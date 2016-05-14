@@ -1,0 +1,62 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# Explicit paths specified without -i or -o; assuming --only paths...
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   Script Inicial.txt
+#
+# Changes not staged for commit:
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio.v11.suo
+#	deleted:    ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ABM Rol/Form1.Designer.cs
+#	deleted:    ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ABM Rol/Form1.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ABM Rubro/Form1.Designer.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ABM Rubro/Form1.cs
+#	deleted:    ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ABM Usuario/Form1.Designer.cs
+#	deleted:    ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ABM Usuario/Form1.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ABM Visibilidad/Form1.Designer.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ABM Visibilidad/Form1.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Calificar/Form1.Designer.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Calificar/Form1.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ComprarOfertar/Form1.Designer.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ComprarOfertar/Form1.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/DataBase/Conexion/LoginDAO.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Facturas/Form1.Designer.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Facturas/Form1.cs
+#	modified:   "../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Generar Publicaci\303\263n/Form1.Designer.cs"
+#	modified:   "../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Generar Publicaci\303\263n/Form1.cs"
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Historial Cliente/Form1.Designer.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Historial Cliente/Form1.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Listado Estadistico/Form1.Designer.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Listado Estadistico/Form1.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Login.Designer.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/MercadoEnvio.csproj
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Program.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Properties/Resources.Designer.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/Properties/Settings.Designer.cs
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/bin/Debug/ArchivoConfiguracion.txt
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/bin/Debug/WindowsFormsApplication1.exe
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/bin/Debug/WindowsFormsApplication1.pdb
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/obj/Debug/MercadoEnvio.csproj.FileListAbsolute.txt
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/obj/Debug/MercadoEnvio.csproj.GenerateResource.Cache
+#	deleted:    ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/obj/Debug/WindowsFormsApplication1.Properties.Resources.resources
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/obj/Debug/WindowsFormsApplication1.exe
+#	modified:   ../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/obj/Debug/WindowsFormsApplication1.pdb
+#
+# Untracked files:
+#	../Aplicacion Desktop/MercadoEnvio/MercadoEnvio.suo
+#	../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ABM Rol/Rol.Designer.cs
+#	../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ABM Rol/Rol.cs
+#	../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ABM Usuario/Usuario.Designer.cs
+#	../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ABM Usuario/Usuario.cs
+#	../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/ABM Usuario/Usuario.resx
+#	../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/DataBase/Conexion/UsuarioDAO.cs
+#	../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/obj/Debug/MercadoEnvio.ABM_Usuario.Usuario.resources
+#	../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/obj/Debug/MercadoEnvio.Properties.Resources.resources
+#	../Aplicacion Desktop/MercadoEnvio/MercadoEnvio/obj/Debug/TempPE/
+#
+

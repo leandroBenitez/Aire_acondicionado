@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using MercadoEnvio.Excepciones;
 using MercadoEnvio.Conexion;
 using System.Data.SqlClient;
-using System.Collections.Generic;
 
 namespace MercadoEnvio.DataBase.Conexion
 {

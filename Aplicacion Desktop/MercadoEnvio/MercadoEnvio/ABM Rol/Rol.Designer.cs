@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApplication1.ABM_Rol
+﻿namespace MercadoEnvio.ABM_Rol
 {
-    partial class Form1
+    partial class Rol
     {
         /// <summary>
         /// Required designer variable.
