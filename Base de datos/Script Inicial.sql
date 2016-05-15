@@ -11,9 +11,129 @@ GO
 
 /******************************************** BORRO TABLAS SI YA EXISTEN  ********************************************/
 
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla lk_estado_usuario ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_estado_usuario
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla ft_usuario ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla lk_cliente ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla lk_empresa ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla lk_rol ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_rol
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla lk_funcion ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_funcion
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla funciones_por_rol ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.funciones_por_rol
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla roles_por_usuario ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.roles_por_usarios
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla log_ingresos ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla ft_calificacion ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_calificacion
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla lk_estado_publi ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_estado_publi
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla lk_visibilidad ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_visibilidad
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla lk_tipo_publi ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_tipo_publi
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla lk_rubro ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_rubro
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla ft_publicacion ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla ft_compra ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla ft_subasta ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_subasta
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla lk_forma_pago ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_forma_pago
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla ft_factura ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura
+END
+
+IF EXISTS (SELECT 1 AS existe FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_estado_usuario')
+BEGIN
+	Print 'La tabla ft_item ya existe, SE BORRARA';
+	DROP TABLE gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_item
+END
+/*************************************************************************************************************************************************************/
 
 
-/* ******************************************* CREACION DE TABLAS *******************************************/
+/* ******************************************* CREACION DE TABLAS ********************************************************************************************/
 BEGIN TRANSACTION CREACION_TABLAS
 
 Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_estado_usuario	(	 id_estado_usuario int identity(1,1)
@@ -189,3 +309,15 @@ Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_item	(	 id_item int identity(
 														)
 
 COMMIT TRANSACTION CREACION_TABLAS
+/***********************************************************************************************************************************/
+
+
+/* BORRA TODAS LAS TABLAS (LO DEJO POR SI ACASO) */
+/*
+ EXEC sp_MSForEachTable 'ALTER TABLE ? NOCHECK CONSTRAINT ALL'
+ GO
+EXEC sp_MSforeachtable @command1 = "DROP TABLE ?"
+-- Ahora volver a habilitar la integridad referencial
+ EXEC sp_MSForEachTable 'ALTER TABLE ? CHECK CONSTRAINT ALL'
+ GO
+*/
