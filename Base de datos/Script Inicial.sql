@@ -3,7 +3,7 @@ Use GD1C2016
 Go
 
 /*	***********************	CREACION DEL SCHEMA	************************ */
-If NOT EXISTS (Select [schema_id] from [sys].[schemas] where [name] = 'GESTORES_DEL_AIRE_ACONDICIONADO')
+If NOT EXISTS (Select schema_id from sys.schemas where name = 'GESTORES_DEL_AIRE_ACONDICIONADO')
 	Execute ('CREATE SCHEMA GESTORES_DEL_AIRE_ACONDICIONADO AUTHORIZATION gd;');
 Go
 
@@ -105,7 +105,6 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente
 	,desc_Cod_Postal nvarchar(50)
 	,desc_Telefono numeric(10,0)
 	,desc_Fecha_Nac datetime
-	,desc_Fecha_Creacion datetime
 	,primary key (id_cliente)	
 	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
 )
@@ -147,20 +146,16 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion
 
 Create Table GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles
 (
-	 id_relacion int identity(1,1)
-	,id_rol int
+	 id_rol int
 	,id_funcion int
-	,primary key (id_relacion)
 	,foreign key (id_rol) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol(id_rol)
 	,foreign key (id_funcion) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion(id_funcion)
 ) 
 
 Create Table GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
 (
-	 id_relacion int identity(1,1)
-	,id_usuario int
+	 id_usuario int
 	,id_rol int
-	,primary key (id_relacion)
 	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
 	,foreign key (id_rol) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol(id_rol)
 )
@@ -308,12 +303,14 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_item
 )
 
 /*	***********************	CARGA DE DATOS	************************ */
+--Carga de los roles
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol	(desc_rol)
 Values	('Cliente'),
 		('Empresa'),
 		('Administrador')
 Go
 
+--Carga de las funciones
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion	(desc_funcion)
 Values	('Login y seguridad'),
 		('ABM de Rol'),
@@ -328,6 +325,7 @@ Values	('Login y seguridad'),
 		('Listado Estadístico')
 Go
 
+--Carga de los estados de las publicaciones
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion	(desc_estado)
 Values	('Borrador'),
 		('Activa'),
@@ -335,308 +333,163 @@ Values	('Borrador'),
 		('Finalizada')
 Go
 
+--Carga de los estados de los usuarios
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_usuario	(desc_estado)
 Values	('Habilitado'),
 		('Bloqueado')
 Go
 
-/*	***********************	MIGRACION DE DATOS	************************ */
---Declaracion de variables para uso de cursor
-Declare
-	 @Publ_Cli_Dni numeric(18, 0)
-	,@Publ_Cli_Apellido nvarchar(255)
-	,@Publ_Cli_Nombre nvarchar(255)
-	,@Publ_Cli_Fecha_Nac datetime
-	,@Publ_Cli_Mail nvarchar(255)
-	,@Publ_Cli_Dom_Calle nvarchar(255)
-	,@Publ_Cli_Nro_Calle numeric(18, 0)
-	,@Publ_Cli_Piso numeric(18, 0)
-	,@Publ_Cli_Depto nvarchar(50)
-	,@Publ_Cli_Cod_Postal nvarchar(50)
-	,@Publ_Empresa_Razon_Social nvarchar(255)
-	,@Publ_Empresa_Cuit nvarchar(50)
-	,@Publ_Empresa_Fecha_Creacion datetime
-	,@Publ_Empresa_Mail nvarchar(50)
-	,@Publ_Empresa_Dom_Calle nvarchar(100)
-	,@Publ_Empresa_Nro_Calle numeric(18, 0)
-	,@Publ_Empresa_Piso numeric(18, 0)
-	,@Publ_Empresa_Depto nvarchar(50)
-	,@Publ_Empresa_Cod_Postal nvarchar(50)
-	,@Publicacion_Cod numeric(18, 0)
-	,@Publicacion_Descripcion nvarchar(255)
-	,@Publicacion_Stock numeric(18, 0)
-	,@Publicacion_Fecha datetime
-	,@Publicacion_Fecha_Venc datetime
-	,@Publicacion_Precio numeric(18, 2)
-	,@Publicacion_Tipo nvarchar(255)
-	,@Publicacion_Visibilidad_Cod numeric(18, 0)
-	,@Publicacion_Visibilidad_Desc nvarchar(255)
-	,@Publicacion_Visibilidad_Precio numeric(18, 2)
-	,@Publicacion_Visibilidad_Porcentaje numeric(18, 2)
-	,@Publicacion_Estado nvarchar(255)
-	,@Publicacion_Rubro_Descripcion nvarchar(255)
-	,@Cli_Dni numeric(18, 0)
-	,@Cli_Apellido nvarchar(255)
-	,@Cli_Nombre nvarchar(255)
-	,@Cli_Fecha_Nac datetime
-	,@Cli_Mail nvarchar(255)
-	,@Cli_Dom_Calle nvarchar(255)
-	,@Cli_Nro_Calle numeric(18, 0)
-	,@Cli_Piso numeric(18, 0)
-	,@Cli_Depto nvarchar(50)
-	,@Cli_Cod_Postal nvarchar(50)
-	,@Compra_Fecha datetime
-	,@Compra_Cantidad numeric(18, 0)
-	,@Oferta_Fecha datetime
-	,@Oferta_Monto numeric(18, 2)
-	,@Calificacion_Codigo numeric(18, 0)
-	,@Calificacion_Cant_Estrellas numeric(18, 0)
-	,@Calificacion_Descripcion nvarchar(255)
-	,@Item_Factura_Monto numeric(18, 2)
-	,@Item_Factura_Cantidad numeric(18, 0)
-	,@Factura_Nro numeric(18, 0)
-	,@Factura_Fecha datetime
-	,@Factura_Total numeric(18, 2)
-	,@Forma_Pago_Desc nvarchar(255)
+--Carga de las relaciones entre los roles y las funciones
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles	(	 id_rol
+																	,id_funcion	)
+Values	(1,1), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10), (1,11),	 
+		(2,1), (2,5), (2,6), (2,8), (2,9), (2,10), (2,11),
+		(3,1), (3,2), (3,3), (3,4), (3,5), (3,6), (3,7), (3,8), (3,9), (3,10), (3,11)
+Go
 
---Declaracion del cursor
-Declare cursor_maestro Cursor for select * from gd_esquema.Maestra
+--Carga de las formas de pago
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.dm_forma_pago	(desc_tipo_pago)
+Select distinct Forma_Pago_Desc 
+From gd_esquema.Maestra
+Where Forma_Pago_Desc is not null
 
---Apertura del cursor en memoria
-Open cursor_maestro
+--Carga de los rubros
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro	(desc_rubro)
+Select Distinct Publicacion_Rubro_Descripcion 
+From gd_esquema.Maestra
+Where Publicacion_Rubro_Descripcion is not null
 
---Lectura del primer registro
-Fetch next from cursor_maestro into	 @Publ_Cli_Dni
-									,@Publ_Cli_Apellido
-									,@Publ_Cli_Nombre
-									,@Publ_Cli_Fecha_Nac
-									,@Publ_Cli_Mail
-									,@Publ_Cli_Dom_Calle
-									,@Publ_Cli_Nro_Calle
-									,@Publ_Cli_Piso
-									,@Publ_Cli_Depto
-									,@Publ_Cli_Cod_Postal
-									,@Publ_Empresa_Razon_Social
-									,@Publ_Empresa_Cuit
-									,@Publ_Empresa_Fecha_Creacion
-									,@Publ_Empresa_Mail
-									,@Publ_Empresa_Dom_Calle
-									,@Publ_Empresa_Nro_Calle
-									,@Publ_Empresa_Piso
-									,@Publ_Empresa_Depto
-									,@Publ_Empresa_Cod_Postal
-									,@Publicacion_Cod
-									,@Publicacion_Descripcion
-									,@Publicacion_Stock
-									,@Publicacion_Fecha
-									,@Publicacion_Fecha_Venc
-									,@Publicacion_Precio
-									,@Publicacion_Tipo
-									,@Publicacion_Visibilidad_Cod
-									,@Publicacion_Visibilidad_Desc
-									,@Publicacion_Visibilidad_Precio
-									,@Publicacion_Visibilidad_Porcentaje
-									,@Publicacion_Estado
-									,@Publicacion_Rubro_Descripcion
-									,@Cli_Dni
-									,@Cli_Apellido
-									,@Cli_Nombre
-									,@Cli_Fecha_Nac
-									,@Cli_Mail
-									,@Cli_Dom_Calle
-									,@Cli_Nro_Calle
-									,@Cli_Piso
-									,@Cli_Depto
-									,@Cli_Cod_Postal
-									,@Compra_Fecha
-									,@Compra_Cantidad
-									,@Oferta_Fecha
-									,@Oferta_Monto
-									,@Calificacion_Codigo
-									,@Calificacion_Cant_Estrellas
-									,@Calificacion_Descripcion
-									,@Item_Factura_Monto
-									,@Item_Factura_Cantidad
-									,@Factura_Nro
-									,@Factura_Fecha
-									,@Factura_Total
-									,@Forma_Pago_Desc
+--Carga de los tipos de publicaciones
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion	(desc_tipo_public)
+Select Distinct Publicacion_Tipo
+From gd_esquema.Maestra
+Where Publicacion_Tipo is not null
 
-While @@fetch_status = 0
-Begin
---Captura de usuarios y clientes
-If (not exists (Select 'existe' from GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente
-				where desc_Dni = @Publ_Cli_Dni)
-	and	@Publ_Cli_Dni is not null	)
-	Begin
-		--Creo el usuario para el cliente
-		Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
-																		,desc_password
-																		,id_estado	)
-		Select	 left(@Publ_Cli_Mail, CHARINDEX('@', @Publ_Cli_Mail) - 1)
-				,hashbytes('sha2_256', left(@Publ_Cli_Mail, CHARINDEX('@', @Publ_Cli_Mail) - 1))
-				,1
-		
-		--Creo el cliente
-		Insert into GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente	(	 id_usuario
-																	,desc_Apellido
-																	,desc_Nombre
-																	,desc_Dni
-																	,desc_Mail	
-																	,desc_Dom_Calle
-																	,desc_Nro_Calle
-																	,desc_Piso
-																	,desc_Depto
-																	,desc_Cod_Postal
-																	,desc_Fecha_Nac
-																	,desc_Fecha_Creacion	)
-		Select	 @@IDENTITY
-				,@Publ_Cli_Apellido
-				,@Publ_Cli_Nombre
-				,@Publ_Cli_Dni
-				,@Publ_Cli_Mail	
-				,@Publ_Cli_Dom_Calle
-				,@Publ_Cli_Nro_Calle
-				,@Publ_Cli_Piso
-				,@Publ_Cli_Depto
-				,@Publ_Cli_Cod_Postal
-				,@Publ_Cli_Fecha_Nac
-				,getdate()
-	End
+--Carga de los tipos de visualizaciones de las publicaciones
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad	(	 desc_codigo
+																	,desc_tipo
+																	,desc_precio
+																	,desc_porcentaje	)
+Select	 Distinct
+		 Publicacion_Visibilidad_Cod
+		,Publicacion_Visibilidad_Desc
+		,Publicacion_Visibilidad_Precio
+		,Publicacion_Visibilidad_Porcentaje
+From gd_esquema.Maestra
+Where Publicacion_Visibilidad_Cod is not null
 
-If (not exists (Select 'existe' from GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente
-				where desc_Dni = @Cli_Dni)
-	and	@Cli_Dni is not null	)
-	Begin
-		--Creo el usuario para el cliente
-		Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
-																	,desc_password
-																	,id_estado	)
-		Select	 left(@Publ_Cli_Mail, CHARINDEX('@', @Cli_Mail) - 1)
-				,hashbytes('sha2_256', left(@Cli_Mail, CHARINDEX('@', @Cli_Mail) - 1))
-				,1
-		
-		--Creo el cliente
-		Insert into GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente	(	 id_usuario
-																	,desc_Apellido
-																	,desc_Nombre
-																	,desc_Dni
-																	,desc_Mail	
-																	,desc_Dom_Calle
-																	,desc_Nro_Calle
-																	,desc_Piso
-																	,desc_Depto
-																	,desc_Cod_Postal
-																	,desc_Fecha_Nac
-																	,desc_Fecha_Creacion	)
-		Select	 @@IDENTITY
-				,@Cli_Apellido
-				,@Cli_Nombre
-				,@Cli_Dni
-				,@Cli_Mail	
-				,@Cli_Dom_Calle
-				,@Cli_Nro_Calle
-				,@Cli_Piso
-				,@Cli_Depto
-				,@Cli_Cod_Postal
-				,@Cli_Fecha_Nac
-				,getdate()
-	End
+--Migracion de clientes, empresas y usuarios
+--Creacion de tabla auxiliar para procesamiento
+Create Table #usuarios	(	 id int identity(1,1)
+							,username nvarchar(255)
+							,password varbinary(32)
+							,status int
+							,entidad varchar(50)
+							,id_entidad varchar(75)	)
 
---Captura de usuarios y empresas
-If (not exists (Select 'existe' from GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa
-				where desc_Cuit = @Publ_Empresa_Cuit)
-	and	@Publ_Empresa_Cuit is not null	)
-	Begin
-		--Creo el usuario para la empresa
-		Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
-																	,desc_password
-																	,id_estado	)
-		Select	 concat('razon', right(@Publ_Empresa_Razon_Social, len(@Publ_Empresa_Razon_Social) - CHARINDEX(':', @Publ_Empresa_Razon_Social)))
-				,hashbytes('sha2_256', concat('razon', right(@Publ_Empresa_Razon_Social, len(@Publ_Empresa_Razon_Social) - CHARINDEX(':', @Publ_Empresa_Razon_Social))))
-				,1
+Insert Into #usuarios 	(	 username
+							,password
+							,status
+							,entidad
+							,id_entidad	)
+Select	 Distinct
+		 left(Replace(Publ_Cli_Mail, ' ', ''), CHARINDEX('@', Replace(Publ_Cli_Mail, ' ', '')) - 1)
+		,hashbytes('sha2_256', left(Replace(Publ_Cli_Mail, ' ', ''), CHARINDEX('@', Replace(Publ_Cli_Mail, ' ', '')) - 1))
+		,1
+		,'Cliente'
+		,Publ_Cli_Dni
+From gd_esquema.Maestra
+Where Publ_Cli_Dni is not null
 
-		--Creo la empresa
-		Insert into GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa	(	 id_usuario
-																	,desc_Razon_Social
-																	,desc_Mail
-																	,desc_Fecha_Creacion	
-																	,desc_Dom_Calle
-																	,desc_Nro_Calle
-																	,desc_Piso
-																	,desc_Depto
-																	,desc_Cod_Postal
-																	,desc_Cuit	)
-		Select	 @@IDENTITY
-				,@Publ_Empresa_Razon_Social
-				,@Publ_Empresa_Mail
-				,@Publ_Empresa_Fecha_Creacion	
-				,@Publ_Empresa_Dom_Calle
-				,@Publ_Empresa_Nro_Calle
-				,@Publ_Empresa_Piso
-				,@Publ_Empresa_Depto
-				,@Publ_Empresa_Cod_Postal
-				,@Publ_Empresa_Cuit
-	End
+Insert Into #usuarios 	(	 username
+							,password
+							,status
+							,entidad
+							,id_entidad	)
+Select	 Distinct
+		 concat('razon', right(Publ_Empresa_Razon_Social, len(Publ_Empresa_Razon_Social) - CHARINDEX(':', Publ_Empresa_Razon_Social)))
+		,hashbytes('sha2_256', concat('razon', right(Publ_Empresa_Razon_Social, len(Publ_Empresa_Razon_Social) - CHARINDEX(':', Publ_Empresa_Razon_Social))))
+		,1
+		,'Empresa'
+		,Publ_Empresa_Cuit
+From gd_esquema.Maestra
+Where Publ_Empresa_Cuit is not null
 
---Muevo el cursor al siguiente registro
-Fetch next from cursor_maestro into	 @Publ_Cli_Dni
-									,@Publ_Cli_Apellido
-									,@Publ_Cli_Nombre
-									,@Publ_Cli_Fecha_Nac
-									,@Publ_Cli_Mail
-									,@Publ_Cli_Dom_Calle
-									,@Publ_Cli_Nro_Calle
-									,@Publ_Cli_Piso
-									,@Publ_Cli_Depto
-									,@Publ_Cli_Cod_Postal
-									,@Publ_Empresa_Razon_Social
-									,@Publ_Empresa_Cuit
-									,@Publ_Empresa_Fecha_Creacion
-									,@Publ_Empresa_Mail
-									,@Publ_Empresa_Dom_Calle
-									,@Publ_Empresa_Nro_Calle
-									,@Publ_Empresa_Piso
-									,@Publ_Empresa_Depto
-									,@Publ_Empresa_Cod_Postal
-									,@Publicacion_Cod
-									,@Publicacion_Descripcion
-									,@Publicacion_Stock
-									,@Publicacion_Fecha
-									,@Publicacion_Fecha_Venc
-									,@Publicacion_Precio
-									,@Publicacion_Tipo
-									,@Publicacion_Visibilidad_Cod
-									,@Publicacion_Visibilidad_Desc
-									,@Publicacion_Visibilidad_Precio
-									,@Publicacion_Visibilidad_Porcentaje
-									,@Publicacion_Estado
-									,@Publicacion_Rubro_Descripcion
-									,@Cli_Dni
-									,@Cli_Apellido
-									,@Cli_Nombre
-									,@Cli_Fecha_Nac
-									,@Cli_Mail
-									,@Cli_Dom_Calle
-									,@Cli_Nro_Calle
-									,@Cli_Piso
-									,@Cli_Depto
-									,@Cli_Cod_Postal
-									,@Compra_Fecha
-									,@Compra_Cantidad
-									,@Oferta_Fecha
-									,@Oferta_Monto
-									,@Calificacion_Codigo
-									,@Calificacion_Cant_Estrellas
-									,@Calificacion_Descripcion
-									,@Item_Factura_Monto
-									,@Item_Factura_Cantidad
-									,@Factura_Nro
-									,@Factura_Fecha
-									,@Factura_Total
-									,@Forma_Pago_Desc
+--Creacion de indice para optimizacion de matcheos
+Create Index index_id_entidad on #Usuarios(id_entidad)
 
-End
+--Carga de usuarios
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
+															,desc_password
+															,id_estado	)
+Select	 username
+		,password
+		,status
+From #usuarios
 
-Close cursor_maestro
-Deallocate cursor_maestro
+--Carga de clientes
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente	(	 id_usuario
+															,desc_Apellido
+															,desc_Nombre
+															,desc_Dni
+															,desc_Mail
+															,desc_Dom_Calle
+															,desc_Nro_Calle
+															,desc_Piso
+															,desc_Depto
+															,desc_Cod_Postal
+															,desc_Fecha_Nac	)
+Select	 Distinct
+		 us.id
+		,ma.Publ_Cli_Apeliido
+		,ma.Publ_Cli_Nombre
+		,ma.Publ_Cli_Dni
+		,ma.Publ_Cli_Mail
+		,ma.Publ_Cli_Dom_Calle
+		,ma.Publ_Cli_Nro_Calle
+		,ma.Publ_Cli_Piso
+		,ma.Publ_Cli_Depto
+		,ma.Publ_Cli_Cod_Postal
+		,ma.Publ_Cli_Fecha_Nac
+From gd_esquema.Maestra ma
+inner join #usuarios us
+	on convert(varchar(75), ma.Publ_Cli_Dni) = us.id_entidad
+Where	ma.Publ_Cli_Dni is not null
+	and us.entidad = 'Cliente'
+
+--Carga de las empresas
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa	(	 id_usuario
+																,desc_Razon_Social
+																,desc_Mail
+																,desc_Fecha_Creacion
+																,desc_Dom_Calle
+																,desc_Nro_Calle
+																,desc_Piso
+																,desc_Depto
+																,desc_Cod_Postal
+																,desc_Cuit	)
+Select	 Distinct
+		 us.id
+		,Publ_Empresa_Razon_Social
+		,Publ_Empresa_Mail
+		,Publ_Empresa_Fecha_Creacion
+		,Publ_Empresa_Dom_Calle
+		,Publ_Empresa_Nro_Calle
+		,Publ_Empresa_Piso
+		,Publ_Empresa_Depto
+		,Publ_Empresa_Cod_Postal
+		,Publ_Empresa_Cuit
+From gd_esquema.Maestra ma
+inner join #usuarios us
+	on ma.Publ_Empresa_Cuit = us.id_entidad
+Where	ma.Publ_Empresa_Cuit is not null
+	and us.entidad = 'Empresa'
+
+--Asignacion de los roles en base a tipo de rol
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios	(	 id_usuario
+																		,id_rol	)
+Select	 id
+		,case entidad when 'Cliente' then 1 else 2 end
+From #usuarios
+
+Drop table #usuarios
