@@ -14,7 +14,7 @@ namespace MercadoEnvio.DataBase.Conexion
         public static String Param_Conexion_contraseña;
         public static String Param_Conexion_nombreBD;
         //A partir de aqui se deben setear el nombre de las tabla y procedimientos
-        public static String tabla_usuarios = "dbo.lk_usuario";
+        public static String tabla_roles = "GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol";
         public static String tabla_clientes = "";
         public static String proc_insertar_cliente = "";
 

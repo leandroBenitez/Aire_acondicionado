@@ -1,4 +1,4 @@
-﻿namespace MercadoEnvio.Facturas
+﻿namespace WindowsFormsApplication1.Facturas
 {
     partial class Form1
     {

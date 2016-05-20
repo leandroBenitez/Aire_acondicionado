@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MercadoEnvio.Historial_Cliente
+namespace WindowsFormsApplication1.Historial_Cliente
 {
     public partial class Form1 : Form
     {

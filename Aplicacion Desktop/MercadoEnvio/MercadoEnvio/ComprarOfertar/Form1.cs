@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MercadoEnvio.ComprarOfertar
+namespace WindowsFormsApplication1.ComprarOfertar
 {
     public partial class Form1 : Form
     {

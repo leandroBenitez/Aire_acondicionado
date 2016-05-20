@@ -1,4 +1,4 @@
-﻿namespace MercadoEnvio.Calificar
+﻿namespace WindowsFormsApplication1.Calificar
 {
     partial class Form1
     {

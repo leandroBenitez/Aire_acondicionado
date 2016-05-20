@@ -7,22 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using MercadoEnvio.DataBase.Conexion;
+using System.IO;
 
-namespace MercadoEnvio
+namespace MercadoEnvios.ABM_Rol
 {
-    public partial class Login : Form
+    public partial class Form1 : Form
     {
-        private LoginDAO loginDAO;
+        private ABM_Rol_DAO abm_rol;
 
-        public Login()
+        public Form1()
         {
             leerArchivoConfig();
-            loginDAO = new LoginDAO();
+            abm_rol = new ABM_Rol_DAO();
             InitializeComponent();
-            cargar_roles_combobox();
+            cargar_funciones();
         }
+
+        public void cargar_funciones() 
+        {
+            foreach (string aux in abm_rol.get_funciones())
+            {
+                checkedListBox1.Items.Add(aux);
+            }
+        }
+
+
+
+
 
         private void leerArchivoConfig()
         {
@@ -50,37 +62,6 @@ namespace MercadoEnvio
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error al leer el archivo de configuracion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void cargar_roles_combobox()
-        {
-            foreach (string aux in loginDAO.get_roles())
-            {
-                comboBox_roles.Items.Add(aux);
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {   
-            //If (string.IsNullOrWhiteSpace(un_texto))
-            //{
-            //    MessageBox.Show("Ingrese un usuario valido.", "Error", MessageBoxButtons.OK,    MessageBoxIcon.Warning);
-            //}
-            
-           // If (textBox_user)  
-           // textBox_pass
-        }
-
-        public void verificar_texto_vacio(string un_texto)
-        { 
-            if (string.IsNullOrWhiteSpace(un_texto))
-            {
-                
-            }
-            else
-            {
-                
             }
         }
     }

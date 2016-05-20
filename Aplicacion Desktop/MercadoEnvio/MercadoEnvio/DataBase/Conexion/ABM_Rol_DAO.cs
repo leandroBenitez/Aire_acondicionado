@@ -9,25 +9,25 @@ using System.Data.SqlClient;
 
 namespace MercadoEnvio.DataBase.Conexion
 {
-    class LoginDAO : GDAA_DAO
+    class ABM_Rol_DAO : GDAA_DAO
     {
-        public LoginDAO()
+        public ABM_Rol_DAO()
         {
             this.iniciar();
         }
 
-        public List<string> get_roles()
+        public List<string> get_funciones()
         {
-            SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("Select desc_rol from " + ConstantesBD.tabla_roles);
-            List<string> resultado = new List<string>();
+            SqlDataReader funciones = this.GD1C2016.ejecutarSentenciaConRetorno("Select [desc_funcion] from [GESTORES_DEL_AIRE_ACONDICIONADO].[dm_funcion]");
+            List<string> funciones_string = new List<string>();
 
-            while (lector.Read())
+            while (funciones.Read())
             {
-                resultado.Add(lector["desc_rol"].ToString());
+                funciones_string.Add(funciones["desc_funcion"].ToString());
             }
 
-            lector.Close();
-            return resultado;
+            funciones.Close();
+            return funciones_string;
         }
 
         protected void lanzarExcepcion(String mensajeError, SqlDataReader lector)
