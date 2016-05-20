@@ -348,8 +348,6 @@ Values	(1,1), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10), (1,11),
 		(3,1), (3,2), (3,3), (3,4), (3,5), (3,6), (3,7), (3,8), (3,9), (3,10), (3,11)
 Go
 
-select * from GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles;
-	
 --Carga de las formas de pago
 Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.dm_forma_pago	(desc_tipo_pago)
 Select distinct Forma_Pago_Desc 
@@ -383,13 +381,13 @@ Where Publicacion_Visibilidad_Cod is not null
 
 --Migracion de clientes, empresas y usuarios
 --Creacion de tabla auxiliar para procesamiento
-Create Table #usuarios	(	 id int identity(1,1)
+/*Create Table #usuarios	(	 id int identity(1,1)
 							,username nvarchar(255)
 							,password varbinary(32)
 							,status int
 							,entidad varchar(50)
 							,id_entidad varchar(75)	)
-
+							*/
 Insert Into #usuarios 	(	 username
 							,password
 							,status
