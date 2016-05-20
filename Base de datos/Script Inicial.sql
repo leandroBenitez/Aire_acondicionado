@@ -381,13 +381,13 @@ Where Publicacion_Visibilidad_Cod is not null
 
 --Migracion de clientes, empresas y usuarios
 --Creacion de tabla auxiliar para procesamiento
-/*Create Table #usuarios	(	 id int identity(1,1)
+Create Table #usuarios	(	 id int identity(1,1)
 							,username nvarchar(255)
 							,password varbinary(32)
 							,status int
 							,entidad varchar(50)
 							,id_entidad varchar(75)	)
-							*/
+							
 Insert Into #usuarios 	(	 username
 							,password
 							,status
