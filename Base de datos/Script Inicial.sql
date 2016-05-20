@@ -311,12 +311,6 @@ Values	('Cliente'),
 		('Administrador')
 Go
 
-Select [desc_rol] from [GESTORES_DEL_AIRE_ACONDICIONADO].[dm_rol];
-
-Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol(desc_rol) Values ('nuevoRol')
-select * from GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol;
-select * from GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion;
-
 --Carga de las funciones
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion	(desc_funcion)
 Values	('Login y seguridad'),
