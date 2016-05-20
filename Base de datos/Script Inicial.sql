@@ -134,6 +134,7 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol
 (
 	 id_rol int identity(1,1)
 	,desc_rol nvarchar(50)
+	,estado_rol nvarchar(15)
 	,primary key (id_rol)
 )
 
@@ -310,6 +311,12 @@ Values	('Cliente'),
 		('Administrador')
 Go
 
+Select [desc_rol] from [GESTORES_DEL_AIRE_ACONDICIONADO].[dm_rol];
+
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol(desc_rol) Values ('nuevoRol')
+select * from GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol;
+select * from GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion;
+
 --Carga de las funciones
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion	(desc_funcion)
 Values	('Login y seguridad'),
@@ -347,6 +354,8 @@ Values	(1,1), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10), (1,11),
 		(3,1), (3,2), (3,3), (3,4), (3,5), (3,6), (3,7), (3,8), (3,9), (3,10), (3,11)
 Go
 
+select * from GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles;
+	
 --Carga de las formas de pago
 Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.dm_forma_pago	(desc_tipo_pago)
 Select distinct Forma_Pago_Desc 
