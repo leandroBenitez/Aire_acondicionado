@@ -1,0 +1,11 @@
+C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\bin\Release\WindowsFormsApplication1.exe.config
+C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\bin\Release\WindowsFormsApplication1.exe
+C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\bin\Release\WindowsFormsApplication1.pdb
+C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\obj\Release\MercadoEnvios.ABM_Rol.altaRol.resources
+C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\obj\Release\MercadoEnvio.ABMRol.bajaRol.resources
+C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\obj\Release\MercadoEnvio.ABMRol.ModificacionRol.resources
+C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\obj\Release\MercadoEnvio.Login.resources
+C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\obj\Release\MercadoEnvio.Properties.Resources.resources
+C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\obj\Release\MercadoEnvio.csproj.GenerateResource.Cache
+C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\obj\Release\WindowsFormsApplication1.exe
+C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\obj\Release\WindowsFormsApplication1.pdb
