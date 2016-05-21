@@ -53,7 +53,7 @@ namespace MercadoEnvios.ABM_Rol
                 abm_rol = new ABM_Rol_DAO();
                 
                 /* SETEO TABLA ROL Y OBTENGO EL NÚMERO DE RUBRO*/
-                int numNuevoRubro = abm_rol.setearRol(textNombre.Text);
+                int id_nuevo_rol = abm_rol.setearRol(textNombre.Text);
                 MessageBox.Show("SE CARGO EL MAX EN LA VARIABLE");
                 // Determine if there are any items checked.
                 if (checkedListBox1.CheckedItems.Count != 0)
@@ -64,8 +64,7 @@ namespace MercadoEnvios.ABM_Rol
                     {
                         if (checkedListBox1.GetItemChecked(x) == true)
                         {
-                            abm_rol.setearFuncionalidades(checkedListBox1.CheckedItems[x].ToString(), i, numNuevoRubro);
-                            checkedListBox1.GetItemChecked(x);
+                            abm_rol.setearFuncionalidades(checkedListBox1.CheckedItems[x].ToString(), i, id_nuevo_rol);
                             i++;
                         }
                     }
