@@ -63,27 +63,38 @@ namespace MercadoEnvio.DataBase.Conexion
             return funciones_string;
         }
 
-
         /* SETEO LAS FUNCIONALIDADES AL NUEVO ROL */
-        public void setearFuncionalidades(String funcionalidad, int id_func, int id_rubro)
+        public void setearFuncionalidades(String funcionalidad, int id_func, int id_rol)
         {
-            this.GD1C2016.ejecutarSentenciaSinRetorno("INSERT GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles(id_rol, id_funcion) VALUES (" + id_rubro + "," + id_func +")");
+            this.GD1C2016.ejecutarSentenciaSinRetorno("INSERT GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles(id_rol, id_funcion) VALUES (" + id_rol + "," + id_func +");");
         }
 
         /* SETEO EL NUEVO ROL Y OBTENGO EL NUMERO DE ID QUE SE LE ASIGNO (NO ANDA TODAVIA)*/
         public int setearRol(String nuevoRol)
         {
-            Int32 numNuevoRubro = 1000;
-            MessageBox.Show(nuevoRol);
-            this.GD1C2016.ejecutarSentenciaSinRetorno("INSERT GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol(desc_rol, estado_rol) VALUES ('" + nuevoRol + "' , 'A')");
+            int numNuevoRol = 0;
+            this.GD1C2016.ejecutarSentenciaSinRetorno("INSERT GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol(desc_rol, estado_rol) VALUES ('" + nuevoRol + "' , 'H')");
 
 
-            SqlDataReader numRubro = this.GD1C2016.ejecutarSentenciaConRetorno("select MAX([id_rol])from [GESTORES_DEL_AIRE_ACONDICIONADO].[dm_rol]");
+            SqlDataReader numRol = this.GD1C2016.ejecutarSentenciaConRetorno("select MAX([id_rol])from [GESTORES_DEL_AIRE_ACONDICIONADO].[dm_rol]");
 
-            // Castear como int o algo por el estilo
-            numRubro.Close();
+            if (numRol.Read())
+                numNuevoRol = (int)numRol[0];
+            numRol.Close();
 
-            return numNuevoRubro;
+            return numNuevoRol;
+        }
+
+        public int getIdFunc(String funcionalidad)
+        {
+            int id_func = 0;
+            SqlDataReader id_funcion = this.GD1C2016.ejecutarSentenciaConRetorno("select id_funcion from GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion where desc_funcion = '" + funcionalidad + "';");
+
+            if (id_funcion.Read())
+                id_func = (int)id_funcion[0];
+
+            id_funcion.Close();
+            return id_func;
         }
 
         /* OBTENGO TODOS LOS NOMBRES DE ROLES QUE EXISTEN*/
@@ -106,23 +117,26 @@ namespace MercadoEnvio.DataBase.Conexion
             throw new ValidacionErroneaUsuarioException(mensajeError);
         }
 
-
-        /* OBTENGO EL ID DEL ROL SEGUN SU DESCRIPCION (FALTA VER COMO CHORA GUARDO AL QUERY EN UN PUTOINT)*/
+        /* OBTENGO EL ID DEL ROL SEGUN SU DESCRIPCION - OK*/
         public int getIdRol(String desc_rol)
         {
             int id = 0;
-            SqlDataReader id_rol = this.GD1C2016.ejecutarSentenciaConRetorno("Select [id_rol] from [GESTORES_DEL_AIRE_ACONDICIONADO].[dm_rol] where desc_rol = '"+ desc_rol +"' )");
+            SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("select MAX([id_rol]) from [GESTORES_DEL_AIRE_ACONDICIONADO].[dm_rol] where desc_rol = '"+ desc_rol +"';");
 
-            id_rol.Close();
+            if (num_rol.Read())
+                id = (int)num_rol[0];
+            num_rol.Close();
+
             return id;
         }
 
-        /* ELIMINO LAS FUNCIONES QUE TIENE ASIGNADAS UN ROLD DE TABLA FUNCIONES_ROLES*/
+        /* ELIMINO LAS FUNCIONES QUE TIENE ASIGNADAS UN ROL DE TABLA FUNCIONES_ROLES - OK*/
         public void deleteFuncionesDeRol(int id_rol)
         {
             this.GD1C2016.ejecutarSentenciaSinRetorno("DELETE FROM GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles WHERE id_rol = " + id_rol + ";");
         }
 
+        /* */
         public List<String> getEstadoRol(String desc_rol)
         {
             SqlDataReader estado = this.GD1C2016.ejecutarSentenciaConRetorno("Select [estado_rol] from [GESTORES_DEL_AIRE_ACONDICIONADO].[dm_rol] where desc_rol = '" + desc_rol + "';");
@@ -136,10 +150,10 @@ namespace MercadoEnvio.DataBase.Conexion
             return nombresRoles;
         }
 
+        /* */
         public void updateEstadoRol(String estado, int id_rol)
         {
-            this.GD1C2016.ejecutarSentenciaSinRetorno("INSERT GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles(estado_rol) VALUES ('" + estado +"') where id_rol = " + id_rol + ";");
-
+            this.GD1C2016.ejecutarSentenciaSinRetorno("UPDATE GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol SET estado_rol = '" + estado + "' where id_rol = " + id_rol + ";");
         }
 
     }

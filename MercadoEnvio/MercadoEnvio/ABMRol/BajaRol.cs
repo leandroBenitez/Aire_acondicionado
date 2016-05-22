@@ -24,23 +24,23 @@ namespace MercadoEnvio.ABMRol
             cargarComboDeNombres();
         }
 
+        /*CARGO EL COMBOBOX CON TODOS LOS ROLES EXISTENTES PEGANDOLE A DM.ROL*/
         public void cargarComboDeNombres()
         {
-            
             foreach (string nombre in abm_rol.get_roles())
             {
                 comboNombresRoles.Items.Add(nombre);
             }
         }
 
+        /* */
         private void botonBaja_Click(object sender, EventArgs e)
         {
-            // ESTE NO ANDA TODAVIA, VER COMO DEVOLVER INT PARA PODER USAR
             int id_rol = abm_rol.getIdRol(comboNombresRoles.SelectedItem.ToString());
             abm_rol.updateEstadoRol("D", id_rol);
 
             // INHABILITAR A LOS USUARIOS QUE TENGAN ASIGNADO EL ROL (¿QUE ONDA ESTO?)
-
+            this.Close();
         }
 
         private void leerArchivoConfig()
