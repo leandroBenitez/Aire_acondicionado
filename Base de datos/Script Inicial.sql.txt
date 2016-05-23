@@ -1,200 +1,671 @@
+/*	**********************	CAMBIO DE BASE DE DATOS	******************** */
 Use GD1C2016
 Go
 
-/*	****************************************	CREACION DEL SCHEMA	*********************************************** */
-IF NOT EXISTS (SELECT [schema_id] FROM [sys].[schemas] WHERE [name] = 'gd_GESTORES_DEL_AIRE_ACONDICIONADO')
-BEGIN
-	EXECUTE ('CREATE SCHEMA gd_GESTORES_DEL_AIRE_ACONDICIONADO AUTHORIZATION gd;');
-END
+/*	***********************	CREACION DEL SCHEMA	************************ */
+If NOT EXISTS (Select schema_id from sys.schemas where name = 'GESTORES_DEL_AIRE_ACONDICIONADO')
+	Execute ('CREATE SCHEMA GESTORES_DEL_AIRE_ACONDICIONADO AUTHORIZATION gd;');
+Go
+
+/*	***********************	BORRADO DE TABLAS	************************ */
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'ft_item')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.ft_item
+	
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'ft_factura')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura
+	
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'dm_forma_pago')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.dm_forma_pago
+
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'ft_subasta')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.ft_subasta
+
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'ft_calificacion')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.ft_calificacion
+
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'ft_compra')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra
+
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'ft_publicacion')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
+
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'dm_rubro')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro
+
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'dm_tipo_publicacion')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion
+
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'dm_visibilidad')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad
+
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'dm_estado_publicacion')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion
+
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'log_ingresos')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos	
+	
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'rl_roles_usuarios')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios	
+	
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'rl_funciones_roles')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles		
+	
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'dm_funcion')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion		
+	
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'dm_rol')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol		
+	
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_empresa')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa	
+	
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'lk_cliente')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente	
+	
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'ft_usuario')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	
+	
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'dm_estado_usuario')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_usuario
+
+If exists (Select 'existe' from INFORMATION_SCHEMA.TABLES where TABLE_SCHEMA = 'GESTORES_DEL_AIRE_ACONDICIONADO' AND  TABLE_NAME = 'dm_tipo_costo')
+	Drop table GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_costo
+
+/*	***********************	CREACION DE TABLAS	************************ */
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_costo
+(	
+	 id_tipo_costo int identity(1,1)
+	,desc_tipo_costo nvarchar(100)
+	,primary key (id_tipo_costo)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_usuario
+(	
+	 id_estado_usuario int identity(1,1)
+	,desc_estado nvarchar(100)
+	,primary key (id_estado_usuario)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario
+(	 
+	 id_usuario int identity(1,1)
+	,desc_username nvarchar(250)
+	,desc_password varbinary(32)
+	,id_estado int
+	,primary key (id_usuario)
+	,foreign key (id_estado) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_usuario(id_estado_usuario)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente
+(	
+	 id_cliente int identity(1,1)
+	,id_usuario int
+	,desc_Apellido nvarchar(255)
+	,desc_Nombre nvarchar(255)
+	,desc_Dni numeric(18,0)
+	,desc_Mail nvarchar(255)
+	,desc_Dom_Calle nvarchar(255)
+	,desc_Nro_Calle numeric(18,0)
+	,desc_Piso numeric(18,0)
+	,desc_Depto nvarchar(50)
+	,desc_Localidad nvarchar(45)
+	,desc_Cod_Postal nvarchar(50)
+	,desc_Telefono numeric(10,0)
+	,desc_Fecha_Nac datetime
+	,primary key (id_cliente)	
+	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa
+(
+	 id_empresa int identity(1,1)
+	,id_usuario int
+	,desc_Razon_Social nvarchar(255)
+	,desc_Mail nvarchar(50)
+	,desc_Telefono numeric(10,0)
+	,desc_Fecha_Creacion datetime
+	,desc_Dom_Calle nvarchar(100)
+	,desc_Nro_Calle numeric(18,0)
+	,desc_Piso numeric(18,0)
+	,desc_Depto nvarchar(50)
+	,desc_Localidad nvarchar(45)
+	,desc_Cod_Postal nvarchar(50)
+	,desc_Ciudad nvarchar(45)
+	,desc_Cuit nvarchar(50)
+	,desc_nombre_contacto nvarchar(100)
+	,primary key (id_empresa)
+	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol
+(
+	 id_rol int identity(1,1)
+	,desc_rol nvarchar(50)
+	,primary key (id_rol)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion
+(
+	 id_funcion int identity(1,1)
+	,desc_funcion nvarchar(200)
+	,primary key (id_funcion)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles
+(
+	 id_rol int
+	,id_funcion int
+	,foreign key (id_rol) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol(id_rol)
+	,foreign key (id_funcion) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion(id_funcion)
+) 
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
+(
+	 id_usuario int
+	,id_rol int
+	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
+	,foreign key (id_rol) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol(id_rol)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
+(
+	 id_log int identity(1,1)
+	,id_usuario int --En caso de corresponder
+	,desc_username nvarchar(250)
+	,desc_fecha_log datetime
+	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion
+(
+	 id_estado_publi int identity(1,1)
+	,desc_estado nvarchar(100)
+	,primary key (id_estado_publi)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad
+(
+	 id_visibilidad int identity(1,1)
+	,desc_codigo numeric(18,0)
+	,desc_tipo nvarchar(255)
+	,desc_precio numeric(18,2)
+	,desc_porcentaje numeric(18,2)
+	,desc_porcentaje_envio numeric(18,2)
+	,primary key (id_visibilidad)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion
+(
+	 id_tipo_publi int identity(1,1)
+	,desc_tipo_public nvarchar(255)
+	,primary key (id_tipo_publi)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro
+(
+	 id_rubro int identity(1,1)
+	,desc_rubro nvarchar(255)
+	,primary key (id_rubro)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
+(
+	 id_publicacion int identity(1,1)
+	,desc_codigo numeric(18,0)
+	,desc_publicacion nvarchar(255)
+	,desc_stock numeric(18,0)
+	,desc_fecha_publi datetime
+	,desc_fecha_venc datetime
+	,desc_precio numeric(18,2)
+	,desc_costo_envio numeric(18,2)
+	,id_estado_publi int
+	,id_visibilidad int
+	,id_tipo_publi int
+	,id_rubro int
+	,id_usuario int
+	,primary key (id_publicacion)
+	,foreign key (id_estado_publi) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion(id_estado_publi)
+	,foreign key (id_visibilidad) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad(id_visibilidad)
+	,foreign key (id_tipo_publi) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion(id_tipo_publi)
+	,foreign key (id_rubro) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro(id_rubro)
+	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra
+(
+	 id_compra int identity(1,1)
+	,desc_fecha datetime
+	,desc_cantidad numeric(18,0)
+	,id_publicacion int
+	,id_usuario int
+	,primary key (id_compra)
+	,foreign key (id_publicacion) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion(id_publicacion)
+	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_subasta
+(	
+	 id_subasta int identity(1,1)
+	,desc_fecha datetime
+	,desc_monto numeric(18,2)
+	,id_publicacion int
+	,id_usuario int
+	,primary key (id_subasta)
+	,foreign key (id_publicacion) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion(id_publicacion)
+	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_calificacion
+(
+	 id_calificacion int identity(1,1)
+	,desc_codigo numeric(18,0)
+	,desc_cantidad_estrellas numeric(18,0)
+	,descripcion nvarchar(255)
+	,id_usuario int
+	,id_compra int
+	,primary key (id_calificacion)
+	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
+	,foreign key (id_compra) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra(id_compra)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_forma_pago
+(
+	 id_forma_pago int identity(1,1)
+	,desc_tipo_pago nvarchar(255)
+	,primary key (id_forma_pago)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura
+(	
+	 id_factura numeric(18,0)
+	,desc_fecha datetime
+	,desc_total numeric(18,2)
+	,id_forma_pago int
+	,id_usuario int
+	,primary key (id_factura)
+	,foreign key (id_forma_pago) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_forma_pago(id_forma_pago)
+	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
+)
+
+Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_item	
+(
+	 id_item int identity(1,1)
+	,desc_item_monto numeric(18,2)
+	,desc_item_cant numeric(18,0)
+	,id_factura numeric(18,0)
+	,id_publicacion int
+	,id_tipo_costo int
+	,primary key (id_item)
+	,foreign key (id_factura) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura(id_factura)
+	,foreign key (id_tipo_costo) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_costo(id_tipo_costo)
+	,foreign key (id_publicacion) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion(id_publicacion)
+)
+
+/*	***********************	CARGA DE DATOS	************************ */
+--Carga de los tipos de costos
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_costo	(desc_tipo_costo)
+Values	('No informado'),
+		('Costo por publicacion'),
+		('Costo por envio'),
+		('Costo por venta')
+Go
+
+--Carga de los roles
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol	(desc_rol)
+Values	('Cliente'),
+		('Empresa'),
+		('Administrador')
+Go
+
+--Carga de las funciones
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion	(desc_funcion)
+Values	('Login y seguridad'),
+		('ABM de Rol'),
+		('ABM de Usuarios'),
+		('ABM de Rubro'),
+		('ABM visibilidad de publicación'),
+		('Generar Publicación'),
+		('Comprar/Ofertar'),
+		('Historial del cliente'),
+		('Calificar al Vendedor'),
+		('Consulta de facturas realizadas al vendedor'),
+		('Listado Estadístico')
+Go
+
+--Carga de los estados de las publicaciones
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion	(desc_estado)
+Values	('Borrador'),
+		('Publicada'),
+		('Pausada'),
+		('Finalizada')
+Go
+
+--Carga de los estados de los usuarios
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_usuario	(desc_estado)
+Values	('Habilitado'),
+		('Bloqueado')
+Go
+
+--Carga de las formas de pago
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.dm_forma_pago	(desc_tipo_pago)
+Select distinct Forma_Pago_Desc 
+From gd_esquema.Maestra
+Where Forma_Pago_Desc is not null
+
+--Carga de los rubros
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro	(desc_rubro)
+Select Distinct Publicacion_Rubro_Descripcion 
+From gd_esquema.Maestra
+Where Publicacion_Rubro_Descripcion is not null
+
+--Carga de los tipos de publicaciones
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion	(desc_tipo_public)
+Select Distinct Publicacion_Tipo
+From gd_esquema.Maestra
+Where Publicacion_Tipo is not null
+
+--Carga de los tipos de visualizaciones de las publicaciones
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad	(	 desc_codigo
+																	,desc_tipo
+																	,desc_precio
+																	,desc_porcentaje
+																	,desc_porcentaje_envio	)
+Select	 Distinct
+		 Publicacion_Visibilidad_Cod
+		,Publicacion_Visibilidad_Desc
+		,Publicacion_Visibilidad_Precio
+		,Publicacion_Visibilidad_Porcentaje
+		,Publicacion_Visibilidad_Porcentaje/2
+From gd_esquema.Maestra
+Where Publicacion_Visibilidad_Cod is not null
+
+--Carga de las relaciones entre los roles y las funciones
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles	(	 id_rol
+																	,id_funcion	)
+Values	(1,1), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10), (1,11),	 
+		(2,1), (2,5), (2,6), (2,8), (2,9), (2,10), (2,11),
+		(3,1), (3,2), (3,3), (3,4), (3,5), (3,6), (3,7), (3,8), (3,9), (3,10), (3,11)
+Go
+
+--Migracion de clientes, empresas y usuarios
+--Creacion de tabla auxiliar para procesamiento
+Create Table #usuarios	(	 id int identity(1,1)
+							,username nvarchar(255)
+							,password varbinary(32)
+							,status int
+							,entidad varchar(50)
+							,id_entidad varchar(75)	)
+
+Insert Into #usuarios 	(	 username
+							,password
+							,status
+							,entidad
+							,id_entidad	)
+Select	 Distinct
+		 left(Replace(Publ_Cli_Mail, ' ', ''), CHARINDEX('@', Replace(Publ_Cli_Mail, ' ', '')) - 1)
+		,hashbytes('sha2_256', left(Replace(Publ_Cli_Mail, ' ', ''), CHARINDEX('@', Replace(Publ_Cli_Mail, ' ', '')) - 1))
+		,1
+		,'Cliente'
+		,Publ_Cli_Dni
+From gd_esquema.Maestra
+Where Publ_Cli_Dni is not null
+
+Insert Into #usuarios 	(	 username
+							,password
+							,status
+							,entidad
+							,id_entidad	)
+Select	 Distinct
+		 concat('razon', right(Publ_Empresa_Razon_Social, len(Publ_Empresa_Razon_Social) - CHARINDEX(':', Publ_Empresa_Razon_Social)))
+		,hashbytes('sha2_256', concat('razon', right(Publ_Empresa_Razon_Social, len(Publ_Empresa_Razon_Social) - CHARINDEX(':', Publ_Empresa_Razon_Social))))
+		,1
+		,'Empresa'
+		,Publ_Empresa_Cuit
+From gd_esquema.Maestra
+Where Publ_Empresa_Cuit is not null
+
+--Creacion de indice para optimizacion de matcheos
+Create Index index_id_entidad on #Usuarios(id_entidad)
+
+--Carga de usuarios
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
+															,desc_password
+															,id_estado	)
+Select	 username
+		,password
+		,status
+From #usuarios
+
+--Carga de clientes
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente	(	 id_usuario
+															,desc_Apellido
+															,desc_Nombre
+															,desc_Dni
+															,desc_Mail
+															,desc_Dom_Calle
+															,desc_Nro_Calle
+															,desc_Piso
+															,desc_Depto
+															,desc_Cod_Postal
+															,desc_Fecha_Nac	)
+Select	 Distinct
+		 us.id
+		,ma.Publ_Cli_Apeliido
+		,ma.Publ_Cli_Nombre
+		,ma.Publ_Cli_Dni
+		,ma.Publ_Cli_Mail
+		,ma.Publ_Cli_Dom_Calle
+		,ma.Publ_Cli_Nro_Calle
+		,ma.Publ_Cli_Piso
+		,ma.Publ_Cli_Depto
+		,ma.Publ_Cli_Cod_Postal
+		,ma.Publ_Cli_Fecha_Nac
+From gd_esquema.Maestra ma
+inner join #usuarios us
+	on convert(varchar(75), ma.Publ_Cli_Dni) = us.id_entidad
+Where	ma.Publ_Cli_Dni is not null
+	and us.entidad = 'Cliente'
+
+--Carga de las empresas
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa	(	 id_usuario
+																,desc_Razon_Social
+																,desc_Mail
+																,desc_Fecha_Creacion
+																,desc_Dom_Calle
+																,desc_Nro_Calle
+																,desc_Piso
+																,desc_Depto
+																,desc_Cod_Postal
+																,desc_Cuit	)
+Select	 Distinct
+		 us.id
+		,Publ_Empresa_Razon_Social
+		,Publ_Empresa_Mail
+		,Publ_Empresa_Fecha_Creacion
+		,Publ_Empresa_Dom_Calle
+		,Publ_Empresa_Nro_Calle
+		,Publ_Empresa_Piso
+		,Publ_Empresa_Depto
+		,Publ_Empresa_Cod_Postal
+		,Publ_Empresa_Cuit
+From gd_esquema.Maestra ma
+inner join #usuarios us
+	on ma.Publ_Empresa_Cuit = us.id_entidad
+Where	ma.Publ_Empresa_Cuit is not null
+	and us.entidad = 'Empresa'
+
+--Asignacion de los roles en base a tipo de usuario
+Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios	(	 id_usuario
+																	,id_rol	)
+Select	 id
+		,case entidad when 'Cliente' then 1 else 2 end
+From #usuarios
+
+--Migracion de las publicaciones
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion	(	 desc_codigo
+																,desc_publicacion
+																,desc_stock
+																,desc_fecha_publi
+																,desc_fecha_venc
+																,desc_precio
+																,desc_costo_envio
+																,id_estado_publi
+																,id_visibilidad
+																,id_tipo_publi
+																,id_rubro
+																,id_usuario	)
+Select	 Distinct
+		 ma.Publicacion_Cod
+		,ma.Publicacion_Descripcion
+		,ma.Publicacion_Stock
+		,ma.Publicacion_Fecha
+		,ma.Publicacion_Fecha_Venc
+		,ma.Publicacion_Precio
+		,0
+		,es.id_estado_publi
+		,vi.id_visibilidad
+		,publ_tipo.id_tipo_publi
+		,ru.id_rubro
+		,us.id
+From gd_esquema.Maestra ma
+inner join #usuarios us
+	on isnull(Convert(varchar(50), ma.Publ_Cli_Dni), ma.Publ_Empresa_Cuit) = us.id_entidad
+inner join GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion publ_tipo
+	on ma.Publicacion_Tipo = publ_tipo.desc_tipo_public
+inner join GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad vi
+	on ma.Publicacion_Visibilidad_Cod = vi.desc_codigo
+inner join GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion es
+	on ma.Publicacion_Estado = es.desc_estado
+inner join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro ru
+	on ma.Publicacion_Rubro_Descripcion = ru.desc_rubro
+Where Publicacion_Cod is not null
+
+--Creacion de tabla auxiliar para procesamiento de compras
+Create table #compra	(	 id int identity(1,1)
+							,fecha datetime
+							,cantidad numeric(18,0)
+							,publicacion int
+							,usuario int	
+							,calificacion varchar(75)	)
+
+--Migracion de las compras
+Insert into #compra	(	 fecha
+						,cantidad
+						,publicacion
+						,usuario
+						,calificacion	)
+Select	 Distinct
+		 ma.Compra_Fecha
+		,ma.Compra_Cantidad
+		,pu.id_publicacion
+		,us.id
+		,ma.Calificacion_Codigo
+From gd_esquema.Maestra ma
+inner join GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pu
+	on ma.Publicacion_Cod = pu.desc_codigo
+inner join #usuarios us
+	on Convert(varchar(75), ma.Cli_Dni) = us.id_entidad
+Where ma.Compra_Fecha is not null
+
+
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra	(	 desc_fecha
+															,desc_cantidad
+															,id_publicacion
+															,id_usuario	)
+Select	 fecha
+		,cantidad
+		,publicacion
+		,usuario
+From #compra
+
+--Migracion de las calificaciones
+insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_calificacion	(	 desc_codigo
+																,desc_cantidad_estrellas
+																,descripcion
+																,id_usuario
+																,id_compra	)
+Select	 Distinct
+		 ma.Calificacion_Codigo
+		,ma.Calificacion_Cant_Estrellas
+		,ma.Calificacion_Descripcion
+		,us.id
+		,co.id
+From gd_esquema.Maestra ma
+inner join #usuarios us
+	on isnull(Convert(nvarchar(75), ma.Publ_Cli_Dni), ma.Publ_Empresa_Cuit) = us.id_entidad
+left join #compra co
+	on ma.Calificacion_Codigo = co.calificacion
+Where ma.Calificacion_Codigo is not null
+
+--Migracion de las ofertas para subastas
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_subasta	(	 desc_fecha
+															,desc_monto
+															,id_publicacion
+															,id_usuario	)
+Select	 Distinct
+		 ma.Oferta_Fecha
+		,ma.Oferta_Monto
+		,pu.id_publicacion
+		,us.id
+From gd_esquema.Maestra ma
+inner join #usuarios us
+	on Convert(varchar(75), ma.Cli_Dni) = us.id_entidad
+inner join GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pu
+	on ma.Publicacion_Cod = pu.desc_codigo
+Where	Oferta_Monto is not null
+
+--Migracion de las facturas
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura	(	 id_factura
+															,desc_fecha
+															,desc_total
+															,id_forma_pago
+															,id_usuario	)
+Select	 Distinct
+		 ma.Factura_Nro
+		,ma.Factura_Fecha
+		,ma.Factura_Total
+		,fo.id_forma_pago
+		,us.id
+From gd_esquema.Maestra ma
+inner join GESTORES_DEL_AIRE_ACONDICIONADO.dm_forma_pago fo
+	on ma.Forma_Pago_Desc = fo.desc_tipo_pago
+inner join #usuarios us
+	on isnull(Convert(varchar(75), ma.Publ_Cli_Dni), ma.Publ_Empresa_Cuit) = us.id_entidad
+
+--Migracion de Items
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_item	(	 desc_item_monto
+														,desc_item_cant
+														,id_factura
+														,id_publicacion
+														,id_tipo_costo	)
+Select	 Distinct
+		 ma.Item_Factura_Monto
+		,ma.Item_Factura_Cantidad
+		,ma.Factura_Nro
+		,pu.id_publicacion
+		,1
+From gd_esquema.Maestra ma
+inner join GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pu
+	on ma.Publicacion_Cod = pu.desc_codigo
+Go
+
+--Comienzo de creacion de Store Procedures, Functions and Triggers
+Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario	(	 @username varchar(150)
+																	,@password varchar(150)
+																	,@rol varchar(100)	)
+As
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
+															,desc_password
+															,id_estado	)
+Select	 @username
+		,hashbytes('sha2_256', @password)
+		,1
+
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios	(	 id_usuario
+																	,id_rol	)
+Select	 @@IDENTITY
+		,id_rol
+From GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol
+Where desc_rol = @rol
+
 GO
-
-/* ------------------------------ CREACION DE TABLAS --------------------------------------------*/
-BEGIN TRANSACTION CREACION_TABLAS
-/* 1 - Estado Usuario */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_estado_usuario	(	 id_estado_usuario int identity(1,1)
-										,desc_estado nvarchar(100)
-										,primary key (id_estado_usuario)
-									)
-/* 2 - Usuario */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 id_usuario int identity(1,1)
-								,desc_username nvarchar(250)
-								,desc_password nvarchar(250)
-								,id_estado int
-								,primary key (id_usuario)
-								,foreign key (id_estado) references lk_estado_usuario(id_estado_usuario)
-							)
-/* 3 - Cliente */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente	(	 id_cliente int identity(1,1)
-								,id_usuario int
-								,desc_Dni numeric(18,0)
-								,desc_Apeliido nvarchar(255)
-								,desc_Nombre nvarchar(255)
-								,desc_Fecha_Nac datetime
-								,desc_Mail nvarchar(255)
-								,desc_Dom_Calle nvarchar(255)
-								,desc_Nro_Calle numeric(18,0)
-								,desc_Piso numeric(18,0)
-								,desc_Depto nvarchar(50)
-								,desc_Localidad varchar(45)
-								,desc_Cod_Postal nvarchar(50)
-								,desc_telefono numeric(10,0)
-								,des_fecha_creacion datetime
-								,primary key (id_cliente)	
-								,foreign key (id_usuario) references ft_usuario(id_usuario)
-							)
-/* 4 - Empresa */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa	(	 id_empresa int identity(1,1)
-								,id_usuario int
-								,desc_Razon_Social nvarchar(255)
-								,desc_Mail nvarchar(50)
-								,desc_telefono numeric(10)
-								,desc_Fecha_Creacion datetime
-								,desc_Dom_Calle nvarchar(100)
-								,desc_Nro_Calle numeric(18,0)
-								,desc_Piso numeric(18,0)
-								,desc_Depto nvarchar(50)
-								,desc_localidad nvarchar(45)
-								,desc_Cod_Postal nvarchar(50)
-								,desc_ciudad nvarchar(45)
-								,desc_Cuit nvarchar(50)
-								,desc_nombre_contacto nvarchar(45)
-								,primary key (id_empresa)
-								,foreign key (id_usuario) references ft_usuario(id_usuario)
-								,id_rubro int
-							)
-/* 5 - Rol */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_rol	(	 id_rol int
-							,desc_rol nvarchar(50)
-							,primary key (id_rol)
-						)
-/* 6 - Funcion */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_funcion	(	 id_funcion int identity(1,1)
-								,desc_funcion nvarchar(200)
-								,primary key (id_funcion)
-							)
-/* 7 - Funciones por rol */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.funciones_por_rol	(	 id_relacion int identity
-										,id_rol int
-										,id_funcion int
-										,primary key (id_relacion)
-										,foreign key (id_rol) references lk_rol(id_rol)
-										,foreign key (id_funcion) references lk_funcion(id_funcion)
-									) 
-/* 8 - Roles por usuario */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.roles_por_usarios	(	 id_relacion int identity(1,1)
-										,id_usuario int
-										,id_rol int
-										,primary key (id_relacion)
-										,foreign key (id_usuario) references ft_usuario(id_usuario)
-										,foreign key (id_rol) references lk_rol(id_rol)
-									)
-
-/* 9 - Calificacion */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_calificacion	(	 id_calificacion int identity(1,1)
-										,desc_cantidad_estrellas numeric(18,0)
-										,descripcion nvarchar(255)
-										,id_usuario_origen int
-										,id_usuario_destino int
-										,desc_codigo numeric(18,0)
-										,primary key (id_calificacion)
-										,foreign key (id_usuario_origen) references ft_usuario(id_usuario)
-										,foreign key (id_usuario_origen) references ft_usuario(id_usuario)
-									)
-/* 10 - Estado publicacion */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_estado_publi	(	 id_estado_publi int identity(1,1)
-										,desc_estado nvarchar(100)
-										,primary key (id_estado_publi)
-									)
-/* 11 - Visibilidad */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_visibilidad	(	 id_visibilidad int identity(1,1)
-									,desc_codigo numeric(18,0)
-									,desc_tipo nvarchar(255)
-									,desc_precio numeric(18,2)
-									,desc_porcentaje numeric(18,2)
-									,primary key (id_visibilidad)
-								)
-/* 12 - Tipo de publicacion */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_tipo_publi	(	 id_tipo_publi int identity(1,1)
-									,desc_tipo_public nvarchar(255)
-									,primary key (id_tipo_publi)
-								)
-/* 13 - Rubro */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_rubro	(	 id_rubro int identity(1,1)
-								,desc_rubro nvarchar(255)
-								,primary key (id_rubro)
-							)
-/* 14 - Publicacion */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion	(	 id_publicacion int identity(1,1)
-									,desc_codigo numeric(18,0)
-									,desc_publicacion nvarchar(255)
-									,desc_stock numeric(18,0)
-									,desc_fecha_publi datetime
-									,desc_fecha_venc datetime
-									,desc_precio numeric(18,2)
-									,desc_preguntas bit
-									,id_rubro int
-									,id_visibilidad int
-									,id_estado_publi int
-									,id_tipo_publi int
-									,id_usuario int
-									,primary key (id_publicacion)
-									,foreign key (id_estado_publi) references lk_estado_publi(id_estado_publi)
-									,foreign key (id_visibilidad) references lk_visibilidad(id_visibilidad)
-									,foreign key (id_tipo_publi) references lk_tipo_publi(id_tipo_publi)
-									,foreign key (id_rubro) references lk_rubro(id_rubro)
-									,foreign key (id_usuario) references ft_usuario(id_usuario)
-								)
-/* 15 - Compra */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra	(	 id_compra int identity(1,1)
-								,desc_fecha datetime
-								,desc_cantidad numeric(18,0)
-								,id_publicacion int
-								,id_usuario int
-								,primary key (id_compra)
-								,foreign key (id_publicacion) references ft_publicacion(id_publicacion)
-								,foreign key (id_usuario) references ft_usuario(id_usuario)
-							)
-/* 16 - Subasta */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_subasta	(	 id_subasta int identity(1,1)
-								,desc_fecha datetime
-								,desc_monto numeric(18,2)
-								,id_publicacion int
-								,id_usuario int
-								,primary key (id_subasta)
-								,foreign key (id_publicacion) references ft_publicacion(id_publicacion)
-								,foreign key (id_usuario) references ft_usuario(id_usuario)
-							)
-/* 17 - Forma de Pago */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.lk_forma_pago	(	 id_forma_pago int identity(1,1)
-									,desc_tipo_pago nvarchar(255)
-									,primary key (id_forma_pago)
-								)
-/* 18 - Factura */
-Create Table dbo.ft_factura	(	 id_factura int identity(1,1)
-								,desc_factura_nro numeric(18,0)
-								,desc_fecha datetime
-								,desc_total numeric(18,2)
-								,id_forma_pago int
-								,id_usuario int
-								,primary key (id_factura)
-								,foreign key (id_forma_pago) references lk_forma_pago(id_forma_pago)
-								,foreign key (id_usuario) references ft_usuario(id_usuario)
-							)
-/* 19 - Item */
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.ft_item	(	 id_item int identity(1,1)
-								,desc_item_monto numeric(18,2)
-								,desc_item_cant numeric(18,0)
-								,id_factura int
-								,id_publicacion int
-								,primary key (id_item)
-								,foreign key (id_factura) references ft_factura(id_factura)
-								,foreign key (id_publicacion) references ft_publicacion(id_publicacion)
-							)
-
-Create Table gd_GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos	(	 id_log int identity(1,1)
-									,id_usuario int --En caso de corresponder
-									,desc_username nvarchar(250)
-									,desc_fecha_log datetime
-								)
-
-COMMIT TRANSACTION CREACION_TABLAS
