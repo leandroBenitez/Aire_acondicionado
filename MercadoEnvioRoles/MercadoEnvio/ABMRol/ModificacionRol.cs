@@ -40,7 +40,9 @@ namespace MercadoEnvio.ABMRol
             checkedListBox1.Items.Clear();
             checkedListBox2.Items.Clear();
 
-            String rol = comboNombresRoles.SelectedItem.ToString(); // ITEM SELECCIONAD EN EL COMBO
+            String rol = comboNombresRoles.SelectedItem.ToString(); // ITEM SELECCIONADO EN EL COMBO
+           // MessageBox.Show(abm_rol.getEstadoRol(rol).First().ToString());
+
             /* SE CARGA EL CHECKEDLIST1 DE FUNCIONES EXISTENTES EN EL ROL (HARDCODE)*/
             foreach (string funcion in abm_rol.getFuncionesAsignadasRol(rol))
             {
@@ -52,7 +54,7 @@ namespace MercadoEnvio.ABMRol
             {
                 checkedListBox2.Items.Add(funcion);
             }
-            
+
             // SETEO CHECK DE ESTADO DE ROL 
             if (abm_rol.getEstadoRol(rol).First().ToString().Equals("H"))
                 radioButtonH.Select();

@@ -50,3 +50,17 @@ C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\bin\Debug\WindowsFormsApplicat
 C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.bajaRol.resources
 C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.ModificacionRol.resources
 C:\Users\Jamper\Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.Properties.Resources.resources
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\obj\Debug\MercadoEnvio.csprojResolveAssemblyReference.cache
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.altaUsuarioCliente.resources
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\obj\Debug\MercadoEnvios.ABM_Rol.altaRol.resources
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.bajaRol.resources
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.ModificacionRol.resources
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\obj\Debug\MercadoEnvio.Login.resources
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\obj\Debug\MercadoEnvio.Properties.Resources.resources
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\obj\Debug\MercadoEnvio.csproj.GenerateResource.Cache
+C:\Users\Jamper\Desktop\MercadoEnvioRoles\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.seleccionRoles.resources

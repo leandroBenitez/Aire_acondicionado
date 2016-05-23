@@ -145,7 +145,7 @@ namespace MercadoEnvio.DataBase.Conexion
             {
                 nombresRoles.Add(estado["estado_rol"].ToString());
             }
-            
+
             estado.Close();
             return nombresRoles;
         }
