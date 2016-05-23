@@ -141,6 +141,7 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol
 (
 	 id_rol int identity(1,1)
 	,desc_rol nvarchar(50)
+	,estado_rol nvarchar(2)
 	,primary key (id_rol)
 )
 
@@ -669,3 +670,61 @@ From GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol
 Where desc_rol = @rol
 
 GO
+
+/*
+
+Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_cliente 	
+(
+	 @id_usuario varchar(22)
+	,@desc_Apellido nvarchar(255)
+	,@desc_Nombre nvarchar(255)
+	,@desc_Dni numeric(18,0)
+	,@desc_Mail nvarchar(255)
+	,@desc_Dom_Calle nvarchar(255)
+	,@desc_Nro_Calle numeric(18,0)
+	,@desc_Piso numeric(18,0)
+	,@desc_Depto nvarchar(50)
+	,@desc_Localidad nvarchar(45)
+	,@desc_Cod_Postal nvarchar(50)
+	,@desc_Telefono numeric(10,0)
+	,@desc_Fecha_Nac datetime
+)
+As
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente 
+(	 	
+	id_usuario 
+	,desc_Apellido 
+	,desc_Nombre 
+	,desc_Dni 
+	,desc_Mail 
+	,desc_Dom_Calle 
+	,desc_Nro_Calle 
+	,desc_Piso 
+	,desc_Depto 
+	,desc_Localidad 
+	,desc_Cod_Postal 
+	,desc_Telefono 
+	,desc_Fecha_Nac 	
+)
+VALUES
+(	 	 
+	 @id_usuario 
+	,@desc_Apellido 
+	,@desc_Nombre 
+	,@desc_Dni 
+	,@desc_Mail 
+	,@desc_Dom_Calle
+	,@desc_Nro_Calle
+	,@desc_Piso 
+	,@desc_Depto 
+	,@desc_Localidad
+	,@desc_Cod_Postal 
+	,@desc_Telefono 
+	,@desc_Fecha_Nac 
+)
+GO
+*/
+
+/* EXECUTE GESTORES_DEL_AIRE_ACONDICIONADO.crear_cliente 1, 'Mendez', 'Adolfo', 2323232323, 'adolfo@gmail.com', 'Corrientes', 7200, 2, 'Depto1', 'Devoto', '1212', 123456, '10/08/95' */
+
+
