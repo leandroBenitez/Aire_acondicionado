@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,23 +45,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABM Usuario\bajaUsuario.cs">
+    <Compile Include="ABM Cliente\altaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Usuario\bajaUsuario.Designer.cs">
-      <DependentUpon>bajaUsuario.cs</DependentUpon>
+    <Compile Include="ABM Cliente\altaCliente.Designer.cs">
+      <DependentUpon>altaCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Usuario\modificacionUsuario.cs">
+    <Compile Include="ABM Cliente\bajaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Usuario\modificacionUsuario.Designer.cs">
-      <DependentUpon>modificacionUsuario.cs</DependentUpon>
+    <Compile Include="ABM Cliente\bajaCliente.Designer.cs">
+      <DependentUpon>bajaCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Usuario\seleccionRoles.cs">
+    <Compile Include="ABM Cliente\modificacionCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Usuario\seleccionRoles.Designer.cs">
+    <Compile Include="ABM Cliente\modificacionCliente.Designer.cs">
+      <DependentUpon>modificacionCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Cliente\seleccionRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Cliente\seleccionRoles.Designer.cs">
       <DependentUpon>seleccionRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Cliente\Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Cliente\Usuario.Designer.cs">
+      <DependentUpon>Usuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Empresa\altaEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Empresa\altaEmpresa.Designer.cs">
+      <DependentUpon>altaEmpresa.cs</DependentUpon>
     </Compile>
     <Compile Include="ABMRol\AltaRol.cs">
       <SubType>Form</SubType>
@@ -73,12 +92,6 @@
     </Compile>
     <Compile Include="ABM Rubro\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ABM Usuario\altaUsuarioCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABM Usuario\altaUsuarioCliente.Designer.cs">
-      <DependentUpon>altaUsuarioCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="ABM Visibilidad\Form1.cs">
       <SubType>Form</SubType>
@@ -154,11 +167,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Excepciones\ValidacionErroneaClienteException.cs" />
     <Compile Include="Excepciones\ValidacionErroneaUsuarioException.cs" />
-    <EmbeddedResource Include="ABM Usuario\altaUsuarioCliente.resx">
-      <DependentUpon>altaUsuarioCliente.cs</DependentUpon>
+    <EmbeddedResource Include="ABM Cliente\altaCliente.resx">
+      <DependentUpon>altaCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Usuario\seleccionRoles.resx">
+    <EmbeddedResource Include="ABM Cliente\modificacionCliente.resx">
+      <DependentUpon>modificacionCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Cliente\seleccionRoles.resx">
       <DependentUpon>seleccionRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Cliente\Usuario.resx">
+      <DependentUpon>Usuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Empresa\altaEmpresa.resx">
+      <DependentUpon>altaEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABMRol\AltaRol.resx">
       <DependentUpon>AltaRol.cs</DependentUpon>
