@@ -1,0 +1,64 @@
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\WindowsFormsApplication1\obj\Debug\MercadoEnvio.csproj.GenerateResource.Cache
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\WindowsFormsApplication1\obj\Debug\MercadoEnvio.csprojResolveAssemblyReference.cache
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.csprojResolveAssemblyReference.cache
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.csproj.GenerateResource.Cache
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.Login.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop V2\MercadoEnvio\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop V2\MercadoEnvio\MercadoEnvio\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop V2\MercadoEnvio\MercadoEnvio\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop V2\MercadoEnvio\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop V2\MercadoEnvio\MercadoEnvio\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop V2\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.csprojResolveAssemblyReference.cache
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop V2\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.Login.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop V2\MercadoEnvio\MercadoEnvio\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop V2\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.csproj.GenerateResource.Cache
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvios.ABM_Rol.Form1.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.csprojResolveAssemblyReference.cache
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvios.ABM_Rol.Form1.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.Login.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.csproj.GenerateResource.Cache
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvios.ABM_Rol.altaRol.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.bajaRol.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.ModificacionRol.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.Login.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\MercadoEnvio\obj\Debug\MercadoEnvio.csproj.GenerateResource.Cache
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvios.ABM_Rol.altaRol.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.bajaRol.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.ModificacionRol.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Login.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csproj.GenerateResource.Cache
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.ABM_Cliente.altaCliente.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.ABM_Cliente.modificacionCliente.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.ABM_Cliente.seleccionRoles.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.ABM_Cliente.Usuario.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.ABM_Empresa.altaEmpresa.resources
