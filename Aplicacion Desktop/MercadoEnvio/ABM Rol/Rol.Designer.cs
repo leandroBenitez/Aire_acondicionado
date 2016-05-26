@@ -1,6 +1,6 @@
-﻿namespace MercadoEnvio.ABM_Usuario
+﻿namespace MercadoEnvio.ABM_Rol
 {
-    partial class bajaUsuario
+    partial class Rol
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "bajaUsuario";
+            this.Text = "Form1";
         }
 
         #endregion

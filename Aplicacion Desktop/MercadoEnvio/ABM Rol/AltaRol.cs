@@ -25,6 +25,7 @@ namespace MercadoEnvios.ABM_Rol
             cargar_funciones();
         }
 
+        /* CARGO EL CHEKEDLSITBOX CON TODAS LAS FUNCIONALIDADES QUE PUEDE TENER EL ROL*/
         public void cargar_funciones() 
         {
             foreach (string funcion in abm_rol.get_funciones())
@@ -33,7 +34,7 @@ namespace MercadoEnvios.ABM_Rol
             }
         }
 
-        /* LIMPIO LAS FUNCIONALIDADES CON CHECK EN CASO DE CONFUSIÓN */
+        /* LIMPIO LAS FUNCIONALIDADES CON CHECK EN CASO DE CONFUSIÓN OK*/
         private void limpiar_Click(object sender, EventArgs e)
         {
             foreach (string aux in abm_rol.get_funciones())
@@ -44,33 +45,36 @@ namespace MercadoEnvios.ABM_Rol
         }
 
         /* CARGO LAS TABLAS CUANDO ACEPTO*/
-
         private void aceptar_Click(object sender, EventArgs e)
         {
             /* VERIFICO QUE TODOS LOS CAMPOS ESTÉN CARGADOS CORRECTAMENTE (falta) */
-            if ( true )
+            if (textNombre.Text != "")
             {
                 abm_rol = new ABM_Rol_DAO();
                 
                 /* SETEO TABLA ROL Y OBTENGO EL NÚMERO DE RUBRO*/
                 int id_nuevo_rol = abm_rol.setearRol(textNombre.Text);
-                MessageBox.Show("SE CARGO EL MAX EN LA VARIABLE");
                 // Determine if there are any items checked.
                 if (checkedListBox1.CheckedItems.Count != 0)
                 {
-                    int i = 1;
+                    int i = 0;
                     // If so, loop through all checked items and add to table
                     for (int x = 0; x <= checkedListBox1.Items.Count - 1; x++)
                     {
                         if (checkedListBox1.GetItemChecked(x) == true)
                         {
-                            abm_rol.setearFuncionalidades(checkedListBox1.CheckedItems[x].ToString(), i, id_nuevo_rol);
+                            abm_rol.setearFuncionalidades(checkedListBox1.CheckedItems[i].ToString(), x+1, id_nuevo_rol);
                             i++;
                         }
                     }
+                    this.Close();
                 }
-
             }
+            else
+            {
+                MessageBox.Show("El nuevo Rol debe tener un nombre");
+            }
+
         }
 
         private void leerArchivoConfig()
