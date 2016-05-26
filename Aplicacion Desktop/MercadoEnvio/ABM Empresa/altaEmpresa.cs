@@ -12,9 +12,18 @@ namespace MercadoEnvio.ABM_Empresa
 {
     public partial class altaEmpresa : Form
     {
-        public altaEmpresa()
+        public altaEmpresa(String username, String password, String rol)
         {
             InitializeComponent();
+            cargarDatos(username, password, rol);
         }
+
+        public void cargarDatos(String username, String password, String rol)
+        {
+            textUsername.Text = username;
+            textPassword.Text = password;
+            textRol.Text = rol;
+        }
+
     }
 }

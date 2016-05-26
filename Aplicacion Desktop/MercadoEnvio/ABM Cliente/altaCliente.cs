@@ -13,34 +13,33 @@ using System.Data.SqlClient;
 
 namespace MercadoEnvio.ABM_Usuario
 {
-    public partial class altaUsuarioCliente : Form
+    public partial class altaCliente : Form
     {
         private ABM_usuario_DAO abm_usuario;
 
-        public altaUsuarioCliente()
+        public altaCliente(String username, String password, String rol)
         {
             leerArchivoConfig();
             abm_usuario = new ABM_usuario_DAO();
             InitializeComponent();
-            cargarDatos();
-
+            cargarDatos(username, password, rol);
         }
 
-        public void cargarDatos()
+        public void cargarDatos(String username, String password, String rol)
         {
             /* CARGO EN COMBO DE DOMINIOS DE MAIL */
             comboDominio.Items.Add("hotmail.com");
             comboDominio.Items.Add("gmail.com");
             comboDominio.Items.Add("live.com");
+            textUsername.Text = username;
+            textPassword.Text = password;
+            textRol.Text = rol;
         }
 
         /* VALIDAR TODOS LOS CAMPOS CONTRA LA BASE */
         private void buttonAlta_Click(object sender, EventArgs e)
         {
-
-
-
-            /*
+            
             // USERNAME EXISTENTE - SI ES = 1 ES PORQUE ES VALIDO EL NOMBRE
             if (abm_usuario.validarUsuarioExistente(textUsername.Text) == 1)
             {
@@ -78,7 +77,7 @@ namespace MercadoEnvio.ABM_Usuario
                     //DateTime desc_Fecha_Nac = DateTime(10,10,10);
                
                     // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
-                    //abm_usuario.setearCliente(username, password, rol, desc_Apellido, desc_Nombre, desc_Dni, desc_Mail, desc_Dom_Calle, desc_Nro_Calle, desc_Piso, desc_Depto, desc_Localidad, desc_Cod_Postal, desc_Telefono);
+                    abm_usuario.setearCliente(username, password, rol, desc_Apellido, desc_Nombre, desc_Dni, desc_Mail, desc_Dom_Calle, desc_Nro_Calle, desc_Piso, desc_Depto, desc_Localidad, desc_Cod_Postal, desc_Telefono);
 
                 }
                 else
@@ -90,7 +89,7 @@ namespace MercadoEnvio.ABM_Usuario
             {
                 MessageBox.Show("EL NOMBRE DE USUARIO YA EXISTE, POR FAVOR INGRESE OTRO");
             }
-            */
+           
         }
 
         private void buttonSelectRol_Click(object sender, EventArgs e)

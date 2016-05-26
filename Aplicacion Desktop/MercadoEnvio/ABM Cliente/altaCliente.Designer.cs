@@ -1,6 +1,6 @@
 ﻿namespace MercadoEnvio.ABM_Usuario
 {
-    partial class altaUsuarioCliente
+    partial class altaCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -32,6 +32,12 @@
             this.buttonAlta = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupBoxCliente = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textAnio = new System.Windows.Forms.TextBox();
+            this.textMes = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.textFecCreacion = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.textDia = new System.Windows.Forms.TextBox();
@@ -60,16 +66,8 @@
             this.textApellido = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textNombre = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textMes = new System.Windows.Forms.TextBox();
-            this.textAnio = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxRoles = new System.Windows.Forms.ComboBox();
             this.textRol = new System.Windows.Forms.TextBox();
-            this.buttonSelectRol = new System.Windows.Forms.Button();
             this.textPassword = new System.Windows.Forms.TextBox();
             this.textUsername = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -144,12 +142,61 @@
             this.groupBoxCliente.Controls.Add(this.textApellido);
             this.groupBoxCliente.Controls.Add(this.label5);
             this.groupBoxCliente.Controls.Add(this.textNombre);
-            this.groupBoxCliente.Location = new System.Drawing.Point(17, 180);
+            this.groupBoxCliente.Location = new System.Drawing.Point(17, 159);
             this.groupBoxCliente.Name = "groupBoxCliente";
             this.groupBoxCliente.Size = new System.Drawing.Size(338, 283);
             this.groupBoxCliente.TabIndex = 48;
             this.groupBoxCliente.TabStop = false;
             this.groupBoxCliente.Text = "Datos Cliente";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(145, 198);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(12, 13);
+            this.label19.TabIndex = 107;
+            this.label19.Text = "/";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(185, 198);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(12, 13);
+            this.label1.TabIndex = 106;
+            this.label1.Text = "/";
+            // 
+            // textAnio
+            // 
+            this.textAnio.Location = new System.Drawing.Point(200, 195);
+            this.textAnio.Name = "textAnio";
+            this.textAnio.Size = new System.Drawing.Size(28, 20);
+            this.textAnio.TabIndex = 105;
+            // 
+            // textMes
+            // 
+            this.textMes.Location = new System.Drawing.Point(157, 195);
+            this.textMes.Name = "textMes";
+            this.textMes.Size = new System.Drawing.Size(28, 20);
+            this.textMes.TabIndex = 104;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(116, 55);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(83, 21);
+            this.comboBox1.TabIndex = 103;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(40, 55);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 13);
+            this.label8.TabIndex = 102;
+            this.label8.Text = "Tpo. de Doc:";
             // 
             // textFecCreacion
             // 
@@ -380,60 +427,9 @@
             this.textNombre.TabIndex = 73;
             this.textNombre.Text = "Nombre";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(40, 55);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 13);
-            this.label8.TabIndex = 102;
-            this.label8.Text = "Tpo. de Doc:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(116, 55);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(83, 21);
-            this.comboBox1.TabIndex = 103;
-            // 
-            // textMes
-            // 
-            this.textMes.Location = new System.Drawing.Point(157, 195);
-            this.textMes.Name = "textMes";
-            this.textMes.Size = new System.Drawing.Size(28, 20);
-            this.textMes.TabIndex = 104;
-            // 
-            // textAnio
-            // 
-            this.textAnio.Location = new System.Drawing.Point(200, 195);
-            this.textAnio.Name = "textAnio";
-            this.textAnio.Size = new System.Drawing.Size(28, 20);
-            this.textAnio.TabIndex = 105;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(185, 198);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(12, 13);
-            this.label1.TabIndex = 106;
-            this.label1.Text = "/";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(145, 198);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(12, 13);
-            this.label19.TabIndex = 107;
-            this.label19.Text = "/";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBoxRoles);
             this.groupBox1.Controls.Add(this.textRol);
-            this.groupBox1.Controls.Add(this.buttonSelectRol);
             this.groupBox1.Controls.Add(this.textPassword);
             this.groupBox1.Controls.Add(this.textUsername);
             this.groupBox1.Controls.Add(this.label4);
@@ -441,18 +437,10 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(17, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(338, 136);
+            this.groupBox1.Size = new System.Drawing.Size(338, 104);
             this.groupBox1.TabIndex = 110;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Usuario";
-            // 
-            // comboBoxRoles
-            // 
-            this.comboBoxRoles.FormattingEnabled = true;
-            this.comboBoxRoles.Location = new System.Drawing.Point(82, 94);
-            this.comboBoxRoles.Name = "comboBoxRoles";
-            this.comboBoxRoles.Size = new System.Drawing.Size(103, 21);
-            this.comboBoxRoles.TabIndex = 6;
             // 
             // textRol
             // 
@@ -461,21 +449,13 @@
             this.textRol.Size = new System.Drawing.Size(83, 20);
             this.textRol.TabIndex = 47;
             // 
-            // buttonSelectRol
-            // 
-            this.buttonSelectRol.Location = new System.Drawing.Point(188, 65);
-            this.buttonSelectRol.Name = "buttonSelectRol";
-            this.buttonSelectRol.Size = new System.Drawing.Size(77, 23);
-            this.buttonSelectRol.TabIndex = 46;
-            this.buttonSelectRol.Text = "Seleccionar";
-            this.buttonSelectRol.UseVisualStyleBackColor = true;
-            // 
             // textPassword
             // 
             this.textPassword.Location = new System.Drawing.Point(102, 40);
             this.textPassword.Name = "textPassword";
             this.textPassword.Size = new System.Drawing.Size(83, 20);
             this.textPassword.TabIndex = 45;
+            this.textPassword.UseSystemPasswordChar = true;
             // 
             // textUsername
             // 
@@ -511,7 +491,7 @@
             this.label2.TabIndex = 38;
             this.label2.Text = "Username:";
             // 
-            // altaUsuarioCliente
+            // altaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -520,7 +500,7 @@
             this.Controls.Add(this.groupBoxCliente);
             this.Controls.Add(this.buttonAlta);
             this.Controls.Add(this.labelCliente);
-            this.Name = "altaUsuarioCliente";
+            this.Name = "altaCliente";
             this.Text = "Form1";
             this.groupBoxCliente.ResumeLayout(false);
             this.groupBoxCliente.PerformLayout();
@@ -572,9 +552,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBoxRoles;
         private System.Windows.Forms.TextBox textRol;
-        private System.Windows.Forms.Button buttonSelectRol;
         private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.TextBox textUsername;
         private System.Windows.Forms.Label label4;

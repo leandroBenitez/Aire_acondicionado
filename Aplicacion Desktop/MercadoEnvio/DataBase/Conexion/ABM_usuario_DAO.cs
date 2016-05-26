@@ -44,14 +44,10 @@ namespace MercadoEnvio.DataBase.Conexion
         /* INSERTO EL CLIENTE */
         public void setearCliente(String username,String password, String rol, String desc_Apellido ,String desc_Nombre ,int desc_Dni ,String desc_Mail ,String desc_Dom_Calle , int desc_Nro_Calle ,int desc_Piso ,String desc_Depto ,String desc_Localidad ,String desc_Cod_Postal ,int desc_Telefono)
         {
-            MessageBox.Show("Entro al setear de la dao");
-            this.GD1C2016.ejecutarSentenciaSinRetorno("EXECUTE GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente '"+ username + "', '" + password + "', '" + rol + "', '" + desc_Nombre + "' ,'" + desc_Apellido + "' , " + desc_Dni + " , '" + desc_Mail + "' , '" + desc_Dom_Calle + "', " + desc_Nro_Calle + ", " + desc_Piso + ",'" + desc_Depto + "' , '" + desc_Localidad + "',  '" + desc_Cod_Postal + "' ," + desc_Telefono);
-                                                     //EXECUTE GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente    'USERKOLO'    ,     'USERKOLO'    ,  'Cliente'   ,        'Ernesto'      ,       'Paredes'        ,    1111111111    ,   'ernestoparedes'  ,          'dorrego'      ,           12          ,         1        ,      'lindo'        ,        'Chacarita'      ,           '9999'           ,          12345      ,          ''
+            String desc_fecha_nac = "10/08/95";
+            MessageBox.Show("Entro al setear el usuario cliente de la dao");
+            this.GD1C2016.ejecutarSentenciaSinRetorno("EXECUTE GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente '"+ username + "', '" + password + "', '" + rol + "', '" + desc_Nombre + "' ,'" + desc_Apellido + "' , " + 12 + " , '" + desc_Mail + "' , '" + desc_Dom_Calle + "', " + 12 + ", " + 12 + ",'" + desc_Depto + "' , '" + desc_Localidad + "',  '" + desc_Cod_Postal + "' , " + 12 + ", '" + desc_fecha_nac + "'");
+                                                     /*EXECUTE GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente   'username1',          'password1', 'Cliente', 'Appelido1', 'Nombre1', 1111111111, 'mail1@gmail.com', 'Calle', 7200, 2, 'Depto1', 'Localidad1', '1212', 123456, '10/08/95' */
         }
-
-
-
     }
-
-
 }

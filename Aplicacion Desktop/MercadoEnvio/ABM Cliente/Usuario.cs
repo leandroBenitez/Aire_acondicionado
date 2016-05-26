@@ -33,17 +33,14 @@ namespace MercadoEnvio.ABM_Usuario
 
             if (comboBoxRol.SelectedItem.ToString().Equals("Cliente"))
             {
-                altaUsuarioCliente formAltaCliente = new altaUsuarioCliente();
+                altaCliente formAltaCliente = new altaCliente(textUsername.Text, textPassword.Text, comboBoxRol.SelectedItem.ToString());
                 formAltaCliente.Show();
 
             } if (comboBoxRol.SelectedItem.ToString().Equals("Empresa"))
             {
-                altaEmpresa formAltaEmpresa = new altaEmpresa();
+                altaEmpresa formAltaEmpresa = new altaEmpresa(textUsername.Text, textPassword.Text, comboBoxRol.SelectedItem.ToString());
                 formAltaEmpresa.Show();
-
             }
-
-
         }
 
         private void Usuario_Load(object sender, EventArgs e)

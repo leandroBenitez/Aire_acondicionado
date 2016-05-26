@@ -54,9 +54,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBoxRoles = new System.Windows.Forms.ComboBox();
             this.textRol = new System.Windows.Forms.TextBox();
-            this.buttonSelectRol = new System.Windows.Forms.Button();
             this.textPassword = new System.Windows.Forms.TextBox();
             this.textUsername = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -94,7 +92,7 @@
             this.groupBoxEmpresa.Controls.Add(this.label26);
             this.groupBoxEmpresa.Controls.Add(this.label30);
             this.groupBoxEmpresa.Controls.Add(this.textBox10);
-            this.groupBoxEmpresa.Location = new System.Drawing.Point(12, 190);
+            this.groupBoxEmpresa.Location = new System.Drawing.Point(12, 171);
             this.groupBoxEmpresa.Name = "groupBoxEmpresa";
             this.groupBoxEmpresa.Size = new System.Drawing.Size(324, 186);
             this.groupBoxEmpresa.TabIndex = 109;
@@ -296,9 +294,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBoxRoles);
             this.groupBox1.Controls.Add(this.textRol);
-            this.groupBox1.Controls.Add(this.buttonSelectRol);
             this.groupBox1.Controls.Add(this.textPassword);
             this.groupBox1.Controls.Add(this.textUsername);
             this.groupBox1.Controls.Add(this.label4);
@@ -306,18 +302,10 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(324, 136);
+            this.groupBox1.Size = new System.Drawing.Size(324, 102);
             this.groupBox1.TabIndex = 141;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Usuario";
-            // 
-            // comboBoxRoles
-            // 
-            this.comboBoxRoles.FormattingEnabled = true;
-            this.comboBoxRoles.Location = new System.Drawing.Point(82, 94);
-            this.comboBoxRoles.Name = "comboBoxRoles";
-            this.comboBoxRoles.Size = new System.Drawing.Size(103, 21);
-            this.comboBoxRoles.TabIndex = 6;
             // 
             // textRol
             // 
@@ -326,21 +314,13 @@
             this.textRol.Size = new System.Drawing.Size(83, 20);
             this.textRol.TabIndex = 47;
             // 
-            // buttonSelectRol
-            // 
-            this.buttonSelectRol.Location = new System.Drawing.Point(188, 65);
-            this.buttonSelectRol.Name = "buttonSelectRol";
-            this.buttonSelectRol.Size = new System.Drawing.Size(77, 23);
-            this.buttonSelectRol.TabIndex = 46;
-            this.buttonSelectRol.Text = "Seleccionar";
-            this.buttonSelectRol.UseVisualStyleBackColor = true;
-            // 
             // textPassword
             // 
             this.textPassword.Location = new System.Drawing.Point(102, 40);
             this.textPassword.Name = "textPassword";
             this.textPassword.Size = new System.Drawing.Size(83, 20);
             this.textPassword.TabIndex = 45;
+            this.textPassword.UseSystemPasswordChar = true;
             // 
             // textUsername
             // 
@@ -443,9 +423,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBoxRoles;
         private System.Windows.Forms.TextBox textRol;
-        private System.Windows.Forms.Button buttonSelectRol;
         private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.TextBox textUsername;
         private System.Windows.Forms.Label label4;
