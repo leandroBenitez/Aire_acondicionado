@@ -122,3 +122,21 @@ C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEn
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.altaCliente.resources
 C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.altaCliente.resources
 C:\Users\Jamper\Desktop\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csprojResolveAssemblyReference.cache
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe.config
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.exe
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.pdb
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.pdb
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.altaCliente.resources
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.modificacionUsuario.resources
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.seleccionRoles.resources
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.Usuario.resources
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Empresa.altaEmpresa.resources
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvios.ABM_Rol.altaRol.resources
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.bajaRol.resources
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.ModificacionRol.resources
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Login.resources
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Properties.Resources.resources
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csproj.GenerateResource.Cache
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.FormCompras.resources
+J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.miCuenta.resources

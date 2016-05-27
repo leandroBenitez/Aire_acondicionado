@@ -120,6 +120,7 @@
     <Compile Include="DataBase\Conexion\ABM_Rol_DAO.cs" />
     <Compile Include="DataBase\Conexion\ABM_usuario_DAO.cs" />
     <Compile Include="DataBase\Conexion\GDAA_DAO.cs" />
+    <Compile Include="DataBase\Conexion\Historial_compras_DAO.cs" />
     <Compile Include="DataBase\Conexion\LoginDAO.cs" />
     <Compile Include="DataBase\Conexion\SQLDataReader.cs" />
     <Compile Include="DataBase\Conexion\SQLServerBD.cs" />
@@ -139,6 +140,10 @@
     <Compile Include="Facturas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Historial Cliente\FormCompras.cs" />
+    <Compile Include="Historial Cliente\FormCompras.Designer.cs" />
+    <Compile Include="Historial Cliente\miCuenta.cs" />
+    <Compile Include="Historial Cliente\miCuenta.Designer.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,12 +154,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Generar Publicación\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Historial Cliente\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Historial Cliente\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Listado Estadistico\Form1.cs">
@@ -191,6 +190,8 @@
     <EmbeddedResource Include="ABM Rol\ModificacionRol.resx">
       <DependentUpon>ModificacionRol.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Historial Cliente\FormCompras.resx" />
+    <EmbeddedResource Include="Historial Cliente\miCuenta.resx" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
