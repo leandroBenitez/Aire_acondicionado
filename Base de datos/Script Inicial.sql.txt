@@ -320,8 +320,7 @@ Go
 
 --Carga de las funciones
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion	(desc_funcion)
-Values	('Login y seguridad'),
-		('ABM de Rol'),
+Values	('ABM de Rol'),
 		('ABM de Usuarios'),
 		('ABM de Rubro'),
 		('ABM visibilidad de publicación'),
@@ -367,10 +366,10 @@ Where Publicacion_Tipo is not null
 
 --Carga de los tipos de visualizaciones de las publicaciones
 Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad	(	 desc_codigo
-																	,desc_tipo
-																	,desc_precio
-																	,desc_porcentaje
-																	,desc_porcentaje_envio	)
+																,desc_tipo
+																,desc_precio
+																,desc_porcentaje
+																,desc_porcentaje_envio	)
 Select	 Distinct
 		 Publicacion_Visibilidad_Cod
 		,Publicacion_Visibilidad_Desc
@@ -383,9 +382,9 @@ Where Publicacion_Visibilidad_Cod is not null
 --Carga de las relaciones entre los roles y las funciones
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles	(	 id_rol
 																	,id_funcion	)
-Values	(1,1), (1,5), (1,6), (1,7), (1,8), (1,9), (1,10), (1,11),	 
-		(2,1), (2,5), (2,6), (2,8), (2,9), (2,10), (2,11),
-		(3,1), (3,2), (3,3), (3,4), (3,5), (3,6), (3,7), (3,8), (3,9), (3,10), (3,11)
+Values	(1,5), (1,6), (1,7), (1,8), (1,9), (1,10),	 
+		(2,5), (2,7), (2,8), (2,9), (2,10),
+		(3,1), (3,2), (3,3), (3,4), (3,5), (3,6), (3,7), (3,8), (3,9), (3,10)
 Go
 
 --Migracion de clientes, empresas y usuarios
@@ -469,15 +468,15 @@ Where	ma.Publ_Cli_Dni is not null
 
 --Carga de las empresas
 Insert Into GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa	(	 id_usuario
-																,desc_Razon_Social
-																,desc_Mail
-																,desc_Fecha_Creacion
-																,desc_Dom_Calle
-																,desc_Nro_Calle
-																,desc_Piso
-																,desc_Depto
-																,desc_Cod_Postal
-																,desc_Cuit	)
+															,desc_Razon_Social
+															,desc_Mail
+															,desc_Fecha_Creacion
+															,desc_Dom_Calle
+															,desc_Nro_Calle
+															,desc_Piso
+															,desc_Depto
+															,desc_Cod_Postal
+															,desc_Cuit	)
 Select	 Distinct
 		 us.id
 		,Publ_Empresa_Razon_Social
@@ -650,79 +649,75 @@ inner join GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pu
 	on ma.Publicacion_Cod = pu.desc_codigo
 Go
 
+--COMIENZO DE CREACION DE STORE PROCEDURES, FUNCTIONS AND TRIGGERS
 /* ELIMINO STORED PROCEDURE SI EXISTE */
-If exists (select'existe' From INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME = 'crear_usuario')
+If exists (select'existe' From INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME = 'crear_usuario_cliente')
 	Drop procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente
 Go
 
---Comienzo de creacion de Store Procedures, Functions and Triggers
 /* STORED PROCEDURE PARA CREAR UN NUEVO CLIENTE (CARGA TABLAS USUARIO, CLIENTE, Y ROLES_USUARIO)*/
-Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente	
-																(	 @username varchar(150)
-																	,@password varchar(150)
-																	,@rol varchar(100)	
-																	/*,@id_usuario varchar(22)*/
-																	,@desc_Apellido nvarchar(255)
-																	,@desc_Nombre nvarchar(255)
-																	,@desc_Dni numeric(18,0)
-																	,@desc_Mail nvarchar(255)
-																	,@desc_Dom_Calle nvarchar(255)
-																	,@desc_Nro_Calle numeric(18,0)
-																	,@desc_Piso numeric(18,0)
-																	,@desc_Depto nvarchar(50)
-																	,@desc_Localidad nvarchar(45)
-																	,@desc_Cod_Postal nvarchar(50)
-																	,@desc_Telefono numeric(10,0)
-																	,@desc_Fecha_Nac datetime
-																 )
+Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente	(	 @username varchar(150)
+																			,@password varchar(150)
+																			,@rol varchar(100)	
+																			,@desc_Apellido varchar(255)
+																			,@desc_Nombre varchar(255)
+																			,@desc_Dni varchar(18) --numeric(18,0)
+																			,@desc_Mail varchar(255)
+																			,@desc_Dom_Calle varchar(255)
+																			,@desc_Nro_Calle varchar(18) --numeric(18,0)
+																			,@desc_Piso varchar(18) --numeric(18,0)
+																			,@desc_Depto varchar(50)
+																			,@desc_Localidad varchar(45)
+																			,@desc_Cod_Postal varchar(50)
+																			,@desc_Telefono varchar(10) --numeric(10,0)
+																			,@desc_Fecha_Nac varchar(20)	)--datetime	)
 As
+Declare @ultimo_id int;
+
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
 															,desc_password
 															,id_estado	)
 Select	 @username
-		,hashbytes('sha2_256', @password)
+		,HASHBYTES('sha2_256', @password)
 		,1
+
+--Capturo el ultimo ID insertado
+Set @ultimo_id = @@IDENTITY;
 
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios	(	 id_usuario
 																	,id_rol	)
-Select	 @@IDENTITY
+Select	 @ultimo_id
 		,id_rol
 From GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol
 Where desc_rol = @rol
 
 
-Insert into GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente 
-(	 	
-	 id_usuario
-	,desc_Apellido 
-	,desc_Nombre 
-	,desc_Dni 
-	,desc_Mail 
-	,desc_Dom_Calle 
-	,desc_Nro_Calle 
-	,desc_Piso 
-	,desc_Depto 
-	,desc_Localidad 
-	,desc_Cod_Postal 
-	,desc_Telefono 
-	,desc_Fecha_Nac 	
-)
-VALUES
-(	 	 
-	(select max(id_usuario) from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario) /* VER POR EL TEMA DEL AUTOINCREMENT SI SIEMPRE VA A SER EL MAXIMO*/ 
-	,@desc_Apellido 
-	,@desc_Nombre 
-	,@desc_Dni 
-	,@desc_Mail 
-	,@desc_Dom_Calle
-	,@desc_Nro_Calle
-	,@desc_Piso 
-	,@desc_Depto 
-	,@desc_Localidad
-	,@desc_Cod_Postal 
-	,@desc_Telefono 
-	,@desc_Fecha_Nac 
-)
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente	(	 id_usuario
+															,desc_Apellido 
+															,desc_Nombre 
+															,desc_Dni 
+															,desc_Mail 
+															,desc_Dom_Calle 
+															,desc_Nro_Calle 
+															,desc_Piso 
+															,desc_Depto 
+															,desc_Localidad 
+															,desc_Cod_Postal 
+															,desc_Telefono 
+															,desc_Fecha_Nac	)
+Select	 @ultimo_id 
+		,@desc_Apellido 
+		,@desc_Nombre 
+		,Convert(numeric(18,0), @desc_Dni) 
+		,@desc_Mail 
+		,@desc_Dom_Calle
+		,Convert(numeric(18,0), @desc_Nro_Calle)
+		,Convert(numeric(18,0), @desc_Piso) 
+		,@desc_Depto 
+		,@desc_Localidad
+		,@desc_Cod_Postal 
+		,Convert(numeric(10,0), @desc_Telefono) 
+		,Convert(datetime, @desc_Fecha_Nac) 
 GO
 
 
@@ -772,3 +767,6 @@ SELECT * FROM GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol
 /* EXECUTE GESTORES_DEL_AIRE_ACONDICIONADO.crear_cliente 1, 'Mendez', 'Adolfo', 2323232323, 'adolfo@gmail.com', 'Corrientes', 7200, 2, 'Depto1', 'Devoto', '1212', 123456, '10/08/95' */
 
 */
+
+Drop table #compra
+Drop table #usuarios

@@ -24,9 +24,15 @@ namespace MercadoEnvio.DataBase.Conexion
             SqlDataReader usuarioExistente = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT 1 FROM GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente c INNER JOIN GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario u ON c.id_usuario = u.id_usuario WHERE u.desc_username = '" + desc_usuario + "';");
 
             if (usuarioExistente.HasRows)
+            {
+                usuarioExistente.Close();
                 return 0;
+            }
             else
+            {
+                usuarioExistente.Close();
                 return 1;
+            }
         }
 
         public int validarDNIExistente(int DNI)
@@ -46,8 +52,22 @@ namespace MercadoEnvio.DataBase.Conexion
         {
             String desc_fecha_nac = "10/08/95";
             MessageBox.Show("Entro al setear el usuario cliente de la dao");
-            this.GD1C2016.ejecutarSentenciaSinRetorno("EXECUTE GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente '"+ username + "', '" + password + "', '" + rol + "', '" + desc_Nombre + "' ,'" + desc_Apellido + "' , " + 12 + " , '" + desc_Mail + "' , '" + desc_Dom_Calle + "', " + 12 + ", " + 12 + ",'" + desc_Depto + "' , '" + desc_Localidad + "',  '" + desc_Cod_Postal + "' , " + 12 + ", '" + desc_fecha_nac + "'");
-                                                     /*EXECUTE GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente   'username1',          'password1', 'Cliente', 'Appelido1', 'Nombre1', 1111111111, 'mail1@gmail.com', 'Calle', 7200, 2, 'Depto1', 'Localidad1', '1212', 123456, '10/08/95' */
+            this.GD1C2016.ejecutarSentenciaSinRetorno("EXECUTE GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente    @username = '" + username
+                                                                                                                  + "', @password = '" + password
+                                                                                                                  + "', @rol = '" + rol
+                                                                                                                  + "', @desc_Apellido = '" + desc_Apellido 
+                                                                                                                  + "', @desc_Nombre = '" + desc_Nombre
+                                                                                                                  + "', @desc_Dni = '" + desc_Dni
+                                                                                                                  + "', @desc_Mail = '" + desc_Mail
+                                                                                                                  + "', @desc_Dom_Calle = '" + desc_Dom_Calle
+                                                                                                                  + "', @desc_Nro_Calle = '" + desc_Nro_Calle
+                                                                                                                  + "', @desc_Piso = '" + desc_Piso
+                                                                                                                  + "', @desc_Depto = '" + desc_Depto
+                                                                                                                  + "', @desc_Localidad = '" + desc_Localidad
+                                                                                                                  + "', @desc_Cod_Postal = '" + desc_Cod_Postal
+                                                                                                                  + "', @desc_Telefono = '" + desc_Telefono
+                                                                                                                  + "', @desc_Fecha_Nac = '" + desc_fecha_nac 
+                                                                                                                  + "'");
         }
     }
 }
