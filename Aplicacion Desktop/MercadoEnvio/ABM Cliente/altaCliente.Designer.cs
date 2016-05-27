@@ -70,6 +70,7 @@
             this.textRol = new System.Windows.Forms.TextBox();
             this.textPassword = new System.Windows.Forms.TextBox();
             this.textUsername = new System.Windows.Forms.TextBox();
+            this.buttonVolver = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -300,7 +301,6 @@
             this.textPiso.Name = "textPiso";
             this.textPiso.Size = new System.Drawing.Size(34, 20);
             this.textPiso.TabIndex = 88;
-            this.textPiso.TextChanged += new System.EventHandler(this.textPiso_TextChanged);
             // 
             // label13
             // 
@@ -342,7 +342,6 @@
             this.textCalle.Name = "textCalle";
             this.textCalle.Size = new System.Drawing.Size(82, 20);
             this.textCalle.TabIndex = 83;
-            this.textCalle.TextChanged += new System.EventHandler(this.textCalle_TextChanged);
             // 
             // label10
             // 
@@ -432,6 +431,7 @@
             this.groupBox1.Controls.Add(this.textRol);
             this.groupBox1.Controls.Add(this.textPassword);
             this.groupBox1.Controls.Add(this.textUsername);
+            this.groupBox1.Controls.Add(this.buttonVolver);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -444,25 +444,38 @@
             // 
             // textRol
             // 
-            this.textRol.Location = new System.Drawing.Point(102, 67);
+            this.textRol.Location = new System.Drawing.Point(102, 68);
             this.textRol.Name = "textRol";
+            this.textRol.ReadOnly = true;
             this.textRol.Size = new System.Drawing.Size(83, 20);
-            this.textRol.TabIndex = 47;
+            this.textRol.TabIndex = 51;
             // 
             // textPassword
             // 
-            this.textPassword.Location = new System.Drawing.Point(102, 40);
+            this.textPassword.Location = new System.Drawing.Point(102, 41);
             this.textPassword.Name = "textPassword";
+            this.textPassword.ReadOnly = true;
             this.textPassword.Size = new System.Drawing.Size(83, 20);
-            this.textPassword.TabIndex = 45;
+            this.textPassword.TabIndex = 50;
             this.textPassword.UseSystemPasswordChar = true;
             // 
             // textUsername
             // 
             this.textUsername.Location = new System.Drawing.Point(102, 16);
             this.textUsername.Name = "textUsername";
+            this.textUsername.ReadOnly = true;
             this.textUsername.Size = new System.Drawing.Size(83, 20);
-            this.textUsername.TabIndex = 44;
+            this.textUsername.TabIndex = 49;
+            // 
+            // buttonVolver
+            // 
+            this.buttonVolver.Location = new System.Drawing.Point(255, 65);
+            this.buttonVolver.Name = "buttonVolver";
+            this.buttonVolver.Size = new System.Drawing.Size(75, 23);
+            this.buttonVolver.TabIndex = 48;
+            this.buttonVolver.Text = "Volver";
+            this.buttonVolver.UseVisualStyleBackColor = true;
+            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // label4
             // 
@@ -488,7 +501,7 @@
             this.label2.Location = new System.Drawing.Point(43, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 13);
-            this.label2.TabIndex = 38;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Username:";
             // 
             // altaCliente
@@ -552,11 +565,12 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textRol;
-        private System.Windows.Forms.TextBox textPassword;
-        private System.Windows.Forms.TextBox textUsername;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonVolver;
+        private System.Windows.Forms.TextBox textRol;
+        private System.Windows.Forms.TextBox textPassword;
+        private System.Windows.Forms.TextBox textUsername;
     }
 }

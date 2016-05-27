@@ -19,7 +19,6 @@ namespace MercadoEnvio.ABM_Usuario
 
         public altaCliente(String username, String password, String rol)
         {
-            leerArchivoConfig();
             abm_usuario = new ABM_usuario_DAO();
             InitializeComponent();
             cargarDatos(username, password, rol);
@@ -31,6 +30,8 @@ namespace MercadoEnvio.ABM_Usuario
             comboDominio.Items.Add("hotmail.com");
             comboDominio.Items.Add("gmail.com");
             comboDominio.Items.Add("live.com");
+
+            /* SETEO LOS CAMPOS CON LAS VARIABLES RECIBIDAS */
             textUsername.Text = username;
             textPassword.Text = password;
             textRol.Text = rol;
@@ -39,57 +40,43 @@ namespace MercadoEnvio.ABM_Usuario
         /* VALIDAR TODOS LOS CAMPOS CONTRA LA BASE */
         private void buttonAlta_Click(object sender, EventArgs e)
         {
-            
-            // USERNAME EXISTENTE - SI ES = 1 ES PORQUE ES VALIDO EL NOMBRE
-            if (abm_usuario.validarUsuarioExistente(textUsername.Text) == 1)
-            {
-                // COMPROBAR SI EL DNI EXISTE 
-                if ( true ) //abm_usuario.validarDNIExistente(int.Parse(textDni.Text)) == 1  
+                // DNI EXISTENTE - SI ES = 1 ES PORQUE ES VALIDO EL DNI (NO ESTÁ INGRESADO TODAVIA)
+                if ( abm_usuario.validarDNIExistente(textDni.Text) == 1  )
                 {
-                    String username = textUsername.Text;
-                    MessageBox.Show(username);
-                    String password = textPassword.Text;
-                    MessageBox.Show(password);
-                    String rol = textRol.Text;
-                    MessageBox.Show(rol);
-                    String desc_Apellido = textApellido.Text;
-                    MessageBox.Show(desc_Apellido);
-                    String desc_Nombre = textNombre.Text;
-                    MessageBox.Show(desc_Nombre);
-                    int desc_Dni = int.Parse(textDni.Text);
-                    Console.WriteLine(desc_Dni);
-                    String desc_Mail = textMail.Text + "@" + comboDominio.SelectedItem.ToString();
-                    MessageBox.Show(desc_Mail);
-                    String desc_Dom_Calle = textCalle.Text;
-                    MessageBox.Show(desc_Dom_Calle);
-                    int desc_Nro_Calle = int.Parse(textAltura.Text);
-                    Console.WriteLine(desc_Nro_Calle);
-                    int desc_Piso = int.Parse(textPiso.Text);
-                    Console.WriteLine(desc_Piso);
-                    String desc_Depto = textDepto.Text;
-                    MessageBox.Show(desc_Depto);
-                    String desc_Localidad = textLocalidad.Text;
-                    MessageBox.Show(desc_Localidad);
-                    String desc_Cod_Postal = textCP.Text;
-                    MessageBox.Show(desc_Cod_Postal);
-                    int desc_Telefono = int.Parse(textTelefono.Text);
-                    Console.WriteLine(desc_Telefono);
-                    //DateTime desc_Fecha_Nac = DateTime(10,10,10);
-               
-                    // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
-                    abm_usuario.setearCliente(username, password, rol, desc_Apellido, desc_Nombre, desc_Dni, desc_Mail, desc_Dom_Calle, desc_Nro_Calle, desc_Piso, desc_Depto, desc_Localidad, desc_Cod_Postal, desc_Telefono);
+                    if (comboDominio.SelectedItem == null)
+                    {
+                        MessageBox.Show("Debe ingresar un dominio de email. Ayuda: seleccione una de las opciones dadas");
+                    }
+                    else
+                    {
+                        String username = textUsername.Text;
+                        String password = textPassword.Text;
+                        String rol = textRol.Text;
+                        String desc_Apellido = textApellido.Text;
+                        String desc_Nombre = textNombre.Text;
+                        String desc_Dni = textDni.Text;
+                        String desc_Mail = textMail.Text + "@" + comboDominio.SelectedItem.ToString();
+                        String desc_Dom_Calle = textCalle.Text;
+                        String desc_Nro_Calle = textAltura.Text;
+                        String desc_Piso = textPiso.Text;
+                        String desc_Depto = textDepto.Text;
+                        String desc_Localidad = textLocalidad.Text;
+                        String desc_Cod_Postal = textCP.Text;
+                        String desc_Telefono = textTelefono.Text;
+                        String desc_Fecha_Nac = textDia.Text + "/" + textMes.Text + "/" + textAnio.Text;
 
+
+                        // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
+                        abm_usuario.setearCliente(username, password, rol, desc_Apellido, desc_Nombre, desc_Dni, desc_Mail, desc_Dom_Calle, desc_Nro_Calle, desc_Piso, desc_Depto, desc_Localidad, desc_Cod_Postal, desc_Telefono, desc_Fecha_Nac);
+
+                        // VUELVO AL MENU PRINCIPAL DE LOS ADMINISTRADORES QUE TODAVIA NO ESTÁ CREADO
+
+                    }
                 }
                 else
                 {
-                   MessageBox.Show("EL DNI YA ESTA REGISTRADO EN EL SISTEMA");
+                   MessageBox.Show("El DNI ingresado ya está registrado en el sistema");
                 }
-            }
-            else
-            {
-                MessageBox.Show("EL NOMBRE DE USUARIO YA EXISTE, POR FAVOR INGRESE OTRO");
-            }
-           
         }
 
         private void buttonSelectRol_Click(object sender, EventArgs e)
@@ -98,35 +85,6 @@ namespace MercadoEnvio.ABM_Usuario
             seleccionRoles formSeleccion = new seleccionRoles();
             formSeleccion.Show();
             //textRol.Text = formSeleccion.comboNombresRoles.SelectedItem.ToString(); NO ANDA, VER
-        }
-
-        private void leerArchivoConfig()
-        {
-            try
-            {
-                using (StreamReader sr = new StreamReader("ArchivoConfiguracion.txt"))
-                {
-                    string line, textoArchivo = "";
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        textoArchivo = textoArchivo + line + "\n";
-                    }
-
-                    char[] delimitadores = { ' ', ',', '.', '\t', '\n' };
-
-                    string[] palabras = textoArchivo.Split(delimitadores);
-
-                    ConstantesBD.fechaSistema = palabras[2];
-                    ConstantesBD.Param_Conexion_urlServidor = palabras[9];
-                    ConstantesBD.Param_Conexion_usuario = palabras[14];
-                    ConstantesBD.Param_Conexion_contraseña = palabras[17];
-                    ConstantesBD.Param_Conexion_nombreBD = palabras[24];
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error al leer el archivo de configuracion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void buttonCalendar_Click(object sender, EventArgs e)
@@ -142,25 +100,11 @@ namespace MercadoEnvio.ABM_Usuario
 
         }
 
-        private void textPiso_TextChanged(object sender, EventArgs e)
+        private void buttonVolver_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            Usuario formUsuario = new Usuario();
+            formUsuario.Show();
         }
-
-        private void textCalle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

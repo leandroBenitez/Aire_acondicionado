@@ -118,7 +118,7 @@ C:\Users\Jamper\Desktop\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.A
 C:\Users\Jamper\Desktop\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Login.resources
 C:\Users\Jamper\Desktop\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Properties.Resources.resources
 C:\Users\Jamper\Desktop\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csproj.GenerateResource.Cache
-C:\Users\Jamper\Desktop\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csprojResolveAssemblyReference.cache
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csprojResolveAssemblyReference.cache
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.altaCliente.resources
 C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.altaCliente.resources
+C:\Users\Jamper\Desktop\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csprojResolveAssemblyReference.cache
