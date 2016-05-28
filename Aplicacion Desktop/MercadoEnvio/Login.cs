@@ -21,7 +21,6 @@ namespace MercadoEnvio
             leerArchivoConfig();
             loginDAO = new LoginDAO();
             InitializeComponent();
-            cargar_roles_combobox();
         }
 
         private void leerArchivoConfig()
@@ -53,34 +52,53 @@ namespace MercadoEnvio
             }
         }
 
-        private void cargar_roles_combobox()
-        {
-            foreach (string aux in loginDAO.get_roles())
-            {
-                comboBox_roles.Items.Add(aux);
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
-        {   
-            //If (string.IsNullOrWhiteSpace(un_texto))
-            //{
-            //    MessageBox.Show("Ingrese un usuario valido.", "Error", MessageBoxButtons.OK,    MessageBoxIcon.Warning);
-            //}
-            
-           // If (textBox_user)  
-           // textBox_pass
-        }
-
-        public void verificar_texto_vacio(string un_texto)
-        { 
-            if (string.IsNullOrWhiteSpace(un_texto))
+        {
+            if ((string.IsNullOrWhiteSpace(textBox_user.Text)) || (string.IsNullOrWhiteSpace(textBox_pass.Text)))
             {
-                
+                MessageBox.Show("Complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                
+                string mensaje = this.loginDAO.validar_login(textBox_user.Text, textBox_pass.Text);
+                switch (mensaje)
+                { 
+                    case "invalido":
+                        MessageBox.Show("El usuario no existe en el sistema.", "Usuario Inexistente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        break;
+                    case "inhabilitado":
+                        MessageBox.Show("El usuario se encuentra bloqueado.", "Usuario Bloqueado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        break;
+                    case "incorrecto":
+                        MessageBox.Show("La contraseña ingresa es incorrecta.", "Contraseña Incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        break;
+                    case "correcto":
+                        int id_usuario = loginDAO.get_id_usuario(textBox_user.Text);
+                        int cant_roles = loginDAO.get_number_roles(id_usuario);
+
+                        if (cant_roles == 0)
+                        {
+                            MessageBox.Show("El usuario no posee roles habilitados.", "Roles Inhabilitados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            string rol = loginDAO.get_unique_rol(id_usuario);
+
+                            if (cant_roles == 1)
+                            {
+                                Menu menu = new Menu(textBox_user.Text, id_usuario, rol);
+                                menu.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                Login_rol logins = new Login_rol(textBox_user.Text, id_usuario);
+                                logins.Show();
+                                this.Hide();
+                            }
+                        }
+                    break;
+                }
             }
         }
     }

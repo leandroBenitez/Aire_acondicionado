@@ -28,24 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox_roles = new System.Windows.Forms.ComboBox();
             this.presentacion = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_user = new System.Windows.Forms.TextBox();
             this.textBox_pass = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.button_ingreso = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // comboBox_roles
-            // 
-            this.comboBox_roles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_roles.FormattingEnabled = true;
-            this.comboBox_roles.Location = new System.Drawing.Point(145, 150);
-            this.comboBox_roles.Name = "comboBox_roles";
-            this.comboBox_roles.Size = new System.Drawing.Size(122, 21);
-            this.comboBox_roles.TabIndex = 0;
             // 
             // presentacion
             // 
@@ -79,32 +68,26 @@
             // textBox_user
             // 
             this.textBox_user.Location = new System.Drawing.Point(145, 68);
+            this.textBox_user.MaxLength = 50;
             this.textBox_user.Name = "textBox_user";
             this.textBox_user.Size = new System.Drawing.Size(122, 20);
-            this.textBox_user.TabIndex = 4;
+            this.textBox_user.TabIndex = 1;
             // 
             // textBox_pass
             // 
             this.textBox_pass.Location = new System.Drawing.Point(145, 109);
+            this.textBox_pass.MaxLength = 50;
             this.textBox_pass.Name = "textBox_pass";
+            this.textBox_pass.PasswordChar = '●';
             this.textBox_pass.Size = new System.Drawing.Size(122, 20);
-            this.textBox_pass.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(113, 153);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Rol:";
+            this.textBox_pass.TabIndex = 2;
             // 
             // button_ingreso
             // 
-            this.button_ingreso.Location = new System.Drawing.Point(289, 199);
+            this.button_ingreso.Location = new System.Drawing.Point(289, 151);
             this.button_ingreso.Name = "button_ingreso";
             this.button_ingreso.Size = new System.Drawing.Size(102, 23);
-            this.button_ingreso.TabIndex = 7;
+            this.button_ingreso.TabIndex = 3;
             this.button_ingreso.Text = "Ingresar";
             this.button_ingreso.UseVisualStyleBackColor = true;
             this.button_ingreso.Click += new System.EventHandler(this.button1_Click);
@@ -113,15 +96,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(409, 235);
+            this.ClientSize = new System.Drawing.Size(404, 189);
             this.Controls.Add(this.button_ingreso);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox_pass);
             this.Controls.Add(this.textBox_user);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.presentacion);
-            this.Controls.Add(this.comboBox_roles);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Login";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -134,13 +115,11 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox_roles;
         private System.Windows.Forms.Label presentacion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_user;
         private System.Windows.Forms.TextBox textBox_pass;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button_ingreso;
     }
 }

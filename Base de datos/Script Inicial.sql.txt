@@ -170,9 +170,7 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
 
 Create Table GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
 (
-	 id_log int identity(1,1)
-	,id_usuario int --En caso de corresponder
-	,desc_username nvarchar(250)
+	 id_usuario int --En caso de corresponder
 	,desc_fecha_log datetime
 	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
 )
@@ -301,6 +299,34 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_item
 	,foreign key (id_tipo_costo) references GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_costo(id_tipo_costo)
 	,foreign key (id_publicacion) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion(id_publicacion)
 )
+Go
+
+/*	***********************	BORRADO DE VISTAS	************************ */
+If exists (select * FROM sys.views where name = 'rol_usuario')
+Drop view GESTORES_DEL_AIRE_ACONDICIONADO.rol_usuario
+Go
+
+If exists (select * FROM sys.views where name = 'rol_funcionalidades')
+Drop view GESTORES_DEL_AIRE_ACONDICIONADO.rol_funcionalidades
+Go
+
+/*	***********************	CREACION DE VISTAS	************************ */
+Create view GESTORES_DEL_AIRE_ACONDICIONADO.rol_usuario
+As
+Select usu.*, rol.desc_rol, rol.estado_rol from GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios usu
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol rol
+	on usu.id_rol = rol.id_rol
+Go
+
+Create view GESTORES_DEL_AIRE_ACONDICIONADO.rol_funcionalidades
+As
+Select rol.desc_rol, fu.desc_funcion
+From GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles rl
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol rol
+	on rl.id_rol = rol.id_rol
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion fu
+	on rl.id_funcion = fu.id_funcion
+Go
 
 /*	***********************	CARGA DE DATOS	************************ */
 --Carga de los tipos de costos
@@ -312,10 +338,10 @@ Values	('No informado'),
 Go
 
 --Carga de los roles
-Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol	(desc_rol)
-Values	('Cliente'),
-		('Empresa'),
-		('Administrador')
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol	(desc_rol, estado_rol)
+Values	('Cliente', 'H'),
+		('Empresa', 'H'),
+		('Administrador', 'H')
 Go
 
 --Carga de las funciones
@@ -650,6 +676,7 @@ inner join GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pu
 Go
 
 --COMIENZO DE CREACION DE STORE PROCEDURES, FUNCTIONS AND TRIGGERS
+/* STORED PROCEDURE PARA CREAR UN NUEVO CLIENTE (CARGA TABLAS USUARIO, CLIENTE, Y ROLES_USUARIO)*/
 /* ELIMINO STORED PROCEDURES SI EXISTEN */
 If exists (select'existe' From INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME = 'crear_usuario_cliente')
 	Drop procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente
@@ -725,6 +752,74 @@ Select	 @ultimo_id
 		,Convert(datetime, @desc_Fecha_Nac) 
 GO
 
+/* STORED PROCEDURE PARA LOGEOS */
+If exists (select'existe' From INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME = 'logearse')
+	Drop procedure GESTORES_DEL_AIRE_ACONDICIONADO.logearse
+Go
+
+Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.logearse	(	 @user varchar(150)
+																,@pass varchar(150)	)
+As
+Declare @usuario int = 0;
+Declare @estado int = 0;
+
+Select	@usuario = us.id_usuario,
+		@estado = us.id_estado
+From GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario us
+Where us.desc_username = @user
+
+if (@usuario = 0)
+	Select 'invalido' as mensaje
+else
+	if (@estado = 2)
+		Select 'inhabilitado' as mensaje
+	else
+		if not exists (Select 'existe' from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario us
+						where us.id_usuario = @usuario
+						  and us.desc_password = HASHBYTES('SHA2_256', @pass)	)
+			Begin
+			Insert into GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos	(	 id_usuario
+																			,desc_fecha_log	)
+			Values	(	 @usuario
+						,Getdate()	)
+
+			Select 'incorrecto' as mensaje
+			End
+		else
+			Begin
+			Delete from GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
+			Where id_usuario = @usuario
+
+			Select 'correcto' as mensaje
+			End
+Go
+
+/* TRIGGER CONTROL DE INGRESOS INCORRECTOS */
+If exists (select 'existe' From sys.objects where type = 'TR' AND name = 'controlar_ingresos')
+	Drop trigger GESTORES_DEL_AIRE_ACONDICIONADO.controlar_ingresos
+Go
+
+Create Trigger GESTORES_DEL_AIRE_ACONDICIONADO.controlar_ingresos
+On GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
+After insert
+As
+Declare @id int;
+Declare @cont int;
+
+Select @id = id_usuario from inserted
+
+Set @cont = (Select Count(1) from GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
+						where id_usuario = @id	)
+
+If (@cont = 3)
+Begin
+	Update GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario
+	Set id_estado = 2
+	Where id_usuario = @id
+End
+Go
+
+
 /* STORED PROCEDURE PARA CREAR UN NUEVO EMPRESA (CARGA TABLAS USUARIO, EMPRESA, Y ROLES_USUARIO)*/
 Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_empresa	(	 @username varchar(150)
 																			,@password varchar(150)
@@ -797,3 +892,22 @@ GO
 
 Drop table #compra
 Drop table #usuarios
+
+/*
+
+Select * from [GESTORES_DEL_AIRE_ACONDICIONADO].[log_ingresos]
+
+Select * from [GESTORES_DEL_AIRE_ACONDICIONADO].[ft_usuario]
+
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
+															,desc_password
+															,id_estado	)
+Select	 'lean'
+		,HASHBYTES('sha2_256', 'lean')
+		,1
+
+Insert into [GESTORES_DEL_AIRE_ACONDICIONADO].[rl_roles_usuarios]
+values (96,1)
+
+Select * from [GESTORES_DEL_AIRE_ACONDICIONADO].[rl_roles_usuarios]
+*/
