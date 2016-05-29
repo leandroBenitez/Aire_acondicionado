@@ -675,8 +675,11 @@ inner join GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pu
 	on ma.Publicacion_Cod = pu.desc_codigo
 Go
 
+--Elimino las tablas temporales
+Drop table #compra
+Drop table #usuarios
+
 --COMIENZO DE CREACION DE STORE PROCEDURES, FUNCTIONS AND TRIGGERS
-/* STORED PROCEDURE PARA CREAR UN NUEVO CLIENTE (CARGA TABLAS USUARIO, CLIENTE, Y ROLES_USUARIO)*/
 /* ELIMINO STORED PROCEDURES SI EXISTEN */
 If exists (select'existe' From INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME = 'crear_usuario_cliente')
 	Drop procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente
@@ -686,6 +689,17 @@ If exists (select'existe' From INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME =
 	Drop procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_empresa
 Go
 
+If exists (select'existe' From INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME = 'logearse')
+	Drop procedure GESTORES_DEL_AIRE_ACONDICIONADO.logearse
+Go
+
+If exists (select 'existe' From sys.objects where type = 'TR' AND name = 'controlar_ingresos')
+	Drop trigger GESTORES_DEL_AIRE_ACONDICIONADO.controlar_ingresos
+Go
+
+If exists (select 'existe' From sys.objects where type = 'TR' AND name = 'sumar_total')
+	Drop trigger GESTORES_DEL_AIRE_ACONDICIONADO.sumar_total
+Go
 
 /* STORED PROCEDURE PARA CREAR UN NUEVO CLIENTE (CARGA TABLAS USUARIO, CLIENTE, Y ROLES_USUARIO)*/
 Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente	(	 @username varchar(150)
@@ -752,11 +766,74 @@ Select	 @ultimo_id
 		,Convert(datetime, @desc_Fecha_Nac) 
 GO
 
-/* STORED PROCEDURE PARA LOGEOS */
-If exists (select'existe' From INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME = 'logearse')
-	Drop procedure GESTORES_DEL_AIRE_ACONDICIONADO.logearse
-Go
+/* STORED PROCEDURE PARA CREAR UN NUEVO EMPRESA (CARGA TABLAS USUARIO, EMPRESA, Y ROLES_USUARIO)*/
+Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_empresa	(	 @username varchar(150)
+																			,@password varchar(150)
+																			,@rol varchar(100)	
+																			,@desc_razon_social varchar(255)
+																			,@desc_Mail varchar(255)
+																			,@desc_Telefono varchar(10) --numeric(10,0)
+																			,@desc_Fecha_Creacion varchar(50)
+																			,@desc_Dom_Calle varchar(255)
+																			,@desc_Nro_Calle varchar(18) --numeric(18,0)
+																			,@desc_Piso varchar(18) --numeric(18,0)
+																			,@desc_Depto varchar(50)
+																			,@desc_Localidad varchar(45)
+																			,@desc_Cod_Postal varchar(50)
+																			,@desc_ciudad varchar(50)
+																			,@desc_cuit varchar(20)	)
+As
+Declare @ultimo_id int;
 
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
+															,desc_password
+															,id_estado	)
+Select	 @username
+		,HASHBYTES('sha2_256', @password)
+		,1
+
+--Capturo el ultimo ID insertado
+Set @ultimo_id = @@IDENTITY;
+
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios	(	 id_usuario
+																	,id_rol	)
+Select	 @ultimo_id
+		,id_rol
+From GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol
+Where desc_rol = @rol
+
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa	(	 id_usuario
+															,desc_Razon_Social 
+															,desc_Mail 
+															,desc_Telefono 
+															,desc_Fecha_Creacion
+															,desc_Dom_Calle 
+															,desc_Nro_Calle 
+															,desc_Piso 
+															,desc_Depto 
+															,desc_Localidad 
+															,desc_Cod_Postal 
+															,desc_Ciudad
+															,desc_Cuit
+															,desc_nombre_contacto	)
+Select	 
+			 @ultimo_id
+			,@desc_razon_social 
+			,@desc_Mail 
+			,Convert(numeric(10,0), @desc_Telefono)  
+			,Convert(datetime, @desc_Fecha_Creacion )
+			,@desc_Dom_Calle 
+			,Convert(numeric(18,0), @desc_Nro_Calle)
+			,Convert(numeric(18,0), @desc_Piso) 
+			,@desc_Depto 
+			,@desc_Localidad 
+			,@desc_Cod_Postal 
+			,@desc_ciudad 
+			,@desc_cuit
+			,''		
+GO
+
+/*PROCEDIMIENTO NECESARIO PARA LOGEO Y SEGURIDAD*/
 Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.logearse	(	 @user varchar(150)
 																,@pass varchar(150)	)
 As
@@ -795,10 +872,6 @@ else
 Go
 
 /* TRIGGER CONTROL DE INGRESOS INCORRECTOS */
-If exists (select 'existe' From sys.objects where type = 'TR' AND name = 'controlar_ingresos')
-	Drop trigger GESTORES_DEL_AIRE_ACONDICIONADO.controlar_ingresos
-Go
-
 Create Trigger GESTORES_DEL_AIRE_ACONDICIONADO.controlar_ingresos
 On GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
 After insert
@@ -819,79 +892,31 @@ Begin
 End
 Go
 
-
-/* STORED PROCEDURE PARA CREAR UN NUEVO EMPRESA (CARGA TABLAS USUARIO, EMPRESA, Y ROLES_USUARIO)*/
-Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_empresa	(	 @username varchar(150)
-																			,@password varchar(150)
-																			,@rol varchar(100)	
-																			,@desc_razon_social varchar(255)
-																			,@desc_Mail varchar(255)
-																			,@desc_Telefono varchar(10) --numeric(10,0)
-																			,@desc_Fecha_Creacion varchar(50)
-																			,@desc_Dom_Calle varchar(255)
-																			,@desc_Nro_Calle varchar(18) --numeric(18,0)
-																			,@desc_Piso varchar(18) --numeric(18,0)
-																			,@desc_Depto varchar(50)
-																			,@desc_Localidad varchar(45)
-																			,@desc_Cod_Postal varchar(50)
-																			,@desc_ciudad varchar(50)
-																			,@desc_cuit varchar(20)	)
+/* TRIGGER SUMAR TOTALES PARA FACTURAS */
+Create Trigger GESTORES_DEL_AIRE_ACONDICIONADO.sumar_total
+On GESTORES_DEL_AIRE_ACONDICIONADO.ft_item
+After insert
 As
-Declare @ultimo_id int;
+Declare @id numeric(18,0);
+Declare @monto_total numeric(18,2);
 
-Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
-															,desc_password
-															,id_estado	)
-Select	 @username
-		,HASHBYTES('sha2_256', @password)
-		,1
+Select @id = id_factura from inserted
 
---Capturo el ultimo ID insertado
-Set @ultimo_id = @@IDENTITY;
+Select @monto_total = SUM(it.desc_item_monto)
+From GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura fa
+left join GESTORES_DEL_AIRE_ACONDICIONADO.ft_item it
+	on fa.id_factura = it.id_factura
+Where it.id_factura = @id
 
-Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios	(	 id_usuario
-																	,id_rol	)
-Select	 @ultimo_id
-		,id_rol
-From GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol
-Where desc_rol = @rol
+Update GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura
+Set desc_total = @monto_total
+Where id_factura = @id
+
+Go
 
 
-Insert into GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa	(	 id_usuario
-															,desc_Razon_Social 
-															,desc_Mail 
-															,desc_Telefono 
-															,desc_Fecha_Creacion
-															,desc_Dom_Calle 
-															,desc_Nro_Calle 
-															,desc_Piso 
-															,desc_Depto 
-															,desc_Localidad 
-															,desc_Cod_Postal 
-															,desc_Ciudad
-															,desc_Cuit
-															,desc_nombre_contacto
-														)
-Select	 
-			 @ultimo_id
-			,@desc_razon_social 
-			,@desc_Mail 
-			,Convert(numeric(10,0), @desc_Telefono)  
-			,Convert(datetime, @desc_Fecha_Creacion )
-			,@desc_Dom_Calle 
-			,Convert(numeric(18,0), @desc_Nro_Calle)
-			,Convert(numeric(18,0), @desc_Piso) 
-			,@desc_Depto 
-			,@desc_Localidad 
-			,@desc_Cod_Postal 
-			,@desc_ciudad 
-			,@desc_cuit
-			,''
-		
-GO
 
-Drop table #compra
-Drop table #usuarios
+
 
 /*
 
