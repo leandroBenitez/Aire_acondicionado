@@ -16,28 +16,37 @@ namespace MercadoEnvio.ABM_Visibilidad
     public partial class ModificacionVisibilidad : Form
     {
         ABM_Visibilidad_DAO abm_visibilidad;
+        List<string> id_visibilidad = new List<string>();
 
         public ModificacionVisibilidad()
         {
             leerArchivoConfig();
             abm_visibilidad = new ABM_Visibilidad_DAO();
             InitializeComponent();
-            cargarComboTipos();
         }
 
-        private void cargarComboTipos()
+        private void Seleccionar_Click(object sender, EventArgs e)
         {
-            foreach (string desc_tipo in abm_visibilidad.get_descVisibilidad())
+            id_visibilidad.Clear();
+            comboBox1.Items.Clear();
+
+            String desc_tipo = textTipo.Text;
+            String desc_precio = textPrecio.Text;
+            String desc_porcentaje = textPorcentaje.Text;
+            String desc_porcentaje_envio = textEnvio.Text;
+
+            id_visibilidad = abm_visibilidad.getIdVisibilidad(desc_tipo, desc_precio, desc_porcentaje, desc_porcentaje_envio);
+            
+            for (int i = 0; i < id_visibilidad.Count; i++)
             {
-                comboTipo.Items.Add(desc_tipo);
+                comboBox1.Items.Add(id_visibilidad[i]);
             }
         }
 
-        private void SeleccionarClick_Click(object sender, EventArgs e)
+        private void Seleccionar2_Click(object sender, EventArgs e)
         {
-            int id_visibilidad = abm_visibilidad.getIdVisibilidad(comboTipo.SelectedItem.ToString());
 
-            ListadoVisibilidad formListado = new ListadoVisibilidad(id_visibilidad);
+            ListadoVisibilidad formListado = new ListadoVisibilidad(int.Parse(comboBox1.SelectedItem.ToString()));
             formListado.Show();
         }
 
@@ -68,6 +77,11 @@ namespace MercadoEnvio.ABM_Visibilidad
             {
                 MessageBox.Show(ex.Message, "Error al leer el archivo de configuracion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void textEnvio_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -93,12 +93,6 @@
     <Compile Include="ABM Rubro\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Visibilidad\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ABM Visibilidad\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="ABM Rol\BajaRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +105,30 @@
     <Compile Include="ABM Rol\ModificacionRol.Designer.cs">
       <DependentUpon>ModificacionRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABM Visibilidad\AltaVisibilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Visibilidad\AltaVisibilidad.designer.cs">
+      <DependentUpon>AltaVisibilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Visibilidad\BajaVisibilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Visibilidad\BajaVisibilidad.designer.cs">
+      <DependentUpon>BajaVisibilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Visibilidad\ListadoVisibilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Visibilidad\ListadoVisibilidad.designer.cs">
+      <DependentUpon>ListadoVisibilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Visibilidad\ModificacionVisibilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Visibilidad\ModificacionVisibilidad.designer.cs">
+      <DependentUpon>ModificacionVisibilidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calificar\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,8 +137,8 @@
     </Compile>
     <Compile Include="DataBase\Conexion\ABM_Rol_DAO.cs" />
     <Compile Include="DataBase\Conexion\ABM_usuario_DAO.cs" />
+    <Compile Include="DataBase\Conexion\ABM_Visibilidad_DAO.cs" />
     <Compile Include="DataBase\Conexion\GDAA_DAO.cs" />
-    <Compile Include="DataBase\Conexion\Historial_compras_DAO.cs" />
     <Compile Include="DataBase\Conexion\LoginDAO.cs" />
     <Compile Include="DataBase\Conexion\SQLDataReader.cs" />
     <Compile Include="DataBase\Conexion\SQLServerBD.cs" />
@@ -140,10 +158,6 @@
     <Compile Include="Facturas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Historial Cliente\FormCompras.cs" />
-    <Compile Include="Historial Cliente\FormCompras.Designer.cs" />
-    <Compile Include="Historial Cliente\miCuenta.cs" />
-    <Compile Include="Historial Cliente\miCuenta.Designer.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,8 +216,18 @@
     <EmbeddedResource Include="ABM Rol\ModificacionRol.resx">
       <DependentUpon>ModificacionRol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Historial Cliente\FormCompras.resx" />
-    <EmbeddedResource Include="Historial Cliente\miCuenta.resx" />
+    <EmbeddedResource Include="ABM Visibilidad\AltaVisibilidad.resx">
+      <DependentUpon>AltaVisibilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Visibilidad\BajaVisibilidad.resx">
+      <DependentUpon>BajaVisibilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Visibilidad\ListadoVisibilidad.resx">
+      <DependentUpon>ListadoVisibilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Visibilidad\ModificacionVisibilidad.resx">
+      <DependentUpon>ModificacionVisibilidad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +262,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataBase\Entidades\" />
+    <Folder Include="Historial Cliente\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -35,9 +35,11 @@ namespace MercadoEnvio.ABM_Visibilidad
 
         private void Baja_Click(object sender, EventArgs e)
         {
-            int id_visibilidad = abm_visibilidad.getIdVisibilidad(comboTipo.SelectedItem.ToString());
+            List<string> id_visibilidad = abm_visibilidad.getIdVisibilidad(comboTipo.SelectedItem.ToString(),"","","");
 
-            abm_visibilidad.borrarVisibilidad(id_visibilidad);
+            abm_visibilidad.borrarVisibilidad(int.Parse(id_visibilidad[0]));
+
+            MessageBox.Show("Se eliminó la visibilidad");
         }
 
         private void comboTipo_SelectedIndexChanged(object sender, EventArgs e)
