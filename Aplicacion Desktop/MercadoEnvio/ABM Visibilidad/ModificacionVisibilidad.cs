@@ -17,6 +17,9 @@ namespace MercadoEnvio.ABM_Visibilidad
     {
         ABM_Visibilidad_DAO abm_visibilidad;
         List<string> id_visibilidad = new List<string>();
+        List<Button> txt = new List<Button>();
+        List<TextBox> txtTipo = new List<TextBox>();
+        int A = 7;
 
         public ModificacionVisibilidad()
         {
@@ -28,7 +31,9 @@ namespace MercadoEnvio.ABM_Visibilidad
         private void Seleccionar_Click(object sender, EventArgs e)
         {
             id_visibilidad.Clear();
-            comboBox1.Items.Clear();
+            Limpiar_TxtYBut();
+
+            A = 7;
 
             String desc_tipo = textTipo.Text;
             String desc_precio = textPrecio.Text;
@@ -39,15 +44,83 @@ namespace MercadoEnvio.ABM_Visibilidad
             
             for (int i = 0; i < id_visibilidad.Count; i++)
             {
-                comboBox1.Items.Add(id_visibilidad[i]);
+                txt.Add(addNewTextBox(id_visibilidad[i]));
             }
         }
 
-        private void Seleccionar2_Click(object sender, EventArgs e)
+        private Button addNewTextBox(string id)
         {
+            Button but = new Button();
+            but.Click += new EventHandler(SeleccionarID);
 
-            ListadoVisibilidad formListado = new ListadoVisibilidad(int.Parse(comboBox1.SelectedItem.ToString()));
+            this.Controls.Add(but);
+            but.Top = A * 38;
+            but.Left = 26;
+            but.Text = id;
+
+
+            TextBox text;
+
+            text = crearTextBox(126);
+            text.Text = abm_visibilidad.get_descVisibilidadSegun(id);
+            txtTipo.Add(text);
+
+            text = crearTextBox(226);
+            text.Text = abm_visibilidad.get_desc_precioVisibilidadSegun(id).ToString();
+            txtTipo.Add(text);
+
+            text = crearTextBox(326);
+            text.Text = abm_visibilidad.get_desc_porcentajeVisibilidadSegun(id).ToString();
+            txtTipo.Add(text);
+
+            text = crearTextBox(426);
+            text.Text = abm_visibilidad.get_desc_porcentaje_envioVisibilidadSegun(id).ToString();
+            txtTipo.Add(text);
+
+            A++;
+            return but;
+        }
+
+        private void SeleccionarID(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+
+            ListadoVisibilidad formListado = new ListadoVisibilidad(int.Parse(button.Text));
             formListado.Show();
+        }
+
+        private TextBox crearTextBox(int left)
+        {
+            TextBox text = new TextBox();
+            text.ReadOnly = true;
+            this.Controls.Add(text);
+            text.Top = A * 38;
+            text.Left = left;
+
+            return text;
+        }
+
+        private void Limpiar_TxtYBut()
+        {
+            foreach (Button t in txt)
+            {
+                this.Controls.Remove(t);
+                t.Dispose();
+            }
+
+            foreach (TextBox t in txtTipo)
+            {
+                this.Controls.Remove(t);
+                t.Dispose();
+            }
+        }
+
+        private void Limpiar_Click(object sender, EventArgs e)
+        {
+            textTipo.Text = "";
+            textPrecio.Text = "";
+            textPorcentaje.Text = "";
+            textEnvio.Text = "";
         }
 
         private void leerArchivoConfig()

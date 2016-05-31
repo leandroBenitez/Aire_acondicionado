@@ -32,6 +32,19 @@ namespace MercadoEnvio.DataBase.Conexion
             return resultado;
         }
 
+        public string get_descVisibilidadSegun(string id_visibilidad)
+        {
+            string id = "";
+            SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT desc_tipo FROM " + ConstantesBD.tabla_visibilidad +
+                                                                               " WHERE id_visibilidad = " + id_visibilidad);
+
+            if (num_rol.Read())
+                id = (string)num_rol[0];
+            num_rol.Close();
+
+            return id;
+        }
+
         public void setearVisibilidad(String desc_tipo, String desc_precio, String desc_porcentaje, String desc_porcentaje_envio)
         {
             this.GD1C2016.ejecutarSentenciaSinRetorno("INSERT INTO " + ConstantesBD.tabla_visibilidad + " (desc_codigo, desc_tipo, desc_precio, desc_porcentaje, desc_porcentaje_envio) VALUES (" + "1010 , '"
@@ -39,6 +52,45 @@ namespace MercadoEnvio.DataBase.Conexion
                                                                                                                                                                                                           + desc_precio + ", " 
                                                                                                                                                                                                           + desc_porcentaje + ", " 
                                                                                                                                                                                                           + desc_porcentaje_envio + ")");
+        }
+
+        public decimal get_desc_precioVisibilidadSegun(string id_visibilidad)
+        {
+            decimal id = 0;
+            SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT desc_precio FROM " + ConstantesBD.tabla_visibilidad +
+                                                                               " WHERE id_visibilidad = " + id_visibilidad);
+
+            if (num_rol.Read())
+                id = (decimal)num_rol[0];
+            num_rol.Close();
+
+            return id;
+        }
+
+        public decimal get_desc_porcentajeVisibilidadSegun(string id_visibilidad)
+        {
+            decimal id = 0;
+            SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT desc_porcentaje FROM " + ConstantesBD.tabla_visibilidad +
+                                                                               " WHERE id_visibilidad = " + id_visibilidad);
+
+            if (num_rol.Read())
+                id = (decimal)num_rol[0];
+            num_rol.Close();
+
+            return id;
+        }
+
+        public decimal get_desc_porcentaje_envioVisibilidadSegun(string id_visibilidad)
+        {
+            decimal id = 0;
+            SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT desc_porcentaje_envio FROM " + ConstantesBD.tabla_visibilidad +
+                                                                               " WHERE id_visibilidad = " + id_visibilidad);
+
+            if (num_rol.Read())
+                id = (decimal)num_rol[0];
+            num_rol.Close();
+
+            return id;
         }
 
         public List<string> getIdVisibilidad(String desc_tipo, String desc_precio, String desc_porcentaje, String desc_porcentaje_envio)
@@ -62,7 +114,8 @@ namespace MercadoEnvio.DataBase.Conexion
             }
 
             SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT id_visibilidad FROM " + ConstantesBD.tabla_visibilidad + 
-                                                                             " WHERE " + desc_tipo + desc_precio + desc_porcentaje + desc_porcentaje_envio);
+                                                                             " WHERE " + desc_tipo + desc_precio + desc_porcentaje + desc_porcentaje_envio +
+                                                                             " ORDER BY id_visibilidad asc");
                                         
             List<string> resultado = new List<string>();
 
@@ -78,7 +131,17 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public void borrarVisibilidad(int id_visibilidad)
         {
-            this.GD1C2016.ejecutarSentenciaSinRetorno("DELETE FROM " + ConstantesBD.tabla_visibilidad + " WHERE id_visibilidad = " + id_visibilidad);
+            try
+            {
+                this.GD1C2016.ejecutarSentenciaSinRetorno("DELETE FROM " + ConstantesBD.tabla_visibilidad + " WHERE id_visibilidad = " + id_visibilidad);
+
+                MessageBox.Show("Se borro la visibilidad");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se pudo borrar la visibilidad. Verificar que no haya referencia a " + get_descVisibilidadSegun(id_visibilidad.ToString()) + " desde otra tabla.");
+
+            }
         }
 
         public void updateVisibilidad(int id_visibilidad, String desc_tipo, String desc_precio, String desc_porcentaje, String desc_porcentaje_envio)
