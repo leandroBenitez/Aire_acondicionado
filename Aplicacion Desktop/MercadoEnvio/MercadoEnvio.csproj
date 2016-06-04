@@ -139,6 +139,9 @@
     <Compile Include="DataBase\Conexion\ABM_usuario_DAO.cs" />
     <Compile Include="DataBase\Conexion\ABM_Visibilidad_DAO.cs" />
     <Compile Include="DataBase\Conexion\GDAA_DAO.cs" />
+    <Compile Include="DataBase\Conexion\HistorialCompras_DAO.cs" />
+    <Compile Include="DataBase\Conexion\HistorialFacturas_DAO.cs" />
+    <Compile Include="DataBase\Conexion\HistorialSubastas_DAO.cs" />
     <Compile Include="DataBase\Conexion\LoginDAO.cs" />
     <Compile Include="DataBase\Conexion\SQLDataReader.cs" />
     <Compile Include="DataBase\Conexion\SQLServerBD.cs" />
@@ -158,6 +161,20 @@
     <Compile Include="Facturas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Historial Cliente\HistorialCompras.cs" />
+    <Compile Include="Historial Cliente\HistorialCompras.Designer.cs" />
+    <Compile Include="Historial Cliente\HistorialEstrellas.cs" />
+    <Compile Include="Historial Cliente\HistorialEstrellas.Designer.cs" />
+    <Compile Include="Historial Cliente\HistorialFacturas.cs" />
+    <Compile Include="Historial Cliente\HistorialFacturas.Designer.cs" />
+    <Compile Include="Historial Cliente\HistorialMiCuenta.cs" />
+    <Compile Include="Historial Cliente\HistorialMiCuenta.Designer.cs" />
+    <Compile Include="Historial Cliente\HistorialSubastas.cs" />
+    <Compile Include="Historial Cliente\HistorialSubastas.Designer.cs" />
+    <Compile Include="Listado Estadistico\NoVendidos.cs" />
+    <Compile Include="Listado Estadistico\NoVendidos.Designer.cs" />
+    <Compile Include="Listado Estadistico\Top5.cs" />
+    <Compile Include="Listado Estadistico\Top5.Designer.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +245,12 @@
     <EmbeddedResource Include="ABM Visibilidad\ModificacionVisibilidad.resx">
       <DependentUpon>ModificacionVisibilidad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Historial Cliente\HistorialCompras.resx" />
+    <EmbeddedResource Include="Historial Cliente\HistorialFacturas.resx" />
+    <EmbeddedResource Include="Historial Cliente\HistorialMiCuenta.resx" />
+    <EmbeddedResource Include="Historial Cliente\HistorialSubastas.resx" />
+    <EmbeddedResource Include="Listado Estadistico\NoVendidos.resx" />
+    <EmbeddedResource Include="Listado Estadistico\Top5.resx" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,7 +285,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataBase\Entidades\" />
-    <Folder Include="Historial Cliente\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
