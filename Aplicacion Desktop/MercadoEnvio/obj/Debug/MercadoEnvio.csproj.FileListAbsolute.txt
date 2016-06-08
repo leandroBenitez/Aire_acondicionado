@@ -197,3 +197,14 @@ J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsForms
 J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialFacturas.resources
 J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialMiCuenta.resources
 J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialSubastas.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Visibilidad.AltaVisibilidad.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Visibilidad.BajaVisibilidad.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Visibilidad.ListadoVisibilidad.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Visibilidad.ModificacionVisibilidad.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialFacturas.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialMiCuenta.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialSubastas.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Listado_Estadistico.NoVendidos.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Listado_Estadistico.Top5.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Login_rol.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Menu.resources
