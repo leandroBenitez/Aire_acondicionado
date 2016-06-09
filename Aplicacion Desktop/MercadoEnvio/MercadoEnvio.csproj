@@ -143,6 +143,7 @@
     <Compile Include="DataBase\Conexion\HistorialFacturas_DAO.cs" />
     <Compile Include="DataBase\Conexion\HistorialSubastas_DAO.cs" />
     <Compile Include="DataBase\Conexion\LoginDAO.cs" />
+    <Compile Include="DataBase\Conexion\publicacionDAO.cs" />
     <Compile Include="DataBase\Conexion\SQLDataReader.cs" />
     <Compile Include="DataBase\Conexion\SQLServerBD.cs" />
     <Compile Include="Excepciones\CierreConexionFallidaException.cs" />
@@ -160,6 +161,24 @@
     </Compile>
     <Compile Include="Facturas\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generar Publicación\Compra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generar Publicación\Compra.Designer.cs">
+      <DependentUpon>Compra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generar Publicación\Subasta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generar Publicación\Subasta.Designer.cs">
+      <DependentUpon>Subasta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generar Publicación\TipoDePubli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Generar Publicación\TipoDePubli.Designer.cs">
+      <DependentUpon>TipoDePubli.cs</DependentUpon>
     </Compile>
     <Compile Include="Historial Cliente\HistorialCompras.cs">
       <SubType>Form</SubType>
@@ -208,12 +227,6 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Generar Publicación\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Generar Publicación\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Login_rol.cs">
       <SubType>Form</SubType>
@@ -266,6 +279,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABM Visibilidad\ModificacionVisibilidad.resx">
       <DependentUpon>ModificacionVisibilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generar Publicación\Compra.resx">
+      <DependentUpon>Compra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generar Publicación\Subasta.resx">
+      <DependentUpon>Subasta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Generar Publicación\TipoDePubli.resx">
+      <DependentUpon>TipoDePubli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Historial Cliente\HistorialFacturas.resx">
       <DependentUpon>HistorialFacturas.cs</DependentUpon>

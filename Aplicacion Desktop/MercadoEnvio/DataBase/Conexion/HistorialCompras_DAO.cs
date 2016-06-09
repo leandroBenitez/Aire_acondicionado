@@ -33,7 +33,7 @@ namespace MercadoEnvio.DataBase.Conexion
              *compras.Close();
              return compras_string;
              * */
-            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from" + ConstantesBD.tabla_compras);
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.tabla_compras);
 
             return resultado;
 

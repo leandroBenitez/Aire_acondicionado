@@ -21,7 +21,7 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public SqlDataReader get_facturas()
         {
-            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from" + ConstantesBD.tabla_facturas);
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.tabla_facturas);
 
             return resultado;
         }

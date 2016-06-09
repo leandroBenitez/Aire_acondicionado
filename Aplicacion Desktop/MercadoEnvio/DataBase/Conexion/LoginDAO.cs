@@ -82,6 +82,16 @@ namespace MercadoEnvio.DataBase.Conexion
             return desc_rol;
         }
 
+        public string get_username(int id_usuario)
+        {
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select desc_username from " + ConstantesBD.tabla_usuarios 
+                                                                                    + " where id_usuario = '" + id_usuario.ToString() + "'");
+            resultado.Read();
+            string username = resultado["desc_username"].ToString();
+            resultado.Close();
+            return username;
+        }
+
         protected void lanzarExcepcion(String mensajeError, SqlDataReader lector)
         {
             lector.Close();
