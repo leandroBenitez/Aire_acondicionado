@@ -15,10 +15,12 @@ namespace MercadoEnvio.Historial_Cliente
     public partial class HistorialFacturas : Form
     {
         HistorialFacturas_DAO HistFacDAO = new HistorialFacturas_DAO();
+        private int id_usuario;
 
-        public HistorialFacturas()
+        public HistorialFacturas(int id)
         {
             InitializeComponent();
+            id_usuario = id;
         }
 
         private void buttonVerFacturas_Click(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace MercadoEnvio.Historial_Cliente
             dataGridViewFacturas.Rows.Clear();
             SqlDataReader lectura;
 
-            lectura = HistFacDAO.get_facturas();
+            lectura = HistFacDAO.get_facturas(this.id_usuario);
 
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
             Object[] columnas = new Object[5];

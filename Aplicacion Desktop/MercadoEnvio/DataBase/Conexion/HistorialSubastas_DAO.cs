@@ -19,7 +19,7 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public SqlDataReader get_subastas()
         {
-            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from" + ConstantesBD.tabla_subastas);
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.tabla_subastas);
 
             return resultado;
         }

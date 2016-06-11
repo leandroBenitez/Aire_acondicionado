@@ -8,18 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MercadoEnvio.DataBase.Conexion;
+using MercadoEnvio.Generar_Publicación;
+using MercadoEnvio.Historial_Cliente;
+using MercadoEnvio.ComprarOfertar;
 
 namespace MercadoEnvio
 {
     public partial class Menu : Form
     {
         private LoginDAO loginDAO;
+        private int id_usuario;
 
         public Menu(string user, int id_user, string rol)
         {
             InitializeComponent();
             loginDAO = new LoginDAO();
             adaptar_menu(user, id_user, rol);
+            id_usuario = id_user;
         }
 
         void adaptar_menu(string user, int id_user, string rol)
@@ -68,7 +73,9 @@ namespace MercadoEnvio
 
         private void boton_generar_pu_Click(object sender, EventArgs e)
         {
-
+            TipoDePubli un_tipo = new TipoDePubli(id_usuario, this);
+            un_tipo.Show();
+            this.Hide();
         }
 
         private void boton_con_fact_Click(object sender, EventArgs e)
@@ -78,7 +85,9 @@ namespace MercadoEnvio
 
         private void boton_historial_Click(object sender, EventArgs e)
         {
-
+            HistorialMiCuenta hist = new HistorialMiCuenta(this.id_usuario);
+            hist.Show();
+            this.Hide();
         }
 
         private void boton_estadistica_Click(object sender, EventArgs e)
@@ -88,7 +97,9 @@ namespace MercadoEnvio
 
         private void boton_comprar_Click(object sender, EventArgs e)
         {
-
+            Publicaciones publi = new Publicaciones();
+            publi.Show();
+            this.Hide();
         }
 
         private void boton_ofertar_Click(object sender, EventArgs e)

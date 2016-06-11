@@ -20,7 +20,7 @@ namespace MercadoEnvio
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new modificacionUsuario());
+            Application.Run(new Login());
         }
     }
 }

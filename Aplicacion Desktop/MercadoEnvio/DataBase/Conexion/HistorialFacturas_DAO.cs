@@ -19,9 +19,10 @@ namespace MercadoEnvio.DataBase.Conexion
         }
 
 
-        public SqlDataReader get_facturas()
+        public SqlDataReader get_facturas(int id_usuario)
         {
-            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from" + ConstantesBD.tabla_facturas);
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.tabla_facturas
+                                                                                    + " where id_usuario = '" + id_usuario.ToString() + "'");
 
             return resultado;
         }
