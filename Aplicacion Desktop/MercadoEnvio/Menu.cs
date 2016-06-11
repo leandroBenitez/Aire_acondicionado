@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MercadoEnvio.DataBase.Conexion;
 using MercadoEnvio.Generar_Publicación;
 using MercadoEnvio.Historial_Cliente;
+using MercadoEnvio.ComprarOfertar;
 
 namespace MercadoEnvio
 {
@@ -96,7 +97,9 @@ namespace MercadoEnvio
 
         private void boton_comprar_Click(object sender, EventArgs e)
         {
-
+            Publicaciones publi = new Publicaciones();
+            publi.Show();
+            this.Hide();
         }
 
         private void boton_ofertar_Click(object sender, EventArgs e)

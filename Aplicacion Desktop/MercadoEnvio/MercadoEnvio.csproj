@@ -147,11 +147,11 @@
     <Compile Include="DataBase\Conexion\SQLDataReader.cs" />
     <Compile Include="DataBase\Conexion\SQLServerBD.cs" />
     <Compile Include="Excepciones\CierreConexionFallidaException.cs" />
-    <Compile Include="ComprarOfertar\Form1.cs">
+    <Compile Include="ComprarOfertar\Publicaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ComprarOfertar\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ComprarOfertar\Publicaciones.Designer.cs">
+      <DependentUpon>Publicaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Excepciones\ConexionFallidaException.cs" />
     <Compile Include="DataBase\Conexion\ConstantesBD.cs" />
@@ -279,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABM Visibilidad\ModificacionVisibilidad.resx">
       <DependentUpon>ModificacionVisibilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComprarOfertar\Publicaciones.resx">
+      <DependentUpon>Publicaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Generar Publicación\Compra.resx">
       <DependentUpon>Compra.cs</DependentUpon>

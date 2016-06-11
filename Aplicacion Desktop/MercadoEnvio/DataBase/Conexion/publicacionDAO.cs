@@ -81,6 +81,12 @@ namespace MercadoEnvio.DataBase.Conexion
             }
         }
 
+        public SqlDataReader get_publicaciones(string condiciones)
+        {
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from" + ConstantesBD.vista_publicaciones);
+            return resultado;
+        }
+
         public SqlDataReader get_datos_ultima_publicacion(int id_user, string tipo_publicacion)
         {
             SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.vista_publicaciones
