@@ -58,7 +58,7 @@ namespace MercadoEnvio.ABM_Usuario
                 filtros.Add("1 = 1");
 
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
-            Object[] columnas = new Object[16];
+            Object[] columnas = new Object[17];
 
             List<SqlDataReader> clientes = abm_usuario.buscarCliente(filtros);
 
@@ -83,6 +83,7 @@ namespace MercadoEnvio.ABM_Usuario
                 columnas[12] = clientes[0]["desc_Cod_Postal"];
                 columnas[13] = clientes[0]["desc_Telefono"];
                 columnas[14] = clientes[0]["desc_Fecha_Nac"];
+                columnas[15] = clientes[0]["desc_Fecha_Creacion"];
 
                 filas.Add(new DataGridViewRow());
                 filas[filas.Count - 1].CreateCells(listado, columnas);
@@ -127,10 +128,12 @@ namespace MercadoEnvio.ABM_Usuario
             textDni.Text = "";
             textEmail.Text = "";
             textDni.Text = "";
+            //ComboBoxTipoDoc  -- Limpiar combo box
         }
   
         private void buttonMod_Click(object sender, EventArgs e)
         {
+            // FALTARIA UN TRY CATCH PARA QUE CUANDO NO SE SELECCIONA NADA NO EXPLOTE TODO  LA CHOTA
             Cliente clienteMod = new Cliente();
 
             DataGridViewRow fila = listado.SelectedRows[0];
@@ -149,11 +152,13 @@ namespace MercadoEnvio.ABM_Usuario
             clienteMod.setTelefono(fila.Cells["TELEFONO"].Value.ToString());
             clienteMod.setTipoDoc(fila.Cells["TIPO_DOC"].Value.ToString());
             clienteMod.setUsername(fila.Cells["USUARIO"].Value.ToString());
+            clienteMod.setFechaCreacion(fila.Cells["FECHA_CREACION"].Value.ToString());
 
             String username = abm_usuario.getUsername(fila.Cells["USUARIO"].Value.ToString());
 
-            String id_rol = fila.Cells["ROL"].Value.ToString();
-            clienteMod.setRol(abm_usuario.getDescRol(id_rol));
+           //clienteMod.setRol(fila.Cells["ROL"].Value.ToString());
+            //String id_rol = ;
+            //clienteMod.setRol(abm_usuario.getDescRol(id_rol));
 
 
             modificacionCliente modificarCliente = new modificacionCliente(clienteMod);

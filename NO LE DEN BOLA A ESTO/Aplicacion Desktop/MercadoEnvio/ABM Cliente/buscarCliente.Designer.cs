@@ -30,23 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.listado = new System.Windows.Forms.DataGridView();
-            this.ID_LOGIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIPO_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOMICILIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NRO_CALLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PISO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DPTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOCALIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COD_POSTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FEC_NAC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ComboBoxTipoDoc = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -63,6 +46,23 @@
             this.B_Volver = new System.Windows.Forms.Button();
             this.leyendaBusqueda = new System.Windows.Forms.Label();
             this.buttonMod = new System.Windows.Forms.Button();
+            this.ID_LOGIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APELLIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIPO_DOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOMICILIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NRO_CALLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PISO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DPTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOCALIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COD_POSTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FEC_NAC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHA_CREACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +98,7 @@
             this.COD_POSTAL,
             this.TELEFONO,
             this.FEC_NAC,
-            this.Rol,
+            this.FECHA_CREACION,
             this.ID_Cliente});
             this.listado.Location = new System.Drawing.Point(11, 224);
             this.listado.Margin = new System.Windows.Forms.Padding(2);
@@ -106,98 +106,6 @@
             this.listado.RowTemplate.Height = 24;
             this.listado.Size = new System.Drawing.Size(892, 300);
             this.listado.TabIndex = 10;
-            // 
-            // ID_LOGIN
-            // 
-            this.ID_LOGIN.HeaderText = "ID_Login";
-            this.ID_LOGIN.Name = "ID_LOGIN";
-            this.ID_LOGIN.ReadOnly = true;
-            this.ID_LOGIN.Visible = false;
-            // 
-            // USUARIO
-            // 
-            this.USUARIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.USUARIO.HeaderText = "Usuario";
-            this.USUARIO.Name = "USUARIO";
-            this.USUARIO.ReadOnly = true;
-            this.USUARIO.Width = 68;
-            // 
-            // APELLIDO
-            // 
-            this.APELLIDO.HeaderText = "Apellido";
-            this.APELLIDO.Name = "APELLIDO";
-            // 
-            // NOMBRE
-            // 
-            this.NOMBRE.HeaderText = "Nombre";
-            this.NOMBRE.Name = "NOMBRE";
-            // 
-            // TIPO_DOC
-            // 
-            this.TIPO_DOC.HeaderText = "Tipo Doc";
-            this.TIPO_DOC.Name = "TIPO_DOC";
-            // 
-            // DNI
-            // 
-            this.DNI.HeaderText = "Nro Doc";
-            this.DNI.Name = "DNI";
-            // 
-            // EMAIL
-            // 
-            this.EMAIL.HeaderText = "Email";
-            this.EMAIL.Name = "EMAIL";
-            // 
-            // DOMICILIO
-            // 
-            this.DOMICILIO.HeaderText = "Domicilio";
-            this.DOMICILIO.Name = "DOMICILIO";
-            // 
-            // NRO_CALLE
-            // 
-            this.NRO_CALLE.HeaderText = "Numero";
-            this.NRO_CALLE.Name = "NRO_CALLE";
-            // 
-            // PISO
-            // 
-            this.PISO.HeaderText = "Piso";
-            this.PISO.Name = "PISO";
-            // 
-            // DPTO
-            // 
-            this.DPTO.HeaderText = "Depto";
-            this.DPTO.Name = "DPTO";
-            // 
-            // LOCALIDAD
-            // 
-            this.LOCALIDAD.HeaderText = "Localidad";
-            this.LOCALIDAD.Name = "LOCALIDAD";
-            // 
-            // COD_POSTAL
-            // 
-            this.COD_POSTAL.HeaderText = "Codigo Postal";
-            this.COD_POSTAL.Name = "COD_POSTAL";
-            // 
-            // TELEFONO
-            // 
-            this.TELEFONO.HeaderText = "Telefono";
-            this.TELEFONO.Name = "TELEFONO";
-            // 
-            // FEC_NAC
-            // 
-            this.FEC_NAC.HeaderText = "Fecha Nacimiento";
-            this.FEC_NAC.Name = "FEC_NAC";
-            // 
-            // Rol
-            // 
-            this.Rol.HeaderText = "Rol";
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
-            // 
-            // ID_Cliente
-            // 
-            this.ID_Cliente.HeaderText = "ID_Cliente";
-            this.ID_Cliente.Name = "ID_Cliente";
-            this.ID_Cliente.Visible = false;
             // 
             // groupBox1
             // 
@@ -370,6 +278,97 @@
             this.buttonMod.UseVisualStyleBackColor = true;
             this.buttonMod.Click += new System.EventHandler(this.buttonMod_Click);
             // 
+            // ID_LOGIN
+            // 
+            this.ID_LOGIN.HeaderText = "ID_Login";
+            this.ID_LOGIN.Name = "ID_LOGIN";
+            this.ID_LOGIN.ReadOnly = true;
+            this.ID_LOGIN.Visible = false;
+            // 
+            // USUARIO
+            // 
+            this.USUARIO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.USUARIO.HeaderText = "Usuario";
+            this.USUARIO.Name = "USUARIO";
+            this.USUARIO.ReadOnly = true;
+            this.USUARIO.Width = 68;
+            // 
+            // APELLIDO
+            // 
+            this.APELLIDO.HeaderText = "Apellido";
+            this.APELLIDO.Name = "APELLIDO";
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.HeaderText = "Nombre";
+            this.NOMBRE.Name = "NOMBRE";
+            // 
+            // TIPO_DOC
+            // 
+            this.TIPO_DOC.HeaderText = "Tipo Doc";
+            this.TIPO_DOC.Name = "TIPO_DOC";
+            // 
+            // DNI
+            // 
+            this.DNI.HeaderText = "Nro Doc";
+            this.DNI.Name = "DNI";
+            // 
+            // EMAIL
+            // 
+            this.EMAIL.HeaderText = "Email";
+            this.EMAIL.Name = "EMAIL";
+            // 
+            // DOMICILIO
+            // 
+            this.DOMICILIO.HeaderText = "Domicilio";
+            this.DOMICILIO.Name = "DOMICILIO";
+            // 
+            // NRO_CALLE
+            // 
+            this.NRO_CALLE.HeaderText = "Numero";
+            this.NRO_CALLE.Name = "NRO_CALLE";
+            // 
+            // PISO
+            // 
+            this.PISO.HeaderText = "Piso";
+            this.PISO.Name = "PISO";
+            // 
+            // DPTO
+            // 
+            this.DPTO.HeaderText = "Depto";
+            this.DPTO.Name = "DPTO";
+            // 
+            // LOCALIDAD
+            // 
+            this.LOCALIDAD.HeaderText = "Localidad";
+            this.LOCALIDAD.Name = "LOCALIDAD";
+            // 
+            // COD_POSTAL
+            // 
+            this.COD_POSTAL.HeaderText = "Codigo Postal";
+            this.COD_POSTAL.Name = "COD_POSTAL";
+            // 
+            // TELEFONO
+            // 
+            this.TELEFONO.HeaderText = "Telefono";
+            this.TELEFONO.Name = "TELEFONO";
+            // 
+            // FEC_NAC
+            // 
+            this.FEC_NAC.HeaderText = "Fecha Nacimiento";
+            this.FEC_NAC.Name = "FEC_NAC";
+            // 
+            // FECHA_CREACION
+            // 
+            this.FECHA_CREACION.HeaderText = "Fecha de Creacion";
+            this.FECHA_CREACION.Name = "FECHA_CREACION";
+            // 
+            // ID_Cliente
+            // 
+            this.ID_Cliente.HeaderText = "ID_Cliente";
+            this.ID_Cliente.Name = "ID_Cliente";
+            this.ID_Cliente.Visible = false;
+            // 
             // buscarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,7 +425,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn COD_POSTAL;
         private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONO;
         private System.Windows.Forms.DataGridViewTextBoxColumn FEC_NAC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FECHA_CREACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_Cliente;
     }
 }

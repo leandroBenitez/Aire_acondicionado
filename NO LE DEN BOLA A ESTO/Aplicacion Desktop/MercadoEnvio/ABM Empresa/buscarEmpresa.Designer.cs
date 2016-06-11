@@ -30,25 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.listado = new System.Windows.Forms.DataGridView();
-            this.ID_LOGIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RAZON_SOCIAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FEC_CREACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CIUDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DOMICILIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NRO_CALLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PISO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DPTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COD_POSTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LOCALIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BAJA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.restablecer = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ID_EMPRESA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bloqueado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textCuit = new System.Windows.Forms.TextBox();
             this.textEmail = new System.Windows.Forms.TextBox();
@@ -61,6 +42,24 @@
             this.B_Buscar = new System.Windows.Forms.Button();
             this.B_Volver = new System.Windows.Forms.Button();
             this.buttonMod = new System.Windows.Forms.Button();
+            this.ID_LOGIN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.USUARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RAZON_SOCIAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUIT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FEC_CREACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EMAIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RUBRO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE_CONTACTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CIUDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DOMICILIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NRO_CALLE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PISO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DPTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COD_POSTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LOCALIDAD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_EMPRESA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +86,9 @@
             this.CUIT,
             this.FEC_CREACION,
             this.EMAIL,
+            this.RUBRO,
+            this.NOMBRE_CONTACTO,
+            this.ESTADO,
             this.CIUDAD,
             this.DOMICILIO,
             this.NRO_CALLE,
@@ -95,114 +97,13 @@
             this.COD_POSTAL,
             this.LOCALIDAD,
             this.TELEFONO,
-            this.BAJA,
-            this.eliminar,
-            this.restablecer,
-            this.ID_EMPRESA,
-            this.bloqueado});
-            this.listado.Location = new System.Drawing.Point(12, 173);
+            this.ID_EMPRESA});
+            this.listado.Location = new System.Drawing.Point(3, 173);
             this.listado.Margin = new System.Windows.Forms.Padding(2);
             this.listado.Name = "listado";
             this.listado.RowTemplate.Height = 24;
             this.listado.Size = new System.Drawing.Size(1340, 256);
             this.listado.TabIndex = 13;
-            // 
-            // ID_LOGIN
-            // 
-            this.ID_LOGIN.HeaderText = "Id_Login";
-            this.ID_LOGIN.Name = "ID_LOGIN";
-            this.ID_LOGIN.Visible = false;
-            // 
-            // USUARIO
-            // 
-            this.USUARIO.HeaderText = "Usuario";
-            this.USUARIO.Name = "USUARIO";
-            // 
-            // RAZON_SOCIAL
-            // 
-            this.RAZON_SOCIAL.HeaderText = "Razon Social";
-            this.RAZON_SOCIAL.Name = "RAZON_SOCIAL";
-            // 
-            // CUIT
-            // 
-            this.CUIT.HeaderText = "Cuit";
-            this.CUIT.Name = "CUIT";
-            // 
-            // FEC_CREACION
-            // 
-            this.FEC_CREACION.HeaderText = "Fecha Creacion";
-            this.FEC_CREACION.Name = "FEC_CREACION";
-            // 
-            // EMAIL
-            // 
-            this.EMAIL.HeaderText = "Email";
-            this.EMAIL.Name = "EMAIL";
-            // 
-            // CIUDAD
-            // 
-            this.CIUDAD.HeaderText = "Ciudad";
-            this.CIUDAD.Name = "CIUDAD";
-            // 
-            // DOMICILIO
-            // 
-            this.DOMICILIO.HeaderText = "Domicilio";
-            this.DOMICILIO.Name = "DOMICILIO";
-            // 
-            // NRO_CALLE
-            // 
-            this.NRO_CALLE.HeaderText = "Nro Calle";
-            this.NRO_CALLE.Name = "NRO_CALLE";
-            // 
-            // PISO
-            // 
-            this.PISO.HeaderText = "Piso";
-            this.PISO.Name = "PISO";
-            // 
-            // DPTO
-            // 
-            this.DPTO.HeaderText = "Depto";
-            this.DPTO.Name = "DPTO";
-            // 
-            // COD_POSTAL
-            // 
-            this.COD_POSTAL.HeaderText = "Codigo Postal";
-            this.COD_POSTAL.Name = "COD_POSTAL";
-            // 
-            // LOCALIDAD
-            // 
-            this.LOCALIDAD.HeaderText = "Localidad";
-            this.LOCALIDAD.Name = "LOCALIDAD";
-            // 
-            // TELEFONO
-            // 
-            this.TELEFONO.HeaderText = "Telefono";
-            this.TELEFONO.Name = "TELEFONO";
-            // 
-            // BAJA
-            // 
-            this.BAJA.HeaderText = "Baja";
-            this.BAJA.Name = "BAJA";
-            // 
-            // eliminar
-            // 
-            this.eliminar.HeaderText = "Marcar para eliminar";
-            this.eliminar.Name = "eliminar";
-            // 
-            // restablecer
-            // 
-            this.restablecer.HeaderText = "Marcar para restablecer";
-            this.restablecer.Name = "restablecer";
-            // 
-            // ID_EMPRESA
-            // 
-            this.ID_EMPRESA.HeaderText = "ID_EMPRESA";
-            this.ID_EMPRESA.Name = "ID_EMPRESA";
-            this.ID_EMPRESA.Visible = false;
-            // 
-            // bloqueado
-            // 
-            this.bloqueado.HeaderText = "Bloqueado";
-            this.bloqueado.Name = "bloqueado";
             // 
             // groupBox1
             // 
@@ -335,6 +236,98 @@
             this.buttonMod.UseVisualStyleBackColor = true;
             this.buttonMod.Click += new System.EventHandler(this.buttonMod_Click);
             // 
+            // ID_LOGIN
+            // 
+            this.ID_LOGIN.HeaderText = "Id_Login";
+            this.ID_LOGIN.Name = "ID_LOGIN";
+            this.ID_LOGIN.Visible = false;
+            // 
+            // USUARIO
+            // 
+            this.USUARIO.HeaderText = "Usuario";
+            this.USUARIO.Name = "USUARIO";
+            // 
+            // RAZON_SOCIAL
+            // 
+            this.RAZON_SOCIAL.HeaderText = "Razon Social";
+            this.RAZON_SOCIAL.Name = "RAZON_SOCIAL";
+            // 
+            // CUIT
+            // 
+            this.CUIT.HeaderText = "Cuit";
+            this.CUIT.Name = "CUIT";
+            // 
+            // FEC_CREACION
+            // 
+            this.FEC_CREACION.HeaderText = "Fecha Creacion";
+            this.FEC_CREACION.Name = "FEC_CREACION";
+            // 
+            // EMAIL
+            // 
+            this.EMAIL.HeaderText = "Email";
+            this.EMAIL.Name = "EMAIL";
+            // 
+            // RUBRO
+            // 
+            this.RUBRO.HeaderText = "Rubro";
+            this.RUBRO.Name = "RUBRO";
+            // 
+            // NOMBRE_CONTACTO
+            // 
+            this.NOMBRE_CONTACTO.HeaderText = "Nombre Contacto";
+            this.NOMBRE_CONTACTO.Name = "NOMBRE_CONTACTO";
+            // 
+            // ESTADO
+            // 
+            this.ESTADO.HeaderText = "Estado";
+            this.ESTADO.Name = "ESTADO";
+            // 
+            // CIUDAD
+            // 
+            this.CIUDAD.HeaderText = "Ciudad";
+            this.CIUDAD.Name = "CIUDAD";
+            // 
+            // DOMICILIO
+            // 
+            this.DOMICILIO.HeaderText = "Domicilio";
+            this.DOMICILIO.Name = "DOMICILIO";
+            // 
+            // NRO_CALLE
+            // 
+            this.NRO_CALLE.HeaderText = "Nro Calle";
+            this.NRO_CALLE.Name = "NRO_CALLE";
+            // 
+            // PISO
+            // 
+            this.PISO.HeaderText = "Piso";
+            this.PISO.Name = "PISO";
+            // 
+            // DPTO
+            // 
+            this.DPTO.HeaderText = "Depto";
+            this.DPTO.Name = "DPTO";
+            // 
+            // COD_POSTAL
+            // 
+            this.COD_POSTAL.HeaderText = "Codigo Postal";
+            this.COD_POSTAL.Name = "COD_POSTAL";
+            // 
+            // LOCALIDAD
+            // 
+            this.LOCALIDAD.HeaderText = "Localidad";
+            this.LOCALIDAD.Name = "LOCALIDAD";
+            // 
+            // TELEFONO
+            // 
+            this.TELEFONO.HeaderText = "Telefono";
+            this.TELEFONO.Name = "TELEFONO";
+            // 
+            // ID_EMPRESA
+            // 
+            this.ID_EMPRESA.HeaderText = "ID_EMPRESA";
+            this.ID_EMPRESA.Name = "ID_EMPRESA";
+            this.ID_EMPRESA.Visible = false;
+            // 
             // buscarEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,25 +352,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView listado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_LOGIN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn USUARIO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RAZON_SOCIAL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CUIT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FEC_CREACION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CIUDAD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DOMICILIO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NRO_CALLE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PISO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DPTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COD_POSTAL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LOCALIDAD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BAJA;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn eliminar;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn restablecer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_EMPRESA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bloqueado;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button B_Volver;
         private System.Windows.Forms.TextBox textCuit;
@@ -390,5 +364,23 @@
         private System.Windows.Forms.Button B_Limpiar;
         private System.Windows.Forms.Button B_Buscar;
         private System.Windows.Forms.Button buttonMod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_LOGIN;
+        private System.Windows.Forms.DataGridViewTextBoxColumn USUARIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RAZON_SOCIAL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUIT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FEC_CREACION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RUBRO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE_CONTACTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CIUDAD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DOMICILIO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NRO_CALLE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PISO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DPTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn COD_POSTAL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LOCALIDAD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_EMPRESA;
     }
 }

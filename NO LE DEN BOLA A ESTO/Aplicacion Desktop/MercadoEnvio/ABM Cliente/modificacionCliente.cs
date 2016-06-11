@@ -22,26 +22,30 @@ namespace MercadoEnvio.ABM_Cliente
             cargarDatos(clienteMod);
         }
 
+        /* CARGO TODOS LOS DATOS DEL USUARIO SEGUN LA TABLA LK_CLIENTE*/
         public void cargarDatos(Cliente clienteMod)
         {
             textUsername.Text = clienteMod.getUsername();
             textNombre.Text = clienteMod.getNombre();
             textApellido.Text = clienteMod.getApellido();
+            comboTipoDoc.Text = clienteMod.getTipoDoc();
             textDni.Text = clienteMod.getDni();
-            // tipo doc
 
             /* DESCOMPONGO EL MAIL*/
-            String mail = clienteMod.getMail();
-            int posicionArroba = mail.IndexOf("@");
-            String dominio = mail.Substring(posicionArroba, mail.Count()-1);
+            String emailEntero = clienteMod.getMail();
+            int posicionArroba = emailEntero.IndexOf("@");
+            String mail = emailEntero.Substring(0,posicionArroba); //ok
+            String dominio = emailEntero.Substring(posicionArroba + 1, emailEntero.Length - mail.Length - 1); //ok
+            textMail.Text = mail;
 
+            /* CARGO EL COMBO DE TIPOS DE DOCUMENTOS */
+            comboTipoDoc.Items.Add("DNI");
 
-            /* CARGO EN COMBO DE DOMINIOS DE MAIL */
+            /* CARGO EL COMBO DE DOMINIOS DE MAIL */
             comboDominio.Items.Add("hotmail.com");
             comboDominio.Items.Add("gmail.com");
             comboDominio.Items.Add("live.com");
-            /* SELECCIONAR OPCION DEL COMBO CORRESPONDIENTE - FALTA PROBAR*/
-            comboDominio.SelectedValue = dominio;
+            comboDominio.Text = dominio;
 
             textDireccion.Text = clienteMod.getDireccion();
             textPiso.Text = clienteMod.getPiso();
@@ -52,25 +56,42 @@ namespace MercadoEnvio.ABM_Cliente
             textCalendar.Text = clienteMod.getFecha_nacimiento();
             textCP.Text = clienteMod.getCodigo_postal();
             textFecCreacion.Text = clienteMod.getFechaCreacion();
-            //textRol.Text = clienteMod.getRol();
+            if (abm_usuario.getEstadoUsuario(clienteMod.getUsername()) == "1")
+            {
+                textEstado.Text = "Habilitado";
+            }
+            else
+            {
+                textEstado.Text = "Desabilitado";
+            }
         }
 
+        /*MODIFICO AL USUARIO - OK */
         private void buttonMod_Click(object sender, EventArgs e)
         {   
             String mail = textMail.Text + "@" + comboDominio.SelectedItem.ToString();
-            String id_cliente = "1";
-
-            abm_usuario.actualizarCliente(id_cliente, textNombre.Text, textApellido.Text, textDni.Text, comboTipoDoc.SelectedItem.ToString(), mail, textTelefono.Text, textDireccion.Text, textAltura.Text, textPiso.Text, textDepto.Text, textLocalidad.Text, textCP.Text, textCalendar.Text, textFecCreacion.Text);
+            abm_usuario.actualizarCliente(textUsername.Text, textNombre.Text, textApellido.Text, textDni.Text, comboTipoDoc.Text, mail, textTelefono.Text, textDireccion.Text, textAltura.Text, textPiso.Text, textDepto.Text, textLocalidad.Text, textCP.Text, "10/10/10", "10/10/10");
         }
 
+        /* OK */
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /* HABILITA O DESHABILITA AL USUARIO DEPENDIENDO EN QEU ESTADO ESTÉ - OK*/
         private void buttonDeshabilitar_Click(object sender, EventArgs e)
         {
-            //abm_usuario.deshabilitarUsuario();
+            if (abm_usuario.getEstadoUsuario(textUsername.Text) == "1")
+            {
+                abm_usuario.deshabilitarUsuario(textUsername.Text);
+                MessageBox.Show("El Uusario ha sido deshabilitado exitosamente");
+            }else
+            {
+                abm_usuario.habilitarUsuario(textUsername.Text);
+                MessageBox.Show("El Uusario ha sido habilitado exitosamente");
+            }
+            this.Close();
         } 
 
     }

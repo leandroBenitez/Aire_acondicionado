@@ -24,17 +24,22 @@ namespace MercadoEnvio.ABM_Empresa
 
         public void cargarDatos(Empresa empresaMod)
         {
-            /* CARGO EL COMBO CON LOS DOMINIO DE EMAIL*/
+            /* DESCOMPONGO EL MAIL*/
+            String emailEntero = empresaMod.getMail();
+            int posicionArroba = emailEntero.IndexOf("@");
+            String mail = emailEntero.Substring(0, posicionArroba); //ok
+            String dominio = emailEntero.Substring(posicionArroba + 1, emailEntero.Length - mail.Length - 1); //ok
+            textMail.Text = mail;
+
+            /* CARGO EL COMBO DE DOMINIOS DE MAIL */
             comboDominio.Items.Add("hotmail.com");
             comboDominio.Items.Add("gmail.com");
             comboDominio.Items.Add("live.com");
+            comboDominio.Text = dominio;
             /* --------------------------------------*/
 
-            //textUsername.Text = empresaMod.get
-            //textRol.Text = empresaMod.getR
             textRazonSoc.Text = empresaMod.getRazSoc();
-            textMail.Text = empresaMod.getMail();
-            // selecciono dominio del combo
+            textUsername.Text = empresaMod.getIdUsername();
             textTelefono.Text = empresaMod.getTelefono();
             textDireccion.Text = empresaMod.getDomCalle();
             textAltura.Text = empresaMod.getNroCalle();
@@ -43,12 +48,42 @@ namespace MercadoEnvio.ABM_Empresa
             textCP.Text = empresaMod.getCodPos();
             textLocalidad.Text = empresaMod.getLocalidad();
             textCuit1.Text = empresaMod.getCuit();
+            textFechaCreacion.Text = empresaMod.getFechaCreacion();
+            textRubro.Text = empresaMod.getRubro();
+            textNombreContacto.Text = empresaMod.getNombreContacto();
+            if (abm_usuario.getEstadoUsuario(empresaMod.getIdUsername()) == "1")
+            {
+                textEstado.Text = "Habilitado";
+            }
+            else
+            {
+                textEstado.Text = "Deshabilitado";
+            }
         }
 
+        /* ACTUALIZO LOS DATOS DE LA EMPRESA */
         private void buttonMod_Click(object sender, EventArgs e)
         {
-            //abm_usuario.actualizarEmpresa(razonSoc, descMail, descTelefono, descCalle, nroCalle, depto, localidad, codPos, ciudad, cuit, nombreContacto, idRubro, idEmpresa)
+            String mail = textMail.Text + "@" + comboDominio.SelectedItem.ToString();
+            abm_usuario.actualizarEmpresa(textRazonSoc.Text, mail, textTelefono.Text, textDireccion.Text, textAltura.Text, textDepto.Text, textLocalidad.Text, textCP.Text, textCiudad.Text, textCuit1.Text, textNombreContacto.Text, textRubro.Text, "idEmp");
         }
+
+
+        /* HABILITA O DESHABILITA AL USUARIO DEPENDIENDO EN QEU ESTADO ESTÉ - OK*/
+        private void buttonDeshabilitar_Click(object sender, EventArgs e)
+        {
+            if (abm_usuario.getEstadoUsuario(textUsername.Text) == "1")
+            {
+                abm_usuario.deshabilitarUsuario(textUsername.Text);
+                MessageBox.Show("El Uusario ha sido deshabilitado exitosamente");
+            }
+            else
+            {
+                abm_usuario.habilitarUsuario(textUsername.Text);
+                MessageBox.Show("El Uusario ha sido habilitado exitosamente");
+            }
+            this.Close();
+        } 
 
     }
 }

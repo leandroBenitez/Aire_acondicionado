@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MercadoEnvio.ABMRol;
 using MercadoEnvio.ABM_Usuario;
+using MercadoEnvio.ABM_Empresa;
 
 namespace MercadoEnvio
 {
@@ -19,7 +20,7 @@ namespace MercadoEnvio
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new buscarCliente());
+            Application.Run(new buscarEmpresa());
         }
     }
 }

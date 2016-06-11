@@ -8,6 +8,7 @@ namespace MercadoEnvio.DataBase.Entidades
 {
     public class Empresa
     {
+        private String desc_id_username;
         private String desc_id_empresa;
         private String desc_razon_social;
         private String desc_mail;
@@ -22,8 +23,20 @@ namespace MercadoEnvio.DataBase.Entidades
         private String desc_ciudad;
         private String desc_cuit;
         private String desc_nombre_contacto;
+        private String desc_rubro;
+        private String desc_estado;
 
         /* GETTERS Y SETTERS */
+        public String getIdUsername()
+        {
+            return this.desc_id_username;
+        }
+
+        public void setIdUsername(String id_username)
+        {
+            this.desc_id_username = id_username;
+        }
+
         public String getIdEmpresa()
         {
             return this.desc_id_empresa;
@@ -91,7 +104,7 @@ namespace MercadoEnvio.DataBase.Entidades
 
         public void setNroCalle(String nro_calle)
         {
-            this.desc_razon_social = nro_calle;
+            this.desc_nro_calle = nro_calle;
         }
 
         public String getPiso()
@@ -162,6 +175,26 @@ namespace MercadoEnvio.DataBase.Entidades
         public void setNombreContacto(String nombre_contacto)
         {
             this.desc_nombre_contacto = nombre_contacto;
+        }
+
+        public String getRubro()
+        {
+            return this.desc_rubro;
+        }
+
+        public void setRubro(String rubro)
+        {
+            this.desc_rubro = rubro;
+        }
+
+        public String getEstado()
+        {
+            return this.desc_estado;
+        }
+
+        public void setEstado(String estado)
+        {
+            this.desc_estado = estado;
         }
     }
 

@@ -143,7 +143,7 @@ namespace MercadoEnvio.DataBase.Conexion
         /* BUSCO EMPRESA POR FILTROS INGRESADOS */
         public List<SqlDataReader> buscarEmpresa(List<String> filtros)
         {
-            SqlDataReader empresas = this.GD1C2016.ejecutarSentenciaConRetorno("select * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario as u inner join GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa as e on u.id_usuario = e.id_empresa where " + filtros[0] +
+            SqlDataReader empresas = this.GD1C2016.ejecutarSentenciaConRetorno("select * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario as u inner join GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa as e on u.id_usuario = e.id_usuario where " + filtros[0] +
                                                                                                                                                                                                                                         " and " + filtros[1] +
                                                                                                                                                                                                                                         " and " + filtros[2] + ";");
             List<SqlDataReader> listaReturn = new List<SqlDataReader>();
@@ -170,19 +170,19 @@ namespace MercadoEnvio.DataBase.Conexion
 
             if (username.HasRows)
             {
-                while (username.Read())
-                {
+                //while (username.Read())
+                //{
+                    username.Read();
                     String user = username["desc_username"].ToString();
                     username.Close();
                     return user;
-                }
+                //}
             }
             else
             {
                 username.Close();
                 return "szd";
             }
-            return "ok";
         }
 
         /* OBTENGO ID DE ROL SEGUN UN ID DE USUARIO - Porbar*/
@@ -214,30 +214,53 @@ namespace MercadoEnvio.DataBase.Conexion
 	                                                                                                       +"'where id_empresa = '" + idEmpresa + "';");
         }
 
-        /* ACTUALIZO CLIENTE - PROBAR*/
+        /* ACTUALIZO CLIENTE - OK*/
         public void actualizarCliente(String idCliente, String nombre, String apellido, String dni, String tipoDoc, String mail, String telefono, String direccion, String nro, String piso, String depto, String localidad, String codPos, String fechaNac, String fechaCreacion)
         {
-            this.GD1C2016.ejecutarSentenciaSinRetorno("update GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente set desc_nombre = '" + nombre              
-                                                                                                        +",desc_Apellido = '" + apellido 
+            MessageBox.Show("update GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente set desc_nombre = '" + nombre              
+                                                                                                       +"',desc_Apellido = '" + apellido 
 	                                                                                 +"',desc_DNI = Convert(numeric(10,0), '" + dni + "')"
 	                                                                                                    +",desc_tipo_doc = '" + tipoDoc
 	                                                                                                       +"',desc_Mail = '" + mail
                                                                                 +"',desc_Telefono = Convert(numeric(10,0), '" + telefono + "')"
-	                                                                                                     +",desc_Dom_Calle '" + direccion
+	                                                                                                  +",desc_Dom_Calle =  '" + direccion
 	                                                                           +"',desc_Nro_Calle=  Convert(numeric(10,0), '" + nro + "')"
-                                                                                    +"',desc_Piso=  Convert(numeric(10,0), '" + piso + "')"
+                                                                                    +",desc_Piso =  Convert(numeric(10,0), '" + piso + "')"
 	                                                                                                       +",desc_Depto = '" + depto
 	                                                                                                  +"',desc_Localidad = '" + localidad
-	                                                                                                +"',idesc_Cod_Postal = '" + codPos
+	                                                                                                +"',desc_Cod_Postal = '" + codPos
                                                                                     +"',desc_Fecha_Nac = Convert(datetime, '" + fechaNac + "')"
                                                                                 +",desc_Fecha_Creacion = Convert(datetime, '" + fechaCreacion + "')"
                                                                                                      + "where id_cliente = '" + idCliente + "'");
+
+            this.GD1C2016.ejecutarSentenciaSinRetorno("update GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente set desc_nombre = '" + nombre              
+                                                                                                       +"',desc_Apellido = '" + apellido 
+	                                                                                 +"',desc_DNI = Convert(numeric(10,0), '" + dni + "')"
+	                                                                                                    +",desc_tipo_doc = '" + tipoDoc
+	                                                                                                       +"',desc_Mail = '" + mail
+                                                                                +"',desc_Telefono = Convert(numeric(10,0), '" + telefono + "')"
+	                                                                                                  +",desc_Dom_Calle =  '" + direccion
+	                                                                           +"',desc_Nro_Calle=  Convert(numeric(10,0), '" + nro + "')"
+                                                                                    +",desc_Piso =  Convert(numeric(10,0), '" + piso + "')"
+	                                                                                                       +",desc_Depto = '" + depto
+	                                                                                                  +"',desc_Localidad = '" + localidad
+	                                                                                                +"',desc_Cod_Postal = '" + codPos
+                                                                                    +"',desc_Fecha_Nac = Convert(datetime, '" + fechaNac + "')"
+                                                                                +",desc_Fecha_Creacion = Convert(datetime, '" + fechaCreacion + "')"
+                                                                                                     + "where id_usuario = '" + idCliente + "'");
         }
 
-        /* DESHABILITAR USUARIO - Probar*/
+        /* DESHABILITAR USUARIO - OK*/
         public void deshabilitarUsuario(String id_usuario)
         {
-            this.GD1C2016.ejecutarSentenciaSinRetorno("update GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario set id_estado = '2' where id_usuario = '" + id_usuario + "'");
+           this.GD1C2016.ejecutarSentenciaSinRetorno("update GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario set id_estado = '2' where id_usuario = '" + id_usuario + "';");
+        }
+
+        /* HABILITAR USUARIO - OK */
+        public void habilitarUsuario(String id_usuario)
+        {
+            MessageBox.Show(id_usuario);
+            this.GD1C2016.ejecutarSentenciaSinRetorno("update GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario set id_estado = '1' where id_usuario = '" + id_usuario + "';");
         }
 
         /* OBTENGO ID_USUARIO SEGUN USERNAME - Probar */
@@ -246,21 +269,28 @@ namespace MercadoEnvio.DataBase.Conexion
             SqlDataReader id_usuario = this.GD1C2016.ejecutarSentenciaConRetorno("select id_usuario from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario where desc_username = '" + desc_usuario + "'");
             if (id_usuario.HasRows)
             {
-                while (id_usuario.Read())
-                {
-                    String user = id_usuario["id_usuario"].ToString();
-                    id_usuario.Close();
-                    return user;
-                }
+                id_usuario.Read();
+
+                String user = id_usuario["id_usuario"].ToString();
+                id_usuario.Close();
+                return user;
             }
             else
             {
-                id_usuario.Close();
-                return "szd";
+                return "ok";
             }
 
-            return "ok";
         }
-                                                                                                                                                                                                                                             
+                  
+        /* OBTENER ESTADO USUARIO POR ID_USUARIO ( 1 - HABILITADO, 2 - DESHABILITADO ) - OK */                                                                                                                                                                               
+        public String getEstadoUsuario(String id_usuario)
+        {
+            SqlDataReader estado = this.GD1C2016.ejecutarSentenciaConRetorno("select id_estado from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario where id_usuario = '" + id_usuario + "';");
+            
+            estado.Read();
+            String est = estado["id_estado"].ToString();
+            estado.Close();
+            return est;
+        }
     }
 }

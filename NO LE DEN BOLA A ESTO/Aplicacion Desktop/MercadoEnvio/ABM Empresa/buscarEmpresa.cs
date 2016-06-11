@@ -33,26 +33,33 @@ namespace MercadoEnvio.ABM_Empresa
 
         private void buttonMod_Click(object sender, EventArgs e)
         {
+            // FALTARIA UN TRY CATCH PARA QUE CUANDO NO SE SELECCIONA NADA NO EXPLOTE TODO  LA CHOTA
+
             Empresa empresaMod = new Empresa();
 
             DataGridViewRow fila = listado.SelectedRows[0];
 
+            empresaMod.setIdUsername(fila.Cells["USUARIO"].Value.ToString());
             empresaMod.setRazSoc(fila.Cells["RAZON_SOCIAL"].Value.ToString());
             empresaMod.setMail(fila.Cells["EMAIL"].Value.ToString());
-            empresaMod.setTelefono(fila.Cells["TELEFONO"].Value.ToString());
+            //empresaMod.setTelefono(fila.Cells["TELEFONO"].Value.ToString());
             empresaMod.setFechaCreacion(fila.Cells["FEC_CREACION"].Value.ToString());
             empresaMod.setMail(fila.Cells["EMAIL"].Value.ToString());
             empresaMod.setDomCalle(fila.Cells["DOMICILIO"].Value.ToString());
             empresaMod.setNroCalle(fila.Cells["NRO_CALLE"].Value.ToString());
             empresaMod.setPiso(fila.Cells["PISO"].Value.ToString());
             empresaMod.setDepto(fila.Cells["DPTO"].Value.ToString());
-            empresaMod.setLocalidad(fila.Cells["LOCALIDAD"].Value.ToString());
+            //empresaMod.setLocalidad(fila.Cells["LOCALIDAD"].Value.ToString());
             empresaMod.setCodPos(fila.Cells["COD_POSTAL"].Value.ToString());
             empresaMod.setTelefono(fila.Cells["TELEFONO"].Value.ToString());
+            empresaMod.setRubro(fila.Cells["RUBRO"].Value.ToString());
             empresaMod.setCiudad(fila.Cells["CIUDAD"].Value.ToString());
+            empresaMod.setEstado(fila.Cells["ESTADO"].Value.ToString());
+            empresaMod.setNombreContacto(fila.Cells["NOMBRE_CONTACTO"].Value.ToString());
             empresaMod.setCuit(fila.Cells["CUIT"].Value.ToString());
+            empresaMod.setFechaCreacion(fila.Cells["FEC_CREACION"].Value.ToString());
 
-            String username = abm_usuario.getUsername(fila.Cells["USUARIO"].Value.ToString());
+            //String username = abm_usuario.getUsername(fila.Cells["USUARIO"].Value.ToString());
             modificacionEmpresa modificarEmpresa = new modificacionEmpresa(empresaMod);
 
             modificarEmpresa.Show();
@@ -77,7 +84,7 @@ namespace MercadoEnvio.ABM_Empresa
                 filtros.Add("1 = 1");
             
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
-            Object[] columnas = new Object[14];
+            Object[] columnas = new Object[18];
 
             List<SqlDataReader> empresa = abm_usuario.buscarEmpresa(filtros);
 
@@ -87,20 +94,23 @@ namespace MercadoEnvio.ABM_Empresa
             while (empresa[0].Read())
             {
                 id_usuario = empresa[0]["id_usuario"].ToString();
-                id_usuarios.Add(id_usuario);
                 columnas[1] = id_usuario;
                 columnas[2] = empresa[0]["desc_razon_social"];
                 columnas[3] = empresa[0]["desc_Cuit"];
                 columnas[4] = empresa[0]["desc_Fecha_Creacion"];
                 columnas[5] = empresa[0]["desc_Mail"];
-                columnas[6] = empresa[0]["desc_Ciudad"];
-                columnas[7] = empresa[0]["desc_Dom_Calle"];
-                columnas[8] = empresa[0]["desc_Nro_Calle"];
-                columnas[9] = empresa[0]["desc_Piso"];
-                columnas[10] = empresa[0]["desc_Depto"];
-                columnas[11] = empresa[0]["desc_Cod_Postal"];
-                columnas[12] = empresa[0]["desc_Localidad"];
-                columnas[13] = empresa[0]["desc_Telefono"];
+                columnas[6] = empresa[0]["id_rubro"];
+                columnas[7] = empresa[0]["desc_Ciudad"];
+                columnas[8] = empresa[0]["desc_nombre_contacto"];
+                columnas[9] = "1"; // OBTENER ESTADO DE LA OTRA TABLA
+                columnas[10] = empresa[0]["desc_ciudad"];
+                columnas[11] = empresa[0]["desc_Dom_Calle"];
+                columnas[12] = empresa[0]["desc_Nro_calle"];
+                columnas[13] = empresa[0]["desc_Piso"];
+                columnas[14] = empresa[0]["desc_Depto"];
+                columnas[15] = empresa[0]["desc_Cod_Postal"];
+                columnas[16] = empresa[0]["desc_Localidad"];
+                columnas[17] = empresa[0]["desc_Telefono"];
                 
                 filas.Add(new DataGridViewRow());
                 filas[filas.Count - 1].CreateCells(listado, columnas);
