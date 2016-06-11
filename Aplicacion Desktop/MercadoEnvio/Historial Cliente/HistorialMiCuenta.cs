@@ -12,14 +12,17 @@ namespace MercadoEnvio.Historial_Cliente
 {
     public partial class HistorialMiCuenta : Form
     {
-        public HistorialMiCuenta()
+        private int id_usuario;
+
+        public HistorialMiCuenta(int id)
         {
             InitializeComponent();
+            id_usuario = id;
         }
 
         private void MostrarFacturacion_Click(object sender, EventArgs e)
         {
-            HistorialFacturas formHistorialFacturas = new HistorialFacturas();
+            HistorialFacturas formHistorialFacturas = new HistorialFacturas(this.id_usuario);
             formHistorialFacturas.Show();
         }
 
