@@ -1,6 +1,6 @@
-﻿namespace MercadoEnvio.ABM_Usuario
+﻿namespace MercadoEnvio.ABM_Empresa
 {
-    partial class bajaUsuario
+    partial class bajaEmpresa
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // bajaUsuario
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 380);
-            this.Name = "bajaUsuario";
-            this.Text = "bajaUsuario";
-            this.ResumeLayout(false);
-
+            this.Text = "bajaEmpresa";
         }
 
         #endregion

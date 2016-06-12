@@ -22,7 +22,7 @@ namespace MercadoEnvios.ABM_Rol
             leerArchivoConfig();
             abm_rol = new ABM_Rol_DAO();
             InitializeComponent();
-            cargar_funciones();
+            //cargar_funciones();
         }
 
         /* CARGO EL CHEKEDLSITBOX CON TODAS LAS FUNCIONALIDADES QUE PUEDE TENER EL ROL*/

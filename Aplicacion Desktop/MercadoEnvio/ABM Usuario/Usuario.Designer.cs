@@ -58,7 +58,7 @@
             // comboBoxRol
             // 
             this.comboBoxRol.FormattingEnabled = true;
-            this.comboBoxRol.Location = new System.Drawing.Point(102, 70);
+            this.comboBoxRol.Location = new System.Drawing.Point(102, 66);
             this.comboBoxRol.Name = "comboBoxRol";
             this.comboBoxRol.Size = new System.Drawing.Size(107, 21);
             this.comboBoxRol.TabIndex = 49;

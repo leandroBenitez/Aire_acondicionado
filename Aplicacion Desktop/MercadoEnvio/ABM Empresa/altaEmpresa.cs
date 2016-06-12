@@ -72,7 +72,7 @@ namespace MercadoEnvio.ABM_Empresa
                             String altura = textAltura.Text;
                             String piso = textPiso.Text;
                             String depto = textDepto.Text;
-                            String localidad = "";
+                            String localidad = textLocalidad.Text;
                             String codPos = textCP.Text;
                             String ciudad = "";
         

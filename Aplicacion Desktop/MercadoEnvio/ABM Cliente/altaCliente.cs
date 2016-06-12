@@ -31,6 +31,9 @@ namespace MercadoEnvio.ABM_Usuario
             comboDominio.Items.Add("gmail.com");
             comboDominio.Items.Add("live.com");
 
+            /* CARGO EL COMBO DE LOS TIPOS DE DOCUMENTO */
+            comboTipoDoc.Items.Add("DNI");
+
             /* SETEO LOS CAMPOS CON LAS VARIABLES RECIBIDAS */
             textUsername.Text = username;
             textPassword.Text = password;
@@ -47,6 +50,10 @@ namespace MercadoEnvio.ABM_Usuario
                     {
                         MessageBox.Show("Debe ingresar un dominio de email. Ayuda: seleccione una de las opciones dadas");
                     }
+                    else if (comboTipoDoc.SelectedItem == null)
+                    {
+                        MessageBox.Show("Debe ingresar un tipo de documento. Ayuda: seleccione una de las opciones dadas");
+                    }
                     else
                     {
                         String username = textUsername.Text;
@@ -55,6 +62,7 @@ namespace MercadoEnvio.ABM_Usuario
                         String desc_Apellido = textApellido.Text;
                         String desc_Nombre = textNombre.Text;
                         String desc_Dni = textDni.Text;
+                        String tipo_doc = comboTipoDoc.SelectedItem.ToString();
                         String desc_Mail = textMail.Text + "@" + comboDominio.SelectedItem.ToString();
                         String desc_Dom_Calle = textCalle.Text;
                         String desc_Nro_Calle = textAltura.Text;
@@ -64,11 +72,12 @@ namespace MercadoEnvio.ABM_Usuario
                         String desc_Cod_Postal = textCP.Text;
                         String desc_Telefono = textTelefono.Text;
                         String desc_Fecha_Nac = textDia.Text + "/" + textMes.Text + "/" + textAnio.Text;
+                        String desc_fecha_creacion = textFecCreacion.Text;
 
 
                         // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
-                        abm_usuario.setearCliente(username, password, rol, desc_Apellido, desc_Nombre, desc_Dni, desc_Mail, desc_Dom_Calle, desc_Nro_Calle, desc_Piso, desc_Depto, desc_Localidad, desc_Cod_Postal, desc_Telefono, desc_Fecha_Nac);
-
+                        abm_usuario.setearCliente(username, password, rol, desc_Apellido, desc_Nombre, desc_Dni, tipo_doc, desc_Mail, desc_Dom_Calle, desc_Nro_Calle, desc_Piso, desc_Depto, desc_Localidad, desc_Cod_Postal, desc_Telefono, desc_Fecha_Nac, desc_fecha_creacion);
+                                                                                                                                                                                                                                                                    
                         // VUELVO AL MENU PRINCIPAL DE LOS ADMINISTRADORES QUE TODAVIA NO ESTÁ CREADO
 
                     }

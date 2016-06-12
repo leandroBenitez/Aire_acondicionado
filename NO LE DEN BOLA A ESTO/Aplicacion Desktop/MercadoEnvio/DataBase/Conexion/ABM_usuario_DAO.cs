@@ -196,8 +196,8 @@ namespace MercadoEnvio.DataBase.Conexion
             return user;
         }
 
-        /* ACTUALIZO EMPRESA - PROBAR*/
-        public void actualizarEmpresa(String razonSoc, String descMail, String descTelefono, String descCalle, String nroCalle, String depto, String localidad, String codPos, String ciudad, String cuit, String nombreContacto, String idRubro, String idEmpresa)
+        /* ACTUALIZO EMPRESA - OK*/
+        public void actualizarEmpresa(String razonSoc, String descMail, String descTelefono, String descCalle, String nroCalle, String depto, String localidad, String codPos, String ciudad, String cuit, String nombreContacto, String idRubro, String idUsuario)
         {
             this.GD1C2016.ejecutarSentenciaSinRetorno("update GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa set desc_Razon_Social = '" + razonSoc 
 	                                                                                                           + "', desc_Mail = '" + descMail
@@ -211,28 +211,13 @@ namespace MercadoEnvio.DataBase.Conexion
 	                                                                                                             +"',desc_Cuit = '" + cuit
 	                                                                                                  +"',desc_nombre_contacto = '" + nombreContacto
 	                                                                                                              +"',id_rubro = '" + idRubro
-	                                                                                                       +"'where id_empresa = '" + idEmpresa + "';");
+	                                                                                                       +"'where id_usuario = '" + idUsuario + "';");
+            MessageBox.Show("La empresa ha sido modificada Satisfactoriamente");
         }
 
         /* ACTUALIZO CLIENTE - OK*/
         public void actualizarCliente(String idCliente, String nombre, String apellido, String dni, String tipoDoc, String mail, String telefono, String direccion, String nro, String piso, String depto, String localidad, String codPos, String fechaNac, String fechaCreacion)
         {
-            MessageBox.Show("update GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente set desc_nombre = '" + nombre              
-                                                                                                       +"',desc_Apellido = '" + apellido 
-	                                                                                 +"',desc_DNI = Convert(numeric(10,0), '" + dni + "')"
-	                                                                                                    +",desc_tipo_doc = '" + tipoDoc
-	                                                                                                       +"',desc_Mail = '" + mail
-                                                                                +"',desc_Telefono = Convert(numeric(10,0), '" + telefono + "')"
-	                                                                                                  +",desc_Dom_Calle =  '" + direccion
-	                                                                           +"',desc_Nro_Calle=  Convert(numeric(10,0), '" + nro + "')"
-                                                                                    +",desc_Piso =  Convert(numeric(10,0), '" + piso + "')"
-	                                                                                                       +",desc_Depto = '" + depto
-	                                                                                                  +"',desc_Localidad = '" + localidad
-	                                                                                                +"',desc_Cod_Postal = '" + codPos
-                                                                                    +"',desc_Fecha_Nac = Convert(datetime, '" + fechaNac + "')"
-                                                                                +",desc_Fecha_Creacion = Convert(datetime, '" + fechaCreacion + "')"
-                                                                                                     + "where id_cliente = '" + idCliente + "'");
-
             this.GD1C2016.ejecutarSentenciaSinRetorno("update GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente set desc_nombre = '" + nombre              
                                                                                                        +"',desc_Apellido = '" + apellido 
 	                                                                                 +"',desc_DNI = Convert(numeric(10,0), '" + dni + "')"
@@ -248,6 +233,7 @@ namespace MercadoEnvio.DataBase.Conexion
                                                                                     +"',desc_Fecha_Nac = Convert(datetime, '" + fechaNac + "')"
                                                                                 +",desc_Fecha_Creacion = Convert(datetime, '" + fechaCreacion + "')"
                                                                                                      + "where id_usuario = '" + idCliente + "'");
+            MessageBox.Show("El cliente ha sido modificado Satisfactoriamente");
         }
 
         /* DESHABILITAR USUARIO - OK*/
@@ -259,7 +245,6 @@ namespace MercadoEnvio.DataBase.Conexion
         /* HABILITAR USUARIO - OK */
         public void habilitarUsuario(String id_usuario)
         {
-            MessageBox.Show(id_usuario);
             this.GD1C2016.ejecutarSentenciaSinRetorno("update GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario set id_estado = '1' where id_usuario = '" + id_usuario + "';");
         }
 

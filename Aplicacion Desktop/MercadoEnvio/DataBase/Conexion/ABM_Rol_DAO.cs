@@ -136,7 +136,7 @@ namespace MercadoEnvio.DataBase.Conexion
             this.GD1C2016.ejecutarSentenciaSinRetorno("DELETE FROM GESTORES_DEL_AIRE_ACONDICIONADO.rl_funciones_roles WHERE id_rol = " + id_rol + ";");
         }
 
-        /* */
+        /* OBTENGO EL ESTADO DEL ROL SEGUN LA DESCRIPCION DEL MISMO*/
         public List<String> getEstadoRol(String desc_rol)
         {
             SqlDataReader estado = this.GD1C2016.ejecutarSentenciaConRetorno("Select [estado_rol] from [GESTORES_DEL_AIRE_ACONDICIONADO].[dm_rol] where desc_rol = '" + desc_rol + "';");
@@ -150,11 +150,13 @@ namespace MercadoEnvio.DataBase.Conexion
             return nombresRoles;
         }
 
-        /* */
+        /* ACTUALIZO ESTADO DE UN ROL */
         public void updateEstadoRol(String estado, int id_rol)
         {
             this.GD1C2016.ejecutarSentenciaSinRetorno("UPDATE GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol SET estado_rol = '" + estado + "' where id_rol = " + id_rol + ";");
         }
+
+
 
     }
 }

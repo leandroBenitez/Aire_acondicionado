@@ -11,6 +11,7 @@ using MercadoEnvio.DataBase.Conexion;
 using MercadoEnvio.Generar_Publicación;
 using MercadoEnvio.Historial_Cliente;
 using MercadoEnvio.ComprarOfertar;
+using MercadoEnvio.ABM_Usuario;
 
 namespace MercadoEnvio
 {
@@ -31,7 +32,8 @@ namespace MercadoEnvio
         {
             text_user.Text = user;
             text_fecha.Text = ConstantesBD.fechaSistema.ToString();
-            
+
+            MessageBox.Show(rol);
             List<string> funciones = this.loginDAO.get_funcionalidades(rol);
 
             if (!(funciones.Contains("ABM de Rol")))
@@ -39,7 +41,7 @@ namespace MercadoEnvio
 
             if (!(funciones.Contains("ABM de Usuarios")))
                 {   boton_abm_user.Hide(); }
-
+            
             if (!(funciones.Contains("ABM de Rubro")))
                 {   boton_abm_rubro.Hide(); }
 
@@ -109,7 +111,8 @@ namespace MercadoEnvio
 
         private void boton_abm_user_Click(object sender, EventArgs e)
         {
-
+            subMenuUsuario nuevoSubMenu = new subMenuUsuario();
+            nuevoSubMenu.Show();
         }
 
         private void boton_abm_visib_Click(object sender, EventArgs e)

@@ -15,11 +15,9 @@ namespace MercadoEnvio.ABM_Usuario
 {
     public partial class Usuario : Form
     {
-        private ABM_usuario_DAO abm_usuario;
+        private ABM_usuario_DAO abm_usuario = new ABM_usuario_DAO();
         public Usuario()
         {
-            leerArchivoConfig();
-            abm_usuario = new ABM_usuario_DAO();
             InitializeComponent();
             this.cargar_items_comboboxroles();
         }
@@ -69,35 +67,6 @@ namespace MercadoEnvio.ABM_Usuario
         private void Usuario_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void leerArchivoConfig()
-        {
-            try
-            {
-                using (StreamReader sr = new StreamReader("ArchivoConfiguracion.txt"))
-                {
-                    string line, textoArchivo = "";
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        textoArchivo = textoArchivo + line + "\n";
-                    }
-
-                    char[] delimitadores = { ' ', ',', '.', '\t', '\n' };
-
-                    string[] palabras = textoArchivo.Split(delimitadores);
-
-                    ConstantesBD.fechaSistema = palabras[2];
-                    ConstantesBD.Param_Conexion_urlServidor = palabras[9];
-                    ConstantesBD.Param_Conexion_usuario = palabras[14];
-                    ConstantesBD.Param_Conexion_contraseña = palabras[17];
-                    ConstantesBD.Param_Conexion_nombreBD = palabras[24];
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error al leer el archivo de configuracion", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
     }
 }

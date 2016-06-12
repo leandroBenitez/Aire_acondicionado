@@ -36,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textAnio = new System.Windows.Forms.TextBox();
             this.textMes = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboTipoDoc = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textFecCreacion = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -113,7 +113,7 @@
             this.groupBoxCliente.Controls.Add(this.textAnio);
             this.groupBoxCliente.Controls.Add(this.monthCalendar1);
             this.groupBoxCliente.Controls.Add(this.textMes);
-            this.groupBoxCliente.Controls.Add(this.comboBox1);
+            this.groupBoxCliente.Controls.Add(this.comboTipoDoc);
             this.groupBoxCliente.Controls.Add(this.label8);
             this.groupBoxCliente.Controls.Add(this.textFecCreacion);
             this.groupBoxCliente.Controls.Add(this.label18);
@@ -182,13 +182,13 @@
             this.textMes.Size = new System.Drawing.Size(28, 20);
             this.textMes.TabIndex = 104;
             // 
-            // comboBox1
+            // comboTipoDoc
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(116, 55);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(83, 21);
-            this.comboBox1.TabIndex = 103;
+            this.comboTipoDoc.FormattingEnabled = true;
+            this.comboTipoDoc.Location = new System.Drawing.Point(116, 55);
+            this.comboTipoDoc.Name = "comboTipoDoc";
+            this.comboTipoDoc.Size = new System.Drawing.Size(83, 21);
+            this.comboTipoDoc.TabIndex = 103;
             // 
             // label8
             // 
@@ -532,7 +532,7 @@
         private System.Windows.Forms.GroupBox groupBoxCliente;
         private System.Windows.Forms.TextBox textAnio;
         private System.Windows.Forms.TextBox textMes;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboTipoDoc;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textFecCreacion;
         private System.Windows.Forms.Label label18;

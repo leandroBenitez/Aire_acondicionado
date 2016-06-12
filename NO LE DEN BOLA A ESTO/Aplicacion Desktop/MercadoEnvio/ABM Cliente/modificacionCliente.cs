@@ -71,6 +71,7 @@ namespace MercadoEnvio.ABM_Cliente
         {   
             String mail = textMail.Text + "@" + comboDominio.SelectedItem.ToString();
             abm_usuario.actualizarCliente(textUsername.Text, textNombre.Text, textApellido.Text, textDni.Text, comboTipoDoc.Text, mail, textTelefono.Text, textDireccion.Text, textAltura.Text, textPiso.Text, textDepto.Text, textLocalidad.Text, textCP.Text, "10/10/10", "10/10/10");
+            this.Close();
         }
 
         /* OK */
