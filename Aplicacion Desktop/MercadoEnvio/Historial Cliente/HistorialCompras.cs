@@ -17,30 +17,27 @@ namespace MercadoEnvio.Historial_Cliente
     public partial class HistorialCompras : Form
     {
         HistorialCompras_DAO HistCompDAO = new HistorialCompras_DAO();
+        private int id_usuario;
         
         
-        public HistorialCompras()
+        public HistorialCompras(int idUser)
         {
             InitializeComponent();
+            id_usuario = idUser;
         }
 
         private void HistorialCompras_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void verCompras_Click(object sender, EventArgs e)
-        {
             dataGridViewCompras.Rows.Clear();
             SqlDataReader lectura;
 
-            lectura = HistCompDAO.get_compras();
+            lectura = HistCompDAO.get_compras(this.id_usuario);
 
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
             Object[] columnas = new Object[5];
 
             while (lectura.Read())
-            { 
+            {
                 columnas[0] = lectura["id_compra"].ToString();
                 columnas[1] = lectura["desc_fecha"].ToString();
                 columnas[2] = lectura["desc_cantidad"].ToString();
@@ -56,14 +53,10 @@ namespace MercadoEnvio.Historial_Cliente
             dataGridViewCompras.Rows.AddRange(filas.ToArray()); 
         }
 
-        private void buttonLimpiar_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
        

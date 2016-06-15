@@ -33,27 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.buttonVerCompras = new System.Windows.Forms.Button();
             this.dataGridViewCompras = new System.Windows.Forms.DataGridView();
             this.Col_idCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_DescFec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_DescCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_idPubl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonLimpiar = new System.Windows.Forms.Button();
             this.buttonVolverAlMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompras)).BeginInit();
             this.SuspendLayout();
-            // 
-            // buttonVerCompras
-            // 
-            this.buttonVerCompras.Location = new System.Drawing.Point(28, 12);
-            this.buttonVerCompras.Name = "buttonVerCompras";
-            this.buttonVerCompras.Size = new System.Drawing.Size(75, 23);
-            this.buttonVerCompras.TabIndex = 1;
-            this.buttonVerCompras.Text = "Ver compras";
-            this.buttonVerCompras.UseVisualStyleBackColor = true;
-            this.buttonVerCompras.Click += new System.EventHandler(this.verCompras_Click);
             // 
             // dataGridViewCompras
             // 
@@ -65,7 +53,7 @@
             this.dataGridViewCompras.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -104,7 +92,7 @@
             // 
             // Col_idCompra
             // 
-            this.Col_idCompra.HeaderText = "IdCompra";
+            this.Col_idCompra.HeaderText = "Compra";
             this.Col_idCompra.Name = "Col_idCompra";
             // 
             // Col_DescFec
@@ -119,31 +107,21 @@
             // 
             // Col_idPubl
             // 
-            this.Col_idPubl.HeaderText = "IdPublicación";
+            this.Col_idPubl.HeaderText = "Publicación";
             this.Col_idPubl.Name = "Col_idPubl";
             // 
             // Col_idUsuario
             // 
-            this.Col_idUsuario.HeaderText = "IdUsuario";
+            this.Col_idUsuario.HeaderText = "Usuario";
             this.Col_idUsuario.Name = "Col_idUsuario";
-            // 
-            // buttonLimpiar
-            // 
-            this.buttonLimpiar.Location = new System.Drawing.Point(101, 266);
-            this.buttonLimpiar.Name = "buttonLimpiar";
-            this.buttonLimpiar.Size = new System.Drawing.Size(90, 23);
-            this.buttonLimpiar.TabIndex = 4;
-            this.buttonLimpiar.Text = "Limpiar";
-            this.buttonLimpiar.UseVisualStyleBackColor = true;
-            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
             // 
             // buttonVolverAlMenu
             // 
-            this.buttonVolverAlMenu.Location = new System.Drawing.Point(342, 266);
+            this.buttonVolverAlMenu.Location = new System.Drawing.Point(222, 266);
             this.buttonVolverAlMenu.Name = "buttonVolverAlMenu";
-            this.buttonVolverAlMenu.Size = new System.Drawing.Size(106, 23);
+            this.buttonVolverAlMenu.Size = new System.Drawing.Size(82, 23);
             this.buttonVolverAlMenu.TabIndex = 5;
-            this.buttonVolverAlMenu.Text = "Volver al menú";
+            this.buttonVolverAlMenu.Text = "Volver";
             this.buttonVolverAlMenu.UseVisualStyleBackColor = true;
             this.buttonVolverAlMenu.Click += new System.EventHandler(this.buttonVolverAlMenu_Click);
             // 
@@ -153,11 +131,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(575, 301);
             this.Controls.Add(this.buttonVolverAlMenu);
-            this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.dataGridViewCompras);
-            this.Controls.Add(this.buttonVerCompras);
             this.Name = "HistorialCompras";
-            this.Text = "HistorialCompras";
+            this.Text = "Historial compras";
             this.Load += new System.EventHandler(this.HistorialCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompras)).EndInit();
             this.ResumeLayout(false);
@@ -166,14 +142,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonVerCompras;
         private System.Windows.Forms.DataGridView dataGridViewCompras;
+        private System.Windows.Forms.Button buttonVolverAlMenu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_DescFec;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_DescCant;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idPubl;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idUsuario;
-        private System.Windows.Forms.Button buttonLimpiar;
-        private System.Windows.Forms.Button buttonVolverAlMenu;
     }
 }

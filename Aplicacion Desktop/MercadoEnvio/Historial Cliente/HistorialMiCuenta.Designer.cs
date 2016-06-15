@@ -32,8 +32,8 @@
             this.MostrarCompras = new System.Windows.Forms.Button();
             this.MostrarSubastas = new System.Windows.Forms.Button();
             this.buttonVolver = new System.Windows.Forms.Button();
-            this.MostrarEstrellasOtorgadas = new System.Windows.Forms.Button();
-            this.MostrarEstrellasPorOtorgar = new System.Windows.Forms.Button();
+            this.MostrarComprasCalificadas = new System.Windows.Forms.Button();
+            this.MostrarComprasSinCalificar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MostrarFacturacion
@@ -48,7 +48,7 @@
             // 
             // MostrarCompras
             // 
-            this.MostrarCompras.Location = new System.Drawing.Point(87, 135);
+            this.MostrarCompras.Location = new System.Drawing.Point(87, 77);
             this.MostrarCompras.Name = "MostrarCompras";
             this.MostrarCompras.Size = new System.Drawing.Size(117, 23);
             this.MostrarCompras.TabIndex = 2;
@@ -76,33 +76,33 @@
             this.buttonVolver.UseVisualStyleBackColor = true;
             this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
-            // MostrarEstrellasOtorgadas
+            // MostrarComprasCalificadas
             // 
-            this.MostrarEstrellasOtorgadas.Location = new System.Drawing.Point(87, 77);
-            this.MostrarEstrellasOtorgadas.Name = "MostrarEstrellasOtorgadas";
-            this.MostrarEstrellasOtorgadas.Size = new System.Drawing.Size(117, 23);
-            this.MostrarEstrellasOtorgadas.TabIndex = 5;
-            this.MostrarEstrellasOtorgadas.Text = "Estrellas otorgadas";
-            this.MostrarEstrellasOtorgadas.UseVisualStyleBackColor = true;
-            this.MostrarEstrellasOtorgadas.Click += new System.EventHandler(this.MostrarEstrellasOtorgadas_Click);
+            this.MostrarComprasCalificadas.Location = new System.Drawing.Point(87, 106);
+            this.MostrarComprasCalificadas.Name = "MostrarComprasCalificadas";
+            this.MostrarComprasCalificadas.Size = new System.Drawing.Size(117, 23);
+            this.MostrarComprasCalificadas.TabIndex = 5;
+            this.MostrarComprasCalificadas.Text = "Compras calificadas";
+            this.MostrarComprasCalificadas.UseVisualStyleBackColor = true;
+            this.MostrarComprasCalificadas.Click += new System.EventHandler(this.MostrarComprasCalificadas_Click);
             // 
-            // MostrarEstrellasPorOtorgar
+            // MostrarComprasSinCalificar
             // 
-            this.MostrarEstrellasPorOtorgar.Location = new System.Drawing.Point(87, 106);
-            this.MostrarEstrellasPorOtorgar.Name = "MostrarEstrellasPorOtorgar";
-            this.MostrarEstrellasPorOtorgar.Size = new System.Drawing.Size(117, 23);
-            this.MostrarEstrellasPorOtorgar.TabIndex = 6;
-            this.MostrarEstrellasPorOtorgar.Text = "Estrellas por otorgar";
-            this.MostrarEstrellasPorOtorgar.UseVisualStyleBackColor = true;
-            this.MostrarEstrellasPorOtorgar.Click += new System.EventHandler(this.MostrarEstrellasPorOtorgar_Click);
+            this.MostrarComprasSinCalificar.Location = new System.Drawing.Point(87, 135);
+            this.MostrarComprasSinCalificar.Name = "MostrarComprasSinCalificar";
+            this.MostrarComprasSinCalificar.Size = new System.Drawing.Size(117, 23);
+            this.MostrarComprasSinCalificar.TabIndex = 6;
+            this.MostrarComprasSinCalificar.Text = "Compras sin calificar";
+            this.MostrarComprasSinCalificar.UseVisualStyleBackColor = true;
+            this.MostrarComprasSinCalificar.Click += new System.EventHandler(this.MostrarComprasSinCalificar_Click);
             // 
             // HistorialMiCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.MostrarEstrellasPorOtorgar);
-            this.Controls.Add(this.MostrarEstrellasOtorgadas);
+            this.Controls.Add(this.MostrarComprasSinCalificar);
+            this.Controls.Add(this.MostrarComprasCalificadas);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.MostrarSubastas);
             this.Controls.Add(this.MostrarCompras);
@@ -119,8 +119,8 @@
         private System.Windows.Forms.Button MostrarCompras;
         private System.Windows.Forms.Button MostrarSubastas;
         private System.Windows.Forms.Button buttonVolver;
-        private System.Windows.Forms.Button MostrarEstrellasOtorgadas;
-        private System.Windows.Forms.Button MostrarEstrellasPorOtorgar;
+        private System.Windows.Forms.Button MostrarComprasCalificadas;
+        private System.Windows.Forms.Button MostrarComprasSinCalificar;
 
     }
 }

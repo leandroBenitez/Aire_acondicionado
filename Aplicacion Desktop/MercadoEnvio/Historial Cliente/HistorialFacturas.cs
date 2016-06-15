@@ -17,13 +17,14 @@ namespace MercadoEnvio.Historial_Cliente
         HistorialFacturas_DAO HistFacDAO = new HistorialFacturas_DAO();
         private int id_usuario;
 
-        public HistorialFacturas(int id)
+
+        public HistorialFacturas(int idUser)
         {
             InitializeComponent();
-            id_usuario = id;
+            id_usuario = idUser;
         }
 
-        private void buttonVerFacturas_Click(object sender, EventArgs e)
+        private void HistorialFacturas_Load(object sender, EventArgs e)
         {
             dataGridViewFacturas.Rows.Clear();
             SqlDataReader lectura;
@@ -47,20 +48,15 @@ namespace MercadoEnvio.Historial_Cliente
             }
 
             lectura.Close();
-            dataGridViewFacturas.Rows.AddRange(filas.ToArray()); 
-        }
-
-
-        private void buttonLimpiar_Click(object sender, EventArgs e)
-        {
-
+            dataGridViewFacturas.Rows.AddRange(filas.ToArray());
         }
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
 
     }
 }
+

@@ -33,8 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.buttonVerFacturas = new System.Windows.Forms.Button();
-            this.buttonLimpiar = new System.Windows.Forms.Button();
             this.buttonVolverAlMenu = new System.Windows.Forms.Button();
             this.dataGridViewFacturas = new System.Windows.Forms.DataGridView();
             this.Col_idFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,33 +43,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFacturas)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonVerFacturas
-            // 
-            this.buttonVerFacturas.Location = new System.Drawing.Point(12, 12);
-            this.buttonVerFacturas.Name = "buttonVerFacturas";
-            this.buttonVerFacturas.Size = new System.Drawing.Size(75, 23);
-            this.buttonVerFacturas.TabIndex = 0;
-            this.buttonVerFacturas.Text = "Ver Facturas";
-            this.buttonVerFacturas.UseVisualStyleBackColor = true;
-            this.buttonVerFacturas.Click += new System.EventHandler(this.buttonVerFacturas_Click);
-            // 
-            // buttonLimpiar
-            // 
-            this.buttonLimpiar.Location = new System.Drawing.Point(109, 284);
-            this.buttonLimpiar.Name = "buttonLimpiar";
-            this.buttonLimpiar.Size = new System.Drawing.Size(75, 23);
-            this.buttonLimpiar.TabIndex = 1;
-            this.buttonLimpiar.Text = "Limpiar";
-            this.buttonLimpiar.UseVisualStyleBackColor = true;
-            this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
-            // 
             // buttonVolverAlMenu
             // 
-            this.buttonVolverAlMenu.Location = new System.Drawing.Point(398, 284);
+            this.buttonVolverAlMenu.Location = new System.Drawing.Point(240, 266);
             this.buttonVolverAlMenu.Name = "buttonVolverAlMenu";
             this.buttonVolverAlMenu.Size = new System.Drawing.Size(111, 23);
             this.buttonVolverAlMenu.TabIndex = 2;
-            this.buttonVolverAlMenu.Text = "Volver al menu";
+            this.buttonVolverAlMenu.Text = "Volver";
             this.buttonVolverAlMenu.UseVisualStyleBackColor = true;
             this.buttonVolverAlMenu.Click += new System.EventHandler(this.buttonVolverAlMenu_Click);
             // 
@@ -85,7 +63,7 @@
             this.dataGridViewFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -124,7 +102,7 @@
             // 
             // Col_idFactura
             // 
-            this.Col_idFactura.HeaderText = "IdFactura";
+            this.Col_idFactura.HeaderText = "Factura";
             this.Col_idFactura.Name = "Col_idFactura";
             // 
             // Col_descfecha
@@ -144,20 +122,19 @@
             // 
             // Col_idUsuario
             // 
-            this.Col_idUsuario.HeaderText = "IdUsuario";
+            this.Col_idUsuario.HeaderText = "Usuario";
             this.Col_idUsuario.Name = "Col_idUsuario";
             // 
             // HistorialFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 339);
+            this.ClientSize = new System.Drawing.Size(598, 308);
             this.Controls.Add(this.dataGridViewFacturas);
             this.Controls.Add(this.buttonVolverAlMenu);
-            this.Controls.Add(this.buttonLimpiar);
-            this.Controls.Add(this.buttonVerFacturas);
             this.Name = "HistorialFacturas";
             this.Text = "HistorialFacturas";
+            this.Load += new System.EventHandler(this.HistorialFacturas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFacturas)).EndInit();
             this.ResumeLayout(false);
 
@@ -165,8 +142,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonVerFacturas;
-        private System.Windows.Forms.Button buttonLimpiar;
         private System.Windows.Forms.Button buttonVolverAlMenu;
         private System.Windows.Forms.DataGridView dataGridViewFacturas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idFactura;

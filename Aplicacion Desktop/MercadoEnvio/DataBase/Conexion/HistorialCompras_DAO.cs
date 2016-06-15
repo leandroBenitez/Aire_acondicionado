@@ -18,22 +18,10 @@ namespace MercadoEnvio.DataBase.Conexion
             this.iniciar();
         }
 
-        public SqlDataReader get_compras()
+        public SqlDataReader get_compras(int id_usuario)
         {
-            /*  public List<string> get_compras()
-            * {
-            * SqlDataReader compras= this.GD1C2016.ejecutarSentenciaConRetorno("Select id_compra from GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra");
-            * List<string> compras_string = new List<string>();
-            *
-            *while (compras.Read())
-            * {
-                 compras_string.Add(compras["id_compra"].ToString());
-            * }
-
-             *compras.Close();
-             return compras_string;
-             * */
-            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.tabla_compras);
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.tabla_compras 
+                                                                                    + " where id_usuario = '" + id_usuario.ToString() + "'");
 
             return resultado;
 

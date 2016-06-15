@@ -13,7 +13,7 @@ namespace MercadoEnvio.Historial_Cliente
     public partial class HistorialMiCuenta : Form
     {
         private int id_usuario;
-
+        
         public HistorialMiCuenta(int id)
         {
             InitializeComponent();
@@ -26,32 +26,36 @@ namespace MercadoEnvio.Historial_Cliente
             formHistorialFacturas.Show();
         }
 
-        private void MostrarEstrellasOtorgadas_Click(object sender, EventArgs e)
+        private void MostrarComprasCalificadas_Click(object sender, EventArgs e)
         {
-
+            HistorialComprasCalificadas formHistorialEstrellasOtorgadas = new HistorialComprasCalificadas(this.id_usuario);
+            formHistorialEstrellasOtorgadas.Show();
         }
 
-        private void MostrarEstrellasPorOtorgar_Click(object sender, EventArgs e)
-        {
 
+        private void MostrarComprasSinCalificar_Click(object sender, EventArgs e)
+        {
+            HistorialComprasSinCalificar formHistorialEstrellasPorOtorgar = new HistorialComprasSinCalificar(this.id_usuario);
+            formHistorialEstrellasPorOtorgar.Show();
         }
-      
+    
         private void MostrarCompras_Click(object sender, EventArgs e)
         {
-            HistorialCompras formHistorialCompras = new HistorialCompras();
+            HistorialCompras formHistorialCompras = new HistorialCompras(this.id_usuario);
             formHistorialCompras.Show();
         }
 
         private void MostrarSubastas_Click(object sender, EventArgs e)
         {
-            HistorialSubastas formHistorialSubastas = new HistorialSubastas();
+            HistorialSubastas formHistorialSubastas = new HistorialSubastas(this.id_usuario);
             formHistorialSubastas.Show();
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
-            this.Close();
+          this.Close();
         }
 
+        
     }
 }

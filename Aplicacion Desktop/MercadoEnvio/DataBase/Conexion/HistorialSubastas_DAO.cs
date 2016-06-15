@@ -17,9 +17,10 @@ namespace MercadoEnvio.DataBase.Conexion
             this.iniciar();        
         }
 
-        public SqlDataReader get_subastas()
+        public SqlDataReader get_subastas(int id_usuario)
         {
-            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.tabla_subastas);
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.tabla_subastas
+                                                                                    + " where id_usuario = '" + id_usuario.ToString() + "'");
 
             return resultado;
         }

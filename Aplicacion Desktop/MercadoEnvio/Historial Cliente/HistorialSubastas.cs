@@ -15,18 +15,21 @@ namespace MercadoEnvio.Historial_Cliente
     public partial class HistorialSubastas : Form
     {
         HistorialSubastas_DAO HistSubDAO = new HistorialSubastas_DAO();
+        private int id_usuario;
 
-        public HistorialSubastas()
+        public HistorialSubastas(int idUser)
         {
             InitializeComponent();
+            id_usuario = idUser;
+            
         }
 
-        private void buttonVerSubastas_Click(object sender, EventArgs e)
+        private void HistorialSubastas_Load(object sender, EventArgs e)
         {
             dataGridViewSubastas.Rows.Clear();
             SqlDataReader lectura;
 
-            lectura = HistSubDAO.get_subastas();
+            lectura = HistSubDAO.get_subastas(this.id_usuario);
 
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
             Object[] columnas = new Object[5];
@@ -48,14 +51,13 @@ namespace MercadoEnvio.Historial_Cliente
             dataGridViewSubastas.Rows.AddRange(filas.ToArray()); 
         }
 
-        private void buttonLimpiar_Click(object sender, EventArgs e)
-        {
 
-        }
-
+       
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
+
+       
     }
 }
