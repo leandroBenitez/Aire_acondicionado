@@ -33,7 +33,6 @@ namespace MercadoEnvio
             text_user.Text = user;
             text_fecha.Text = ConstantesBD.fechaSistema.ToString();
 
-            MessageBox.Show(rol);
             List<string> funciones = this.loginDAO.get_funcionalidades(rol);
 
             if (!(funciones.Contains("ABM de Rol")))

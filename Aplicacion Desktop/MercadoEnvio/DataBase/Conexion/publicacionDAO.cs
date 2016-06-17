@@ -83,7 +83,10 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public SqlDataReader get_publicaciones(string condiciones)
         {
-            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from" + ConstantesBD.vista_publicaciones);
+            MessageBox.Show("Select * from " + ConstantesBD.vista_publicaciones + " where " + condiciones);
+
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.vista_publicaciones
+                                                                                    + " where " + condiciones);
             return resultado;
         }
 

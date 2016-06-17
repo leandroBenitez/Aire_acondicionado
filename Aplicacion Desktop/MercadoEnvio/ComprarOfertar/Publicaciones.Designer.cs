@@ -48,13 +48,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.text_libre = new System.Windows.Forms.TextBox();
             this.presentacion = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewPub = new System.Windows.Forms.DataGridView();
             this.boton_buscar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.descrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_costo_envio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_fecha_venc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPub)).BeginInit();
             this.SuspendLayout();
             // 
             // combo_rubros
@@ -178,6 +183,7 @@
             this.boton_aplicar.TabIndex = 6;
             this.boton_aplicar.Text = "Aplicar";
             this.boton_aplicar.UseVisualStyleBackColor = true;
+            this.boton_aplicar.Click += new System.EventHandler(this.boton_aplicar_Click);
             // 
             // groupBox1
             // 
@@ -252,13 +258,22 @@
             this.presentacion.TabIndex = 7;
             this.presentacion.Text = "Mercado Envios - Compras online";
             // 
-            // dataGridView1
+            // dataGridViewPub
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(200, 69);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(587, 312);
-            this.dataGridView1.TabIndex = 8;
+            this.dataGridViewPub.AllowUserToAddRows = false;
+            this.dataGridViewPub.AllowUserToDeleteRows = false;
+            this.dataGridViewPub.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPub.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.descrip,
+            this.desc_stock,
+            this.desc_precio,
+            this.desc_costo_envio,
+            this.desc_fecha_venc});
+            this.dataGridViewPub.Location = new System.Drawing.Point(200, 69);
+            this.dataGridViewPub.Name = "dataGridViewPub";
+            this.dataGridViewPub.ReadOnly = true;
+            this.dataGridViewPub.Size = new System.Drawing.Size(587, 312);
+            this.dataGridViewPub.TabIndex = 8;
             // 
             // boton_buscar
             // 
@@ -280,6 +295,36 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Filtros de busqueda";
             // 
+            // descrip
+            // 
+            this.descrip.HeaderText = "Descripcion";
+            this.descrip.Name = "descrip";
+            this.descrip.ReadOnly = true;
+            // 
+            // desc_stock
+            // 
+            this.desc_stock.HeaderText = "Stock";
+            this.desc_stock.Name = "desc_stock";
+            this.desc_stock.ReadOnly = true;
+            // 
+            // desc_precio
+            // 
+            this.desc_precio.HeaderText = "Precio";
+            this.desc_precio.Name = "desc_precio";
+            this.desc_precio.ReadOnly = true;
+            // 
+            // desc_costo_envio
+            // 
+            this.desc_costo_envio.HeaderText = "Costo Envio";
+            this.desc_costo_envio.Name = "desc_costo_envio";
+            this.desc_costo_envio.ReadOnly = true;
+            // 
+            // desc_fecha_venc
+            // 
+            this.desc_fecha_venc.HeaderText = "Fecha Vencimiento";
+            this.desc_fecha_venc.Name = "desc_fecha_venc";
+            this.desc_fecha_venc.ReadOnly = true;
+            // 
             // Publicaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,7 +332,7 @@
             this.ClientSize = new System.Drawing.Size(799, 393);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.boton_buscar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewPub);
             this.Controls.Add(this.presentacion);
             this.Controls.Add(this.text_libre);
             this.Controls.Add(this.panel1);
@@ -299,7 +344,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPub)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,7 +364,7 @@
         private System.Windows.Forms.Label presentacion;
         private System.Windows.Forms.TextBox precio_desde;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewPub;
         private System.Windows.Forms.Button boton_buscar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -330,5 +375,10 @@
         private System.Windows.Forms.TextBox precio_hasta;
         private System.Windows.Forms.DateTimePicker fecha_hasta;
         private System.Windows.Forms.DateTimePicker fecha_desde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descrip;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desc_stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desc_precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desc_costo_envio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desc_fecha_venc;
     }
 }

@@ -21,6 +21,7 @@ namespace MercadoEnvio.ComprarOfertar
             InitializeComponent();
             publicacion = new publicacionDAO();
             cargar_datos();
+            cargar_grid("");
         }
 
         public void cargar_datos()
@@ -55,8 +56,36 @@ namespace MercadoEnvio.ComprarOfertar
 
         private void boton_buscar_Click(object sender, EventArgs e)
         {
-            SqlDataReader resultado = publicacion.get_publicaciones("s");
-            resultado.Close();
+            cargar_grid("desc_publicacion like '%" + text_libre.Text + "%'");
+        }
+
+        public void cargar_grid(string condiciones)
+        {
+            dataGridViewPub.Rows.Clear();
+
+            SqlDataReader lectura = publicacion.get_publicaciones(condiciones);
+            
+            List<DataGridViewRow> filas = new List<DataGridViewRow>();
+            Object[] columnas = new Object[5];
+
+            while (lectura.Read())
+            {
+                columnas[0] = lectura["desc_publicacion"].ToString();
+                columnas[1] = lectura["desc_stock"].ToString();
+                columnas[2] = lectura["desc_precio"].ToString();
+                columnas[3] = lectura["desc_costo_envio"].ToString();
+                columnas[4] = lectura["fecha_vencimiento"].ToString();
+
+                filas.Add(new DataGridViewRow());
+                filas[filas.Count - 1].CreateCells(dataGridViewPub, columnas);
+            }
+            lectura.Close();
+            dataGridViewPub.Rows.AddRange(filas.ToArray());
+        }
+
+        private void boton_aplicar_Click(object sender, EventArgs e)
+        {
+            //if (string combo_rubros.Text)
         }
     }
 }
