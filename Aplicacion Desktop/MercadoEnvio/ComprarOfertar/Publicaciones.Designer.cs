@@ -49,13 +49,17 @@
             this.text_libre = new System.Windows.Forms.TextBox();
             this.presentacion = new System.Windows.Forms.Label();
             this.dataGridViewPub = new System.Windows.Forms.DataGridView();
-            this.boton_buscar = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.descrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc_precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc_costo_envio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc_fecha_venc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boton_buscar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -136,17 +140,21 @@
             // 
             // fecha_hasta
             // 
+            this.fecha_hasta.CustomFormat = "";
             this.fecha_hasta.Location = new System.Drawing.Point(88, 43);
             this.fecha_hasta.Name = "fecha_hasta";
             this.fecha_hasta.Size = new System.Drawing.Size(69, 20);
             this.fecha_hasta.TabIndex = 12;
+            this.fecha_hasta.Value = new System.DateTime(2016, 6, 17, 0, 0, 0, 0);
             // 
             // fecha_desde
             // 
+            this.fecha_desde.CustomFormat = "";
             this.fecha_desde.Location = new System.Drawing.Point(6, 43);
             this.fecha_desde.Name = "fecha_desde";
             this.fecha_desde.Size = new System.Drawing.Size(69, 20);
             this.fecha_desde.TabIndex = 11;
+            this.fecha_desde.Value = new System.DateTime(2016, 6, 17, 0, 0, 0, 0);
             // 
             // label6
             // 
@@ -174,6 +182,7 @@
             this.boton_limpiar.TabIndex = 7;
             this.boton_limpiar.Text = "Limpiar";
             this.boton_limpiar.UseVisualStyleBackColor = true;
+            this.boton_limpiar.Click += new System.EventHandler(this.boton_limpiar_Click);
             // 
             // boton_aplicar
             // 
@@ -272,8 +281,38 @@
             this.dataGridViewPub.Location = new System.Drawing.Point(200, 69);
             this.dataGridViewPub.Name = "dataGridViewPub";
             this.dataGridViewPub.ReadOnly = true;
-            this.dataGridViewPub.Size = new System.Drawing.Size(587, 312);
+            this.dataGridViewPub.Size = new System.Drawing.Size(587, 284);
             this.dataGridViewPub.TabIndex = 8;
+            // 
+            // descrip
+            // 
+            this.descrip.HeaderText = "Descripcion";
+            this.descrip.Name = "descrip";
+            this.descrip.ReadOnly = true;
+            // 
+            // desc_stock
+            // 
+            this.desc_stock.HeaderText = "Stock";
+            this.desc_stock.Name = "desc_stock";
+            this.desc_stock.ReadOnly = true;
+            // 
+            // desc_precio
+            // 
+            this.desc_precio.HeaderText = "Precio/Subasta";
+            this.desc_precio.Name = "desc_precio";
+            this.desc_precio.ReadOnly = true;
+            // 
+            // desc_costo_envio
+            // 
+            this.desc_costo_envio.HeaderText = "Costo Envio";
+            this.desc_costo_envio.Name = "desc_costo_envio";
+            this.desc_costo_envio.ReadOnly = true;
+            // 
+            // desc_fecha_venc
+            // 
+            this.desc_fecha_venc.HeaderText = "Fecha Vencimiento";
+            this.desc_fecha_venc.Name = "desc_fecha_venc";
+            this.desc_fecha_venc.ReadOnly = true;
             // 
             // boton_buscar
             // 
@@ -295,41 +334,55 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Filtros de busqueda";
             // 
-            // descrip
+            // button1
             // 
-            this.descrip.HeaderText = "Descripcion";
-            this.descrip.Name = "descrip";
-            this.descrip.ReadOnly = true;
+            this.button1.Location = new System.Drawing.Point(611, 358);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Pagina Sig. >";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // desc_stock
+            // button2
             // 
-            this.desc_stock.HeaderText = "Stock";
-            this.desc_stock.Name = "desc_stock";
-            this.desc_stock.ReadOnly = true;
+            this.button2.Location = new System.Drawing.Point(526, 358);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(79, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "< Pagina Ant.";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // desc_precio
+            // button3
             // 
-            this.desc_precio.HeaderText = "Precio";
-            this.desc_precio.Name = "desc_precio";
-            this.desc_precio.ReadOnly = true;
+            this.button3.Location = new System.Drawing.Point(429, 358);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 23);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "<< Primera Pag.";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // desc_costo_envio
+            // button4
             // 
-            this.desc_costo_envio.HeaderText = "Costo Envio";
-            this.desc_costo_envio.Name = "desc_costo_envio";
-            this.desc_costo_envio.ReadOnly = true;
-            // 
-            // desc_fecha_venc
-            // 
-            this.desc_fecha_venc.HeaderText = "Fecha Vencimiento";
-            this.desc_fecha_venc.Name = "desc_fecha_venc";
-            this.desc_fecha_venc.ReadOnly = true;
+            this.button4.Location = new System.Drawing.Point(696, 358);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(91, 23);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Ultima Pag. >>";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Publicaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 393);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.boton_buscar);
             this.Controls.Add(this.dataGridViewPub);
@@ -380,5 +433,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_costo_envio;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_fecha_venc;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

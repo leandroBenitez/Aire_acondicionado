@@ -81,13 +81,40 @@ namespace MercadoEnvio.DataBase.Conexion
             }
         }
 
-        public SqlDataReader get_publicaciones(string condiciones)
+        public SqlDataReader get_publicaciones(string condiciones, int pagina, int tamanioPagina)
         {
-            MessageBox.Show("Select * from " + ConstantesBD.vista_publicaciones + " where " + condiciones);
+            if (pagina == 1)
+            {
+                MessageBox.Show("Select TOP " + tamanioPagina.ToString() + " * from "
+                                                                    + ConstantesBD.vista_publicaciones
+                                                                    + " where " + condiciones);
+                return this.GD1C2016.ejecutarSentenciaConRetorno("Select TOP " + tamanioPagina.ToString() + " * from " 
+                                                                    + ConstantesBD.vista_publicaciones
+                                                                    + " where " + condiciones);
+            }
+            else
+            {
+                int publicacionesAnteriores = (pagina - 1) * tamanioPagina;
+                MessageBox.Show("Select TOP " + tamanioPagina.ToString() + " * from "
+                                                                    + ConstantesBD.vista_publicaciones
+                                                                    + " where " + condiciones
+                                                                    + " and id_publicacion not in (Select TOP "
+                                                                    + publicacionesAnteriores.ToString()
+                                                                    + " id_publicacion from "
+                                                                    + ConstantesBD.vista_publicaciones
+                                                                    + " where " + condiciones
+                                                                    + ")");
 
-            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.vista_publicaciones
-                                                                                    + " where " + condiciones);
-            return resultado;
+                return this.GD1C2016.ejecutarSentenciaConRetorno("Select TOP " + tamanioPagina.ToString() + " * from "
+                                                                    + ConstantesBD.vista_publicaciones
+                                                                    + " where " + condiciones
+                                                                    + " and id_publicacion not in (Select TOP "
+                                                                    + publicacionesAnteriores.ToString()
+                                                                    + " id_publicacion from "
+                                                                    + ConstantesBD.vista_publicaciones
+                                                                    + " where " + condiciones
+                                                                    + ")");
+            }
         }
 
         public SqlDataReader get_datos_ultima_publicacion(int id_user, string tipo_publicacion)
@@ -133,5 +160,17 @@ namespace MercadoEnvio.DataBase.Conexion
             lector.Close();
             throw new ValidacionErroneaUsuarioException(mensajeError);
         }
+
+        public int obtenerTotalRegistros(string condiciones)
+        {
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select Count(1) as CONTADOR from " + ConstantesBD.vista_publicaciones
+                                                                                    + " where " + condiciones);
+            resultado.Read();
+            int cantidad;
+            int.TryParse(resultado["CONTADOR"].ToString(), out cantidad);
+            resultado.Close();
+            return cantidad;
+        }
+
     }
 }
