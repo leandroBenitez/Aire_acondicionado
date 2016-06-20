@@ -17,9 +17,6 @@ namespace MercadoEnvio.ABM_Visibilidad
     {
         ABM_Visibilidad_DAO abm_visibilidad;
         List<string> id_visibilidad = new List<string>();
-        List<Button> txt = new List<Button>();
-        List<TextBox> txtTipo = new List<TextBox>();
-        int A = 7;
 
         public ModificacionVisibilidad()
         {
@@ -27,13 +24,11 @@ namespace MercadoEnvio.ABM_Visibilidad
             abm_visibilidad = new ABM_Visibilidad_DAO();
             InitializeComponent();
         }
-
-        private void Seleccionar_Click(object sender, EventArgs e)
+        
+        private void Buscar_Click(object sender, EventArgs e)
         {
-            id_visibilidad.Clear();
-            Limpiar_TxtYBut();
-
-            A = 7;
+            tablaVisibilidad.Rows.Clear();
+            tablaVisibilidad.Refresh();
 
             String desc_tipo = textTipo.Text;
             String desc_precio = textPrecio.Text;
@@ -41,77 +36,31 @@ namespace MercadoEnvio.ABM_Visibilidad
             String desc_porcentaje_envio = textEnvio.Text;
 
             id_visibilidad = abm_visibilidad.getIdVisibilidad(desc_tipo, desc_precio, desc_porcentaje, desc_porcentaje_envio);
-            
+
+            string id;
+
             for (int i = 0; i < id_visibilidad.Count; i++)
             {
-                txt.Add(addNewTextBox(id_visibilidad[i]));
-            }
-        }
+                id = id_visibilidad[i];
 
-        private Button addNewTextBox(string id)
-        {
-            Button but = new Button();
-            but.Click += new EventHandler(SeleccionarID);
-
-            this.Controls.Add(but);
-            but.Top = A * 38;
-            but.Left = 26;
-            but.Text = id;
-
-
-            TextBox text;
-
-            text = crearTextBox(126);
-            text.Text = abm_visibilidad.get_descVisibilidadSegun(id);
-            txtTipo.Add(text);
-
-            text = crearTextBox(226);
-            text.Text = abm_visibilidad.get_desc_precioVisibilidadSegun(id).ToString();
-            txtTipo.Add(text);
-
-            text = crearTextBox(326);
-            text.Text = abm_visibilidad.get_desc_porcentajeVisibilidadSegun(id).ToString();
-            txtTipo.Add(text);
-
-            text = crearTextBox(426);
-            text.Text = abm_visibilidad.get_desc_porcentaje_envioVisibilidadSegun(id).ToString();
-            txtTipo.Add(text);
-
-            A++;
-            return but;
-        }
-
-        private void SeleccionarID(object sender, EventArgs e)
-        {
-            Button button = sender as Button;
-
-            ListadoVisibilidad formListado = new ListadoVisibilidad(int.Parse(button.Text));
-            formListado.Show();
-        }
-
-        private TextBox crearTextBox(int left)
-        {
-            TextBox text = new TextBox();
-            text.ReadOnly = true;
-            this.Controls.Add(text);
-            text.Top = A * 38;
-            text.Left = left;
-
-            return text;
-        }
-
-        private void Limpiar_TxtYBut()
-        {
-            foreach (Button t in txt)
-            {
-                this.Controls.Remove(t);
-                t.Dispose();
+                tablaVisibilidad.Rows.Add(id,
+                                          abm_visibilidad.get_descVisibilidadSegun(id).ToString(), 
+                                          abm_visibilidad.get_desc_precioVisibilidadSegun(id).ToString(),
+                                          abm_visibilidad.get_desc_porcentajeVisibilidadSegun(id).ToString(),
+                                          abm_visibilidad.get_desc_porcentaje_envioVisibilidadSegun(id).ToString(),
+                                          "Modificar");
             }
 
-            foreach (TextBox t in txtTipo)
+        }
+
+        private void Click_En_Seleccionar(object sender, DataGridViewCellEventArgs e)
+        {
+            if (tablaVisibilidad.CurrentCell.ColumnIndex == 5)
             {
-                this.Controls.Remove(t);
-                t.Dispose();
+                var row = tablaVisibilidad.CurrentRow;
+
+                ListadoVisibilidad formListado = new ListadoVisibilidad(int.Parse(row.Cells[0].Value.ToString()));
+                formListado.Show();
             }
         }
 

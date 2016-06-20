@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.Seleccionar = new System.Windows.Forms.Button();
+            this.Buscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textPrecio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,37 +38,44 @@
             this.textEnvio = new System.Windows.Forms.TextBox();
             this.textTipo = new System.Windows.Forms.TextBox();
             this.Limpiar = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.tablaVisibilidad = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PorcentajeEnvio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Selección = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaVisibilidad)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 78);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(6, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ingresar \r\ntipo:";
             // 
-            // Seleccionar
+            // Buscar
             // 
-            this.Seleccionar.Location = new System.Drawing.Point(428, 195);
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.Size = new System.Drawing.Size(75, 23);
-            this.Seleccionar.TabIndex = 2;
-            this.Seleccionar.Text = "Buscar";
-            this.Seleccionar.UseVisualStyleBackColor = true;
-            this.Seleccionar.Click += new System.EventHandler(this.Seleccionar_Click);
+            this.Buscar.Location = new System.Drawing.Point(531, 170);
+            this.Buscar.Name = "Buscar";
+            this.Buscar.Size = new System.Drawing.Size(75, 23);
+            this.Buscar.TabIndex = 2;
+            this.Buscar.Text = "Buscar";
+            this.Buscar.UseVisualStyleBackColor = true;
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(320, 78);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(396, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 26);
             this.label2.TabIndex = 3;
@@ -76,7 +83,7 @@
             // 
             // textPrecio
             // 
-            this.textPrecio.Location = new System.Drawing.Point(403, 78);
+            this.textPrecio.Location = new System.Drawing.Point(479, 16);
             this.textPrecio.Name = "textPrecio";
             this.textPrecio.Size = new System.Drawing.Size(100, 20);
             this.textPrecio.TabIndex = 4;
@@ -84,7 +91,8 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 149);
+            this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.label3.Location = new System.Drawing.Point(6, 57);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 26);
             this.label3.TabIndex = 5;
@@ -92,7 +100,7 @@
             // 
             // textPorcentaje
             // 
-            this.textPorcentaje.Location = new System.Drawing.Point(109, 149);
+            this.textPorcentaje.Location = new System.Drawing.Point(90, 57);
             this.textPorcentaje.Name = "textPorcentaje";
             this.textPorcentaje.Size = new System.Drawing.Size(100, 20);
             this.textPorcentaje.TabIndex = 6;
@@ -100,7 +108,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(320, 149);
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(396, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 26);
             this.label4.TabIndex = 7;
@@ -108,7 +117,7 @@
             // 
             // textEnvio
             // 
-            this.textEnvio.Location = new System.Drawing.Point(403, 146);
+            this.textEnvio.Location = new System.Drawing.Point(479, 51);
             this.textEnvio.Name = "textEnvio";
             this.textEnvio.Size = new System.Drawing.Size(100, 20);
             this.textEnvio.TabIndex = 8;
@@ -116,14 +125,14 @@
             // 
             // textTipo
             // 
-            this.textTipo.Location = new System.Drawing.Point(109, 78);
+            this.textTipo.Location = new System.Drawing.Point(90, 19);
             this.textTipo.Name = "textTipo";
             this.textTipo.Size = new System.Drawing.Size(100, 20);
             this.textTipo.TabIndex = 11;
             // 
             // Limpiar
             // 
-            this.Limpiar.Location = new System.Drawing.Point(28, 195);
+            this.Limpiar.Location = new System.Drawing.Point(12, 170);
             this.Limpiar.Name = "Limpiar";
             this.Limpiar.Size = new System.Drawing.Size(75, 23);
             this.Limpiar.TabIndex = 12;
@@ -131,84 +140,102 @@
             this.Limpiar.UseVisualStyleBackColor = true;
             this.Limpiar.Click += new System.EventHandler(this.Limpiar_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 240);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Seleccionar";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(164, 240);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Tipo";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(256, 240);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Precio";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(353, 240);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Porcentaje";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(458, 240);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(34, 13);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Envio";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(123, 25);
+            this.label10.Location = new System.Drawing.Point(136, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(340, 27);
             this.label10.TabIndex = 18;
             this.label10.Text = "MODIFICACION DE VISIBILIDAD";
             // 
+            // tablaVisibilidad
+            // 
+            this.tablaVisibilidad.AllowUserToAddRows = false;
+            this.tablaVisibilidad.AllowUserToDeleteRows = false;
+            this.tablaVisibilidad.AllowUserToResizeColumns = false;
+            this.tablaVisibilidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaVisibilidad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Tipo,
+            this.Precio,
+            this.Porcentaje,
+            this.PorcentajeEnvio,
+            this.Selección});
+            this.tablaVisibilidad.Location = new System.Drawing.Point(12, 209);
+            this.tablaVisibilidad.Name = "tablaVisibilidad";
+            this.tablaVisibilidad.Size = new System.Drawing.Size(594, 217);
+            this.tablaVisibilidad.TabIndex = 19;
+            this.tablaVisibilidad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Click_En_Seleccionar);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Width = 30;
+            // 
+            // Tipo
+            // 
+            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.MaxInputLength = 32768;
+            this.Tipo.Name = "Tipo";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Porcentaje
+            // 
+            this.Porcentaje.HeaderText = "Porcentaje";
+            this.Porcentaje.Name = "Porcentaje";
+            // 
+            // PorcentajeEnvio
+            // 
+            this.PorcentajeEnvio.HeaderText = "Porcentaje Envio";
+            this.PorcentajeEnvio.Name = "PorcentajeEnvio";
+            // 
+            // Selección
+            // 
+            this.Selección.HeaderText = "Seleccionar";
+            this.Selección.Name = "Selección";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textPrecio);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textTipo);
+            this.groupBox1.Controls.Add(this.textPorcentaje);
+            this.groupBox1.Controls.Add(this.textEnvio);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.groupBox1.Location = new System.Drawing.Point(12, 53);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(594, 99);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros de Búsqueda";
+            // 
             // ModificacionVisibilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 480);
+            this.ClientSize = new System.Drawing.Size(621, 457);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.tablaVisibilidad);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.Limpiar);
-            this.Controls.Add(this.textTipo);
-            this.Controls.Add(this.textEnvio);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textPorcentaje);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textPrecio);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.Seleccionar);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Buscar);
             this.Name = "ModificacionVisibilidad";
             this.Text = "ModificacionVisibilidad";
+            ((System.ComponentModel.ISupportInitialize)(this.tablaVisibilidad)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,7 +244,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Seleccionar;
+        private System.Windows.Forms.Button Buscar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textPrecio;
         private System.Windows.Forms.Label label3;
@@ -226,11 +253,14 @@
         private System.Windows.Forms.TextBox textEnvio;
         private System.Windows.Forms.TextBox textTipo;
         private System.Windows.Forms.Button Limpiar;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView tablaVisibilidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Porcentaje;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PorcentajeEnvio;
+        private System.Windows.Forms.DataGridViewButtonColumn Selección;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
