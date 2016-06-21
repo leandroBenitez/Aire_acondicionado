@@ -86,6 +86,7 @@ namespace MercadoEnvio
 
         private void boton_historial_Click(object sender, EventArgs e)
         {
+            HistorialMiCuenta hist = new HistorialMiCuenta(this.id_usuario);//this para lograr menu show
             hist.Show();
             this.Hide();
         }
