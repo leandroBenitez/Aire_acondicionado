@@ -12,6 +12,7 @@ using MercadoEnvio.Generar_Publicación;
 using MercadoEnvio.Historial_Cliente;
 using MercadoEnvio.ComprarOfertar;
 using MercadoEnvio.ABM_Usuario;
+using MercadoEnvio.Consulta_Facturas;
 
 namespace MercadoEnvio
 {
@@ -81,7 +82,9 @@ namespace MercadoEnvio
 
         private void boton_con_fact_Click(object sender, EventArgs e)
         {
-
+            cons_fac consultaFacturas = new cons_fac(this);
+            consultaFacturas.Show();
+            this.Hide();
         }
 
         private void boton_historial_Click(object sender, EventArgs e)

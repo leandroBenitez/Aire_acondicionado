@@ -276,6 +276,7 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_forma_pago
 Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura
 (	
 	 id_factura numeric(18,0)
+	,desc_factura_nro NUMERIC(18,0) -- HABRIA QUE AGREGARLE LOS DATOS
 	,desc_fecha datetime
 	,desc_total numeric(18,2)
 	,id_forma_pago int
@@ -1062,3 +1063,11 @@ values (96,1)
 
 Select * from GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
 */
+
+
+
+
+
+
+
+

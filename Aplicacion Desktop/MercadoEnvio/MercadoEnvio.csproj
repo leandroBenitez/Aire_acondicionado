@@ -165,6 +165,7 @@
     <Compile Include="ABM Visibilidad\ModificacionVisibilidad.designer.cs">
       <DependentUpon>ModificacionVisibilidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABM_Factura_DAO.cs" />
     <Compile Include="Calificar\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +183,12 @@
     </Compile>
     <Compile Include="ComprarOfertar\Subastar.Designer.cs">
       <DependentUpon>Subastar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta Facturas\cons_fac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta Facturas\cons_fac.Designer.cs">
+      <DependentUpon>cons_fac.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Conexion\ABM_Rol_DAO.cs" />
     <Compile Include="DataBase\Conexion\ABM_usuario_DAO.cs" />
@@ -364,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ComprarOfertar\Subastar.resx">
       <DependentUpon>Subastar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta Facturas\cons_fac.resx">
+      <DependentUpon>cons_fac.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Generar Publicación\Compra.resx">
       <DependentUpon>Compra.cs</DependentUpon>
