@@ -134,7 +134,7 @@ namespace MercadoEnvio.DataBase.Conexion
         {
             try
             {
-                this.GD1C2016.ejecutarSentenciaSinRetorno("UPDATE " + ConstantesBD.tabla_visibilidad + " SET desc_estado = '0' WHERE id_visibilidad = " + id_visibilidad);
+                this.GD1C2016.ejecutarSentenciaSinRetorno("UPDATE " + ConstantesBD.tabla_visibilidad + " SET desc_estado = 0 WHERE id_visibilidad = " + id_visibilidad);
 
                 MessageBox.Show("Se borro la visibilidad");
             }
