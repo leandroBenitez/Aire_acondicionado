@@ -47,11 +47,12 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public void setearVisibilidad(String desc_tipo, String desc_precio, String desc_porcentaje, String desc_porcentaje_envio)
         {
-            this.GD1C2016.ejecutarSentenciaSinRetorno("INSERT INTO " + ConstantesBD.tabla_visibilidad + " (desc_codigo, desc_tipo, desc_precio, desc_porcentaje, desc_porcentaje_envio) VALUES (" + "1010 , '"
+            this.GD1C2016.ejecutarSentenciaSinRetorno("INSERT INTO " + ConstantesBD.tabla_visibilidad + " (desc_codigo, desc_tipo, desc_precio, desc_porcentaje, desc_porcentaje_envio, desc_estado) VALUES (" + "1010 , '"
                                                                                                                                                                                                           + desc_tipo + "', " 
                                                                                                                                                                                                           + desc_precio + ", " 
                                                                                                                                                                                                           + desc_porcentaje + ", " 
-                                                                                                                                                                                                          + desc_porcentaje_envio + ")");
+                                                                                                                                                                                                          + desc_porcentaje_envio + ", " 
+                                                                                                                                                                                                          + 1 + ")");
         }
 
         public decimal get_desc_precioVisibilidadSegun(string id_visibilidad)
@@ -127,6 +128,21 @@ namespace MercadoEnvio.DataBase.Conexion
 
             lector.Close();
             return resultado;
+        }
+
+        public void deshabilitarVisibilidad(int id_visibilidad)
+        {
+            try
+            {
+                this.GD1C2016.ejecutarSentenciaSinRetorno("UPDATE " + ConstantesBD.tabla_visibilidad + " SET desc_estado = '0' WHERE id_visibilidad = " + id_visibilidad);
+
+                MessageBox.Show("Se borro la visibilidad");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("No se pudo borrar la visibilidad. Verificar que no haya referencia a " + get_descVisibilidadSegun(id_visibilidad.ToString()) + " desde otra tabla.");
+
+            }
         }
 
         public void borrarVisibilidad(int id_visibilidad)

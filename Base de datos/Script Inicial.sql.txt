@@ -190,6 +190,7 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad
 	,desc_precio numeric(18,2)
 	,desc_porcentaje numeric(18,2)
 	,desc_porcentaje_envio numeric(18,2)
+	,desc_estado bit DEFAULT 1
 	,primary key (id_visibilidad)
 )
 
