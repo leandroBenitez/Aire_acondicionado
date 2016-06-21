@@ -49,17 +49,20 @@
             this.text_libre = new System.Windows.Forms.TextBox();
             this.presentacion = new System.Windows.Forms.Label();
             this.dataGridViewPub = new System.Windows.Forms.DataGridView();
-            this.descrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc_precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc_costo_envio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc_fecha_venc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boton_buscar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.id_publi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_costo_envio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_fecha_venc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -273,6 +276,7 @@
             this.dataGridViewPub.AllowUserToDeleteRows = false;
             this.dataGridViewPub.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPub.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_publi,
             this.descrip,
             this.desc_stock,
             this.desc_precio,
@@ -283,6 +287,95 @@
             this.dataGridViewPub.ReadOnly = true;
             this.dataGridViewPub.Size = new System.Drawing.Size(587, 284);
             this.dataGridViewPub.TabIndex = 8;
+            // 
+            // boton_buscar
+            // 
+            this.boton_buscar.Location = new System.Drawing.Point(712, 42);
+            this.boton_buscar.Name = "boton_buscar";
+            this.boton_buscar.Size = new System.Drawing.Size(75, 23);
+            this.boton_buscar.TabIndex = 10;
+            this.boton_buscar.Text = "Buscar";
+            this.boton_buscar.UseVisualStyleBackColor = true;
+            this.boton_buscar.Click += new System.EventHandler(this.boton_buscar_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(37, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(134, 15);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Filtros de busqueda";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(521, 358);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Página Sig. >";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(297, 358);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(79, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "< Página Ant.";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(200, 358);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 23);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "<< Primera Pág.";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(606, 358);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(91, 23);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Última Pág. >>";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(382, 358);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(133, 23);
+            this.button5.TabIndex = 15;
+            this.button5.Text = "Comprar/Subastar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.Maroon;
+            this.button6.Location = new System.Drawing.Point(724, 358);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(63, 23);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "Volver";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // id_publi
+            // 
+            this.id_publi.HeaderText = "Cod. Public.";
+            this.id_publi.Name = "id_publi";
+            this.id_publi.ReadOnly = true;
             // 
             // descrip
             // 
@@ -314,71 +407,13 @@
             this.desc_fecha_venc.Name = "desc_fecha_venc";
             this.desc_fecha_venc.ReadOnly = true;
             // 
-            // boton_buscar
-            // 
-            this.boton_buscar.Location = new System.Drawing.Point(712, 42);
-            this.boton_buscar.Name = "boton_buscar";
-            this.boton_buscar.Size = new System.Drawing.Size(75, 23);
-            this.boton_buscar.TabIndex = 10;
-            this.boton_buscar.Text = "Buscar";
-            this.boton_buscar.UseVisualStyleBackColor = true;
-            this.boton_buscar.Click += new System.EventHandler(this.boton_buscar_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(37, 44);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 15);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Filtros de busqueda";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(611, 358);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(79, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Pagina Sig. >";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(526, 358);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "< Pagina Ant.";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(429, 358);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(91, 23);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "<< Primera Pag.";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(696, 358);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(91, 23);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Ultima Pag. >>";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // Publicaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 393);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -428,14 +463,17 @@
         private System.Windows.Forms.TextBox precio_hasta;
         private System.Windows.Forms.DateTimePicker fecha_hasta;
         private System.Windows.Forms.DateTimePicker fecha_desde;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_publi;
         private System.Windows.Forms.DataGridViewTextBoxColumn descrip;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_costo_envio;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_fecha_venc;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
     }
 }

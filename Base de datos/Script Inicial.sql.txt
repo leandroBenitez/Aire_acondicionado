@@ -733,6 +733,43 @@ If exists (select 'existe' From sys.objects where type = 'TR' AND name = 'sumar_
 	Drop trigger GESTORES_DEL_AIRE_ACONDICIONADO.sumar_total
 Go
 
+If exists (select'existe' From INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME = 'comprar_subastar')
+	Drop procedure GESTORES_DEL_AIRE_ACONDICIONADO.comprar_subastar
+Go
+
+/* STORED PROCEDURE PARA GENERAR OFERTAS Y COMPRAS*/
+CREATE procedure GESTORES_DEL_AIRE_ACONDICIONADO.comprar_subastar	(	 @desc_fecha varchar(30)
+																		,@monto decimal(18,2)
+																		,@publicacion int
+																		,@usuario int
+																		,@tipo_publicacion varchar(50)
+																		,@cantidad int	)
+As
+if @tipo_publicacion = 'Compra Inmediata'
+begin
+	Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra	(	 desc_fecha
+																,desc_cantidad
+																,id_publicacion
+																,id_usuario	)
+	Select	 CONVERT(datetime, right(@desc_fecha, 4) + SUBSTRING(@desc_fecha, 3, 4) + left(@desc_fecha, 2))
+			,@cantidad
+			,@publicacion
+			,@usuario
+end
+else
+begin
+	Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_subasta	(	 desc_fecha
+																,desc_monto
+																,id_publicacion
+																,id_usuario	)
+	Select	 CONVERT(datetime, right(@desc_fecha, 4) + SUBSTRING(@desc_fecha, 3, 4) + left(@desc_fecha, 2))
+			,@monto
+			,@publicacion
+			,@usuario
+end
+
+Go
+
 /* STORED PROCEDURE PARA CREAR UN NUEVO CLIENTE (CARGA TABLAS USUARIO, CLIENTE, Y ROLES_USUARIO)*/
 Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.guardar_publicacion	(	 @id_publicacion varchar(50)
 																			,@descripcion varchar(250)
@@ -1009,9 +1046,9 @@ Go
 
 /*
 
-Select * from [GESTORES_DEL_AIRE_ACONDICIONADO].[log_ingresos]
+Select * from GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
 
-Select * from [GESTORES_DEL_AIRE_ACONDICIONADO].[ft_usuario]
+Select * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario
 
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
 															,desc_password
@@ -1020,8 +1057,8 @@ Select	 'admin'
 		,HASHBYTES('sha2_256', 'admin')
 		,1
 
-Insert into [GESTORES_DEL_AIRE_ACONDICIONADO].[rl_roles_usuarios]
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
 values (96,1)
 
-Select * from [GESTORES_DEL_AIRE_ACONDICIONADO].[rl_roles_usuarios]
+Select * from GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
 */

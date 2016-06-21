@@ -85,9 +85,6 @@ namespace MercadoEnvio.DataBase.Conexion
         {
             if (pagina == 1)
             {
-                MessageBox.Show("Select TOP " + tamanioPagina.ToString() + " * from "
-                                                                    + ConstantesBD.vista_publicaciones
-                                                                    + " where " + condiciones);
                 return this.GD1C2016.ejecutarSentenciaConRetorno("Select TOP " + tamanioPagina.ToString() + " * from " 
                                                                     + ConstantesBD.vista_publicaciones
                                                                     + " where " + condiciones);
@@ -95,16 +92,6 @@ namespace MercadoEnvio.DataBase.Conexion
             else
             {
                 int publicacionesAnteriores = (pagina - 1) * tamanioPagina;
-                MessageBox.Show("Select TOP " + tamanioPagina.ToString() + " * from "
-                                                                    + ConstantesBD.vista_publicaciones
-                                                                    + " where " + condiciones
-                                                                    + " and id_publicacion not in (Select TOP "
-                                                                    + publicacionesAnteriores.ToString()
-                                                                    + " id_publicacion from "
-                                                                    + ConstantesBD.vista_publicaciones
-                                                                    + " where " + condiciones
-                                                                    + ")");
-
                 return this.GD1C2016.ejecutarSentenciaConRetorno("Select TOP " + tamanioPagina.ToString() + " * from "
                                                                     + ConstantesBD.vista_publicaciones
                                                                     + " where " + condiciones
@@ -170,6 +157,27 @@ namespace MercadoEnvio.DataBase.Conexion
             int.TryParse(resultado["CONTADOR"].ToString(), out cantidad);
             resultado.Close();
             return cantidad;
+        }
+
+        public void realizar_compra_subasta (   float monto, 
+                                                int publicacion, 
+                                                int usuario, 
+                                                string tipo_publicacion, 
+                                                int cantidad    )
+        {
+            this.GD1C2016.ejecutarSentenciaSinRetorno("Execute GESTORES_DEL_AIRE_ACONDICIONADO.comprar_subastar @desc_fecha = '" + ConstantesBD.fechaSistema
+                                                                                                         + "' , @monto = '" + monto.ToString()
+                                                                                                         + "' , @publicacion = '" + publicacion.ToString()
+                                                                                                         + "' , @usuario = '" + usuario.ToString()
+                                                                                                         + "' , @tipo_publicacion = '" + tipo_publicacion
+                                                                                                         + "' , @cantidad = '" + cantidad.ToString() + "'");    
+        }
+
+        public SqlDataReader get_ultima_oferta(int id_publicacion)
+        {
+            return this.GD1C2016.ejecutarSentenciaConRetorno("Select TOP 1 * from " + ConstantesBD.tabla_subastas 
+                                                                + " where id_publicacion = '" + id_publicacion.ToString()
+                                                                + "' order by desc_monto desc");
         }
 
     }
