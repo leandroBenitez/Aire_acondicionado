@@ -31,8 +31,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonVolver = new System.Windows.Forms.Button();
             this.dataGridViewComprasCalificadas = new System.Windows.Forms.DataGridView();
+            this.buttonPrimerPag = new System.Windows.Forms.Button();
+            this.buttonPaginaAnt = new System.Windows.Forms.Button();
+            this.buttonPaginaSgte = new System.Windows.Forms.Button();
+            this.buttonUltimaPag = new System.Windows.Forms.Button();
             this.Col_IdCalif = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_desc_codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_CantEst = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_IdCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewComprasCalificadas)).BeginInit();
@@ -40,9 +46,9 @@
             // 
             // buttonVolver
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(140, 224);
+            this.buttonVolver.Location = new System.Drawing.Point(576, 305);
             this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(75, 23);
+            this.buttonVolver.Size = new System.Drawing.Size(92, 23);
             this.buttonVolver.TabIndex = 0;
             this.buttonVolver.Text = "Volver";
             this.buttonVolver.UseVisualStyleBackColor = true;
@@ -65,23 +71,75 @@
             this.dataGridViewComprasCalificadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewComprasCalificadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_IdCalif,
+            this.Col_desc_codigo,
             this.Col_CantEst,
+            this.Col_descripcion,
             this.Col_IdUsuario,
             this.Col_IdCompra});
-            this.dataGridViewComprasCalificadas.Location = new System.Drawing.Point(58, 40);
+            this.dataGridViewComprasCalificadas.Location = new System.Drawing.Point(25, 24);
             this.dataGridViewComprasCalificadas.Name = "dataGridViewComprasCalificadas";
-            this.dataGridViewComprasCalificadas.Size = new System.Drawing.Size(444, 150);
+            this.dataGridViewComprasCalificadas.Size = new System.Drawing.Size(643, 261);
             this.dataGridViewComprasCalificadas.TabIndex = 1;
+            // 
+            // buttonPrimerPag
+            // 
+            this.buttonPrimerPag.Location = new System.Drawing.Point(25, 304);
+            this.buttonPrimerPag.Name = "buttonPrimerPag";
+            this.buttonPrimerPag.Size = new System.Drawing.Size(92, 23);
+            this.buttonPrimerPag.TabIndex = 2;
+            this.buttonPrimerPag.Text = "<< Primer Pág.";
+            this.buttonPrimerPag.UseVisualStyleBackColor = true;
+            this.buttonPrimerPag.Click += new System.EventHandler(this.buttonPrimerPag_Click);
+            // 
+            // buttonPaginaAnt
+            // 
+            this.buttonPaginaAnt.Location = new System.Drawing.Point(160, 305);
+            this.buttonPaginaAnt.Name = "buttonPaginaAnt";
+            this.buttonPaginaAnt.Size = new System.Drawing.Size(92, 23);
+            this.buttonPaginaAnt.TabIndex = 3;
+            this.buttonPaginaAnt.Text = "< Página Ant.";
+            this.buttonPaginaAnt.UseVisualStyleBackColor = true;
+            this.buttonPaginaAnt.Click += new System.EventHandler(this.buttonPaginaAnt_Click);
+            // 
+            // buttonPaginaSgte
+            // 
+            this.buttonPaginaSgte.Location = new System.Drawing.Point(294, 305);
+            this.buttonPaginaSgte.Name = "buttonPaginaSgte";
+            this.buttonPaginaSgte.Size = new System.Drawing.Size(92, 23);
+            this.buttonPaginaSgte.TabIndex = 4;
+            this.buttonPaginaSgte.Text = "Página Sgte >";
+            this.buttonPaginaSgte.UseVisualStyleBackColor = true;
+            this.buttonPaginaSgte.Click += new System.EventHandler(this.buttonPaginaSgte_Click);
+            // 
+            // buttonUltimaPag
+            // 
+            this.buttonUltimaPag.Location = new System.Drawing.Point(445, 305);
+            this.buttonUltimaPag.Name = "buttonUltimaPag";
+            this.buttonUltimaPag.Size = new System.Drawing.Size(92, 23);
+            this.buttonUltimaPag.TabIndex = 5;
+            this.buttonUltimaPag.Text = "Última Pág. >>";
+            this.buttonUltimaPag.UseVisualStyleBackColor = true;
+            this.buttonUltimaPag.Click += new System.EventHandler(this.buttonUltimaPag_Click);
             // 
             // Col_IdCalif
             // 
             this.Col_IdCalif.HeaderText = "Calificación";
             this.Col_IdCalif.Name = "Col_IdCalif";
             // 
+            // Col_desc_codigo
+            // 
+            this.Col_desc_codigo.HeaderText = "Código";
+            this.Col_desc_codigo.Name = "Col_desc_codigo";
+            // 
             // Col_CantEst
             // 
             this.Col_CantEst.HeaderText = "Cantidad de estrellas";
             this.Col_CantEst.Name = "Col_CantEst";
+            // 
+            // Col_descripcion
+            // 
+            this.Col_descripcion.HeaderText = "Descripción";
+            this.Col_descripcion.Name = "Col_descripcion";
             // 
             // Col_IdUsuario
             // 
@@ -97,12 +155,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 261);
+            this.ClientSize = new System.Drawing.Size(680, 340);
+            this.Controls.Add(this.buttonUltimaPag);
+            this.Controls.Add(this.buttonPaginaSgte);
+            this.Controls.Add(this.buttonPaginaAnt);
+            this.Controls.Add(this.buttonPrimerPag);
             this.Controls.Add(this.dataGridViewComprasCalificadas);
             this.Controls.Add(this.buttonVolver);
             this.Name = "HistorialComprasCalificadas";
             this.Text = "Compras calificadas";
-            this.Load += new System.EventHandler(this.HistorialComprasCalificadas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewComprasCalificadas)).EndInit();
             this.ResumeLayout(false);
 
@@ -112,8 +173,14 @@
 
         private System.Windows.Forms.Button buttonVolver;
         private System.Windows.Forms.DataGridView dataGridViewComprasCalificadas;
+        private System.Windows.Forms.Button buttonPrimerPag;
+        private System.Windows.Forms.Button buttonPaginaAnt;
+        private System.Windows.Forms.Button buttonPaginaSgte;
+        private System.Windows.Forms.Button buttonUltimaPag;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_IdCalif;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_desc_codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CantEst;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_IdUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_IdCompra;
     }

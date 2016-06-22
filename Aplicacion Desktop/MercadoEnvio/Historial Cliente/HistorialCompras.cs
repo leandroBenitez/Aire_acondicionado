@@ -10,15 +10,18 @@ using System.Windows.Forms;
 using MercadoEnvio.DataBase.Conexion;
 using System.Data.SqlClient;
 
-
-
 namespace MercadoEnvio.Historial_Cliente
 {
     public partial class HistorialCompras : Form
     {
         HistorialCompras_DAO HistCompDAO = new HistorialCompras_DAO();
         private int id_usuario;
-        
+
+        //Páginas-------------------------------------------------------------
+        private int tamanioPagina = 10;
+        private int paginaActual = 1;
+        private int totalPaginas = 0;
+        //Páginas-------------------------------------------------------------
         
         public HistorialCompras(int idUser)
         {
@@ -26,9 +29,16 @@ namespace MercadoEnvio.Historial_Cliente
             id_usuario = idUser;
         }
 
-        private void HistorialCompras_Load(object sender, EventArgs e)
+        private void cargar_grid_histCompras()
         {
             dataGridViewCompras.Rows.Clear();
+
+            //total de registros--------------------------------------------------
+            int totalRegistros = HistCompDAO.obtenerTotalRegistros(this.id_usuario);
+            //total de páginas----------------------------------------------------
+            this.totalPaginas = calcularTotalDePaginas(totalRegistros);
+            //--------------------------------------------------------------------
+
             SqlDataReader lectura;
 
             lectura = HistCompDAO.get_compras(this.id_usuario);
@@ -58,6 +68,51 @@ namespace MercadoEnvio.Historial_Cliente
         {
             this.Close();
         }
+
+
+        private int calcularTotalDePaginas(int cantRegistros)
+        {
+            int aux;
+            aux = cantRegistros / this.tamanioPagina;
+
+            if (cantRegistros % this.tamanioPagina > 0)
+            {
+                aux += 1;
+            }
+            return aux;
+        }
+
+        private void buttonPrimerPag_Click(object sender, EventArgs e)
+        {
+            this.paginaActual = this.totalPaginas;
+            cargar_grid_histCompras();
+        }
+
+        private void buttonPaginaAnt_Click(object sender, EventArgs e)
+        {
+            if (!(this.paginaActual == 1))
+            {
+                this.paginaActual -= 1;
+                cargar_grid_histCompras();
+            }
+        }
+
+        private void buttonPaginaSgte_Click(object sender, EventArgs e)
+        {
+            if (!(this.paginaActual == this.totalPaginas))
+            {
+                this.paginaActual += 1;
+                cargar_grid_histCompras();
+            }
+        }
+
+        private void buttonUltimaPag_Click(object sender, EventArgs e)
+        {
+            this.paginaActual = this.totalPaginas;
+            cargar_grid_histCompras();
+        }
+
+       
 
        
 

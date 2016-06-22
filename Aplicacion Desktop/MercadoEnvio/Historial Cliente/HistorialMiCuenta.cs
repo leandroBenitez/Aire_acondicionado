@@ -13,11 +13,13 @@ namespace MercadoEnvio.Historial_Cliente
     public partial class HistorialMiCuenta : Form
     {
         private int id_usuario;
+        public Menu menu;
         
-        public HistorialMiCuenta(int id)
+        public HistorialMiCuenta(int id_user, Menu un_menu)
         {
             InitializeComponent();
-            id_usuario = id;
+            id_usuario = id_user;
+            menu = un_menu;
         }
 
         private void MostrarFacturacion_Click(object sender, EventArgs e)
@@ -53,7 +55,13 @@ namespace MercadoEnvio.Historial_Cliente
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
-          this.Close();
+            menu.Show();//cambio para menu
+            this.Close();
+        }
+
+        private void buttonSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         

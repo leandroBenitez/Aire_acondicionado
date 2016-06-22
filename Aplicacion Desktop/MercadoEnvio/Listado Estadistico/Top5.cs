@@ -12,9 +12,12 @@ namespace MercadoEnvio.Listado_Estadistico
 {
     public partial class Top5 : Form
     {
-        public Top5()
+        public Menu menu;
+
+        public Top5(Menu un_menu)
         {
             InitializeComponent();
+            menu = un_menu;
         }
 
         private void comboBoxTop5_SelectedIndexChanged(object sender, EventArgs e)
@@ -29,13 +32,16 @@ namespace MercadoEnvio.Listado_Estadistico
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
-
+            menu.Show();
+            this.Close();
         }
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
         {
 
         }
+
+
 
        
        

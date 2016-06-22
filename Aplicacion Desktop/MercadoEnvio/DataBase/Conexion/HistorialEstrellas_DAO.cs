@@ -18,7 +18,7 @@ namespace MercadoEnvio.DataBase.Conexion
             this.iniciar();
         }
 
-        public SqlDataReader get_comprasCalificadas(int id_usuario)//FALTA FILTRAR
+        public SqlDataReader get_comprasCalificadas(int id_usuario)
         {
             SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.tabla_subastas
                                                                                     + " where id_usuario = '" + id_usuario.ToString() + "'");
@@ -28,12 +28,23 @@ namespace MercadoEnvio.DataBase.Conexion
         }
 
 
-        public SqlDataReader get_comprasSinCalificar(int id_usuario) //FALTA FILTRAR
+        public SqlDataReader get_comprasSinCalificar(int id_usuario) 
         {
             SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.tabla_subastas
                                                                                     + " where id_usuario = '" + id_usuario.ToString() + "'");
 
             return resultado;
+        }
+
+        public int obtenerTotalRegistros(int id_usuario)
+        {
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select Count(1) as CONTADOR from " + ConstantesBD.tabla_facturas
+                                                                                    + " where id_usuario = '" + id_usuario.ToString() + "'");
+            resultado.Read();
+            int cantidad;
+            int.TryParse(resultado["CONTADOR"].ToString(), out cantidad);
+            resultado.Close();
+            return cantidad;
         }
 
 

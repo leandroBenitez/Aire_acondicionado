@@ -24,7 +24,7 @@ namespace MercadoEnvio.Listado_Estadistico
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void buttonLimpiar_Click(object sender, EventArgs e)

@@ -13,6 +13,7 @@ using MercadoEnvio.Historial_Cliente;
 using MercadoEnvio.ComprarOfertar;
 using MercadoEnvio.ABM_Usuario;
 using MercadoEnvio.Consulta_Facturas;
+using MercadoEnvio.Listado_Estadistico;
 
 namespace MercadoEnvio
 {
@@ -89,15 +90,18 @@ namespace MercadoEnvio
 
         private void boton_historial_Click(object sender, EventArgs e)
         {
-            HistorialMiCuenta hist = new HistorialMiCuenta(this.id_usuario);//this para lograr menu show
+            HistorialMiCuenta hist = new HistorialMiCuenta(this.id_usuario, this);//this para lograr menu show
             hist.Show();
             this.Hide();
         }
 
         private void boton_estadistica_Click(object sender, EventArgs e)
         {
-
+            Top5 top5 = new Top5(this);//recibe menu
+            top5.Show();
+            this.Hide();
         }
+
 
         private void boton_comprar_Click(object sender, EventArgs e)
         {

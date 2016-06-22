@@ -40,14 +40,18 @@
             this.Col_descTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_idFormaPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonPrimerPag = new System.Windows.Forms.Button();
+            this.buttonPaginaAnt = new System.Windows.Forms.Button();
+            this.buttonPaginaSgte = new System.Windows.Forms.Button();
+            this.buttonUltimaPag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFacturas)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonVolverAlMenu
             // 
-            this.buttonVolverAlMenu.Location = new System.Drawing.Point(240, 266);
+            this.buttonVolverAlMenu.Location = new System.Drawing.Point(481, 273);
             this.buttonVolverAlMenu.Name = "buttonVolverAlMenu";
-            this.buttonVolverAlMenu.Size = new System.Drawing.Size(111, 23);
+            this.buttonVolverAlMenu.Size = new System.Drawing.Size(94, 23);
             this.buttonVolverAlMenu.TabIndex = 2;
             this.buttonVolverAlMenu.Text = "Volver";
             this.buttonVolverAlMenu.UseVisualStyleBackColor = true;
@@ -125,16 +129,59 @@
             this.Col_idUsuario.HeaderText = "Usuario";
             this.Col_idUsuario.Name = "Col_idUsuario";
             // 
+            // buttonPrimerPag
+            // 
+            this.buttonPrimerPag.Location = new System.Drawing.Point(33, 273);
+            this.buttonPrimerPag.Name = "buttonPrimerPag";
+            this.buttonPrimerPag.Size = new System.Drawing.Size(92, 23);
+            this.buttonPrimerPag.TabIndex = 4;
+            this.buttonPrimerPag.Text = "<< Primer Pág.";
+            this.buttonPrimerPag.UseVisualStyleBackColor = true;
+            this.buttonPrimerPag.Click += new System.EventHandler(this.buttonPrimerPag_Click);
+            // 
+            // buttonPaginaAnt
+            // 
+            this.buttonPaginaAnt.Location = new System.Drawing.Point(143, 273);
+            this.buttonPaginaAnt.Name = "buttonPaginaAnt";
+            this.buttonPaginaAnt.Size = new System.Drawing.Size(92, 23);
+            this.buttonPaginaAnt.TabIndex = 5;
+            this.buttonPaginaAnt.Text = "< Página Ant.";
+            this.buttonPaginaAnt.UseVisualStyleBackColor = true;
+            this.buttonPaginaAnt.Click += new System.EventHandler(this.buttonPaginaAnt_Click);
+            // 
+            // buttonPaginaSgte
+            // 
+            this.buttonPaginaSgte.Location = new System.Drawing.Point(256, 273);
+            this.buttonPaginaSgte.Name = "buttonPaginaSgte";
+            this.buttonPaginaSgte.Size = new System.Drawing.Size(92, 23);
+            this.buttonPaginaSgte.TabIndex = 6;
+            this.buttonPaginaSgte.Text = "Página Sgte >";
+            this.buttonPaginaSgte.UseVisualStyleBackColor = true;
+            this.buttonPaginaSgte.Click += new System.EventHandler(this.buttonPaginaSgte_Click);
+            // 
+            // buttonUltimaPag
+            // 
+            this.buttonUltimaPag.Location = new System.Drawing.Point(366, 273);
+            this.buttonUltimaPag.Name = "buttonUltimaPag";
+            this.buttonUltimaPag.Size = new System.Drawing.Size(94, 23);
+            this.buttonUltimaPag.TabIndex = 7;
+            this.buttonUltimaPag.Text = "Última Pág. >>";
+            this.buttonUltimaPag.UseVisualStyleBackColor = true;
+            this.buttonUltimaPag.Click += new System.EventHandler(this.buttonUltimaPag_Click);
+            // 
             // HistorialFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 308);
+            this.Controls.Add(this.buttonUltimaPag);
+            this.Controls.Add(this.buttonPaginaSgte);
+            this.Controls.Add(this.buttonPaginaAnt);
+            this.Controls.Add(this.buttonPrimerPag);
             this.Controls.Add(this.dataGridViewFacturas);
             this.Controls.Add(this.buttonVolverAlMenu);
             this.Name = "HistorialFacturas";
-            this.Text = "HistorialFacturas";
-            this.Load += new System.EventHandler(this.HistorialFacturas_Load);
+            this.Text = "Historial de facturas";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFacturas)).EndInit();
             this.ResumeLayout(false);
 
@@ -149,5 +196,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_descTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idFormaPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idUsuario;
+        private System.Windows.Forms.Button buttonPrimerPag;
+        private System.Windows.Forms.Button buttonPaginaAnt;
+        private System.Windows.Forms.Button buttonPaginaSgte;
+        private System.Windows.Forms.Button buttonUltimaPag;
     }
 }
