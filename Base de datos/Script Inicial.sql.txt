@@ -260,10 +260,12 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_calificacion
 	,desc_codigo numeric(18,0)
 	,desc_cantidad_estrellas numeric(18,0)
 	,descripcion nvarchar(255)
-	,id_usuario int
+	,id_usuario_vendedor int
+	,id_usuario_comprador int
 	,id_compra int
 	,primary key (id_calificacion)
-	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
+	,foreign key (id_usuario_vendedor) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
+	,foreign key (id_usuario_comprador) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
 	,foreign key (id_compra) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra(id_compra)
 )
 
@@ -638,19 +640,23 @@ From #compra
 insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_calificacion	(	 desc_codigo
 																,desc_cantidad_estrellas
 																,descripcion
-																,id_usuario
+																,id_usuario_vendedor
+																,id_usuario_comprador
 																,id_compra	)
 Select	 Distinct
 		 ma.Calificacion_Codigo
 		,ma.Calificacion_Cant_Estrellas
 		,ma.Calificacion_Descripcion
 		,us.id
+		,co.usuario
 		,co.id
 From gd_esquema.Maestra ma
-inner join #usuarios us
-	on isnull(Convert(nvarchar(75), ma.Publ_Cli_Dni), ma.Publ_Empresa_Cuit) = us.id_entidad
 left join #compra co
-	on ma.Calificacion_Codigo = co.calificacion
+	on ma.Calificacion_Codigo = co.id
+join GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pu
+	on pu.id_publicacion = co.id 
+inner join #usuarios us
+	on pu.id_usuario = us.id
 Where ma.Calificacion_Codigo is not null
 
 --Migracion de las ofertas para subastas
@@ -1043,11 +1049,6 @@ Where id_factura = @id
 Go
 
 
-
-
-
-/*
-
 Select * from GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
 
 Select * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario
@@ -1063,12 +1064,3 @@ Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
 values (96,1)
 
 Select * from GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
-*/
-
-
-
-
-
-
-
-

@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using MercadoEnvio.ABMRol;
 using MercadoEnvio.ABM_Usuario;
 using MercadoEnvio.ABM_Visibilidad;
+using MercadoEnvio.Calificaciones;
 
 
 namespace MercadoEnvio
@@ -21,7 +22,7 @@ namespace MercadoEnvio
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Calificar());
         }
     }
 }

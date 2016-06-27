@@ -166,11 +166,11 @@
       <DependentUpon>ModificacionVisibilidad.cs</DependentUpon>
     </Compile>
     <Compile Include="ABM_Factura_DAO.cs" />
-    <Compile Include="Calificar\Form1.cs">
+    <Compile Include="Calificar\Calificar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Calificar\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Calificar\Calificar.Designer.cs">
+      <DependentUpon>Calificar.cs</DependentUpon>
     </Compile>
     <Compile Include="ComprarOfertar\Comprar.cs">
       <SubType>Form</SubType>
@@ -193,6 +193,7 @@
     <Compile Include="DataBase\Conexion\ABM_Rol_DAO.cs" />
     <Compile Include="DataBase\Conexion\ABM_usuario_DAO.cs" />
     <Compile Include="DataBase\Conexion\ABM_Visibilidad_DAO.cs" />
+    <Compile Include="DataBase\Conexion\Calificar_DAO.cs" />
     <Compile Include="DataBase\Conexion\GDAA_DAO.cs" />
     <Compile Include="DataBase\Conexion\HistorialCompras_DAO.cs" />
     <Compile Include="DataBase\Conexion\HistorialEstrellas_DAO.cs" />
@@ -362,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABM Visibilidad\ModificacionVisibilidad.resx">
       <DependentUpon>ModificacionVisibilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calificar\Calificar.resx">
+      <DependentUpon>Calificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ComprarOfertar\Comprar.resx">
       <DependentUpon>Comprar.cs</DependentUpon>
