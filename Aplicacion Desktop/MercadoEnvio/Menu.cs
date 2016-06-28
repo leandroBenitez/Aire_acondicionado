@@ -14,6 +14,7 @@ using MercadoEnvio.ComprarOfertar;
 using MercadoEnvio.ABM_Usuario;
 using MercadoEnvio.Consulta_Facturas;
 using MercadoEnvio.Listado_Estadistico;
+using MercadoEnvio.Calificar;
 
 namespace MercadoEnvio
 {
@@ -114,6 +115,13 @@ namespace MercadoEnvio
         {
             Publicaciones publi = new Publicaciones(this, "Subasta");
             publi.Show();
+            this.Hide();
+        }
+
+        private void boton_calificar_Click(object sender, EventArgs e)
+        {
+            ListadoSinCalificar listado = new ListadoSinCalificar(this.id_usuario);
+            listado.Show();
             this.Hide();
         }
 

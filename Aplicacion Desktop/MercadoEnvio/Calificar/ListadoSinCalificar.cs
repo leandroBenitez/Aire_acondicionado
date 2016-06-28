@@ -12,33 +12,24 @@ using MercadoEnvio.DataBase.Entidades;
 using System.Data.SqlClient;
 using System.IO;
 
-namespace MercadoEnvio.Calificaciones
+namespace MercadoEnvio.Calificar
 {
-    public partial class Calificar : Form
+    public partial class ListadoSinCalificar : Form
     {
         private Calificar_DAO calificarDAO;
+        List<string> listadoCalificaciones = new List<string>();
 
-        public Calificar()
+        public ListadoSinCalificar(int id_user)
         {
             leerArchivoConfig();
             calificarDAO = new Calificar_DAO();
             InitializeComponent();
-            cargarCalificacionComboBox();
+            cargarGridView(id_user);
         }
 
-        public void cargarCalificacionComboBox()
+        private void cargarGridView(int id_user)
         {
-            for (int i = 1; i <= 5; i++)
-            {
-                Calificacion_ComboBox.Items.Add(i);
-            }
-        }
-
-        private void AceptarButton_Click(object sender, EventArgs e)
-        {
-            int j = (int)Calificacion_ComboBox.SelectedItem;
-
-            PruebaTextBox.Text = j.ToString();
+            listadoCalificaciones = calificarDAO.getCalificaciones(id_user.ToString());
         }
 
         private void leerArchivoConfig()

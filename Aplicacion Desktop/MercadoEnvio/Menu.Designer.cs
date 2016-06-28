@@ -41,11 +41,12 @@
             this.boton_salir = new System.Windows.Forms.Button();
             this.text_user = new System.Windows.Forms.Label();
             this.text_fecha = new System.Windows.Forms.Label();
+            this.boton_calificar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // boton_abm_roles
             // 
-            this.boton_abm_roles.Location = new System.Drawing.Point(195, 229);
+            this.boton_abm_roles.Location = new System.Drawing.Point(195, 271);
             this.boton_abm_roles.Name = "boton_abm_roles";
             this.boton_abm_roles.Size = new System.Drawing.Size(133, 23);
             this.boton_abm_roles.TabIndex = 10;
@@ -55,7 +56,7 @@
             // 
             // boton_abm_user
             // 
-            this.boton_abm_user.Location = new System.Drawing.Point(23, 183);
+            this.boton_abm_user.Location = new System.Drawing.Point(23, 225);
             this.boton_abm_user.Name = "boton_abm_user";
             this.boton_abm_user.Size = new System.Drawing.Size(133, 23);
             this.boton_abm_user.TabIndex = 7;
@@ -65,7 +66,7 @@
             // 
             // boton_abm_rubro
             // 
-            this.boton_abm_rubro.Location = new System.Drawing.Point(23, 229);
+            this.boton_abm_rubro.Location = new System.Drawing.Point(23, 271);
             this.boton_abm_rubro.Name = "boton_abm_rubro";
             this.boton_abm_rubro.Size = new System.Drawing.Size(133, 23);
             this.boton_abm_rubro.TabIndex = 9;
@@ -75,7 +76,7 @@
             // 
             // boton_abm_visib
             // 
-            this.boton_abm_visib.Location = new System.Drawing.Point(195, 183);
+            this.boton_abm_visib.Location = new System.Drawing.Point(195, 225);
             this.boton_abm_visib.Name = "boton_abm_visib";
             this.boton_abm_visib.Size = new System.Drawing.Size(133, 23);
             this.boton_abm_visib.TabIndex = 8;
@@ -147,7 +148,7 @@
             // 
             this.boton_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.boton_salir.ForeColor = System.Drawing.Color.Red;
-            this.boton_salir.Location = new System.Drawing.Point(195, 275);
+            this.boton_salir.Location = new System.Drawing.Point(195, 317);
             this.boton_salir.Name = "boton_salir";
             this.boton_salir.Size = new System.Drawing.Size(133, 23);
             this.boton_salir.TabIndex = 11;
@@ -179,11 +180,22 @@
             this.text_fecha.TabIndex = 0;
             this.text_fecha.Text = "Fecha";
             // 
+            // boton_calificar
+            // 
+            this.boton_calificar.Location = new System.Drawing.Point(23, 179);
+            this.boton_calificar.Name = "boton_calificar";
+            this.boton_calificar.Size = new System.Drawing.Size(133, 23);
+            this.boton_calificar.TabIndex = 12;
+            this.boton_calificar.Text = "Calificar";
+            this.boton_calificar.UseVisualStyleBackColor = true;
+            this.boton_calificar.Click += new System.EventHandler(this.boton_calificar_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 310);
+            this.ClientSize = new System.Drawing.Size(354, 423);
+            this.Controls.Add(this.boton_calificar);
             this.Controls.Add(this.text_fecha);
             this.Controls.Add(this.text_user);
             this.Controls.Add(this.boton_salir);
@@ -219,5 +231,6 @@
         private System.Windows.Forms.Button boton_salir;
         private System.Windows.Forms.Label text_user;
         private System.Windows.Forms.Label text_fecha;
+        private System.Windows.Forms.Button boton_calificar;
     }
 }

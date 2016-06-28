@@ -17,5 +17,19 @@ namespace MercadoEnvio.DataBase.Conexion
         {
             this.iniciar();
         }
+
+        public List<string> getCalificaciones(string id_user)
+        {
+            SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT desc_tipo from " + ConstantesBD.tabla_visibilidad);
+            List<string> resultado = new List<string>();
+
+            while (lector.Read())
+            {
+                resultado.Add(lector["desc_tipo"].ToString());
+            }
+
+            lector.Close();
+            return resultado;
+        }
     }
 }
