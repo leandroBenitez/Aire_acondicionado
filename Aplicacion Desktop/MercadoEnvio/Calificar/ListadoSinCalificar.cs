@@ -11,13 +11,15 @@ using MercadoEnvio.DataBase.Conexion;
 using MercadoEnvio.DataBase.Entidades;
 using System.Data.SqlClient;
 using System.IO;
+using MercadoEnvio.Calificaciones;
 
-namespace MercadoEnvio.Calificar
+namespace MercadoEnvio.ListadoCalificaciones
 {
     public partial class ListadoSinCalificar : Form
     {
         private Calificar_DAO calificarDAO;
         List<string> listadoCalificaciones = new List<string>();
+
 
         public ListadoSinCalificar(int id_user)
         {
@@ -29,7 +31,25 @@ namespace MercadoEnvio.Calificar
 
         private void cargarGridView(int id_user)
         {
-            listadoCalificaciones = calificarDAO.getCalificaciones(id_user.ToString());
+            listadoCalificaciones = calificarDAO.getCompras(id_user.ToString());
+
+            for (int i = 0; i < listadoCalificaciones.Count; i++)
+            {
+                calificacionListado.Rows.Add(listadoCalificaciones[i].ToString()
+                                            ,calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i].ToString()))
+                                            ,calificarDAO.getCalificacion(id_user, listadoCalificaciones[i].ToString()));
+            }
+        }
+
+        private void button_seleccionar_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow fila = calificacionListado.SelectedRows[0];
+            int publicacion = int.Parse(fila.Cells["Publicacion"].Value.ToString());
+            int vendedor = int.Parse(fila.Cells["Vendedor"].Value.ToString());
+
+            Calificar formCalificar = new Calificar(publicacion, vendedor);
+            formCalificar.Show();
+
         }
 
         private void leerArchivoConfig()

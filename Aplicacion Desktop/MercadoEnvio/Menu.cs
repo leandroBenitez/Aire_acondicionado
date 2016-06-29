@@ -14,7 +14,7 @@ using MercadoEnvio.ComprarOfertar;
 using MercadoEnvio.ABM_Usuario;
 using MercadoEnvio.Consulta_Facturas;
 using MercadoEnvio.Listado_Estadistico;
-using MercadoEnvio.Calificar;
+using MercadoEnvio.ListadoCalificaciones;
 
 namespace MercadoEnvio
 {

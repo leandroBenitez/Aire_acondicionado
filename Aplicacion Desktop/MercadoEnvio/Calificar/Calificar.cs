@@ -18,11 +18,14 @@ namespace MercadoEnvio.Calificaciones
     {
         private Calificar_DAO calificarDAO;
 
-        public Calificar()
+        public Calificar(int publicacion, int usuario)
         {
             leerArchivoConfig();
             calificarDAO = new Calificar_DAO();
             InitializeComponent();
+            
+            labelUsuario.Text = usuario.ToString();
+
             cargarCalificacionComboBox();
         }
 

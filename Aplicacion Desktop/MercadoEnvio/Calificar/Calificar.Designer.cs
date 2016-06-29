@@ -32,6 +32,8 @@
             this.Calificación = new System.Windows.Forms.Label();
             this.AceptarButton = new System.Windows.Forms.Button();
             this.PruebaTextBox = new System.Windows.Forms.TextBox();
+            this.presentacion = new System.Windows.Forms.Label();
+            this.labelUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Calificacion_ComboBox
@@ -68,11 +70,35 @@
             this.PruebaTextBox.Size = new System.Drawing.Size(100, 20);
             this.PruebaTextBox.TabIndex = 3;
             // 
+            // presentacion
+            // 
+            this.presentacion.AutoSize = true;
+            this.presentacion.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presentacion.ForeColor = System.Drawing.Color.Maroon;
+            this.presentacion.Location = new System.Drawing.Point(79, 19);
+            this.presentacion.Name = "presentacion";
+            this.presentacion.Size = new System.Drawing.Size(90, 23);
+            this.presentacion.TabIndex = 8;
+            this.presentacion.Text = "Calificar a\r\n";
+            // 
+            // labelUsuario
+            // 
+            this.labelUsuario.AutoSize = true;
+            this.labelUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsuario.ForeColor = System.Drawing.Color.Maroon;
+            this.labelUsuario.Location = new System.Drawing.Point(164, 19);
+            this.labelUsuario.Name = "labelUsuario";
+            this.labelUsuario.Size = new System.Drawing.Size(23, 23);
+            this.labelUsuario.TabIndex = 9;
+            this.labelUsuario.Text = "id";
+            // 
             // Calificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.labelUsuario);
+            this.Controls.Add(this.presentacion);
             this.Controls.Add(this.PruebaTextBox);
             this.Controls.Add(this.AceptarButton);
             this.Controls.Add(this.Calificación);
@@ -90,6 +116,8 @@
         private System.Windows.Forms.Label Calificación;
         private System.Windows.Forms.Button AceptarButton;
         private System.Windows.Forms.TextBox PruebaTextBox;
+        private System.Windows.Forms.Label presentacion;
+        private System.Windows.Forms.Label labelUsuario;
 
     }
 }
