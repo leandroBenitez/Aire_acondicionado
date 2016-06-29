@@ -18,26 +18,28 @@ namespace MercadoEnvio.ListadoCalificaciones
     public partial class ListadoSinCalificar : Form
     {
         private Calificar_DAO calificarDAO;
+        private Menu unMenu;
         List<string> listadoCalificaciones = new List<string>();
 
 
-        public ListadoSinCalificar(int id_user)
+        public ListadoSinCalificar(Menu menu, int id_vendendor)
         {
             leerArchivoConfig();
             calificarDAO = new Calificar_DAO();
+            this.unMenu = menu;
             InitializeComponent();
-            cargarGridView(id_user);
+            cargarGridView(id_vendendor);
         }
 
-        private void cargarGridView(int id_user)
+        private void cargarGridView(int id_vendendor)
         {
-            listadoCalificaciones = calificarDAO.getCompras(id_user.ToString());
+            listadoCalificaciones = calificarDAO.getCompras(id_vendendor.ToString());
 
             for (int i = 0; i < listadoCalificaciones.Count; i++)
             {
                 calificacionListado.Rows.Add(listadoCalificaciones[i].ToString()
                                             ,calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i].ToString()))
-                                            ,calificarDAO.getCalificacion(id_user, listadoCalificaciones[i].ToString()));
+                                            ,calificarDAO.getCalificacion(id_vendendor, listadoCalificaciones[i].ToString()));
             }
         }
 
@@ -47,9 +49,15 @@ namespace MercadoEnvio.ListadoCalificaciones
             int publicacion = int.Parse(fila.Cells["Publicacion"].Value.ToString());
             int vendedor = int.Parse(fila.Cells["Vendedor"].Value.ToString());
 
-            Calificar formCalificar = new Calificar(publicacion, vendedor);
+            Calificar formCalificar = new Calificar(publicacion, vendedor, int.Parse(this.unMenu.id_usuario.ToString()));
             formCalificar.Show();
 
+        }
+
+        private void Volver_Click(object sender, EventArgs e)
+        {
+            this.unMenu.Show();
+            this.Close();
         }
 
         private void leerArchivoConfig()

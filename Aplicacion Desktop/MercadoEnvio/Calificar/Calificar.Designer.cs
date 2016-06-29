@@ -31,7 +31,6 @@
             this.Calificacion_ComboBox = new System.Windows.Forms.ComboBox();
             this.Calificación = new System.Windows.Forms.Label();
             this.AceptarButton = new System.Windows.Forms.Button();
-            this.PruebaTextBox = new System.Windows.Forms.TextBox();
             this.presentacion = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -63,13 +62,6 @@
             this.AceptarButton.UseVisualStyleBackColor = true;
             this.AceptarButton.Click += new System.EventHandler(this.AceptarButton_Click);
             // 
-            // PruebaTextBox
-            // 
-            this.PruebaTextBox.Location = new System.Drawing.Point(141, 229);
-            this.PruebaTextBox.Name = "PruebaTextBox";
-            this.PruebaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.PruebaTextBox.TabIndex = 3;
-            // 
             // presentacion
             // 
             this.presentacion.AutoSize = true;
@@ -99,7 +91,6 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.labelUsuario);
             this.Controls.Add(this.presentacion);
-            this.Controls.Add(this.PruebaTextBox);
             this.Controls.Add(this.AceptarButton);
             this.Controls.Add(this.Calificación);
             this.Controls.Add(this.Calificacion_ComboBox);
@@ -115,7 +106,6 @@
         private System.Windows.Forms.ComboBox Calificacion_ComboBox;
         private System.Windows.Forms.Label Calificación;
         private System.Windows.Forms.Button AceptarButton;
-        private System.Windows.Forms.TextBox PruebaTextBox;
         private System.Windows.Forms.Label presentacion;
         private System.Windows.Forms.Label labelUsuario;
 

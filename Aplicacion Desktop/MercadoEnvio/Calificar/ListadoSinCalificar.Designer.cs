@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.calificacionListado = new System.Windows.Forms.DataGridView();
-            this.button_seleccionar = new System.Windows.Forms.Button();
             this.Publicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Calificación = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button_seleccionar = new System.Windows.Forms.Button();
+            this.Volver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.calificacionListado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,16 +48,6 @@
             this.calificacionListado.Name = "calificacionListado";
             this.calificacionListado.Size = new System.Drawing.Size(343, 166);
             this.calificacionListado.TabIndex = 0;
-            // 
-            // button_seleccionar
-            // 
-            this.button_seleccionar.Location = new System.Drawing.Point(281, 225);
-            this.button_seleccionar.Name = "button_seleccionar";
-            this.button_seleccionar.Size = new System.Drawing.Size(75, 23);
-            this.button_seleccionar.TabIndex = 1;
-            this.button_seleccionar.Text = "Seleccionar";
-            this.button_seleccionar.UseVisualStyleBackColor = true;
-            this.button_seleccionar.Click += new System.EventHandler(this.button_seleccionar_Click);
             // 
             // Publicacion
             // 
@@ -73,11 +64,34 @@
             this.Calificación.HeaderText = "Calificación";
             this.Calificación.Name = "Calificación";
             // 
+            // button_seleccionar
+            // 
+            this.button_seleccionar.Location = new System.Drawing.Point(281, 225);
+            this.button_seleccionar.Name = "button_seleccionar";
+            this.button_seleccionar.Size = new System.Drawing.Size(75, 23);
+            this.button_seleccionar.TabIndex = 1;
+            this.button_seleccionar.Text = "Seleccionar";
+            this.button_seleccionar.UseVisualStyleBackColor = true;
+            this.button_seleccionar.Click += new System.EventHandler(this.button_seleccionar_Click);
+            // 
+            // Volver
+            // 
+            this.Volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Volver.ForeColor = System.Drawing.Color.Maroon;
+            this.Volver.Location = new System.Drawing.Point(13, 225);
+            this.Volver.Name = "Volver";
+            this.Volver.Size = new System.Drawing.Size(75, 23);
+            this.Volver.TabIndex = 2;
+            this.Volver.Text = "Volver";
+            this.Volver.UseVisualStyleBackColor = true;
+            this.Volver.Click += new System.EventHandler(this.Volver_Click);
+            // 
             // ListadoSinCalificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 282);
+            this.Controls.Add(this.Volver);
             this.Controls.Add(this.button_seleccionar);
             this.Controls.Add(this.calificacionListado);
             this.Name = "ListadoSinCalificar";
@@ -94,5 +108,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Publicacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Calificación;
+        private System.Windows.Forms.Button Volver;
     }
 }

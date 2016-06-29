@@ -17,14 +17,18 @@ namespace MercadoEnvio.Calificaciones
     public partial class Calificar : Form
     {
         private Calificar_DAO calificarDAO;
+        int pubCalif, vendedorCalif, compradorCalif;
 
-        public Calificar(int publicacion, int usuario)
+        public Calificar(int publicacion, int vendedor, int comprador)
         {
             leerArchivoConfig();
             calificarDAO = new Calificar_DAO();
             InitializeComponent();
             
-            labelUsuario.Text = usuario.ToString();
+            labelUsuario.Text = vendedor.ToString();
+            pubCalif = publicacion;
+            vendedorCalif = vendedor;
+            compradorCalif = comprador;
 
             cargarCalificacionComboBox();
         }
@@ -39,9 +43,8 @@ namespace MercadoEnvio.Calificaciones
 
         private void AceptarButton_Click(object sender, EventArgs e)
         {
-            int j = (int)Calificacion_ComboBox.SelectedItem;
-
-            PruebaTextBox.Text = j.ToString();
+            int estrellas = (int)Calificacion_ComboBox.SelectedItem;
+            calificarDAO.calificarA( pubCalif, estrellas, vendedorCalif, compradorCalif);
         }
 
         private void leerArchivoConfig()

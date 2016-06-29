@@ -285,7 +285,6 @@ E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\Mercado
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Subastar.resources
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Consulta_Facturas.cons_fac.resources
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Calificaciones.Calificar.resources
-E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Calificar.ListadoSinCalificar.resources
 D:\Archivos de programa\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe.config
 D:\Archivos de programa\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.exe
 D:\Archivos de programa\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.pdb
@@ -332,3 +331,4 @@ D:\Archivos de programa\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEn
 D:\Archivos de programa\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Properties.Resources.resources
 D:\Archivos de programa\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csproj.GenerateResource.Cache
 D:\Archivos de programa\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ListadoCalificaciones.ListadoSinCalificar.resources
+E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ListadoCalificaciones.ListadoSinCalificar.resources

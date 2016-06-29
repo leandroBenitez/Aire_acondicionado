@@ -18,15 +18,17 @@ namespace MercadoEnvio.DataBase.Conexion
             this.iniciar();
         }
 
-        public List<string> getCompras(string id_user)
+        public List<string> getCompras(string comprador)
         {
-            SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT id_publicacion from " + ConstantesBD.tabla_compras +
-                                                                             " WHERE id_usuario = " + id_user);
+            SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT co.id_compra from " + ConstantesBD.tabla_compras + " AS co" +
+                                                                             " LEFT JOIN " + ConstantesBD.tabla_calificacion + " AS ca" +
+                                                                             " ON co.id_compra = ca.id_compra WHERE ca.id_compra IS NULL AND co.id_usuario = " +
+                                                                             comprador);
             List<string> resultado = new List<string>();
 
             while (lector.Read())
             {
-                resultado.Add(lector["id_publicacion"].ToString());
+                resultado.Add(lector["id_compra"].ToString());
             }
 
             lector.Close();
@@ -53,17 +55,30 @@ namespace MercadoEnvio.DataBase.Conexion
             }
         }
 
-        public int getVendedor(int id_pub)
+        public int getVendedor(int id_compra)
         {
             int id = 0;
-            SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT id_usuario FROM " + ConstantesBD.tabla_publicaciones +
-                                                                               " WHERE id_publicacion = " + id_pub);
+            SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT pu.id_usuario FROM " + ConstantesBD.tabla_publicaciones + " pu" +
+                                                                               " JOIN " + ConstantesBD.tabla_compras + " co" +
+                                                                               " ON co.id_compra = " + id_compra +
+                                                                               " AND co.id_publicacion = pu.id_publicacion");
 
             if (num_rol.Read())
                 id = (int)num_rol[0];
             num_rol.Close();
 
             return id;
+        }
+
+        public void calificarA(int pubCalif, int estrellas, int vendedorCalif, int compradorCalif)
+        {
+            this.GD1C2016.ejecutarSentenciaSinRetorno("INSERT INTO " + ConstantesBD.tabla_calificacion + " (desc_codigo, desc_cantidad_estrellas, id_usuario_vendedor, id_usuario_comprador, id_compra) " +
+                                                      "Values ("
+                                                      + pubCalif + ", "
+                                                      + estrellas + ", "
+                                                      + vendedorCalif + ", "
+                                                      + compradorCalif + ", "
+                                                      + pubCalif + ")");
         }
     }
 }

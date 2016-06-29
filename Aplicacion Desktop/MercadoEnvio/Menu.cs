@@ -120,7 +120,7 @@ namespace MercadoEnvio
 
         private void boton_calificar_Click(object sender, EventArgs e)
         {
-            ListadoSinCalificar listado = new ListadoSinCalificar(this.id_usuario);
+            ListadoSinCalificar listado = new ListadoSinCalificar(this, this.id_usuario);
             listado.Show();
             this.Hide();
         }
