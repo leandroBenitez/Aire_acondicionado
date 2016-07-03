@@ -102,6 +102,7 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente
 	,id_usuario int
 	,desc_Apellido nvarchar(255)
 	,desc_Nombre nvarchar(255)
+	,desc_tipo_doc nvarchar(5)
 	,desc_Dni numeric(18,0)
 	,desc_Mail nvarchar(255)
 	,desc_Dom_Calle nvarchar(255)
@@ -112,6 +113,7 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente
 	,desc_Cod_Postal nvarchar(50)
 	,desc_Telefono numeric(10,0)
 	,desc_Fecha_Nac datetime
+	,desc_fecha_creacion datetime
 	,primary key (id_cliente)	
 	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
 )
@@ -133,6 +135,7 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa
 	,desc_Ciudad nvarchar(45)
 	,desc_Cuit nvarchar(50)
 	,desc_nombre_contacto nvarchar(100)
+	,desc_rubro nvarchar(50)
 	,primary key (id_empresa)
 	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
 )
@@ -841,6 +844,7 @@ Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente	(	 @usern
 																			,@rol varchar(100)	
 																			,@desc_Apellido varchar(255)
 																			,@desc_Nombre varchar(255)
+																			,@desc_tipo_doc varchar(5)
 																			,@desc_Dni varchar(18) --numeric(18,0)
 																			,@desc_Mail varchar(255)
 																			,@desc_Dom_Calle varchar(255)
@@ -850,7 +854,8 @@ Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_cliente	(	 @usern
 																			,@desc_Localidad varchar(45)
 																			,@desc_Cod_Postal varchar(50)
 																			,@desc_Telefono varchar(10) --numeric(10,0)
-																			,@desc_Fecha_Nac varchar(20)	)--datetime	)
+																			,@desc_Fecha_Nac varchar(20)	--datetime	)
+																			,@desc_fecha_creacion varchar(20))
 As
 Declare @ultimo_id int;
 
@@ -875,6 +880,7 @@ Where desc_rol = @rol
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente	(	 id_usuario
 															,desc_Apellido 
 															,desc_Nombre 
+															,desc_tipo_doc
 															,desc_Dni 
 															,desc_Mail 
 															,desc_Dom_Calle 
@@ -884,10 +890,12 @@ Insert into GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente	(	 id_usuario
 															,desc_Localidad 
 															,desc_Cod_Postal 
 															,desc_Telefono 
-															,desc_Fecha_Nac	)
+															,desc_Fecha_Nac	
+															,desc_fecha_creacion)
 Select	 @ultimo_id 
 		,@desc_Apellido 
 		,@desc_Nombre 
+		,@desc_tipo_doc
 		,Convert(numeric(18,0), @desc_Dni) 
 		,@desc_Mail 
 		,@desc_Dom_Calle
@@ -897,7 +905,8 @@ Select	 @ultimo_id
 		,@desc_Localidad
 		,@desc_Cod_Postal 
 		,Convert(numeric(10,0), @desc_Telefono) 
-		,Convert(datetime, @desc_Fecha_Nac) 
+		,Convert(datetime, @desc_Fecha_Nac)
+		,Convert(datetime, @desc_fecha_Creacion) 
 GO
 
 /* STORED PROCEDURE PARA CREAR UN NUEVO EMPRESA (CARGA TABLAS USUARIO, EMPRESA, Y ROLES_USUARIO)*/
@@ -915,7 +924,8 @@ Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_empresa	(	 @usern
 																			,@desc_Localidad varchar(45)
 																			,@desc_Cod_Postal varchar(50)
 																			,@desc_ciudad varchar(50)
-																			,@desc_cuit varchar(20)	)
+																			,@desc_cuit varchar(20)
+																			,@desc_rubro varchar(50)	)
 As
 Declare @ultimo_id int;
 
@@ -949,7 +959,9 @@ Insert into GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa	(	 id_usuario
 															,desc_Cod_Postal 
 															,desc_Ciudad
 															,desc_Cuit
-															,desc_nombre_contacto	)
+															,desc_nombre_contacto
+															,desc_rubro
+														)
 Select	 
 			 @ultimo_id
 			,@desc_razon_social 
@@ -964,7 +976,8 @@ Select
 			,@desc_Cod_Postal 
 			,@desc_ciudad 
 			,@desc_cuit
-			,''		
+			,''	
+			,@desc_rubro	
 GO
 
 /*PROCEDIMIENTO NECESARIO PARA LOGEO Y SEGURIDAD*/
@@ -1063,4 +1076,19 @@ Select	 'admin'
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
 values (96,1)
 
-Select * from GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
+/*  SETEO EL CAMPO TIPO DOC DE LA TABLA CLIENTE COMO DNI PARA TODOS LOS REGISTROS EXISTENTES
+
+update GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente
+set desc_tipo_doc = 'DNI'
+
+*/
+
+/* LE ASIGNO TODOS LOS ROLES AL USUARIO ADMIN PARA PROBAR TODAS LAS FUNCIONALIDADES
+
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
+values (96,2)
+
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
+values (96,3)
+
+*/
