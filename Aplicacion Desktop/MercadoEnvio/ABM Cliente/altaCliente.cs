@@ -72,14 +72,15 @@ namespace MercadoEnvio.ABM_Usuario
                         String desc_Cod_Postal = textCP.Text;
                         String desc_Telefono = textTelefono.Text;
                         String desc_Fecha_Nac = textDia.Text + "/" + textMes.Text + "/" + textAnio.Text;
-                        String desc_fecha_creacion = textFecCreacion.Text;
-
-
+                        String desc_fecha_creacion = textDiaCre.Text + "/" + textMesCre.Text + "/" + textAnioCre.Text;
+                        
+                
                         // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
                         abm_usuario.setearCliente(username, password, rol, desc_Apellido, desc_Nombre, desc_Dni, tipo_doc, desc_Mail, desc_Dom_Calle, desc_Nro_Calle, desc_Piso, desc_Depto, desc_Localidad, desc_Cod_Postal, desc_Telefono, desc_Fecha_Nac, desc_fecha_creacion);
-                                                                                                                                                                                                                                                                    
-                        // VUELVO AL MENU PRINCIPAL DE LOS ADMINISTRADORES QUE TODAVIA NO ESTÁ CREADO
 
+                        MessageBox.Show("El nuevo Cliente fue creado con éxito!");                                                                                                                                                                                                              
+                        // VUELVO AL MENU DE USUARIOS
+                        this.Close();
                     }
                 }
                 else

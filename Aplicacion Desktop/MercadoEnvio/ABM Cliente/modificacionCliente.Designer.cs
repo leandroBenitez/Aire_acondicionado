@@ -472,6 +472,7 @@
             this.Controls.Add(this.label2);
             this.Name = "modificacionCliente";
             this.Text = "modificacionClienteAux";
+            this.Load += new System.EventHandler(this.modificacionCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

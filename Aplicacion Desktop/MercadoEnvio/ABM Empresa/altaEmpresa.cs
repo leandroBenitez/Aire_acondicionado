@@ -74,13 +74,16 @@ namespace MercadoEnvio.ABM_Empresa
                             String depto = textDepto.Text;
                             String localidad = textLocalidad.Text;
                             String codPos = textCP.Text;
-                            String ciudad = "";
+                            String ciudad = textCiudad.Text;
+                            String rubro = textRubro.Text;
         
                             // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
-                            abm_usuario.setearEmpresa(username, password, rol, razSoc, desc_Mail, telefono, fecha_creacion, direccion, altura, piso, depto, localidad,  codPos, ciudad, cuit);
+                            abm_usuario.setearEmpresa(username, password, rol, razSoc, desc_Mail, telefono, fecha_creacion, direccion, altura, piso, depto, localidad,  codPos, ciudad, cuit, rubro);
 
-                            // VUELVO AL MENU PRINCIPAL DE LOS ADMINISTRADORES QUE TODAVIA NO ESTÁ CREADO
 
+                            // VUELVO
+                            MessageBox.Show("La empresa ha sido creada exitosamente!");
+                            this.Close();
                         }
                         
                     }
@@ -94,6 +97,11 @@ namespace MercadoEnvio.ABM_Empresa
             {
                 MessageBox.Show("El numero de razon social ya existe, por favor ingrese otro");
             }
+
+        }
+
+        private void altaEmpresa_Load(object sender, EventArgs e)
+        {
 
         }
 

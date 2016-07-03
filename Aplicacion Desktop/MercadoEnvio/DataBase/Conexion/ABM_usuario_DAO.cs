@@ -106,7 +106,7 @@ namespace MercadoEnvio.DataBase.Conexion
         }
 
         /* INSERTO LA EMPRESA */
-        public void setearEmpresa(String username, String password, String rol, String razon_social, String mail, String telefono, String fecha_creacion, String dom_calle, String nro_calle, String piso, String depto, String localidad, String cp, String ciudad, String cuit)
+        public void setearEmpresa(String username, String password, String rol, String razon_social, String mail, String telefono, String fecha_creacion, String dom_calle, String nro_calle, String piso, String depto, String localidad, String cp, String ciudad, String cuit, String rubro)
         {
             this.GD1C2016.ejecutarSentenciaSinRetorno("EXECUTE GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_empresa    @username = '" + username
                                                                                                                   + "', @password = '" + password
@@ -123,6 +123,7 @@ namespace MercadoEnvio.DataBase.Conexion
                                                                                                                   + "', @desc_Cod_Postal = '" + cp
                                                                                                                   + "', @desc_ciudad = '" + ciudad
                                                                                                                   + "', @desc_cuit = '" + cuit
+                                                                                                                  + "', @desc_rubro = '" + rubro
                                                                                                                   + "'");
         }
 
@@ -197,7 +198,7 @@ namespace MercadoEnvio.DataBase.Conexion
         }
 
         /* ACTUALIZO EMPRESA - OK*/
-        public void actualizarEmpresa(String razonSoc, String descMail, String descTelefono, String descCalle, String nroCalle, String depto, String localidad, String codPos, String ciudad, String cuit, String nombreContacto, String idRubro, String idUsuario)
+        public void actualizarEmpresa(String razonSoc, String descMail, String descTelefono, String descCalle, String nroCalle, String depto, String localidad, String codPos, String ciudad, String cuit, String nombreContacto, String descRubro, String idUsuario)
         {
             this.GD1C2016.ejecutarSentenciaSinRetorno("update GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa set desc_Razon_Social = '" + razonSoc 
 	                                                                                                           + "', desc_Mail = '" + descMail
@@ -210,7 +211,7 @@ namespace MercadoEnvio.DataBase.Conexion
 	                                                                                                           +"',desc_Ciudad = '" + ciudad
 	                                                                                                             +"',desc_Cuit = '" + cuit
 	                                                                                                  +"',desc_nombre_contacto = '" + nombreContacto
-	                                                                                                              +"',id_rubro = '" + idRubro
+	                                                                                                              +"',desc_rubro = '" + descRubro
 	                                                                                                       +"'where id_usuario = '" + idUsuario + "';");
             MessageBox.Show("La empresa ha sido modificada Satisfactoriamente");
         }

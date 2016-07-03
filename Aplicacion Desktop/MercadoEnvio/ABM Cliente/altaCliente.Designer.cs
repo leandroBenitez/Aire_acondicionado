@@ -38,7 +38,7 @@
             this.textMes = new System.Windows.Forms.TextBox();
             this.comboTipoDoc = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textFecCreacion = new System.Windows.Forms.TextBox();
+            this.textDiaCre = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.textDia = new System.Windows.Forms.TextBox();
             this.buttonCalendar = new System.Windows.Forms.Button();
@@ -74,6 +74,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textAnioCre = new System.Windows.Forms.TextBox();
+            this.textMesCre = new System.Windows.Forms.TextBox();
             this.groupBoxCliente.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -108,6 +112,10 @@
             // 
             // groupBoxCliente
             // 
+            this.groupBoxCliente.Controls.Add(this.label20);
+            this.groupBoxCliente.Controls.Add(this.label21);
+            this.groupBoxCliente.Controls.Add(this.textAnioCre);
+            this.groupBoxCliente.Controls.Add(this.textMesCre);
             this.groupBoxCliente.Controls.Add(this.label19);
             this.groupBoxCliente.Controls.Add(this.label1);
             this.groupBoxCliente.Controls.Add(this.textAnio);
@@ -115,7 +123,7 @@
             this.groupBoxCliente.Controls.Add(this.textMes);
             this.groupBoxCliente.Controls.Add(this.comboTipoDoc);
             this.groupBoxCliente.Controls.Add(this.label8);
-            this.groupBoxCliente.Controls.Add(this.textFecCreacion);
+            this.groupBoxCliente.Controls.Add(this.textDiaCre);
             this.groupBoxCliente.Controls.Add(this.label18);
             this.groupBoxCliente.Controls.Add(this.textDia);
             this.groupBoxCliente.Controls.Add(this.buttonCalendar);
@@ -199,12 +207,12 @@
             this.label8.TabIndex = 102;
             this.label8.Text = "Tpo. de Doc:";
             // 
-            // textFecCreacion
+            // textDiaCre
             // 
-            this.textFecCreacion.Location = new System.Drawing.Point(116, 220);
-            this.textFecCreacion.Name = "textFecCreacion";
-            this.textFecCreacion.Size = new System.Drawing.Size(100, 20);
-            this.textFecCreacion.TabIndex = 100;
+            this.textDiaCre.Location = new System.Drawing.Point(116, 220);
+            this.textDiaCre.Name = "textDiaCre";
+            this.textDiaCre.Size = new System.Drawing.Size(28, 20);
+            this.textDiaCre.TabIndex = 100;
             // 
             // label18
             // 
@@ -504,6 +512,38 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Username:";
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(145, 223);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(12, 13);
+            this.label20.TabIndex = 111;
+            this.label20.Text = "/";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(185, 223);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(12, 13);
+            this.label21.TabIndex = 110;
+            this.label21.Text = "/";
+            // 
+            // textAnioCre
+            // 
+            this.textAnioCre.Location = new System.Drawing.Point(200, 220);
+            this.textAnioCre.Name = "textAnioCre";
+            this.textAnioCre.Size = new System.Drawing.Size(28, 20);
+            this.textAnioCre.TabIndex = 109;
+            // 
+            // textMesCre
+            // 
+            this.textMesCre.Location = new System.Drawing.Point(157, 220);
+            this.textMesCre.Name = "textMesCre";
+            this.textMesCre.Size = new System.Drawing.Size(28, 20);
+            this.textMesCre.TabIndex = 108;
+            // 
             // altaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,7 +554,7 @@
             this.Controls.Add(this.buttonAlta);
             this.Controls.Add(this.labelCliente);
             this.Name = "altaCliente";
-            this.Text = "Form1";
+            this.Text = "Alta Cliente";
             this.groupBoxCliente.ResumeLayout(false);
             this.groupBoxCliente.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -534,7 +574,7 @@
         private System.Windows.Forms.TextBox textMes;
         private System.Windows.Forms.ComboBox comboTipoDoc;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textFecCreacion;
+        private System.Windows.Forms.TextBox textDiaCre;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textDia;
         private System.Windows.Forms.Button buttonCalendar;
@@ -572,5 +612,9 @@
         private System.Windows.Forms.TextBox textRol;
         private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.TextBox textUsername;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox textAnioCre;
+        private System.Windows.Forms.TextBox textMesCre;
     }
 }

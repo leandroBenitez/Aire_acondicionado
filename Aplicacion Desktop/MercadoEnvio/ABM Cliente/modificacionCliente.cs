@@ -93,6 +93,11 @@ namespace MercadoEnvio.ABM_Cliente
                 MessageBox.Show("El Uusario ha sido habilitado exitosamente");
             }
             this.Close();
+        }
+
+        private void modificacionCliente_Load(object sender, EventArgs e)
+        {
+
         } 
 
     }

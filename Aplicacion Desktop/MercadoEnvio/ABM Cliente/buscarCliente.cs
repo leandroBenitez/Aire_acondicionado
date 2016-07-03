@@ -69,8 +69,8 @@ namespace MercadoEnvio.ABM_Usuario
                 id_usuario = clientes[0]["id_usuario"].ToString();
                 id_usuarios.Add(id_usuario);
                 columnas[1] = id_usuario;
-                columnas[2] = clientes[0]["desc_Nombre"];
-                columnas[3] = clientes[0]["desc_Apellido"];
+                columnas[2] = clientes[0]["desc_Apellido"];
+                columnas[3] = clientes[0]["desc_Nombre"];
                 columnas[4] = clientes[0]["desc_tipo_doc"];
                 columnas[5] = clientes[0]["desc_Dni"];
                 columnas[6] = clientes[0]["desc_Mail"];

@@ -97,7 +97,7 @@ namespace MercadoEnvio.ABM_Empresa
                 columnas[3] = empresa[0]["desc_Cuit"];
                 columnas[4] = empresa[0]["desc_Fecha_Creacion"];
                 columnas[5] = empresa[0]["desc_Mail"];
-                columnas[6] = empresa[0]["id_rubro"];
+                columnas[6] = empresa[0]["desc_rubro"];
                 columnas[7] = empresa[0]["desc_nombre_contacto"];
                 columnas[8] = empresa[0]["desc_Ciudad"];
                 columnas[9] = empresa[0]["desc_Dom_Calle"];

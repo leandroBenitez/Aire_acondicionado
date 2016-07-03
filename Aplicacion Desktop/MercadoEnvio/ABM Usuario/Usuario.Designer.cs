@@ -36,11 +36,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.comboBoxRol);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.textPassword);
@@ -115,6 +117,16 @@
             this.label2.TabIndex = 38;
             this.label2.Text = "Username:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 93);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(72, 27);
+            this.button1.TabIndex = 50;
+            this.button1.Text = "Volver";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +152,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBoxRol;
+        private System.Windows.Forms.Button button1;
 
     }
 }
