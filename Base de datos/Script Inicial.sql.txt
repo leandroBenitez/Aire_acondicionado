@@ -925,6 +925,7 @@ Create Procedure GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_empresa	(	 @usern
 																			,@desc_Cod_Postal varchar(50)
 																			,@desc_ciudad varchar(50)
 																			,@desc_cuit varchar(20)
+																			,@desc_nombre_contacto varchar(30)
 																			,@desc_rubro varchar(50)	)
 As
 Declare @ultimo_id int;
@@ -976,7 +977,7 @@ Select
 			,@desc_Cod_Postal 
 			,@desc_ciudad 
 			,@desc_cuit
-			,''	
+			,@desc_nombre_contacto
 			,@desc_rubro	
 GO
 
@@ -1090,5 +1091,6 @@ values (96,2)
 
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
 values (96,3)
+
 
 */
