@@ -106,7 +106,7 @@ namespace MercadoEnvio.DataBase.Conexion
         }
 
         /* INSERTO LA EMPRESA */
-        public void setearEmpresa(String username, String password, String rol, String razon_social, String mail, String telefono, String fecha_creacion, String dom_calle, String nro_calle, String piso, String depto, String localidad, String cp, String ciudad, String cuit, String rubro)
+        public void setearEmpresa(String username, String password, String rol, String razon_social, String mail, String telefono, String fecha_creacion, String dom_calle, String nro_calle, String piso, String depto, String localidad, String cp, String ciudad, String cuit, String rubro, String nombreContacto)
         {
             this.GD1C2016.ejecutarSentenciaSinRetorno("EXECUTE GESTORES_DEL_AIRE_ACONDICIONADO.crear_usuario_empresa    @username = '" + username
                                                                                                                   + "', @password = '" + password
@@ -123,6 +123,7 @@ namespace MercadoEnvio.DataBase.Conexion
                                                                                                                   + "', @desc_Cod_Postal = '" + cp
                                                                                                                   + "', @desc_ciudad = '" + ciudad
                                                                                                                   + "', @desc_cuit = '" + cuit
+                                                                                                                  + "', @desc_nombre_contacto = '" + nombreContacto
                                                                                                                   + "', @desc_rubro = '" + rubro
                                                                                                                   + "'");
         }

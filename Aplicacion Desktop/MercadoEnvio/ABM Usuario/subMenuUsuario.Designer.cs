@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.buttonAlta = new System.Windows.Forms.Button();
-            this.buttonBaja = new System.Windows.Forms.Button();
             this.buttonModCliente = new System.Windows.Forms.Button();
             this.buttonModEmpresa = new System.Windows.Forms.Button();
             this.buttonSalir = new System.Windows.Forms.Button();
@@ -45,16 +44,6 @@
             this.buttonAlta.UseVisualStyleBackColor = true;
             this.buttonAlta.Click += new System.EventHandler(this.buttonAlta_Click);
             // 
-            // buttonBaja
-            // 
-            this.buttonBaja.Location = new System.Drawing.Point(199, 24);
-            this.buttonBaja.Name = "buttonBaja";
-            this.buttonBaja.Size = new System.Drawing.Size(133, 36);
-            this.buttonBaja.TabIndex = 1;
-            this.buttonBaja.Text = "Baja Usuario";
-            this.buttonBaja.UseVisualStyleBackColor = true;
-            this.buttonBaja.Click += new System.EventHandler(this.buttonBaja_Click);
-            // 
             // buttonModCliente
             // 
             this.buttonModCliente.Location = new System.Drawing.Point(32, 82);
@@ -67,7 +56,7 @@
             // 
             // buttonModEmpresa
             // 
-            this.buttonModEmpresa.Location = new System.Drawing.Point(199, 82);
+            this.buttonModEmpresa.Location = new System.Drawing.Point(35, 132);
             this.buttonModEmpresa.Name = "buttonModEmpresa";
             this.buttonModEmpresa.Size = new System.Drawing.Size(130, 34);
             this.buttonModEmpresa.TabIndex = 3;
@@ -77,11 +66,11 @@
             // 
             // buttonSalir
             // 
-            this.buttonSalir.Location = new System.Drawing.Point(254, 249);
+            this.buttonSalir.Location = new System.Drawing.Point(58, 188);
             this.buttonSalir.Name = "buttonSalir";
             this.buttonSalir.Size = new System.Drawing.Size(75, 23);
             this.buttonSalir.TabIndex = 4;
-            this.buttonSalir.Text = "Salir";
+            this.buttonSalir.Text = "Volver";
             this.buttonSalir.UseVisualStyleBackColor = true;
             this.buttonSalir.Click += new System.EventHandler(this.buttonSalir_Click);
             // 
@@ -89,11 +78,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(365, 284);
+            this.ClientSize = new System.Drawing.Size(196, 224);
             this.Controls.Add(this.buttonSalir);
             this.Controls.Add(this.buttonModEmpresa);
             this.Controls.Add(this.buttonModCliente);
-            this.Controls.Add(this.buttonBaja);
             this.Controls.Add(this.buttonAlta);
             this.Name = "subMenuUsuario";
             this.Text = "subMenuUsuario";
@@ -104,7 +92,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonAlta;
-        private System.Windows.Forms.Button buttonBaja;
         private System.Windows.Forms.Button buttonModCliente;
         private System.Windows.Forms.Button buttonModEmpresa;
         private System.Windows.Forms.Button buttonSalir;

@@ -420,6 +420,7 @@
             // 
             this.textEstado.Location = new System.Drawing.Point(103, 344);
             this.textEstado.Name = "textEstado";
+            this.textEstado.ReadOnly = true;
             this.textEstado.Size = new System.Drawing.Size(100, 20);
             this.textEstado.TabIndex = 124;
             // 

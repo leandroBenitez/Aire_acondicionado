@@ -103,6 +103,7 @@
             this.listado.Location = new System.Drawing.Point(11, 224);
             this.listado.Margin = new System.Windows.Forms.Padding(2);
             this.listado.Name = "listado";
+            this.listado.ReadOnly = true;
             this.listado.RowTemplate.Height = 24;
             this.listado.Size = new System.Drawing.Size(892, 300);
             this.listado.TabIndex = 10;
@@ -126,76 +127,91 @@
             // 
             this.APELLIDO.HeaderText = "Apellido";
             this.APELLIDO.Name = "APELLIDO";
+            this.APELLIDO.ReadOnly = true;
             // 
             // NOMBRE
             // 
             this.NOMBRE.HeaderText = "Nombre";
             this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.ReadOnly = true;
             // 
             // TIPO_DOC
             // 
             this.TIPO_DOC.HeaderText = "Tipo Doc";
             this.TIPO_DOC.Name = "TIPO_DOC";
+            this.TIPO_DOC.ReadOnly = true;
             // 
             // DNI
             // 
             this.DNI.HeaderText = "Nro Doc";
             this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
             // 
             // EMAIL
             // 
             this.EMAIL.HeaderText = "Email";
             this.EMAIL.Name = "EMAIL";
+            this.EMAIL.ReadOnly = true;
             // 
             // DOMICILIO
             // 
             this.DOMICILIO.HeaderText = "Domicilio";
             this.DOMICILIO.Name = "DOMICILIO";
+            this.DOMICILIO.ReadOnly = true;
             // 
             // NRO_CALLE
             // 
             this.NRO_CALLE.HeaderText = "Numero";
             this.NRO_CALLE.Name = "NRO_CALLE";
+            this.NRO_CALLE.ReadOnly = true;
             // 
             // PISO
             // 
             this.PISO.HeaderText = "Piso";
             this.PISO.Name = "PISO";
+            this.PISO.ReadOnly = true;
             // 
             // DPTO
             // 
             this.DPTO.HeaderText = "Depto";
             this.DPTO.Name = "DPTO";
+            this.DPTO.ReadOnly = true;
             // 
             // LOCALIDAD
             // 
             this.LOCALIDAD.HeaderText = "Localidad";
             this.LOCALIDAD.Name = "LOCALIDAD";
+            this.LOCALIDAD.ReadOnly = true;
             // 
             // COD_POSTAL
             // 
             this.COD_POSTAL.HeaderText = "Codigo Postal";
             this.COD_POSTAL.Name = "COD_POSTAL";
+            this.COD_POSTAL.ReadOnly = true;
             // 
             // TELEFONO
             // 
             this.TELEFONO.HeaderText = "Telefono";
             this.TELEFONO.Name = "TELEFONO";
+            this.TELEFONO.ReadOnly = true;
             // 
             // FEC_NAC
             // 
             this.FEC_NAC.HeaderText = "Fecha Nacimiento";
             this.FEC_NAC.Name = "FEC_NAC";
+            this.FEC_NAC.ReadOnly = true;
             // 
             // FECHA_CREACION
             // 
             this.FECHA_CREACION.HeaderText = "Fecha de Creacion";
             this.FECHA_CREACION.Name = "FECHA_CREACION";
+            this.FECHA_CREACION.ReadOnly = true;
             // 
             // ID_Cliente
             // 
             this.ID_Cliente.HeaderText = "ID_Cliente";
             this.ID_Cliente.Name = "ID_Cliente";
+            this.ID_Cliente.ReadOnly = true;
             this.ID_Cliente.Visible = false;
             // 
             // groupBox1

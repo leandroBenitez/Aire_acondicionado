@@ -76,9 +76,10 @@ namespace MercadoEnvio.ABM_Empresa
                             String codPos = textCP.Text;
                             String ciudad = textCiudad.Text;
                             String rubro = textRubro.Text;
+                            String nombreContacto = textNameContact.Text;
         
                             // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
-                            abm_usuario.setearEmpresa(username, password, rol, razSoc, desc_Mail, telefono, fecha_creacion, direccion, altura, piso, depto, localidad,  codPos, ciudad, cuit, rubro);
+                            abm_usuario.setearEmpresa(username, password, rol, razSoc, desc_Mail, telefono, fecha_creacion, direccion, altura, piso, depto, localidad,  codPos, ciudad, cuit, rubro, nombreContacto);
 
 
                             // VUELVO

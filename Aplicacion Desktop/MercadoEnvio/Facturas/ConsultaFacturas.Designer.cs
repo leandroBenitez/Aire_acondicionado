@@ -1,6 +1,6 @@
 ﻿namespace MercadoEnvio.Facturas
 {
-    partial class Form1
+    partial class ConsultaFacturas
     {
         /// <summary>
         /// Required designer variable.

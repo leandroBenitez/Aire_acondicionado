@@ -334,3 +334,4 @@ D:\Archivos de programa\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEn
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ListadoCalificaciones.ListadoSinCalificar.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Calificaciones.Calificar.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ListadoCalificaciones.ListadoSinCalificar.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csprojResolveAssemblyReference.cache
