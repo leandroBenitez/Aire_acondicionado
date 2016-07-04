@@ -222,11 +222,9 @@
     <Compile Include="Excepciones\ConexionFallidaException.cs" />
     <Compile Include="DataBase\Conexion\ConstantesBD.cs" />
     <Compile Include="Excepciones\EjecucionComandoFallidaException.cs" />
-    <Compile Include="Facturas\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Facturas\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Facturas\ConsultaFacturas.cs" />
+    <Compile Include="Facturas\ConsultaFacturas.Designer.cs">
+      <DependentUpon>ConsultaFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="Generar Publicación\Compra.cs">
       <SubType>Form</SubType>

@@ -1077,6 +1077,17 @@ Select	 'admin'
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
 values (96,1)
 
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	desc_username
+															,desc_password
+															,id_estado	)
+Values	 (
+		'adri'
+		,HASHBYTES('sha2_256', 'guibu')
+		,1)
+
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
+values (97,3)
+
 /*  SETEO EL CAMPO TIPO DOC DE LA TABLA CLIENTE COMO DNI PARA TODOS LOS REGISTROS EXISTENTES
 
 update GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente

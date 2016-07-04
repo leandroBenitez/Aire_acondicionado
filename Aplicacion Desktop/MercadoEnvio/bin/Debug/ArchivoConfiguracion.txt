@@ -1,7 +1,7 @@
 Fecha Sistema: 05/24/2016
 
 Parametros Conexion:
-	URL Servidor: JAMPER-HP\SQLSERVER2012
+	URL Servidor: ADRIAN\SQLSERVER2012
 	Nombre de Usuario: gd
 	Password: gd2016
 	Nombre de base de Datos: GD1C2016
