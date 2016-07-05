@@ -756,6 +756,11 @@ CREATE procedure GESTORES_DEL_AIRE_ACONDICIONADO.comprar_subastar	(	 @desc_fecha
 																		,@tipo_publicacion varchar(50)
 																		,@cantidad int	)
 As
+Declare @stock_anterior int
+ 
+Select @stock_anterior = desc_stock from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
+	where id_publicacion = @publicacion
+
 if @tipo_publicacion = 'Compra Inmediata'
 begin
 	Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra	(	 desc_fecha
@@ -766,6 +771,18 @@ begin
 			,@cantidad
 			,@publicacion
 			,@usuario
+
+	if @cantidad = @stock_anterior
+	begin
+		Delete from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
+		where id_publicacion = @publicacion
+	end
+	else
+	begin
+		Update GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
+		Set desc_stock = @stock_anterior - @cantidad
+		where id_publicacion = @publicacion
+	end
 end
 else
 begin
@@ -777,6 +794,10 @@ begin
 			,@monto
 			,@publicacion
 			,@usuario
+
+	Update GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
+	Set desc_precio = @monto
+	where id_publicacion = @publicacion
 end
 
 Go
@@ -1063,9 +1084,8 @@ Where id_factura = @id
 Go
 
 
-Select * from GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
-
-Select * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario
+--Select * from GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
+--Select * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario
 
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
 															,desc_password
@@ -1102,6 +1122,4 @@ values (96,2)
 
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
 values (96,3)
-
-
 */

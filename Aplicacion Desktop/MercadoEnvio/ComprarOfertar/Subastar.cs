@@ -63,9 +63,16 @@ namespace MercadoEnvio.ComprarOfertar
         {
             if (float.Parse(nuevo_monto.Text) > 0)
             {
-                publicacion.realizar_compra_subasta(float.Parse(nuevo_monto.Text), this.id_publicacion, this.id_usuario, "Subasta", 0);
-                MessageBox.Show("Su oferta se ha realizado con exito!");
-                this.Close();
+                if (float.Parse(nuevo_monto.Text) > float.Parse(ult_monto.Text))
+                {
+                    publicacion.realizar_compra_subasta(float.Parse(nuevo_monto.Text), this.id_publicacion, this.id_usuario, "Subasta", 0);
+                    MessageBox.Show("Su oferta se ha realizado con exito!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("La oferta debe ser mayor a la anterior.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
