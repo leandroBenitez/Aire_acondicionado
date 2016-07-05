@@ -17,14 +17,16 @@ namespace MercadoEnvio.ComprarOfertar
         public float valor;
         public int id_publicacion;
         public int id_usuario;
+        private Menu un_menu;
 
-        public Comprar(string desc, float valor, float costo_envio, int stock, int id_publica, int id_user)
+        public Comprar(string desc, float valor, float costo_envio, int stock, int id_publica, int id_user, Menu un_me)
         {
             InitializeComponent();
             this.costo_envio = costo_envio;
             this.valor = valor;
             this.id_publicacion = id_publica;
             this.id_usuario = id_user;
+            this.un_menu = un_me;
             setearValores(desc, stock);
         }
 
@@ -39,15 +41,34 @@ namespace MercadoEnvio.ComprarOfertar
             combo_cantidad.Items.Add("0");
             combo_cantidad.Text = "0";
 
-            label_valor.Text = "0";
-            cost_envio.Text = this.costo_envio.ToString();
-            total_real.Text = this.costo_envio.ToString();
+            label_valor.Text = "$0";
+            if (!(float.Parse(this.costo_envio.ToString()) > 0))
+            {
+                check_envio.Enabled = false;
+                total_real.Text = "$0";
+            }
+
+            total_real.Text = "$0";
+            cost_envio.Text = "$0";
         }
 
         private void combo_cantidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            label_valor.Text = (Int32.Parse(combo_cantidad.Text) * this.valor).ToString();
-            total_real.Text = ((Int32.Parse(combo_cantidad.Text) * this.valor) + this.costo_envio).ToString();
+            recalcular_valores();
+        }
+
+        public void recalcular_valores()
+        {
+            label_valor.Text = "$" + (Int32.Parse(combo_cantidad.Text) * this.valor).ToString();
+
+            if (check_envio.Checked == false)
+            {
+                total_real.Text = "$" + (Int32.Parse(combo_cantidad.Text) * this.valor).ToString();
+            }
+            else
+            {
+                total_real.Text = "$" + ((Int32.Parse(combo_cantidad.Text) * this.valor) + this.costo_envio).ToString();            
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -63,11 +84,25 @@ namespace MercadoEnvio.ComprarOfertar
                 publicacion.realizar_compra_subasta(0, this.id_publicacion, this.id_usuario, "Compra Inmediata", Int16.Parse(combo_cantidad.Text));
                 MessageBox.Show("Su compra se ha realizado con exito!");
                 this.Close();
+                this.un_menu.Show();
             }
             else
             {
                 MessageBox.Show("Elija al menos un item.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void check_envio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_envio.Checked == true)
+            {
+                cost_envio.Text = "$" + this.costo_envio.ToString();
+            }
+            else
+            {
+                cost_envio.Text = "$0";
+            }
+            recalcular_valores();
         }
     }
 }

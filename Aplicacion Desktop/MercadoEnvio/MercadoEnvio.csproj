@@ -184,6 +184,12 @@
     <Compile Include="ComprarOfertar\Comprar.Designer.cs">
       <DependentUpon>Comprar.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComprarOfertar\Publicaciones_subasta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComprarOfertar\Publicaciones_subasta.Designer.cs">
+      <DependentUpon>Publicaciones_subasta.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComprarOfertar\Subastar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,11 +219,11 @@
     <Compile Include="DataBase\Entidades\Empresa.cs" />
     <Compile Include="DataBase\Entidades\User.cs" />
     <Compile Include="Excepciones\CierreConexionFallidaException.cs" />
-    <Compile Include="ComprarOfertar\Publicaciones.cs">
+    <Compile Include="ComprarOfertar\Publicaciones_compra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ComprarOfertar\Publicaciones.Designer.cs">
-      <DependentUpon>Publicaciones.cs</DependentUpon>
+    <Compile Include="ComprarOfertar\Publicaciones_compra.Designer.cs">
+      <DependentUpon>Publicaciones_compra.cs</DependentUpon>
     </Compile>
     <Compile Include="Excepciones\ConexionFallidaException.cs" />
     <Compile Include="DataBase\Conexion\ConstantesBD.cs" />
@@ -379,8 +385,11 @@
     <EmbeddedResource Include="ComprarOfertar\Comprar.resx">
       <DependentUpon>Comprar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ComprarOfertar\Publicaciones.resx">
-      <DependentUpon>Publicaciones.cs</DependentUpon>
+    <EmbeddedResource Include="ComprarOfertar\Publicaciones_subasta.resx">
+      <DependentUpon>Publicaciones_subasta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComprarOfertar\Publicaciones_compra.resx">
+      <DependentUpon>Publicaciones_compra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ComprarOfertar\Subastar.resx">
       <DependentUpon>Subastar.cs</DependentUpon>

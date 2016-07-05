@@ -106,14 +106,14 @@ namespace MercadoEnvio
 
         private void boton_comprar_Click(object sender, EventArgs e)
         {
-            Publicaciones publi = new Publicaciones(this, "Compra");
+            Publicaciones_compra publi = new Publicaciones_compra(this);
             publi.Show();
             this.Hide();
         }
 
         private void boton_ofertar_Click(object sender, EventArgs e)
         {
-            Publicaciones publi = new Publicaciones(this, "Subasta");
+            Publicaciones_subasta publi = new Publicaciones_subasta(this);
             publi.Show();
             this.Hide();
         }

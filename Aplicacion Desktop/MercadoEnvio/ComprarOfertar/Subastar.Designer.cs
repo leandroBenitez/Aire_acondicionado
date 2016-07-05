@@ -40,6 +40,9 @@
             this.ult_fecha = new System.Windows.Forms.Label();
             this.fecha_venc = new System.Windows.Forms.Label();
             this.nuevo_monto = new System.Windows.Forms.TextBox();
+            this.check_envio = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.total_real = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // presentacion
@@ -155,11 +158,43 @@
             this.nuevo_monto.Size = new System.Drawing.Size(100, 20);
             this.nuevo_monto.TabIndex = 14;
             // 
+            // check_envio
+            // 
+            this.check_envio.AutoSize = true;
+            this.check_envio.Location = new System.Drawing.Point(130, 172);
+            this.check_envio.Name = "check_envio";
+            this.check_envio.Size = new System.Drawing.Size(15, 14);
+            this.check_envio.TabIndex = 17;
+            this.check_envio.UseVisualStyleBackColor = true;
+            this.check_envio.CheckedChanged += new System.EventHandler(this.check_envio_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 172);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Envio disponible:";
+            // 
+            // total_real
+            // 
+            this.total_real.AutoSize = true;
+            this.total_real.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total_real.Location = new System.Drawing.Point(165, 170);
+            this.total_real.Name = "total_real";
+            this.total_real.Size = new System.Drawing.Size(35, 15);
+            this.total_real.TabIndex = 18;
+            this.total_real.Text = "total";
+            // 
             // Subastar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 236);
+            this.Controls.Add(this.total_real);
+            this.Controls.Add(this.check_envio);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.nuevo_monto);
             this.Controls.Add(this.fecha_venc);
             this.Controls.Add(this.ult_fecha);
@@ -193,6 +228,9 @@
         private System.Windows.Forms.Label ult_fecha;
         private System.Windows.Forms.Label fecha_venc;
         private System.Windows.Forms.TextBox nuevo_monto;
+        private System.Windows.Forms.CheckBox check_envio;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label total_real;
 
     }
 }

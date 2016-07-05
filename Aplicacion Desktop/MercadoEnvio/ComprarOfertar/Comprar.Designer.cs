@@ -40,6 +40,8 @@
             this.label_valor = new System.Windows.Forms.Label();
             this.cost_envio = new System.Windows.Forms.Label();
             this.total_real = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.check_envio = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // presentacion
@@ -158,11 +160,32 @@
             this.total_real.TabIndex = 13;
             this.total_real.Text = "total";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 104);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Envio disponible:";
+            // 
+            // check_envio
+            // 
+            this.check_envio.AutoSize = true;
+            this.check_envio.Location = new System.Drawing.Point(130, 104);
+            this.check_envio.Name = "check_envio";
+            this.check_envio.Size = new System.Drawing.Size(15, 14);
+            this.check_envio.TabIndex = 15;
+            this.check_envio.UseVisualStyleBackColor = true;
+            this.check_envio.CheckedChanged += new System.EventHandler(this.check_envio_CheckedChanged);
+            // 
             // Comprar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 196);
+            this.Controls.Add(this.check_envio);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.total_real);
             this.Controls.Add(this.cost_envio);
             this.Controls.Add(this.label_valor);
@@ -196,6 +219,8 @@
         private System.Windows.Forms.Label label_valor;
         private System.Windows.Forms.Label cost_envio;
         private System.Windows.Forms.Label total_real;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox check_envio;
 
     }
 }

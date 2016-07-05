@@ -20,16 +20,18 @@ namespace MercadoEnvio.ComprarOfertar
         public int id_publicacion;
         public int id_usuario;
         public string fecha_vencimiento;
+        public Menu un_menu;
 
-        public Subastar(string fecha_vencimiento, string desc, float valor, float costo_envio, int stock, int id_publica, int id_user)
+        public Subastar(string fecha_vencimiento, string desc, float valor, float costo_envio, int stock, int id_publica, Menu un_men)
         {
             InitializeComponent();
             publicacion = new publicacionDAO();
             this.costo_envio = costo_envio;
             this.valor = valor;
             this.id_publicacion = id_publica;
-            this.id_usuario = id_user;
+            this.id_usuario = un_men.id_usuario;
             this.fecha_vencimiento = fecha_vencimiento;
+            this.un_menu = un_men;
             setearValores(desc, stock);
         }
 
@@ -43,15 +45,22 @@ namespace MercadoEnvio.ComprarOfertar
             if (respuesta.HasRows)
             {
                 respuesta.Read();
-                ult_monto.Text = respuesta["desc_monto"].ToString();
+                ult_monto.Text = "$"+respuesta["desc_monto"].ToString();
                 ult_fecha.Text = respuesta["desc_fecha"].ToString();
             }
             else
             {
-                ult_monto.Text = "0";
+                ult_monto.Text = "$"+this.valor;
                 ult_fecha.Text = "-";
             }
             respuesta.Close();
+
+            total_real.Text = "$0";
+
+            if (!(float.Parse(costo_envio.ToString()) > 0))
+            {
+                check_envio.Enabled = false;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -63,7 +72,7 @@ namespace MercadoEnvio.ComprarOfertar
         {
             if (float.Parse(nuevo_monto.Text) > 0)
             {
-                if (float.Parse(nuevo_monto.Text) > float.Parse(ult_monto.Text))
+                if (float.Parse(nuevo_monto.Text) > float.Parse(ult_monto.Text.Substring(1)))
                 {
                     publicacion.realizar_compra_subasta(float.Parse(nuevo_monto.Text), this.id_publicacion, this.id_usuario, "Subasta", 0);
                     MessageBox.Show("Su oferta se ha realizado con exito!");
@@ -77,6 +86,18 @@ namespace MercadoEnvio.ComprarOfertar
             else
             {
                 MessageBox.Show("Revise el valor ingresado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void check_envio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_envio.Checked == true)
+            {
+                total_real.Text = "$" + this.costo_envio.ToString();
+            }
+            else
+            {
+                total_real.Text = "$0";
             }
         }
     }
