@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBoxEmpresa = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textNameContact = new System.Windows.Forms.TextBox();
             this.textRubro = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textCiudad = new System.Windows.Forms.TextBox();
@@ -42,11 +44,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textCuit2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textAnio = new System.Windows.Forms.TextBox();
-            this.textMes = new System.Windows.Forms.TextBox();
-            this.textDia = new System.Windows.Forms.TextBox();
+            this.textFechaSist = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.comboDominio = new System.Windows.Forms.ComboBox();
@@ -75,8 +73,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonAlta = new System.Windows.Forms.Button();
             this.labelCliente = new System.Windows.Forms.Label();
-            this.textNameContact = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBoxEmpresa.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -98,11 +94,7 @@
             this.groupBoxEmpresa.Controls.Add(this.label5);
             this.groupBoxEmpresa.Controls.Add(this.textCuit2);
             this.groupBoxEmpresa.Controls.Add(this.label1);
-            this.groupBoxEmpresa.Controls.Add(this.label20);
-            this.groupBoxEmpresa.Controls.Add(this.label29);
-            this.groupBoxEmpresa.Controls.Add(this.textAnio);
-            this.groupBoxEmpresa.Controls.Add(this.textMes);
-            this.groupBoxEmpresa.Controls.Add(this.textDia);
+            this.groupBoxEmpresa.Controls.Add(this.textFechaSist);
             this.groupBoxEmpresa.Controls.Add(this.label31);
             this.groupBoxEmpresa.Controls.Add(this.label27);
             this.groupBoxEmpresa.Controls.Add(this.comboDominio);
@@ -127,6 +119,22 @@
             this.groupBoxEmpresa.TabIndex = 109;
             this.groupBoxEmpresa.TabStop = false;
             this.groupBoxEmpresa.Text = "Datos Empresa";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(11, 48);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 13);
+            this.label10.TabIndex = 155;
+            this.label10.Text = "Nombre Contacto:";
+            // 
+            // textNameContact
+            // 
+            this.textNameContact.Location = new System.Drawing.Point(116, 45);
+            this.textNameContact.Name = "textNameContact";
+            this.textNameContact.Size = new System.Drawing.Size(95, 20);
+            this.textNameContact.TabIndex = 154;
             // 
             // textRubro
             // 
@@ -231,44 +239,12 @@
             this.label1.TabIndex = 141;
             this.label1.Text = "-";
             // 
-            // label20
+            // textFechaSist
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(149, 282);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(12, 13);
-            this.label20.TabIndex = 140;
-            this.label20.Text = "/";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(192, 282);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(12, 13);
-            this.label29.TabIndex = 139;
-            this.label29.Text = "/";
-            // 
-            // textAnio
-            // 
-            this.textAnio.Location = new System.Drawing.Point(205, 279);
-            this.textAnio.Name = "textAnio";
-            this.textAnio.Size = new System.Drawing.Size(28, 20);
-            this.textAnio.TabIndex = 138;
-            // 
-            // textMes
-            // 
-            this.textMes.Location = new System.Drawing.Point(162, 279);
-            this.textMes.Name = "textMes";
-            this.textMes.Size = new System.Drawing.Size(28, 20);
-            this.textMes.TabIndex = 137;
-            // 
-            // textDia
-            // 
-            this.textDia.Location = new System.Drawing.Point(116, 279);
-            this.textDia.Name = "textDia";
-            this.textDia.Size = new System.Drawing.Size(28, 20);
-            this.textDia.TabIndex = 136;
+            this.textFechaSist.Location = new System.Drawing.Point(116, 279);
+            this.textFechaSist.Name = "textFechaSist";
+            this.textFechaSist.Size = new System.Drawing.Size(95, 20);
+            this.textFechaSist.TabIndex = 136;
             // 
             // label31
             // 
@@ -515,22 +491,6 @@
             this.labelCliente.TabIndex = 143;
             this.labelCliente.Text = "ALTA DE EMPRESA";
             // 
-            // textNameContact
-            // 
-            this.textNameContact.Location = new System.Drawing.Point(116, 45);
-            this.textNameContact.Name = "textNameContact";
-            this.textNameContact.Size = new System.Drawing.Size(95, 20);
-            this.textNameContact.TabIndex = 154;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(11, 48);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 13);
-            this.label10.TabIndex = 155;
-            this.label10.Text = "Nombre Contacto:";
-            // 
             // altaEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -555,11 +515,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxEmpresa;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textAnio;
-        private System.Windows.Forms.TextBox textMes;
-        private System.Windows.Forms.TextBox textDia;
+        private System.Windows.Forms.TextBox textFechaSist;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.ComboBox comboDominio;

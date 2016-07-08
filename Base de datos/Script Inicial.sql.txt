@@ -968,7 +968,7 @@ Select
 			,@desc_razon_social 
 			,@desc_Mail 
 			,Convert(numeric(10,0), @desc_Telefono)  
-			,Convert(datetime, @desc_Fecha_Creacion )
+			,Convert(datetime, substring(@desc_fecha_Creacion, 7,4)+substring(@desc_fecha_Creacion, 1,2)+substring(@desc_fecha_Creacion, 4,2))
 			,@desc_Dom_Calle 
 			,Convert(numeric(18,0), @desc_Nro_Calle)
 			,Convert(numeric(18,0), @desc_Piso) 
@@ -1088,7 +1088,7 @@ Values	 (
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
 values (97,3)
 
-/*  SETEO EL CAMPO TIPO DOC DE LA TABLA CLIENTE COMO DNI PARA TODOS LOS REGISTROS EXISTENTES
+/*  SETEO EL CAMPO TIPO DOC DE LA TABLA CLIENTE COMO DNI PARA TODOS LOS REGISTROS EXISTENTES2
 
 update GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente
 set desc_tipo_doc = 'DNI'

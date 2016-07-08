@@ -32,6 +32,9 @@ namespace MercadoEnvio.ABM_Empresa
             textUsername.Text = username;
             textPassword.Text = password;
             textRol.Text = rol;
+
+            /* SETEO LA FECHA DE CREACION LEVANTANDOLA DESDE EL ARCHIVO DE CONFIGURACION */
+            textFechaSist.Text = ConstantesBD.fechaSistema;
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
@@ -67,7 +70,7 @@ namespace MercadoEnvio.ABM_Empresa
                             String razSoc = textRazonSoc.Text;
                             String desc_Mail = textMail.Text + "@" + comboDominio.SelectedItem.ToString();
                             String telefono = textTelefono.Text;
-                            String fecha_creacion =  textDia.Text + "/" + textMes.Text + "/" + textAnio.Text;
+                            String fecha_creacion = textFechaSist.Text;
                             String direccion = textDireccion.Text;
                             String altura = textAltura.Text;
                             String piso = textPiso.Text;
@@ -77,10 +80,9 @@ namespace MercadoEnvio.ABM_Empresa
                             String ciudad = textCiudad.Text;
                             String rubro = textRubro.Text;
                             String nombreContacto = textNameContact.Text;
-        
-                            // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
-                            abm_usuario.setearEmpresa(username, password, rol, razSoc, desc_Mail, telefono, fecha_creacion, direccion, altura, piso, depto, localidad,  codPos, ciudad, cuit, rubro, nombreContacto);
 
+                            // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
+                            abm_usuario.setearEmpresa(username, password, rol, razSoc, desc_Mail, telefono, fecha_creacion, direccion, altura, piso, depto, localidad, codPos, ciudad, cuit, rubro, nombreContacto);
 
                             // VUELVO
                             MessageBox.Show("La empresa ha sido creada exitosamente!");
