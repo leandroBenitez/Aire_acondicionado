@@ -71,7 +71,7 @@ namespace MercadoEnvio.Consulta_Facturas
             if (textDestinatario.Text != "")
             {
                 List<String> lista_id_usuarios = abm_factura.getUsuarioPorLikeDesc(textDestinatario.Text);
-                String id_usuarios_filtro = " '99999'";
+                String id_usuarios_filtro = "'99999'";
                 int pos = 0;
                 while ( lista_id_usuarios.Count() > pos )
                 {
@@ -84,9 +84,19 @@ namespace MercadoEnvio.Consulta_Facturas
                 filtros.Add("1=1");
 
             if (textDescripcion.Text != "")
-                filtros.Add("1 = 1");
+            {
+                List<String> lista_id_facturas = abm_factura.getFacturas(textDescripcion.Text);
+                String id_facturas_filtro = "'0000000000000000000009999'";
+                int pos = 0;
+                while (lista_id_facturas.Count() > pos)
+                {
+                    id_facturas_filtro = id_facturas_filtro + ",'" + lista_id_facturas.ElementAt(pos) + "'";
+                    pos++;
+                }
+                filtros.Add("id_factura IN (" + id_facturas_filtro + ")");
+            }
             else
-            filtros.Add("1=1");
+                filtros.Add("1=1");
 
             if (textImporte1.Text != "" && textImporte2.Text != "")
                 filtros.Add("desc_total BETWEEN " + textImporte1.Text + " AND " + textImporte2.Text);

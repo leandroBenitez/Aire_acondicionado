@@ -55,6 +55,19 @@ namespace MercadoEnvio.DataBase.Conexion
             return users;
         }
 
+        /* OBTENGO LOS NUMERO DE FACTURA (ID_FACTURA) EN DONDE HAY ITEMS QUE CONTIENEN EL LIKEDESC*/
+         public List<String> getFacturas(String likeDesc)
+           {
+            SqlDataReader facturas = this.GD1C2016.ejecutarSentenciaConRetorno("select id_factura from GESTORES_DEL_AIRE_ACONDICIONADO.ft_item where DESC_ITEM_DESC LIKE '%" + likeDesc + "%'");
+            List<String> nros_fact = new List<String>();
 
+            while (facturas.Read())
+            {
+                nros_fact.Add(facturas["id_factura"].ToString());
+            }
+
+            facturas.Close();
+            return nros_fact;
+        }
     }
 }
