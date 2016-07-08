@@ -238,7 +238,6 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra
 	 id_compra int identity(1,1)
 	,desc_fecha datetime
 	,desc_cantidad numeric(18,0)
-	,monto_total numeric(18,2)
 	,id_publicacion numeric(18,0)
 	,id_usuario int
 	,primary key (id_compra)
@@ -283,7 +282,6 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.dm_forma_pago
 Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura
 (	
 	 id_factura numeric(18,0)
-	,desc_factura_nro NUMERIC(18,0) -- HABRIA QUE AGREGARLE LOS DATOS
 	,desc_fecha datetime
 	,desc_total numeric(18,2)
 	,id_forma_pago int
@@ -296,6 +294,7 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura
 Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_item	
 (
 	 id_item int identity(1,1)
+	,desc_item_desc varchar(50)
 	,desc_item_monto numeric(18,2)
 	,desc_item_cant numeric(18,0)
 	,id_factura numeric(18,0)
@@ -317,12 +316,8 @@ If exists (select * FROM sys.views where name = 'rol_funcionalidades')
 Drop view GESTORES_DEL_AIRE_ACONDICIONADO.rol_funcionalidades
 Go
 
-If exists (select * FROM sys.views where name = 'publicaciones_compra')
-Drop view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones_compra
-Go
-
-If exists (select * FROM sys.views where name = 'publicaciones_subasta')
-Drop view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones_subasta
+If exists (select * FROM sys.views where name = 'publicaciones')
+Drop view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones
 Go
 
 /*	***********************	CREACION DE VISTAS	************************ */
@@ -343,18 +338,17 @@ left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion fu
 	on rl.id_funcion = fu.id_funcion
 Go
 
-Create view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones_compra
+Create view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones
 As
 Select	 pub.id_publicacion
 		,pub.desc_publicacion
 		,pub.desc_stock
 		,pub.desc_precio
 		,pub.desc_costo_envio
-		,left(cast(pub.desc_fecha_publi as date), 10) as fecha_publicacion
-		,left(cast(pub.desc_fecha_venc as date), 10) as fecha_vencimiento
+		,cast(pub.desc_fecha_publi as date) as fecha_publicacion
+		,cast(pub.desc_fecha_venc as date) as fecha_vencimiento
 		,rub.desc_rubro
-		,vis.desc_tipo as visualizacion
-		,vis.desc_precio as precio_visualizacion		
+		,vis.desc_tipo
 		,est.desc_estado
 		,tip.desc_tipo_public
 		,pub.id_usuario
@@ -367,36 +361,6 @@ left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion est
 	on pub.id_estado_publi = est.id_estado_publi
 left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion tip
 	on pub.id_tipo_publi = tip.id_tipo_publi
-where desc_tipo_public = 'Compra Inmediata'
-and est.desc_estado in ('Pausada', 'Activo')
-Go
-
-Create view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones_subasta
-As
-Select	 pub.id_publicacion
-		,pub.desc_publicacion
-		,pub.desc_stock
-		,pub.desc_precio
-		,pub.desc_costo_envio
-		,left(cast(pub.desc_fecha_publi as date), 10) as fecha_publicacion
-		,left(cast(pub.desc_fecha_venc as date), 10) as fecha_vencimiento
-		,rub.desc_rubro
-		,vis.desc_tipo as visualizacion
-		,vis.desc_precio as precio_visualizacion		
-		,est.desc_estado
-		,tip.desc_tipo_public
-		,pub.id_usuario
-from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pub
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro rub
-	on pub.id_rubro = rub.id_rubro
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad vis
-	on pub.id_visibilidad = vis.id_visibilidad
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion est
-	on pub.id_estado_publi = est.id_estado_publi
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion tip
-	on pub.id_tipo_publi = tip.id_tipo_publi
-where desc_tipo_public = 'Subasta'
-and est.desc_estado in ('Pausada', 'Activo')
 Go
 
 /*	***********************	CARGA DE DATOS	************************ */
@@ -432,7 +396,7 @@ Go
 --Carga de los estados de las publicaciones
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion	(desc_estado)
 Values	('Borrador'),
-		('Activa'),
+		('Publicada'),
 		('Pausada'),
 		('Finalizada')
 Go
@@ -619,7 +583,7 @@ Select	 Distinct
 		,ma.Publicacion_Fecha_Venc
 		,ma.Publicacion_Precio
 		,0
-		,2
+		,es.id_estado_publi
 		,vi.id_visibilidad
 		,publ_tipo.id_tipo_publi
 		,ru.id_rubro
@@ -780,64 +744,41 @@ If exists (select 'existe' From sys.objects where type = 'TR' AND name = 'sumar_
 	Drop trigger GESTORES_DEL_AIRE_ACONDICIONADO.sumar_total
 Go
 
-If exists (select'existe' From INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME = 'comprar')
-	Drop procedure GESTORES_DEL_AIRE_ACONDICIONADO.comprar
+If exists (select'existe' From INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME = 'comprar_subastar')
+	Drop procedure GESTORES_DEL_AIRE_ACONDICIONADO.comprar_subastar
 Go
 
-If exists (select'existe' From INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME = 'subastar')
-	Drop procedure GESTORES_DEL_AIRE_ACONDICIONADO.subastar
-Go
-
-/* STORED PROCEDURE PARA GENERAR COMPRAS*/
-CREATE procedure GESTORES_DEL_AIRE_ACONDICIONADO.comprar	(	 @desc_fecha varchar(30)
-																,@monto decimal(18,2)
-																,@publicacion int
-																,@usuario int
-																,@cantidad int	)
+/* STORED PROCEDURE PARA GENERAR OFERTAS Y COMPRAS*/
+CREATE procedure GESTORES_DEL_AIRE_ACONDICIONADO.comprar_subastar	(	 @desc_fecha varchar(30)
+																		,@monto decimal(18,2)
+																		,@publicacion int
+																		,@usuario int
+																		,@tipo_publicacion varchar(50)
+																		,@cantidad int	)
 As
-Declare @stock_anterior int
- 
-Select @stock_anterior = desc_stock from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
-	where id_publicacion = @publicacion
-
-Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra	(	 desc_fecha
-															,desc_cantidad
-															,monto_total
-															,id_publicacion
-															,id_usuario	)
-Select	 CONVERT(datetime, right(@desc_fecha, 4) + SUBSTRING(@desc_fecha, 3, 4) + left(@desc_fecha, 2))
-		,@cantidad
-		,@monto
-		,@publicacion
-		,@usuario
-
-if @cantidad = @stock_anterior
+if @tipo_publicacion = 'Compra Inmediata'
 begin
-	Delete from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
-	where id_publicacion = @publicacion
+	Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra	(	 desc_fecha
+																,desc_cantidad
+																,id_publicacion
+																,id_usuario	)
+	Select	 CONVERT(datetime, right(@desc_fecha, 4) + SUBSTRING(@desc_fecha, 3, 4) + left(@desc_fecha, 2))
+			,@cantidad
+			,@publicacion
+			,@usuario
 end
 else
 begin
-	Update GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
-	Set desc_stock = @stock_anterior - @cantidad
-	where id_publicacion = @publicacion
+	Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_subasta	(	 desc_fecha
+																,desc_monto
+																,id_publicacion
+																,id_usuario	)
+	Select	 CONVERT(datetime, right(@desc_fecha, 4) + SUBSTRING(@desc_fecha, 3, 4) + left(@desc_fecha, 2))
+			,@monto
+			,@publicacion
+			,@usuario
 end
-Go
 
-/* STORED PROCEDURE PARA GENERAR SUBASTAR*/
-CREATE procedure GESTORES_DEL_AIRE_ACONDICIONADO.subastar	(	 @desc_fecha varchar(30)
-																,@monto decimal(18,2)
-																,@publicacion int
-																,@usuario int	)
-As
-Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_subasta	(	 desc_fecha
-															,desc_monto
-															,id_publicacion
-															,id_usuario	)
-Select	 CONVERT(datetime, right(@desc_fecha, 4) + SUBSTRING(@desc_fecha, 3, 4) + left(@desc_fecha, 2))
-		,@monto
-		,@publicacion
-		,@usuario
 Go
 
 /* STORED PROCEDURE PARA CREAR UN NUEVO CLIENTE (CARGA TABLAS USUARIO, CLIENTE, Y ROLES_USUARIO)*/
@@ -1122,8 +1063,9 @@ Where id_factura = @id
 Go
 
 
---Select * from GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
---Select * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario
+Select * from GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
+
+Select * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario
 
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
 															,desc_password
@@ -1144,8 +1086,7 @@ Values	 (
 		,1)
 
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
-values (97,3),
-		(97,1)
+values (97,3)
 
 /*  SETEO EL CAMPO TIPO DOC DE LA TABLA CLIENTE COMO DNI PARA TODOS LOS REGISTROS EXISTENTES
 
@@ -1161,4 +1102,6 @@ values (96,2)
 
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
 values (96,3)
+
 */
+
