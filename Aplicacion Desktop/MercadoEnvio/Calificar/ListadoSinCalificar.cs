@@ -49,8 +49,9 @@ namespace MercadoEnvio.ListadoCalificaciones
             int publicacion = int.Parse(fila.Cells["Publicacion"].Value.ToString());
             int vendedor = int.Parse(fila.Cells["Vendedor"].Value.ToString());
 
-            Calificar formCalificar = new Calificar(publicacion, vendedor, int.Parse(this.unMenu.id_usuario.ToString()));
+            Calificar formCalificar = new Calificar(publicacion, vendedor, int.Parse(this.unMenu.id_usuario.ToString()), this.unMenu);
             formCalificar.Show();
+            this.Close();
 
         }
 

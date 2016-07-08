@@ -17,9 +17,10 @@ namespace MercadoEnvio.Calificaciones
     public partial class Calificar : Form
     {
         private Calificar_DAO calificarDAO;
-        int pubCalif, vendedorCalif, compradorCalif;
+        int pubCalif, vendedorCalif, compradorCalif; 
+        private Menu unMenu;
 
-        public Calificar(int publicacion, int vendedor, int comprador)
+        public Calificar(int publicacion, int vendedor, int comprador, Menu menu)
         {
             leerArchivoConfig();
             calificarDAO = new Calificar_DAO();
@@ -29,6 +30,7 @@ namespace MercadoEnvio.Calificaciones
             pubCalif = publicacion;
             vendedorCalif = vendedor;
             compradorCalif = comprador;
+            unMenu = menu;
 
             cargarCalificacionComboBox();
         }
@@ -43,8 +45,19 @@ namespace MercadoEnvio.Calificaciones
 
         private void AceptarButton_Click(object sender, EventArgs e)
         {
-            int estrellas = (int)Calificacion_ComboBox.SelectedItem;
-            calificarDAO.calificarA( pubCalif, estrellas, vendedorCalif, compradorCalif);
+            try
+            {
+                int estrellas = (int)Calificacion_ComboBox.SelectedItem;
+                calificarDAO.calificarA(pubCalif, estrellas, vendedorCalif, compradorCalif);
+                MessageBox.Show("Calificación realizada");
+                this.Close();
+                this.unMenu.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione una cantidad de estrellas de la lista");
+            }
+
         }
 
         private void leerArchivoConfig()
