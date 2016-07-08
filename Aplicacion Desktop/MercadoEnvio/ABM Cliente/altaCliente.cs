@@ -38,6 +38,14 @@ namespace MercadoEnvio.ABM_Usuario
             textUsername.Text = username;
             textPassword.Text = password;
             textRol.Text = rol;
+
+            /* FECHA DE NACIMIENTO DESDE CALENDAR/DATEPICKER */
+            fechaNacimiento.Format = DateTimePickerFormat.Custom;
+            fechaNacimiento.CustomFormat = "dd/mm/yy";
+            fechaNacimiento.Text = "05/05/2016";
+            
+            /* SETEO LA FECHA DE CREACION LEVANTANDOLA DESDE EL ARCHIVO DE CONFIGURACION */
+            textFechaCre.Text = ConstantesBD.fechaSistema;
         }
 
         /* VALIDAR TODOS LOS CAMPOS CONTRA LA BASE */
@@ -71,9 +79,11 @@ namespace MercadoEnvio.ABM_Usuario
                         String desc_Localidad = textLocalidad.Text;
                         String desc_Cod_Postal = textCP.Text;
                         String desc_Telefono = textTelefono.Text;
-                        String desc_Fecha_Nac = textDia.Text + "/" + textMes.Text + "/" + textAnio.Text;
-                        String desc_fecha_creacion = textDiaCre.Text + "/" + textMesCre.Text + "/" + textAnioCre.Text;
-                        
+                        String desc_Fecha_Nac = fechaNacimiento.Text;
+                        String desc_fecha_creacion = textFechaCre.Text;
+
+                        MessageBox.Show(desc_Fecha_Nac);
+                        MessageBox.Show(desc_fecha_creacion);
                 
                         // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
                         abm_usuario.setearCliente(username, password, rol, desc_Apellido, desc_Nombre, desc_Dni, tipo_doc, desc_Mail, desc_Dom_Calle, desc_Nro_Calle, desc_Piso, desc_Depto, desc_Localidad, desc_Cod_Postal, desc_Telefono, desc_Fecha_Nac, desc_fecha_creacion);
@@ -97,24 +107,16 @@ namespace MercadoEnvio.ABM_Usuario
             //textRol.Text = formSeleccion.comboNombresRoles.SelectedItem.ToString(); NO ANDA, VER
         }
 
-        private void buttonCalendar_Click(object sender, EventArgs e)
-        {
-            monthCalendar1.Visible = true;
-        }
-
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            monthCalendar1.Visible = false;
-            // FALTARIA CARGA LA FECHA EN EL TEXT QUE NO ME LO ESTA CARGANDO EN EL FORMATO QUE QUIERO
-            //textCalendar.Text = monthCalendar1.ToString();
-
-        }
-
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             this.Close();
             Usuario formUsuario = new Usuario();
             formUsuario.Show();
+        }
+
+        private void buttonCalendar_Click_1(object sender, EventArgs e)
+        {
+            //calendar.Show();
         }
     }
 }

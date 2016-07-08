@@ -30,18 +30,11 @@
         {
             this.labelCliente = new System.Windows.Forms.Label();
             this.buttonAlta = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.groupBoxCliente = new System.Windows.Forms.GroupBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textAnio = new System.Windows.Forms.TextBox();
-            this.textMes = new System.Windows.Forms.TextBox();
             this.comboTipoDoc = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textDiaCre = new System.Windows.Forms.TextBox();
+            this.textFechaCre = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textDia = new System.Windows.Forms.TextBox();
-            this.buttonCalendar = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.textTelefono = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -74,10 +67,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textAnioCre = new System.Windows.Forms.TextBox();
-            this.textMesCre = new System.Windows.Forms.TextBox();
+            this.fechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.groupBoxCliente.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -102,31 +92,13 @@
             this.buttonAlta.UseVisualStyleBackColor = true;
             this.buttonAlta.Click += new System.EventHandler(this.buttonAlta_Click);
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(0, 245);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 39;
-            this.monthCalendar1.Visible = false;
-            this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
-            // 
             // groupBoxCliente
             // 
-            this.groupBoxCliente.Controls.Add(this.label20);
-            this.groupBoxCliente.Controls.Add(this.label21);
-            this.groupBoxCliente.Controls.Add(this.textAnioCre);
-            this.groupBoxCliente.Controls.Add(this.textMesCre);
-            this.groupBoxCliente.Controls.Add(this.label19);
-            this.groupBoxCliente.Controls.Add(this.label1);
-            this.groupBoxCliente.Controls.Add(this.textAnio);
-            this.groupBoxCliente.Controls.Add(this.monthCalendar1);
-            this.groupBoxCliente.Controls.Add(this.textMes);
+            this.groupBoxCliente.Controls.Add(this.fechaNacimiento);
             this.groupBoxCliente.Controls.Add(this.comboTipoDoc);
             this.groupBoxCliente.Controls.Add(this.label8);
-            this.groupBoxCliente.Controls.Add(this.textDiaCre);
+            this.groupBoxCliente.Controls.Add(this.textFechaCre);
             this.groupBoxCliente.Controls.Add(this.label18);
-            this.groupBoxCliente.Controls.Add(this.textDia);
-            this.groupBoxCliente.Controls.Add(this.buttonCalendar);
             this.groupBoxCliente.Controls.Add(this.label17);
             this.groupBoxCliente.Controls.Add(this.textTelefono);
             this.groupBoxCliente.Controls.Add(this.label16);
@@ -158,38 +130,6 @@
             this.groupBoxCliente.TabStop = false;
             this.groupBoxCliente.Text = "Datos Cliente";
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(145, 198);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(12, 13);
-            this.label19.TabIndex = 107;
-            this.label19.Text = "/";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(185, 198);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(12, 13);
-            this.label1.TabIndex = 106;
-            this.label1.Text = "/";
-            // 
-            // textAnio
-            // 
-            this.textAnio.Location = new System.Drawing.Point(200, 195);
-            this.textAnio.Name = "textAnio";
-            this.textAnio.Size = new System.Drawing.Size(28, 20);
-            this.textAnio.TabIndex = 105;
-            // 
-            // textMes
-            // 
-            this.textMes.Location = new System.Drawing.Point(157, 195);
-            this.textMes.Name = "textMes";
-            this.textMes.Size = new System.Drawing.Size(28, 20);
-            this.textMes.TabIndex = 104;
-            // 
             // comboTipoDoc
             // 
             this.comboTipoDoc.FormattingEnabled = true;
@@ -207,42 +147,27 @@
             this.label8.TabIndex = 102;
             this.label8.Text = "Tpo. de Doc:";
             // 
-            // textDiaCre
+            // textFechaCre
             // 
-            this.textDiaCre.Location = new System.Drawing.Point(116, 220);
-            this.textDiaCre.Name = "textDiaCre";
-            this.textDiaCre.Size = new System.Drawing.Size(28, 20);
-            this.textDiaCre.TabIndex = 100;
+            this.textFechaCre.Location = new System.Drawing.Point(117, 227);
+            this.textFechaCre.Name = "textFechaCre";
+            this.textFechaCre.ReadOnly = true;
+            this.textFechaCre.Size = new System.Drawing.Size(83, 20);
+            this.textFechaCre.TabIndex = 100;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(4, 223);
+            this.label18.Location = new System.Drawing.Point(4, 230);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(100, 13);
             this.label18.TabIndex = 99;
             this.label18.Text = "Fecha de Creacion:";
             // 
-            // textDia
-            // 
-            this.textDia.Location = new System.Drawing.Point(117, 195);
-            this.textDia.Name = "textDia";
-            this.textDia.Size = new System.Drawing.Size(28, 20);
-            this.textDia.TabIndex = 98;
-            // 
-            // buttonCalendar
-            // 
-            this.buttonCalendar.Location = new System.Drawing.Point(255, 193);
-            this.buttonCalendar.Name = "buttonCalendar";
-            this.buttonCalendar.Size = new System.Drawing.Size(75, 23);
-            this.buttonCalendar.TabIndex = 97;
-            this.buttonCalendar.Text = "Calendario";
-            this.buttonCalendar.UseVisualStyleBackColor = true;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(8, 198);
+            this.label17.Location = new System.Drawing.Point(8, 203);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(96, 13);
             this.label17.TabIndex = 96;
@@ -512,37 +437,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Username:";
             // 
-            // label20
+            // fechaNacimiento
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(145, 223);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(12, 13);
-            this.label20.TabIndex = 111;
-            this.label20.Text = "/";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(185, 223);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(12, 13);
-            this.label21.TabIndex = 110;
-            this.label21.Text = "/";
-            // 
-            // textAnioCre
-            // 
-            this.textAnioCre.Location = new System.Drawing.Point(200, 220);
-            this.textAnioCre.Name = "textAnioCre";
-            this.textAnioCre.Size = new System.Drawing.Size(28, 20);
-            this.textAnioCre.TabIndex = 109;
-            // 
-            // textMesCre
-            // 
-            this.textMesCre.Location = new System.Drawing.Point(157, 220);
-            this.textMesCre.Name = "textMesCre";
-            this.textMesCre.Size = new System.Drawing.Size(28, 20);
-            this.textMesCre.TabIndex = 108;
+            this.fechaNacimiento.Location = new System.Drawing.Point(116, 199);
+            this.fechaNacimiento.Name = "fechaNacimiento";
+            this.fechaNacimiento.Size = new System.Drawing.Size(100, 20);
+            this.fechaNacimiento.TabIndex = 108;
             // 
             // altaCliente
             // 
@@ -568,16 +468,11 @@
 
         private System.Windows.Forms.Label labelCliente;
         private System.Windows.Forms.Button buttonAlta;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.GroupBox groupBoxCliente;
-        private System.Windows.Forms.TextBox textAnio;
-        private System.Windows.Forms.TextBox textMes;
         private System.Windows.Forms.ComboBox comboTipoDoc;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textDiaCre;
+        private System.Windows.Forms.TextBox textFechaCre;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textDia;
-        private System.Windows.Forms.Button buttonCalendar;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textTelefono;
         private System.Windows.Forms.Label label16;
@@ -602,8 +497,6 @@
         private System.Windows.Forms.TextBox textApellido;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textNombre;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -612,9 +505,6 @@
         private System.Windows.Forms.TextBox textRol;
         private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.TextBox textUsername;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textAnioCre;
-        private System.Windows.Forms.TextBox textMesCre;
+        private System.Windows.Forms.DateTimePicker fechaNacimiento;
     }
 }
