@@ -261,6 +261,7 @@
             // desc_fecha_venc
             // 
             this.desc_fecha_venc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.desc_fecha_venc.FillWeight = 120F;
             this.desc_fecha_venc.HeaderText = "Fecha Vencimiento";
             this.desc_fecha_venc.MinimumWidth = 10;
             this.desc_fecha_venc.Name = "desc_fecha_venc";

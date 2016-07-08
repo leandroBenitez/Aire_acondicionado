@@ -240,6 +240,7 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra
 	,desc_cantidad numeric(18,0)
 	,id_publicacion numeric(18,0)
 	,id_usuario int
+	,desc_envio varchar(2) default 'No'
 	,primary key (id_compra)
 	,foreign key (id_publicacion) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion(id_publicacion)
 	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
@@ -252,6 +253,7 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_subasta
 	,desc_monto numeric(18,2)
 	,id_publicacion numeric(18,0)
 	,id_usuario int
+	,desc_envio varchar(2) default 'No'
 	,primary key (id_subasta)
 	,foreign key (id_publicacion) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion(id_publicacion)
 	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
@@ -396,7 +398,7 @@ Go
 --Carga de los estados de las publicaciones
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion	(desc_estado)
 Values	('Borrador'),
-		('Publicada'),
+		('Activo'),
 		('Pausada'),
 		('Finalizada')
 Go
@@ -596,7 +598,7 @@ inner join GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion publ_tipo
 inner join GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad vi
 	on ma.Publicacion_Visibilidad_Cod = vi.desc_codigo
 inner join GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion es
-	on ma.Publicacion_Estado = es.desc_estado
+	on case when ma.Publicacion_Estado = 'Publicada' then 'Activo' end = es.desc_estado
 inner join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro ru
 	on ma.Publicacion_Rubro_Descripcion = ru.desc_rubro
 Where Publicacion_Cod is not null
@@ -1062,11 +1064,6 @@ Where id_factura = @id
 
 Go
 
-
-Select * from GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
-
-Select * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario
-
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
 															,desc_password
 															,id_estado	)
@@ -1104,4 +1101,3 @@ Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
 values (96,3)
 
 */
-

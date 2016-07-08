@@ -72,20 +72,6 @@ C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\
 C:\Users\Flia Benitez\Desktop\MercadoEnvioRoles\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\Flia Benitez\Desktop\MercadoEnvioRoles\MercadoEnvio\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Flia Benitez\Desktop\MercadoEnvioRoles\MercadoEnvio\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe.config
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.exe
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.pdb
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.pdb
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.seleccionRoles.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.Usuario.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Empresa.altaEmpresa.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvios.ABM_Rol.altaRol.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.bajaRol.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.ModificacionRol.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Login.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Properties.Resources.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csproj.GenerateResource.Cache
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe.config
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.pdb
@@ -117,10 +103,7 @@ C:\Users\Jamper\Desktop\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.L
 C:\Users\Jamper\Desktop\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Properties.Resources.resources
 C:\Users\Jamper\Desktop\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csproj.GenerateResource.Cache
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.altaCliente.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.altaCliente.resources
 C:\Users\Jamper\Desktop\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csprojResolveAssemblyReference.cache
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Login_rol.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Menu.resources
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe.config
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.pdb
@@ -177,18 +160,6 @@ C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEn
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Listado_Estadistico.Top5.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Login_rol.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Menu.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Visibilidad.AltaVisibilidad.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Visibilidad.BajaVisibilidad.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Visibilidad.ListadoVisibilidad.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Visibilidad.ModificacionVisibilidad.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Generar_Publicación.Compra.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Generar_Publicación.Subasta.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Generar_Publicación.TipoDePubli.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialFacturas.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialMiCuenta.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialSubastas.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Listado_Estadistico.NoVendidos.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Listado_Estadistico.Top5.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.subMenuUsuario.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Generar_Publicación.Compra.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Generar_Publicación.Subasta.resources
@@ -199,16 +170,6 @@ C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEn
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Empresa.bajaEmpresa.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Empresa.buscarEmpresa.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Empresa.modificacionEmpresa.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.bajaUsuario.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.buscarCliente.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Cliente.modificacionCliente.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Empresa.bajaEmpresa.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Empresa.buscarEmpresa.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Empresa.modificacionEmpresa.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.subMenuUsuario.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialCompras.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialComprasCalificadas.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialComprasSinCalificar.resources
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.bajaUsuario.resources
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.buscarCliente.resources
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Cliente.modificacionCliente.resources
@@ -228,8 +189,6 @@ E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\Mercado
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialSubastas.resources
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Listado_Estadistico.NoVendidos.resources
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Listado_Estadistico.Top5.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Comprar.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Subastar.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Comprar.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Subastar.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialCompras.resources
@@ -332,10 +291,51 @@ D:\Archivos de programa\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEn
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ListadoCalificaciones.ListadoSinCalificar.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Calificaciones.Calificar.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ListadoCalificaciones.ListadoSinCalificar.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Calificaciones.Calificar.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ListadoCalificaciones.ListadoSinCalificar.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Consulta_Facturas.cons_fac.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Publicaciones_compra.resources
-C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Publicaciones_subasta.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Publicaciones_subasta.resources
 C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Publicaciones_compra.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.altaCliente.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.bajaUsuario.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.buscarCliente.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Cliente.modificacionCliente.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.seleccionRoles.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Empresa.altaEmpresa.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Empresa.bajaEmpresa.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Empresa.buscarEmpresa.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Empresa.modificacionEmpresa.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvios.ABM_Rol.altaRol.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.bajaRol.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABMRol.ModificacionRol.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.subMenuUsuario.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Usuario.Usuario.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Visibilidad.AltaVisibilidad.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Visibilidad.BajaVisibilidad.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Visibilidad.ListadoVisibilidad.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Visibilidad.ModificacionVisibilidad.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Calificaciones.Calificar.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ListadoCalificaciones.ListadoSinCalificar.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Comprar.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Publicaciones_subasta.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Publicaciones_compra.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Subastar.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Consulta_Facturas.cons_fac.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Generar_Publicación.Compra.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Generar_Publicación.Subasta.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Generar_Publicación.TipoDePubli.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialCompras.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialComprasCalificadas.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialComprasSinCalificar.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialFacturas.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialMiCuenta.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialSubastas.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Listado_Estadistico.NoVendidos.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Listado_Estadistico.Top5.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Login.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Login_rol.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Menu.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Properties.Resources.resources
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csproj.GenerateResource.Cache
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\WindowsFormsApplication1.pdb
