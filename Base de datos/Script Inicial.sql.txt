@@ -240,7 +240,6 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra
 	,desc_cantidad numeric(18,0)
 	,id_publicacion numeric(18,0)
 	,id_usuario int
-	,desc_envio varchar(2) default 'No'
 	,primary key (id_compra)
 	,foreign key (id_publicacion) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion(id_publicacion)
 	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
@@ -253,7 +252,6 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_subasta
 	,desc_monto numeric(18,2)
 	,id_publicacion numeric(18,0)
 	,id_usuario int
-	,desc_envio varchar(2) default 'No'
 	,primary key (id_subasta)
 	,foreign key (id_publicacion) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion(id_publicacion)
 	,foreign key (id_usuario) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
@@ -318,12 +316,8 @@ If exists (select * FROM sys.views where name = 'rol_funcionalidades')
 Drop view GESTORES_DEL_AIRE_ACONDICIONADO.rol_funcionalidades
 Go
 
-If exists (select * FROM sys.views where name = 'publicaciones_compra')
-Drop view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones_compra
-Go
-
-If exists (select * FROM sys.views where name = 'publicaciones_subasta')
-Drop view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones_subasta
+If exists (select * FROM sys.views where name = 'publicaciones')
+Drop view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones
 Go
 
 /*	***********************	CREACION DE VISTAS	************************ */
@@ -334,64 +328,6 @@ left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol rol
 	on usu.id_rol = rol.id_rol
 Go
 
-Create view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones_subasta
-As
-Select	 pub.id_publicacion
-		,pub.desc_publicacion
-		,pub.desc_stock
-		,pub.desc_precio
-		,pub.desc_costo_envio
-		,left(cast(pub.desc_fecha_publi as date), 10) as fecha_publicacion
-		,left(cast(pub.desc_fecha_venc as date), 10) as fecha_vencimiento
-		,rub.desc_rubro
-		,vis.desc_tipo as visualizacion
-		,vis.desc_precio as precio_visualizacion		
-		,est.desc_estado
-		,tip.desc_tipo_public
-		,pub.id_usuario
-from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pub
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro rub
-	on pub.id_rubro = rub.id_rubro
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad vis
-	on pub.id_visibilidad = vis.id_visibilidad
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion est
-	on pub.id_estado_publi = est.id_estado_publi
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion tip
-	on pub.id_tipo_publi = tip.id_tipo_publi
-where desc_tipo_public = 'Subasta'
-and est.desc_estado in ('Pausada', 'Activo')
-
-GO
-
-Create view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones_compra
-As
-Select	 pub.id_publicacion
-		,pub.desc_publicacion
-		,pub.desc_stock
-		,pub.desc_precio
-		,pub.desc_costo_envio
-		,left(cast(pub.desc_fecha_publi as date), 10) as fecha_publicacion
-		,left(cast(pub.desc_fecha_venc as date), 10) as fecha_vencimiento
-		,rub.desc_rubro
-		,vis.desc_tipo as visualizacion
-		,vis.desc_precio as precio_visualizacion		
-		,est.desc_estado
-		,tip.desc_tipo_public
-		,pub.id_usuario
-from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pub
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro rub
-	on pub.id_rubro = rub.id_rubro
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad vis
-	on pub.id_visibilidad = vis.id_visibilidad
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion est
-	on pub.id_estado_publi = est.id_estado_publi
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion tip
-	on pub.id_tipo_publi = tip.id_tipo_publi
-where desc_tipo_public = 'Compra Inmediata'
-and est.desc_estado in ('Pausada', 'Activo')
-
-GO
-
 Create view GESTORES_DEL_AIRE_ACONDICIONADO.rol_funcionalidades
 As
 Select rol.desc_rol, fu.desc_funcion
@@ -400,6 +336,31 @@ left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol rol
 	on rl.id_rol = rol.id_rol
 left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion fu
 	on rl.id_funcion = fu.id_funcion
+Go
+
+Create view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones
+As
+Select	 pub.id_publicacion
+		,pub.desc_publicacion
+		,pub.desc_stock
+		,pub.desc_precio
+		,pub.desc_costo_envio
+		,cast(pub.desc_fecha_publi as date) as fecha_publicacion
+		,cast(pub.desc_fecha_venc as date) as fecha_vencimiento
+		,rub.desc_rubro
+		,vis.desc_tipo
+		,est.desc_estado
+		,tip.desc_tipo_public
+		,pub.id_usuario
+from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pub
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro rub
+	on pub.id_rubro = rub.id_rubro
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad vis
+	on pub.id_visibilidad = vis.id_visibilidad
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion est
+	on pub.id_estado_publi = est.id_estado_publi
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion tip
+	on pub.id_tipo_publi = tip.id_tipo_publi
 Go
 
 /*	***********************	CARGA DE DATOS	************************ */
@@ -435,7 +396,7 @@ Go
 --Carga de los estados de las publicaciones
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion	(desc_estado)
 Values	('Borrador'),
-		('Activo'),
+		('Publicada'),
 		('Pausada'),
 		('Finalizada')
 Go
@@ -635,7 +596,7 @@ inner join GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion publ_tipo
 inner join GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad vi
 	on ma.Publicacion_Visibilidad_Cod = vi.desc_codigo
 inner join GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion es
-	on case when ma.Publicacion_Estado = 'Publicada' then 'Activo' end = es.desc_estado
+	on ma.Publicacion_Estado = es.desc_estado
 inner join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro ru
 	on ma.Publicacion_Rubro_Descripcion = ru.desc_rubro
 Where Publicacion_Cod is not null
@@ -945,7 +906,7 @@ Select	 @ultimo_id
 		,@desc_Cod_Postal 
 		,Convert(numeric(10,0), @desc_Telefono) 
 		,Convert(datetime, @desc_Fecha_Nac)
-		,Convert(datetime, @desc_fecha_Creacion) 
+		,Convert(datetime, substring(@desc_fecha_Creacion, 7,4)+substring(@desc_fecha_Creacion, 1,2)+substring(@desc_fecha_Creacion, 4,2))
 GO
 
 /* STORED PROCEDURE PARA CREAR UN NUEVO EMPRESA (CARGA TABLAS USUARIO, EMPRESA, Y ROLES_USUARIO)*/
@@ -1100,6 +1061,11 @@ Set desc_total = @monto_total
 Where id_factura = @id
 
 Go
+
+
+Select * from GESTORES_DEL_AIRE_ACONDICIONADO.log_ingresos
+
+Select * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario
 
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
 															,desc_password
