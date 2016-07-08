@@ -30,8 +30,31 @@ namespace MercadoEnvio.DataBase.Conexion
                                                                                                                                          " and " + filtros[3] + ";");
             List<SqlDataReader> listaReturn = new List<SqlDataReader>();
             listaReturn.Add(facturas);
+            MessageBox.Show("salgo del buscador de facturas");
 
             return listaReturn;
         }
+
+        /* OBTENGO TODOS LOS ID DE USUARIO TIRANDOLE UN LIKE A LA DESCRIPCIÓN EN LA TABLA USUARIO - PROBAR */
+        public List<String> getUsuarioPorLikeDesc(String likeDescUser)
+        {
+            MessageBox.Show("entro al like por descripcion");
+            MessageBox.Show(likeDescUser);
+            MessageBox.Show("select id_usuario from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario where desc_username LIKE '% " + likeDescUser + "%'");
+            SqlDataReader usuarios = this.GD1C2016.ejecutarSentenciaConRetorno("select id_usuario from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario where desc_username LIKE '%" +  likeDescUser + "%'");
+            List<String> users = new List<String>();
+
+            while (usuarios.Read())
+            {
+                users.Add(usuarios["id_usuario"].ToString());
+            }
+
+            usuarios.Close();
+            MessageBox.Show("salgo del like por descripcion");
+
+            return users;
+        }
+
+
     }
 }

@@ -31,6 +31,12 @@
             this.listado = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.buttonBuscar = new System.Windows.Forms.Button();
+            this.textDestinatario = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textDescripcion = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textImporte2 = new System.Windows.Forms.TextBox();
             this.textImporte1 = new System.Windows.Forms.TextBox();
@@ -46,18 +52,11 @@
             this.textDia2 = new System.Windows.Forms.TextBox();
             this.textDia1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textDescripcion = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textDestinatario = new System.Windows.Forms.TextBox();
+            this.buttonVolver = new System.Windows.Forms.Button();
             this.id_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc_factura_nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonBuscar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.listado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -69,15 +68,14 @@
             this.listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_factura,
-            this.desc_factura_nro,
             this.desc_fecha,
             this.desc_total,
             this.id_usuario});
-            this.listado.Location = new System.Drawing.Point(11, 203);
+            this.listado.Location = new System.Drawing.Point(252, 203);
             this.listado.Margin = new System.Windows.Forms.Padding(2);
             this.listado.Name = "listado";
             this.listado.RowTemplate.Height = 24;
-            this.listado.Size = new System.Drawing.Size(548, 300);
+            this.listado.Size = new System.Drawing.Size(445, 300);
             this.listado.TabIndex = 11;
             // 
             // label1
@@ -120,6 +118,58 @@
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de Búsqueda";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(488, 102);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 24);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Limpiar Filtros";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonBuscar
+            // 
+            this.buttonBuscar.Location = new System.Drawing.Point(700, 106);
+            this.buttonBuscar.Name = "buttonBuscar";
+            this.buttonBuscar.Size = new System.Drawing.Size(88, 25);
+            this.buttonBuscar.TabIndex = 23;
+            this.buttonBuscar.Text = "Buscar";
+            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
+            // 
+            // textDestinatario
+            // 
+            this.textDestinatario.Location = new System.Drawing.Point(323, 102);
+            this.textDestinatario.Name = "textDestinatario";
+            this.textDestinatario.Size = new System.Drawing.Size(96, 20);
+            this.textDestinatario.TabIndex = 22;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(323, 86);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(63, 13);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Destinatario";
+            // 
+            // textDescripcion
+            // 
+            this.textDescripcion.Location = new System.Drawing.Point(323, 46);
+            this.textDescripcion.Name = "textDescripcion";
+            this.textDescripcion.Size = new System.Drawing.Size(475, 20);
+            this.textDescripcion.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(323, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(60, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Descipción";
             // 
             // label8
             // 
@@ -240,49 +290,21 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Intervalo de fechas";
             // 
-            // label9
+            // buttonVolver
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(323, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Descipción";
-            // 
-            // textDescripcion
-            // 
-            this.textDescripcion.Location = new System.Drawing.Point(323, 46);
-            this.textDescripcion.Name = "textDescripcion";
-            this.textDescripcion.Size = new System.Drawing.Size(475, 20);
-            this.textDescripcion.TabIndex = 20;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(323, 86);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 13);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Destinatario";
-            // 
-            // textDestinatario
-            // 
-            this.textDestinatario.Location = new System.Drawing.Point(323, 102);
-            this.textDestinatario.Name = "textDestinatario";
-            this.textDestinatario.Size = new System.Drawing.Size(96, 20);
-            this.textDestinatario.TabIndex = 22;
+            this.buttonVolver.Location = new System.Drawing.Point(741, 501);
+            this.buttonVolver.Name = "buttonVolver";
+            this.buttonVolver.Size = new System.Drawing.Size(75, 23);
+            this.buttonVolver.TabIndex = 14;
+            this.buttonVolver.Text = "Volver";
+            this.buttonVolver.UseVisualStyleBackColor = true;
+            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // id_factura
             // 
-            this.id_factura.HeaderText = "ID";
+            this.id_factura.HeaderText = "Nro Factura";
             this.id_factura.Name = "id_factura";
             this.id_factura.ReadOnly = true;
-            // 
-            // desc_factura_nro
-            // 
-            this.desc_factura_nro.HeaderText = "Numero";
-            this.desc_factura_nro.Name = "desc_factura_nro";
-            this.desc_factura_nro.ReadOnly = true;
             // 
             // desc_fecha
             // 
@@ -301,36 +323,6 @@
             this.id_usuario.HeaderText = "Usuario";
             this.id_usuario.Name = "id_usuario";
             this.id_usuario.ReadOnly = true;
-            // 
-            // buttonBuscar
-            // 
-            this.buttonBuscar.Location = new System.Drawing.Point(700, 106);
-            this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(88, 25);
-            this.buttonBuscar.TabIndex = 23;
-            this.buttonBuscar.Text = "Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
-            this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(488, 102);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 24);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Limpiar Filtros";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Location = new System.Drawing.Point(712, 489);
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(75, 23);
-            this.buttonVolver.TabIndex = 14;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // cons_fac
             // 
@@ -375,13 +367,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textDescripcion;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_factura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desc_factura_nro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desc_fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desc_total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_usuario;
         private System.Windows.Forms.Button buttonBuscar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonVolver;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_factura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desc_fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desc_total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_usuario;
     }
 }
