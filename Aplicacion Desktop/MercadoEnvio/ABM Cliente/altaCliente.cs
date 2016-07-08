@@ -82,15 +82,21 @@ namespace MercadoEnvio.ABM_Usuario
                         String desc_Fecha_Nac = fechaNacimiento.Text;
                         String desc_fecha_creacion = textFechaCre.Text;
 
-                        MessageBox.Show(desc_Fecha_Nac);
-                        MessageBox.Show(desc_fecha_creacion);
-                
-                        // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
-                        abm_usuario.setearCliente(username, password, rol, desc_Apellido, desc_Nombre, desc_Dni, tipo_doc, desc_Mail, desc_Dom_Calle, desc_Nro_Calle, desc_Piso, desc_Depto, desc_Localidad, desc_Cod_Postal, desc_Telefono, desc_Fecha_Nac, desc_fecha_creacion);
+                        try
+                        {
+                            // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
+                            abm_usuario.setearCliente(username, password, rol, desc_Apellido, desc_Nombre, desc_Dni, tipo_doc, desc_Mail, desc_Dom_Calle, desc_Nro_Calle, desc_Piso, desc_Depto, desc_Localidad, desc_Cod_Postal, desc_Telefono, desc_Fecha_Nac, desc_fecha_creacion);
+                            MessageBox.Show("El nuevo Cliente fue creado con éxito!");
+                            // VUELVO AL MENU DE USUARIOS
+                            this.Close();
+                        }
+                        catch (Exception f)
+                        {
+                            MessageBox.Show("Verifique los datos ingresados");
+                        }
+                        
 
-                        MessageBox.Show("El nuevo Cliente fue creado con éxito!");                                                                                                                                                                                                              
-                        // VUELVO AL MENU DE USUARIOS
-                        this.Close();
+                        
                     }
                 }
                 else
