@@ -46,7 +46,7 @@ namespace MercadoEnvio.Generar_Publicación
             fecha_vencimiento.Format = DateTimePickerFormat.Custom;
             fecha_vencimiento.CustomFormat = "yyyy-MM-dd";
 
-            if (publicacion.publicacion_pendiente(this.id_usuario, "Compra Inmediata") == "ok")
+            if (publicacion.publicacion_pendiente(this.id_usuario, ConstantesBD.vista_publi_compra) == "ok")
             {
                 label_id_publicacion.Text = (publicacion.ultimo_id() + 1).ToString();
                 fecha_sys.Text = ConstantesBD.fechaSistema;
@@ -56,7 +56,7 @@ namespace MercadoEnvio.Generar_Publicación
             {
                 MessageBox.Show("El usuario posee una publicacion pendiente", "Publicacion Pendiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                SqlDataReader resultado = publicacion.get_datos_ultima_publicacion(this.id_usuario, "Compra Inmediata");
+                SqlDataReader resultado = publicacion.get_datos_ultima_publicacion(this.id_usuario, ConstantesBD.vista_publi_compra);
 
                 resultado.Read();
                 label_id_publicacion.Text = resultado["id_publicacion"].ToString();

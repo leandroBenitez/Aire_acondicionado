@@ -45,10 +45,10 @@ namespace MercadoEnvio.ComprarOfertar
         {
             dataGridViewPub.Rows.Clear();
 
-            int totalRegistros = publicacion.obtenerTotalRegistros(this.condiciones + " " + this.condicion_necesaria);
+            int totalRegistros = publicacion.obtenerTotalRegistros_SU(this.condiciones + " " + this.condicion_necesaria);
             this.totalPaginas = calcularTotalDePaginas(totalRegistros);
 
-            SqlDataReader lectura = publicacion.get_publicaciones(this.condiciones + " " + this.condicion_necesaria, this.paginaActual, this.tamanioPagina);
+            SqlDataReader lectura = publicacion.get_publicaciones_SU(this.condiciones + " " + this.condicion_necesaria, this.paginaActual, this.tamanioPagina);
             
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
             Object[] columnas = new Object[6];
@@ -73,7 +73,7 @@ namespace MercadoEnvio.ComprarOfertar
         {
             this.condiciones = "desc_publicacion like '%" + text_libre.Text + "%' and";
             this.paginaActual = 1;
-            int totalRegistros = publicacion.obtenerTotalRegistros(this.condiciones + " " + this.condicion_necesaria);
+            int totalRegistros = publicacion.obtenerTotalRegistros_SU(this.condiciones + " " + this.condicion_necesaria);
             this.totalPaginas = calcularTotalDePaginas(totalRegistros);
             cargar_grid();
             for (int i = 0; i < check_list.Items.Count; i++)
@@ -102,7 +102,7 @@ namespace MercadoEnvio.ComprarOfertar
             
             this.condiciones = condiciones + " and desc_rubro in " + rubros + " and";
             this.paginaActual = 1;
-            int totalRegistros = publicacion.obtenerTotalRegistros(this.condiciones + " " + this.condicion_necesaria);
+            int totalRegistros = publicacion.obtenerTotalRegistros_SU(this.condiciones + " " + this.condicion_necesaria);
             this.totalPaginas = calcularTotalDePaginas(totalRegistros);
             cargar_grid();
         }

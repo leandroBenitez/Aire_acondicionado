@@ -43,7 +43,7 @@ namespace MercadoEnvio.Generar_Publicación
 
             label_user.Text = login.get_username(this.id_usuario);
 
-            if (publicacion.publicacion_pendiente(this.id_usuario, "Subasta") == "ok")
+            if (publicacion.publicacion_pendiente(this.id_usuario, ConstantesBD.vista_publi_subasta) == "ok")
             {
                 label_id_publicacion.Text = (publicacion.ultimo_id() + 1).ToString();
                 fecha_sys.Text = ConstantesBD.fechaSistema;
@@ -52,7 +52,7 @@ namespace MercadoEnvio.Generar_Publicación
             {
                 MessageBox.Show("El usuario posee una publicacion pendiente", "Publicacion Pendiente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                SqlDataReader resultado = publicacion.get_datos_ultima_publicacion(this.id_usuario, "Subasta");
+                SqlDataReader resultado = publicacion.get_datos_ultima_publicacion(this.id_usuario, ConstantesBD.vista_publi_subasta);
 
                 resultado.Read();
                 label_id_publicacion.Text = resultado["id_publicacion"].ToString();

@@ -65,40 +65,62 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public string publicacion_pendiente(int id_user, string tipo_publicacion)
         {
-            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select 'existe' as resultado from " + ConstantesBD.vista_publicaciones 
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select 'existe' as resultado from " + tipo_publicacion 
                                                                                         + " where id_usuario = '" + id_user.ToString()
-                                                                                        + "' and desc_tipo_public = '" + tipo_publicacion 
                                                                                         + "' and desc_estado = 'Borrador'");
             if (!resultado.HasRows)
             {
                 resultado.Close();
-                return "ok";
+                return "ok";    
             }
             else
-            {
+            {   
                 resultado.Close();
                 return "pendiente";
             }
         }
 
-        public SqlDataReader get_publicaciones(string condiciones, int pagina, int tamanioPagina)
+        public SqlDataReader get_publicaciones_CO(string condiciones, int pagina, int tamanioPagina)
         {
             if (pagina == 1)
             {
                 return this.GD1C2016.ejecutarSentenciaConRetorno("Select TOP " + tamanioPagina.ToString() + " * from " 
-                                                                    + ConstantesBD.vista_publicaciones
+                                                                    + ConstantesBD.vista_publi_compra
                                                                     + " where " + condiciones);
             }
             else
             {
                 int publicacionesAnteriores = (pagina - 1) * tamanioPagina;
                 return this.GD1C2016.ejecutarSentenciaConRetorno("Select TOP " + tamanioPagina.ToString() + " * from "
-                                                                    + ConstantesBD.vista_publicaciones
+                                                                    + ConstantesBD.vista_publi_compra
                                                                     + " where " + condiciones
                                                                     + " and id_publicacion not in (Select TOP "
                                                                     + publicacionesAnteriores.ToString()
                                                                     + " id_publicacion from "
-                                                                    + ConstantesBD.vista_publicaciones
+                                                                    + ConstantesBD.vista_publi_compra
+                                                                    + " where " + condiciones
+                                                                    + ")");
+            }
+        }
+
+        public SqlDataReader get_publicaciones_SU(string condiciones, int pagina, int tamanioPagina)
+        {
+            if (pagina == 1)
+            {
+                return this.GD1C2016.ejecutarSentenciaConRetorno("Select TOP " + tamanioPagina.ToString() + " * from "
+                                                                    + ConstantesBD.vista_publi_subasta
+                                                                    + " where " + condiciones);
+            }
+            else
+            {
+                int publicacionesAnteriores = (pagina - 1) * tamanioPagina;
+                return this.GD1C2016.ejecutarSentenciaConRetorno("Select TOP " + tamanioPagina.ToString() + " * from "
+                                                                    + ConstantesBD.vista_publi_subasta
+                                                                    + " where " + condiciones
+                                                                    + " and id_publicacion not in (Select TOP "
+                                                                    + publicacionesAnteriores.ToString()
+                                                                    + " id_publicacion from "
+                                                                    + ConstantesBD.vista_publi_subasta
                                                                     + " where " + condiciones
                                                                     + ")");
             }
@@ -106,9 +128,8 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public SqlDataReader get_datos_ultima_publicacion(int id_user, string tipo_publicacion)
         {
-            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.vista_publicaciones
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + tipo_publicacion
                                                                                 + " where id_usuario = '" + id_user.ToString()
-                                                                                + "' and desc_tipo_public = '" + tipo_publicacion 
                                                                                 + "' and desc_estado = 'Borrador'");
             return resultado;
         }
@@ -148,9 +169,20 @@ namespace MercadoEnvio.DataBase.Conexion
             throw new ValidacionErroneaUsuarioException(mensajeError);
         }
 
-        public int obtenerTotalRegistros(string condiciones)
+        public int obtenerTotalRegistros_CO(string condiciones)
         {
-            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select Count(1) as CONTADOR from " + ConstantesBD.vista_publicaciones
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select Count(1) as CONTADOR from " + ConstantesBD.vista_publi_compra
+                                                                                    + " where " + condiciones);
+            resultado.Read();
+            int cantidad;
+            int.TryParse(resultado["CONTADOR"].ToString(), out cantidad);
+            resultado.Close();
+            return cantidad;
+        }
+
+        public int obtenerTotalRegistros_SU(string condiciones)
+        {
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select Count(1) as CONTADOR from " + ConstantesBD.vista_publi_subasta
                                                                                     + " where " + condiciones);
             resultado.Read();
             int cantidad;
