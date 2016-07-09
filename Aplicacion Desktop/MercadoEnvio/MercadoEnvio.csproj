@@ -212,6 +212,7 @@
     <Compile Include="DataBase\Conexion\HistorialFacturas_DAO.cs" />
     <Compile Include="DataBase\Conexion\HistorialSubastas_DAO.cs" />
     <Compile Include="DataBase\Conexion\LoginDAO.cs" />
+    <Compile Include="DataBase\Conexion\NoVendido_DAO.cs" />
     <Compile Include="DataBase\Conexion\publicacionDAO.cs" />
     <Compile Include="DataBase\Conexion\SQLDataReader.cs" />
     <Compile Include="DataBase\Conexion\SQLServerBD.cs" />
@@ -251,6 +252,12 @@
     </Compile>
     <Compile Include="Generar Publicación\TipoDePubli.Designer.cs">
       <DependentUpon>TipoDePubli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Historial Cliente\HistorialCalificacionesRecibidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Historial Cliente\HistorialCalificacionesRecibidas.designer.cs">
+      <DependentUpon>HistorialCalificacionesRecibidas.cs</DependentUpon>
     </Compile>
     <Compile Include="Historial Cliente\HistorialCompras.cs">
       <SubType>Form</SubType>
@@ -405,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Generar Publicación\TipoDePubli.resx">
       <DependentUpon>TipoDePubli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historial Cliente\HistorialCalificacionesRecibidas.resx">
+      <DependentUpon>HistorialCalificacionesRecibidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Historial Cliente\HistorialCompras.resx">
       <DependentUpon>HistorialCompras.cs</DependentUpon>

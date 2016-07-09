@@ -33,9 +33,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Col_Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CantProf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonSeleccionar = new System.Windows.Forms.Button();
             this.buttonVolver = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxAñoNV = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,14 +82,27 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 115);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_Vendedor,
+            this.Col_CantProf});
+            this.dataGridView1.Location = new System.Drawing.Point(38, 147);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(400, 203);
+            this.dataGridView1.Size = new System.Drawing.Size(244, 203);
             this.dataGridView1.TabIndex = 4;
+            // 
+            // Col_Vendedor
+            // 
+            this.Col_Vendedor.HeaderText = "Vendedor";
+            this.Col_Vendedor.Name = "Col_Vendedor";
+            // 
+            // Col_CantProf
+            // 
+            this.Col_CantProf.HeaderText = "Cantidad";
+            this.Col_CantProf.Name = "Col_CantProf";
             // 
             // buttonSeleccionar
             // 
-            this.buttonSeleccionar.Location = new System.Drawing.Point(38, 341);
+            this.buttonSeleccionar.Location = new System.Drawing.Point(38, 361);
             this.buttonSeleccionar.Name = "buttonSeleccionar";
             this.buttonSeleccionar.Size = new System.Drawing.Size(75, 23);
             this.buttonSeleccionar.TabIndex = 5;
@@ -95,7 +112,8 @@
             // 
             // buttonVolver
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(193, 341);
+            this.buttonVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonVolver.Location = new System.Drawing.Point(207, 361);
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Size = new System.Drawing.Size(75, 23);
             this.buttonVolver.TabIndex = 6;
@@ -105,7 +123,7 @@
             // 
             // buttonLimpiar
             // 
-            this.buttonLimpiar.Location = new System.Drawing.Point(359, 341);
+            this.buttonLimpiar.Location = new System.Drawing.Point(123, 361);
             this.buttonLimpiar.Name = "buttonLimpiar";
             this.buttonLimpiar.Size = new System.Drawing.Size(75, 23);
             this.buttonLimpiar.TabIndex = 7;
@@ -113,11 +131,29 @@
             this.buttonLimpiar.UseVisualStyleBackColor = true;
             this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(35, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Año:";
+            // 
+            // textBoxAñoNV
+            // 
+            this.textBoxAñoNV.Location = new System.Drawing.Point(94, 106);
+            this.textBoxAñoNV.Name = "textBoxAñoNV";
+            this.textBoxAñoNV.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAñoNV.TabIndex = 9;
+            // 
             // NoVendidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(476, 376);
+            this.ClientSize = new System.Drawing.Size(336, 393);
+            this.Controls.Add(this.textBoxAñoNV);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.buttonSeleccionar);
@@ -144,5 +180,9 @@
         private System.Windows.Forms.Button buttonSeleccionar;
         private System.Windows.Forms.Button buttonVolver;
         private System.Windows.Forms.Button buttonLimpiar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxAñoNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Vendedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_CantProf;
     }
 }

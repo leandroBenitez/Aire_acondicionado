@@ -109,7 +109,7 @@
             this.presentacion.Name = "presentacion";
             this.presentacion.Size = new System.Drawing.Size(271, 23);
             this.presentacion.TabIndex = 7;
-            this.presentacion.Text = "Mercado Envios - Subastas online";
+            this.presentacion.Text = "Mercado Envíos - Subastas online";
             // 
             // dataGridViewPub
             // 

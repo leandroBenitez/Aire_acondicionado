@@ -127,8 +127,9 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Col_IdCalif.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Col_IdCalif.HeaderText = "Calificación";
+            this.Col_IdCalif.HeaderText = "Nº Calificación";
             this.Col_IdCalif.Name = "Col_IdCalif";
+            this.Col_IdCalif.ReadOnly = true;
             // 
             // Col_descCodigo
             // 
@@ -137,7 +138,7 @@
             // 
             // Col_descCantidadEstrellas
             // 
-            this.Col_descCantidadEstrellas.HeaderText = "Cantidad de estrellas";
+            this.Col_descCantidadEstrellas.HeaderText = "Estrellas";
             this.Col_descCantidadEstrellas.Name = "Col_descCantidadEstrellas";
             // 
             // Col_descripcion

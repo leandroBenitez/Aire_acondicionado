@@ -148,7 +148,7 @@
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(340, 27);
             this.label10.TabIndex = 18;
-            this.label10.Text = "MODIFICACION DE VISIBILIDAD";
+            this.label10.Text = "MODIFICACIÓN DE VISIBILIDAD";
             // 
             // tablaVisibilidad
             // 

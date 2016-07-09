@@ -53,16 +53,16 @@
             this.presentacion.Name = "presentacion";
             this.presentacion.Size = new System.Drawing.Size(333, 23);
             this.presentacion.TabIndex = 2;
-            this.presentacion.Text = "Mercado Envios - Confirmación de compra";
+            this.presentacion.Text = "Mercado Envíos - Confirmación de compra";
             // 
             // articulo
             // 
             this.articulo.AutoSize = true;
             this.articulo.Location = new System.Drawing.Point(37, 49);
             this.articulo.Name = "articulo";
-            this.articulo.Size = new System.Drawing.Size(41, 13);
+            this.articulo.Size = new System.Drawing.Size(44, 13);
             this.articulo.TabIndex = 3;
-            this.articulo.Text = "articulo";
+            this.articulo.Text = "Artículo";
             // 
             // label2
             // 

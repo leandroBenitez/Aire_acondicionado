@@ -230,7 +230,7 @@
             this.Controls.Add(this.Buscar);
             this.Controls.Add(this.label10);
             this.Name = "BajaVisibilidad";
-            this.Text = "BajaVisibilidad";
+            this.Text = "Baja Visibilidad";
             ((System.ComponentModel.ISupportInitialize)(this.tablaVisibilidad)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -35,13 +35,14 @@
             this.MostrarComprasCalificadas = new System.Windows.Forms.Button();
             this.MostrarComprasSinCalificar = new System.Windows.Forms.Button();
             this.buttonSalir = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // MostrarFacturacion
             // 
-            this.MostrarFacturacion.Location = new System.Drawing.Point(87, 38);
+            this.MostrarFacturacion.Location = new System.Drawing.Point(73, 16);
             this.MostrarFacturacion.Name = "MostrarFacturacion";
-            this.MostrarFacturacion.Size = new System.Drawing.Size(117, 23);
+            this.MostrarFacturacion.Size = new System.Drawing.Size(137, 23);
             this.MostrarFacturacion.TabIndex = 0;
             this.MostrarFacturacion.Text = "Facturación";
             this.MostrarFacturacion.UseVisualStyleBackColor = true;
@@ -49,9 +50,9 @@
             // 
             // MostrarCompras
             // 
-            this.MostrarCompras.Location = new System.Drawing.Point(87, 67);
+            this.MostrarCompras.Location = new System.Drawing.Point(73, 45);
             this.MostrarCompras.Name = "MostrarCompras";
-            this.MostrarCompras.Size = new System.Drawing.Size(117, 23);
+            this.MostrarCompras.Size = new System.Drawing.Size(137, 23);
             this.MostrarCompras.TabIndex = 2;
             this.MostrarCompras.Text = "Compras";
             this.MostrarCompras.UseVisualStyleBackColor = true;
@@ -59,9 +60,9 @@
             // 
             // MostrarSubastas
             // 
-            this.MostrarSubastas.Location = new System.Drawing.Point(87, 154);
+            this.MostrarSubastas.Location = new System.Drawing.Point(73, 154);
             this.MostrarSubastas.Name = "MostrarSubastas";
-            this.MostrarSubastas.Size = new System.Drawing.Size(117, 23);
+            this.MostrarSubastas.Size = new System.Drawing.Size(137, 23);
             this.MostrarSubastas.TabIndex = 3;
             this.MostrarSubastas.Text = "Subastas";
             this.MostrarSubastas.UseVisualStyleBackColor = true;
@@ -69,9 +70,9 @@
             // 
             // buttonVolver
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(87, 183);
+            this.buttonVolver.Location = new System.Drawing.Point(73, 183);
             this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(117, 23);
+            this.buttonVolver.Size = new System.Drawing.Size(137, 23);
             this.buttonVolver.TabIndex = 4;
             this.buttonVolver.Text = "Volver";
             this.buttonVolver.UseVisualStyleBackColor = true;
@@ -79,9 +80,9 @@
             // 
             // MostrarComprasCalificadas
             // 
-            this.MostrarComprasCalificadas.Location = new System.Drawing.Point(87, 96);
+            this.MostrarComprasCalificadas.Location = new System.Drawing.Point(73, 74);
             this.MostrarComprasCalificadas.Name = "MostrarComprasCalificadas";
-            this.MostrarComprasCalificadas.Size = new System.Drawing.Size(117, 23);
+            this.MostrarComprasCalificadas.Size = new System.Drawing.Size(137, 23);
             this.MostrarComprasCalificadas.TabIndex = 5;
             this.MostrarComprasCalificadas.Text = "Compras calificadas";
             this.MostrarComprasCalificadas.UseVisualStyleBackColor = true;
@@ -89,9 +90,9 @@
             // 
             // MostrarComprasSinCalificar
             // 
-            this.MostrarComprasSinCalificar.Location = new System.Drawing.Point(87, 125);
+            this.MostrarComprasSinCalificar.Location = new System.Drawing.Point(73, 103);
             this.MostrarComprasSinCalificar.Name = "MostrarComprasSinCalificar";
-            this.MostrarComprasSinCalificar.Size = new System.Drawing.Size(117, 23);
+            this.MostrarComprasSinCalificar.Size = new System.Drawing.Size(137, 23);
             this.MostrarComprasSinCalificar.TabIndex = 6;
             this.MostrarComprasSinCalificar.Text = "Compras sin calificar";
             this.MostrarComprasSinCalificar.UseVisualStyleBackColor = true;
@@ -101,19 +102,30 @@
             // 
             this.buttonSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSalir.ForeColor = System.Drawing.Color.Crimson;
-            this.buttonSalir.Location = new System.Drawing.Point(87, 214);
+            this.buttonSalir.Location = new System.Drawing.Point(72, 214);
             this.buttonSalir.Name = "buttonSalir";
-            this.buttonSalir.Size = new System.Drawing.Size(119, 23);
+            this.buttonSalir.Size = new System.Drawing.Size(138, 23);
             this.buttonSalir.TabIndex = 7;
             this.buttonSalir.Text = "Salir";
             this.buttonSalir.UseVisualStyleBackColor = true;
             this.buttonSalir.Click += new System.EventHandler(this.buttonSalir_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(73, 127);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Calificaciones Recibidas";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.MostrarCalificacionesRecibidas_Click);
             // 
             // HistorialMiCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonSalir);
             this.Controls.Add(this.MostrarComprasSinCalificar);
             this.Controls.Add(this.MostrarComprasCalificadas);
@@ -136,6 +148,7 @@
         private System.Windows.Forms.Button MostrarComprasCalificadas;
         private System.Windows.Forms.Button MostrarComprasSinCalificar;
         private System.Windows.Forms.Button buttonSalir;
+        private System.Windows.Forms.Button button1;
 
     }
 }

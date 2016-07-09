@@ -49,7 +49,8 @@
             // 
             // buttonVolverAlMenu
             // 
-            this.buttonVolverAlMenu.Location = new System.Drawing.Point(481, 273);
+            this.buttonVolverAlMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonVolverAlMenu.Location = new System.Drawing.Point(481, 265);
             this.buttonVolverAlMenu.Name = "buttonVolverAlMenu";
             this.buttonVolverAlMenu.Size = new System.Drawing.Size(94, 23);
             this.buttonVolverAlMenu.TabIndex = 2;
@@ -88,7 +89,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewFacturas.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewFacturas.Location = new System.Drawing.Point(33, 41);
+            this.dataGridViewFacturas.Location = new System.Drawing.Point(33, 25);
             this.dataGridViewFacturas.Name = "dataGridViewFacturas";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -101,12 +102,12 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewFacturas.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewFacturas.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridViewFacturas.Size = new System.Drawing.Size(542, 219);
+            this.dataGridViewFacturas.Size = new System.Drawing.Size(542, 222);
             this.dataGridViewFacturas.TabIndex = 3;
             // 
             // Col_idFactura
             // 
-            this.Col_idFactura.HeaderText = "Factura";
+            this.Col_idFactura.HeaderText = "Nº Factura";
             this.Col_idFactura.Name = "Col_idFactura";
             // 
             // Col_descfecha
@@ -131,7 +132,7 @@
             // 
             // buttonPrimerPag
             // 
-            this.buttonPrimerPag.Location = new System.Drawing.Point(33, 273);
+            this.buttonPrimerPag.Location = new System.Drawing.Point(33, 265);
             this.buttonPrimerPag.Name = "buttonPrimerPag";
             this.buttonPrimerPag.Size = new System.Drawing.Size(92, 23);
             this.buttonPrimerPag.TabIndex = 4;
@@ -141,7 +142,7 @@
             // 
             // buttonPaginaAnt
             // 
-            this.buttonPaginaAnt.Location = new System.Drawing.Point(143, 273);
+            this.buttonPaginaAnt.Location = new System.Drawing.Point(143, 265);
             this.buttonPaginaAnt.Name = "buttonPaginaAnt";
             this.buttonPaginaAnt.Size = new System.Drawing.Size(92, 23);
             this.buttonPaginaAnt.TabIndex = 5;
@@ -151,7 +152,7 @@
             // 
             // buttonPaginaSgte
             // 
-            this.buttonPaginaSgte.Location = new System.Drawing.Point(256, 273);
+            this.buttonPaginaSgte.Location = new System.Drawing.Point(256, 265);
             this.buttonPaginaSgte.Name = "buttonPaginaSgte";
             this.buttonPaginaSgte.Size = new System.Drawing.Size(92, 23);
             this.buttonPaginaSgte.TabIndex = 6;
@@ -161,7 +162,7 @@
             // 
             // buttonUltimaPag
             // 
-            this.buttonUltimaPag.Location = new System.Drawing.Point(366, 273);
+            this.buttonUltimaPag.Location = new System.Drawing.Point(366, 265);
             this.buttonUltimaPag.Name = "buttonUltimaPag";
             this.buttonUltimaPag.Size = new System.Drawing.Size(94, 23);
             this.buttonUltimaPag.TabIndex = 7;
@@ -173,7 +174,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 308);
+            this.ClientSize = new System.Drawing.Size(598, 303);
             this.Controls.Add(this.buttonUltimaPag);
             this.Controls.Add(this.buttonPaginaSgte);
             this.Controls.Add(this.buttonPaginaAnt);
@@ -191,14 +192,14 @@
 
         private System.Windows.Forms.Button buttonVolverAlMenu;
         private System.Windows.Forms.DataGridView dataGridViewFacturas;
+        private System.Windows.Forms.Button buttonPrimerPag;
+        private System.Windows.Forms.Button buttonPaginaAnt;
+        private System.Windows.Forms.Button buttonPaginaSgte;
+        private System.Windows.Forms.Button buttonUltimaPag;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_descfecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_descTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idFormaPago;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idUsuario;
-        private System.Windows.Forms.Button buttonPrimerPag;
-        private System.Windows.Forms.Button buttonPaginaAnt;
-        private System.Windows.Forms.Button buttonPaginaSgte;
-        private System.Windows.Forms.Button buttonUltimaPag;
     }
 }

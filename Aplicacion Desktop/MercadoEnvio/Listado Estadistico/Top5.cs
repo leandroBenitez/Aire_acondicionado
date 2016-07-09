@@ -51,7 +51,7 @@ namespace MercadoEnvio.Listado_Estadistico
         {
             comboBoxTop5.Items.Clear();
            
-            if (comboBoxTrimestre.Text != "" && textBoxAnio.Text != "" && comboBoxTop5.Text != "")
+            if (comboBoxTrimestre.Text != "" && textBoxAñoTop.Text != "" && comboBoxTop5.Text != "")
             {
                
                 switch (comboBoxTrimestre.Text)
@@ -99,7 +99,7 @@ namespace MercadoEnvio.Listado_Estadistico
 
         private void buttonLimpiar_Click(object sender, EventArgs e)
         {
-            textBoxAnio.Text = "";
+            textBoxAñoTop.Text = "";
             comboBoxTop5.SelectedIndex = -1;
             comboBoxTop5.Items.Clear();
             comboBoxTrimestre.SelectedIndex = -1;

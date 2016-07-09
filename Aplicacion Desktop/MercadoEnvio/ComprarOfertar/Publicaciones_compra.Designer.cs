@@ -35,6 +35,12 @@
             this.text_libre = new System.Windows.Forms.TextBox();
             this.presentacion = new System.Windows.Forms.Label();
             this.dataGridViewPub = new System.Windows.Forms.DataGridView();
+            this.id_publi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_costo_envio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_fecha_venc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.boton_buscar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -43,12 +49,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.id_publi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc_stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc_precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc_costo_envio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc_fecha_venc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPub)).BeginInit();
             this.SuspendLayout();
@@ -109,7 +109,7 @@
             this.presentacion.Name = "presentacion";
             this.presentacion.Size = new System.Drawing.Size(264, 23);
             this.presentacion.TabIndex = 7;
-            this.presentacion.Text = "Mercado Envios - Compras online";
+            this.presentacion.Text = "Mercado Envíos - Compras online";
             // 
             // dataGridViewPub
             // 
@@ -128,6 +128,62 @@
             this.dataGridViewPub.ReadOnly = true;
             this.dataGridViewPub.Size = new System.Drawing.Size(600, 284);
             this.dataGridViewPub.TabIndex = 8;
+            // 
+            // id_publi
+            // 
+            this.id_publi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.id_publi.HeaderText = "Cod. Public.";
+            this.id_publi.MinimumWidth = 50;
+            this.id_publi.Name = "id_publi";
+            this.id_publi.ReadOnly = true;
+            this.id_publi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id_publi.Width = 50;
+            // 
+            // descrip
+            // 
+            this.descrip.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.descrip.HeaderText = "Descripcion";
+            this.descrip.MinimumWidth = 10;
+            this.descrip.Name = "descrip";
+            this.descrip.ReadOnly = true;
+            this.descrip.Width = 10;
+            // 
+            // desc_stock
+            // 
+            this.desc_stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.desc_stock.HeaderText = "Stock";
+            this.desc_stock.MinimumWidth = 40;
+            this.desc_stock.Name = "desc_stock";
+            this.desc_stock.ReadOnly = true;
+            this.desc_stock.Width = 40;
+            // 
+            // desc_precio
+            // 
+            this.desc_precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.desc_precio.HeaderText = "Precio/Subasta";
+            this.desc_precio.MinimumWidth = 80;
+            this.desc_precio.Name = "desc_precio";
+            this.desc_precio.ReadOnly = true;
+            this.desc_precio.Width = 80;
+            // 
+            // desc_costo_envio
+            // 
+            this.desc_costo_envio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.desc_costo_envio.HeaderText = "Costo Envio";
+            this.desc_costo_envio.MinimumWidth = 40;
+            this.desc_costo_envio.Name = "desc_costo_envio";
+            this.desc_costo_envio.ReadOnly = true;
+            this.desc_costo_envio.Width = 40;
+            // 
+            // desc_fecha_venc
+            // 
+            this.desc_fecha_venc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.desc_fecha_venc.FillWeight = 120F;
+            this.desc_fecha_venc.HeaderText = "Fecha Vencimiento";
+            this.desc_fecha_venc.MinimumWidth = 10;
+            this.desc_fecha_venc.Name = "desc_fecha_venc";
+            this.desc_fecha_venc.ReadOnly = true;
+            this.desc_fecha_venc.Width = 10;
             // 
             // boton_buscar
             // 
@@ -211,62 +267,6 @@
             this.button6.Text = "Volver";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // id_publi
-            // 
-            this.id_publi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.id_publi.HeaderText = "Cod. Public.";
-            this.id_publi.MinimumWidth = 50;
-            this.id_publi.Name = "id_publi";
-            this.id_publi.ReadOnly = true;
-            this.id_publi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.id_publi.Width = 50;
-            // 
-            // descrip
-            // 
-            this.descrip.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.descrip.HeaderText = "Descripcion";
-            this.descrip.MinimumWidth = 10;
-            this.descrip.Name = "descrip";
-            this.descrip.ReadOnly = true;
-            this.descrip.Width = 10;
-            // 
-            // desc_stock
-            // 
-            this.desc_stock.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.desc_stock.HeaderText = "Stock";
-            this.desc_stock.MinimumWidth = 40;
-            this.desc_stock.Name = "desc_stock";
-            this.desc_stock.ReadOnly = true;
-            this.desc_stock.Width = 40;
-            // 
-            // desc_precio
-            // 
-            this.desc_precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.desc_precio.HeaderText = "Precio/Subasta";
-            this.desc_precio.MinimumWidth = 80;
-            this.desc_precio.Name = "desc_precio";
-            this.desc_precio.ReadOnly = true;
-            this.desc_precio.Width = 80;
-            // 
-            // desc_costo_envio
-            // 
-            this.desc_costo_envio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.desc_costo_envio.HeaderText = "Costo Envio";
-            this.desc_costo_envio.MinimumWidth = 40;
-            this.desc_costo_envio.Name = "desc_costo_envio";
-            this.desc_costo_envio.ReadOnly = true;
-            this.desc_costo_envio.Width = 40;
-            // 
-            // desc_fecha_venc
-            // 
-            this.desc_fecha_venc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.desc_fecha_venc.FillWeight = 120F;
-            this.desc_fecha_venc.HeaderText = "Fecha Vencimiento";
-            this.desc_fecha_venc.MinimumWidth = 10;
-            this.desc_fecha_venc.Name = "desc_fecha_venc";
-            this.desc_fecha_venc.ReadOnly = true;
-            this.desc_fecha_venc.Width = 10;
             // 
             // Publicaciones_compra
             // 

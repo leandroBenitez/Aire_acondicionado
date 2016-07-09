@@ -11,39 +11,46 @@ using MercadoEnvio.DataBase.Conexion;
 using System.Data.SqlClient;
 using MercadoEnvio.Listado_Estadistico;
 
+
 namespace MercadoEnvio.Listado_Estadistico
 {   
     
     public partial class NoVendidos : Form
     {
+        NoVendido_DAO ProdNoVendidos = new NoVendido_DAO();
+        ABM_Visibilidad_DAO VisibDAO = new ABM_Visibilidad_DAO();
+
+
         public NoVendidos()
         {
             InitializeComponent();
             comboBoxVisibilidad.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            comboBoxVisibilidad.Items.Add("Por tipo de publicación");
-            comboBoxVisibilidad.Items.Add("Por producto vendido");
-            comboBoxVisibilidad.Items.Add("Por envío de producto");
-            comboBoxVisibilidad.Items.Add("Gratuita para el vendedor");
+            List<string> idVisibilidades = ProdNoVendidos.get_idVisibilidad();
+
+            for (int i = 0; i < idVisibilidades.Count; i++)
+            {
+                string descVisi = VisibDAO.get_descVisibilidadSegun(idVisibilidades[i]);
+                comboBoxVisibilidad.Items.Add(descVisi);
+            }
+          
 
             comboBoxMes.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            comboBoxMes.Items.Add("Enero");
-            comboBoxMes.Items.Add("Febrero");
-            comboBoxMes.Items.Add("Marzo");
-            comboBoxMes.Items.Add("Mayo");
-            comboBoxMes.Items.Add("Junio");
-            comboBoxMes.Items.Add("Julio");
-            comboBoxMes.Items.Add("Agosto");
-            comboBoxMes.Items.Add("Septiembre");
-            comboBoxMes.Items.Add("Octubre");
-            comboBoxMes.Items.Add("Noviembre");
-            comboBoxMes.Items.Add("Diciembre");
+            for (int i = 1; i <= 12; i++ )
+            {
+                comboBoxMes.Items.Add(i);
+            }
 
         }
 
         private void buttonSeleccionar_Click(object sender, EventArgs e)
         {
+            string condicion = " where 1=1";
+            if (!(string.IsNullOrWhiteSpace(comboBoxVisibilidad.Text)))
+            {
+                condicion = condicion + " and visibilidad = '" + comboBoxVisibilidad.Text + "'";
+            }
 
         }
 

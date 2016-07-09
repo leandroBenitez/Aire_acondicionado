@@ -28,6 +28,12 @@ namespace MercadoEnvio.Historial_Cliente
             formHistorialFacturas.Show();
         }
 
+        private void MostrarCompras_Click(object sender, EventArgs e)
+        {
+            HistorialCompras formHistorialCompras = new HistorialCompras(this.id_usuario);
+            formHistorialCompras.Show();
+        }
+
         private void MostrarComprasCalificadas_Click(object sender, EventArgs e)
         {
             HistorialComprasCalificadas formHistorialEstrellasOtorgadas = new HistorialComprasCalificadas(this.id_usuario);
@@ -40,14 +46,15 @@ namespace MercadoEnvio.Historial_Cliente
             HistorialComprasSinCalificar formHistorialEstrellasPorOtorgar = new HistorialComprasSinCalificar(this.id_usuario);
             formHistorialEstrellasPorOtorgar.Show();
         }
-    
-        private void MostrarCompras_Click(object sender, EventArgs e)
+
+        private void MostrarCalificacionesRecibidas_Click(object sender, EventArgs e)
         {
-            HistorialCompras formHistorialCompras = new HistorialCompras(this.id_usuario);
-            formHistorialCompras.Show();
+            HistorialCalificacionesRecibidas formHistorailCalificacionesRecibidas = new HistorialCalificacionesRecibidas(this.id_usuario);
+            formHistorailCalificacionesRecibidas.Show();
         }
 
-        private void MostrarSubastas_Click(object sender, EventArgs e)
+    
+       private void MostrarSubastas_Click(object sender, EventArgs e)
         {
             HistorialSubastas formHistorialSubastas = new HistorialSubastas(this.id_usuario);
             formHistorialSubastas.Show();
@@ -64,6 +71,6 @@ namespace MercadoEnvio.Historial_Cliente
             Application.Exit();
         }
 
-        
+             
     }
 }

@@ -46,10 +46,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(42, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 27);
+            this.label1.Size = new System.Drawing.Size(166, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "Alta de Visibilidad";
             // 
@@ -169,7 +169,7 @@
             this.Controls.Add(this.Limpiar);
             this.Controls.Add(this.label1);
             this.Name = "AltaVisibilidad";
-            this.Text = "Form1";
+            this.Text = "Alta Visibilidad";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

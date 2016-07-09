@@ -34,16 +34,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewCompras = new System.Windows.Forms.DataGridView();
-            this.Col_idCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_DescFec = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_DescCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_idPubl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonVolverAlMenu = new System.Windows.Forms.Button();
             this.buttonPrimerPag = new System.Windows.Forms.Button();
             this.buttonPaginaAnt = new System.Windows.Forms.Button();
             this.buttonPaginaSgte = new System.Windows.Forms.Button();
             this.buttonUltimaPag = new System.Windows.Forms.Button();
+            this.Col_idCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_DescFec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_DescCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_idPubl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,12 +91,63 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewCompras.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewCompras.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridViewCompras.Size = new System.Drawing.Size(529, 261);
+            this.dataGridViewCompras.Size = new System.Drawing.Size(529, 228);
             this.dataGridViewCompras.TabIndex = 3;
+            // 
+            // buttonVolverAlMenu
+            // 
+            this.buttonVolverAlMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonVolverAlMenu.Location = new System.Drawing.Point(475, 271);
+            this.buttonVolverAlMenu.Name = "buttonVolverAlMenu";
+            this.buttonVolverAlMenu.Size = new System.Drawing.Size(82, 23);
+            this.buttonVolverAlMenu.TabIndex = 5;
+            this.buttonVolverAlMenu.Text = "Volver";
+            this.buttonVolverAlMenu.UseVisualStyleBackColor = true;
+            this.buttonVolverAlMenu.Click += new System.EventHandler(this.buttonVolverAlMenu_Click);
+            // 
+            // buttonPrimerPag
+            // 
+            this.buttonPrimerPag.Location = new System.Drawing.Point(28, 271);
+            this.buttonPrimerPag.Name = "buttonPrimerPag";
+            this.buttonPrimerPag.Size = new System.Drawing.Size(84, 23);
+            this.buttonPrimerPag.TabIndex = 6;
+            this.buttonPrimerPag.Text = "<< Primer Pág.";
+            this.buttonPrimerPag.UseVisualStyleBackColor = true;
+            this.buttonPrimerPag.Click += new System.EventHandler(this.buttonPrimerPag_Click);
+            // 
+            // buttonPaginaAnt
+            // 
+            this.buttonPaginaAnt.Location = new System.Drawing.Point(144, 271);
+            this.buttonPaginaAnt.Name = "buttonPaginaAnt";
+            this.buttonPaginaAnt.Size = new System.Drawing.Size(83, 23);
+            this.buttonPaginaAnt.TabIndex = 7;
+            this.buttonPaginaAnt.Text = "< Página Ant.";
+            this.buttonPaginaAnt.UseVisualStyleBackColor = true;
+            this.buttonPaginaAnt.Click += new System.EventHandler(this.buttonPaginaAnt_Click);
+            // 
+            // buttonPaginaSgte
+            // 
+            this.buttonPaginaSgte.Location = new System.Drawing.Point(259, 271);
+            this.buttonPaginaSgte.Name = "buttonPaginaSgte";
+            this.buttonPaginaSgte.Size = new System.Drawing.Size(83, 23);
+            this.buttonPaginaSgte.TabIndex = 8;
+            this.buttonPaginaSgte.Text = "Página Sgte >";
+            this.buttonPaginaSgte.UseVisualStyleBackColor = true;
+            this.buttonPaginaSgte.Click += new System.EventHandler(this.buttonPaginaSgte_Click);
+            // 
+            // buttonUltimaPag
+            // 
+            this.buttonUltimaPag.Location = new System.Drawing.Point(367, 271);
+            this.buttonUltimaPag.Name = "buttonUltimaPag";
+            this.buttonUltimaPag.Size = new System.Drawing.Size(84, 23);
+            this.buttonUltimaPag.TabIndex = 9;
+            this.buttonUltimaPag.Text = "Última Pág. >>";
+            this.buttonUltimaPag.UseVisualStyleBackColor = true;
+            this.buttonUltimaPag.Click += new System.EventHandler(this.buttonUltimaPag_Click);
             // 
             // Col_idCompra
             // 
-            this.Col_idCompra.HeaderText = "Compra";
+            this.Col_idCompra.HeaderText = "Nº Compra";
             this.Col_idCompra.Name = "Col_idCompra";
             // 
             // Col_DescFec
@@ -119,61 +170,11 @@
             this.Col_idUsuario.HeaderText = "Usuario";
             this.Col_idUsuario.Name = "Col_idUsuario";
             // 
-            // buttonVolverAlMenu
-            // 
-            this.buttonVolverAlMenu.Location = new System.Drawing.Point(475, 312);
-            this.buttonVolverAlMenu.Name = "buttonVolverAlMenu";
-            this.buttonVolverAlMenu.Size = new System.Drawing.Size(82, 23);
-            this.buttonVolverAlMenu.TabIndex = 5;
-            this.buttonVolverAlMenu.Text = "Volver";
-            this.buttonVolverAlMenu.UseVisualStyleBackColor = true;
-            this.buttonVolverAlMenu.Click += new System.EventHandler(this.buttonVolverAlMenu_Click);
-            // 
-            // buttonPrimerPag
-            // 
-            this.buttonPrimerPag.Location = new System.Drawing.Point(28, 312);
-            this.buttonPrimerPag.Name = "buttonPrimerPag";
-            this.buttonPrimerPag.Size = new System.Drawing.Size(84, 23);
-            this.buttonPrimerPag.TabIndex = 6;
-            this.buttonPrimerPag.Text = "<< Primer Pág.";
-            this.buttonPrimerPag.UseVisualStyleBackColor = true;
-            this.buttonPrimerPag.Click += new System.EventHandler(this.buttonPrimerPag_Click);
-            // 
-            // buttonPaginaAnt
-            // 
-            this.buttonPaginaAnt.Location = new System.Drawing.Point(144, 312);
-            this.buttonPaginaAnt.Name = "buttonPaginaAnt";
-            this.buttonPaginaAnt.Size = new System.Drawing.Size(83, 23);
-            this.buttonPaginaAnt.TabIndex = 7;
-            this.buttonPaginaAnt.Text = "< Página Ant.";
-            this.buttonPaginaAnt.UseVisualStyleBackColor = true;
-            this.buttonPaginaAnt.Click += new System.EventHandler(this.buttonPaginaAnt_Click);
-            // 
-            // buttonPaginaSgte
-            // 
-            this.buttonPaginaSgte.Location = new System.Drawing.Point(259, 312);
-            this.buttonPaginaSgte.Name = "buttonPaginaSgte";
-            this.buttonPaginaSgte.Size = new System.Drawing.Size(83, 23);
-            this.buttonPaginaSgte.TabIndex = 8;
-            this.buttonPaginaSgte.Text = "Página Sgte >";
-            this.buttonPaginaSgte.UseVisualStyleBackColor = true;
-            this.buttonPaginaSgte.Click += new System.EventHandler(this.buttonPaginaSgte_Click);
-            // 
-            // buttonUltimaPag
-            // 
-            this.buttonUltimaPag.Location = new System.Drawing.Point(367, 312);
-            this.buttonUltimaPag.Name = "buttonUltimaPag";
-            this.buttonUltimaPag.Size = new System.Drawing.Size(84, 23);
-            this.buttonUltimaPag.TabIndex = 9;
-            this.buttonUltimaPag.Text = "Última Pág. >>";
-            this.buttonUltimaPag.UseVisualStyleBackColor = true;
-            this.buttonUltimaPag.Click += new System.EventHandler(this.buttonUltimaPag_Click);
-            // 
             // HistorialCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 352);
+            this.ClientSize = new System.Drawing.Size(575, 314);
             this.Controls.Add(this.buttonUltimaPag);
             this.Controls.Add(this.buttonPaginaSgte);
             this.Controls.Add(this.buttonPaginaAnt);
@@ -191,14 +192,14 @@
 
         private System.Windows.Forms.DataGridView dataGridViewCompras;
         private System.Windows.Forms.Button buttonVolverAlMenu;
+        private System.Windows.Forms.Button buttonPrimerPag;
+        private System.Windows.Forms.Button buttonPaginaAnt;
+        private System.Windows.Forms.Button buttonPaginaSgte;
+        private System.Windows.Forms.Button buttonUltimaPag;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_DescFec;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_DescCant;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idPubl;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idUsuario;
-        private System.Windows.Forms.Button buttonPrimerPag;
-        private System.Windows.Forms.Button buttonPaginaAnt;
-        private System.Windows.Forms.Button buttonPaginaSgte;
-        private System.Windows.Forms.Button buttonUltimaPag;
     }
 }

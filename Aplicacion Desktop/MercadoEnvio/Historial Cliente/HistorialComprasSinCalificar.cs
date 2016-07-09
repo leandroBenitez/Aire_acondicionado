@@ -48,21 +48,16 @@ namespace MercadoEnvio.Historial_Cliente
 
             while (lectura.Read())
             {
-                int calificacion;
-                int.TryParse(lectura["id_calificacion"].ToString(), out calificacion);
-                //si el campo id_calificacion == 0, hay calificación y se carga historial de calificación
-                if (calificacion == 0)
-                {
-                    columnas[0] = lectura["id_calificacion"].ToString();
-                    columnas[1] = lectura["desc_codigo"].ToString();
-                    columnas[2] = lectura["desc_cantidad_estrellas"].ToString();
-                    columnas[3] = lectura["descripcion"].ToString();
-                    columnas[4] = lectura["id_usuario"].ToString();
-                    columnas[5] = lectura["id_compra"].ToString();
+                columnas[0] = lectura["id_calificacion"].ToString();
+                columnas[1] = lectura["desc_codigo"].ToString();
+                columnas[2] = lectura["desc_cantidad_estrellas"].ToString();
+                columnas[3] = lectura["descripcion"].ToString();
+                columnas[4] = lectura["id_usuario_comprador"].ToString();
+                columnas[5] = lectura["id_compra"].ToString();
 
-                    filas.Add(new DataGridViewRow());
-                    filas[filas.Count - 1].CreateCells(dataGridViewComprasSinCalificar, columnas);
-                }
+                filas.Add(new DataGridViewRow());
+                filas[filas.Count - 1].CreateCells(dataGridViewComprasSinCalificar, columnas);
+                
             }
 
             lectura.Close();

@@ -92,7 +92,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Descripcion:";
+            this.label2.Text = "Descripción:";
             // 
             // label3
             // 
@@ -185,9 +185,9 @@
             this.check_envio.AutoSize = true;
             this.check_envio.Location = new System.Drawing.Point(347, 113);
             this.check_envio.Name = "check_envio";
-            this.check_envio.Size = new System.Drawing.Size(53, 17);
+            this.check_envio.Size = new System.Drawing.Size(55, 17);
             this.check_envio.TabIndex = 17;
-            this.check_envio.Text = "Envio";
+            this.check_envio.Text = "Envío";
             this.check_envio.UseVisualStyleBackColor = true;
             this.check_envio.CheckedChanged += new System.EventHandler(this.check_envio_CheckedChanged);
             // 
@@ -196,9 +196,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(406, 114);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 13);
+            this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 18;
-            this.label6.Text = "Costo Envio:";
+            this.label6.Text = "Costo Envío:";
             // 
             // textbox_envio
             // 
@@ -224,7 +224,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 13);
             this.label9.TabIndex = 21;
-            this.label9.Text = "Visualizacion:";
+            this.label9.Text = "Visualización:";
             // 
             // label10
             // 
