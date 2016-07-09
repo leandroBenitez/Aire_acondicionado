@@ -317,11 +317,71 @@ If exists (select * FROM sys.views where name = 'rol_funcionalidades')
 Drop view GESTORES_DEL_AIRE_ACONDICIONADO.rol_funcionalidades
 Go
 
-If exists (select * FROM sys.views where name = 'publicaciones')
+If exists (select * FROM sys.views where name = 'publicaciones_subasta')
+Drop view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones
+Go
+
+If exists (select * FROM sys.views where name = 'publicaciones_compra')
 Drop view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones
 Go
 
 /*	***********************	CREACION DE VISTAS	************************ */
+Create view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones_subasta
+As
+Select	 pub.id_publicacion
+		,pub.desc_publicacion
+		,pub.desc_stock
+		,pub.desc_precio
+		,pub.desc_costo_envio
+		,left(cast(pub.desc_fecha_publi as date), 10) as fecha_publicacion
+		,left(cast(pub.desc_fecha_venc as date), 10) as fecha_vencimiento
+		,rub.desc_rubro
+		,vis.desc_tipo as visualizacion
+		,vis.desc_precio as precio_visualizacion		
+		,est.desc_estado
+		,tip.desc_tipo_public
+		,pub.id_usuario
+from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pub
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro rub
+	on pub.id_rubro = rub.id_rubro
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad vis
+	on pub.id_visibilidad = vis.id_visibilidad
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion est
+	on pub.id_estado_publi = est.id_estado_publi
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion tip
+	on pub.id_tipo_publi = tip.id_tipo_publi
+where desc_tipo_public = 'Subasta'
+and est.desc_estado in ('Pausada', 'Activo')
+GO
+
+Create view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones_compra
+As
+Select	 pub.id_publicacion
+		,pub.desc_publicacion
+		,pub.desc_stock
+		,pub.desc_precio
+		,pub.desc_costo_envio
+		,left(cast(pub.desc_fecha_publi as date), 10) as fecha_publicacion
+		,left(cast(pub.desc_fecha_venc as date), 10) as fecha_vencimiento
+		,rub.desc_rubro
+		,vis.desc_tipo as visualizacion
+		,vis.desc_precio as precio_visualizacion		
+		,est.desc_estado
+		,tip.desc_tipo_public
+		,pub.id_usuario
+from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pub
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro rub
+	on pub.id_rubro = rub.id_rubro
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad vis
+	on pub.id_visibilidad = vis.id_visibilidad
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion est
+	on pub.id_estado_publi = est.id_estado_publi
+left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion tip
+	on pub.id_tipo_publi = tip.id_tipo_publi
+where desc_tipo_public = 'Compra Inmediata'
+and est.desc_estado in ('Pausada', 'Activo')
+GO
+
 Create view GESTORES_DEL_AIRE_ACONDICIONADO.rol_usuario
 As
 Select usu.*, rol.desc_rol, rol.estado_rol from GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios usu
@@ -337,31 +397,6 @@ left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol rol
 	on rl.id_rol = rol.id_rol
 left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion fu
 	on rl.id_funcion = fu.id_funcion
-Go
-
-Create view GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones
-As
-Select	 pub.id_publicacion
-		,pub.desc_publicacion
-		,pub.desc_stock
-		,pub.desc_precio
-		,pub.desc_costo_envio
-		,cast(pub.desc_fecha_publi as date) as fecha_publicacion
-		,cast(pub.desc_fecha_venc as date) as fecha_vencimiento
-		,rub.desc_rubro
-		,vis.desc_tipo
-		,est.desc_estado
-		,tip.desc_tipo_public
-		,pub.id_usuario
-from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pub
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro rub
-	on pub.id_rubro = rub.id_rubro
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_visibilidad vis
-	on pub.id_visibilidad = vis.id_visibilidad
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_estado_publicacion est
-	on pub.id_estado_publi = est.id_estado_publi
-left join GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_publicacion tip
-	on pub.id_tipo_publi = tip.id_tipo_publi
 Go
 
 /*	***********************	CARGA DE DATOS	************************ */
