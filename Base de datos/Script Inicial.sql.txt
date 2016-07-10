@@ -854,7 +854,7 @@ Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra	(	 desc_fecha
 															,id_publicacion
 															,id_usuario	
 															,desc_envio	)
-Select	 CONVERT(datetime, right(@desc_fecha, 4) + SUBSTRING(@desc_fecha, 4, 2) + left(@desc_fecha, 2))
+Select	 CONVERT(date, substring(@desc_fecha, 7, 4) + substring(@desc_fecha, 4, 2) + substring(@desc_fecha, 1, 2))
 		,@cantidad
 		,@publicacion
 		,@usuario
