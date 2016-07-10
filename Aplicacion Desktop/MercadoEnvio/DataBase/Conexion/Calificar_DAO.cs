@@ -34,6 +34,7 @@ namespace MercadoEnvio.DataBase.Conexion
             lector.Close();
             return resultado;
         }
+
         public int getCalificacion(int id_user, string id_pub)
         {
             try
@@ -70,15 +71,16 @@ namespace MercadoEnvio.DataBase.Conexion
             return id;
         }
 
-        public void calificarA(int pubCalif, int estrellas, int vendedorCalif, int compradorCalif)
+        public void calificarA(int pubCalif, int estrellas, int vendedorCalif, int compradorCalif, string descripcion)
         {
-            this.GD1C2016.ejecutarSentenciaSinRetorno("INSERT INTO " + ConstantesBD.tabla_calificacion + " (desc_codigo, desc_cantidad_estrellas, id_usuario_vendedor, id_usuario_comprador, id_compra) " +
+            this.GD1C2016.ejecutarSentenciaSinRetorno("INSERT INTO " + ConstantesBD.tabla_calificacion + " (desc_codigo, desc_cantidad_estrellas, id_usuario_vendedor, id_usuario_comprador, id_compra, descripcion) " +
                                                       "Values ("
                                                       + pubCalif + ", "
                                                       + estrellas + ", "
                                                       + vendedorCalif + ", "
                                                       + compradorCalif + ", "
-                                                      + pubCalif + ")");
+                                                      + pubCalif + ", "
+                                                      + descripcion + ")");
         }
     }
 }

@@ -33,12 +33,14 @@
             this.AceptarButton = new System.Windows.Forms.Button();
             this.presentacion = new System.Windows.Forms.Label();
             this.labelUsuario = new System.Windows.Forms.Label();
+            this.label_descripcion = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Calificacion_ComboBox
             // 
             this.Calificacion_ComboBox.FormattingEnabled = true;
-            this.Calificacion_ComboBox.Location = new System.Drawing.Point(95, 124);
+            this.Calificacion_ComboBox.Location = new System.Drawing.Point(114, 74);
             this.Calificacion_ComboBox.Name = "Calificacion_ComboBox";
             this.Calificacion_ComboBox.Size = new System.Drawing.Size(121, 21);
             this.Calificacion_ComboBox.TabIndex = 0;
@@ -46,7 +48,7 @@
             // Calificación
             // 
             this.Calificación.AutoSize = true;
-            this.Calificación.Location = new System.Drawing.Point(28, 127);
+            this.Calificación.Location = new System.Drawing.Point(47, 77);
             this.Calificación.Name = "Calificación";
             this.Calificación.Size = new System.Drawing.Size(61, 13);
             this.Calificación.TabIndex = 1;
@@ -54,7 +56,7 @@
             // 
             // AceptarButton
             // 
-            this.AceptarButton.Location = new System.Drawing.Point(141, 183);
+            this.AceptarButton.Location = new System.Drawing.Point(160, 184);
             this.AceptarButton.Name = "AceptarButton";
             this.AceptarButton.Size = new System.Drawing.Size(75, 23);
             this.AceptarButton.TabIndex = 2;
@@ -84,11 +86,29 @@
             this.labelUsuario.TabIndex = 9;
             this.labelUsuario.Text = "id";
             // 
+            // label_descripcion
+            // 
+            this.label_descripcion.AutoSize = true;
+            this.label_descripcion.Location = new System.Drawing.Point(47, 127);
+            this.label_descripcion.Name = "label_descripcion";
+            this.label_descripcion.Size = new System.Drawing.Size(63, 13);
+            this.label_descripcion.TabIndex = 10;
+            this.label_descripcion.Text = "Descripción";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(114, 124);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(121, 20);
+            this.textBox1.TabIndex = 11;
+            // 
             // Calificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label_descripcion);
             this.Controls.Add(this.labelUsuario);
             this.Controls.Add(this.presentacion);
             this.Controls.Add(this.AceptarButton);
@@ -108,6 +128,8 @@
         private System.Windows.Forms.Button AceptarButton;
         private System.Windows.Forms.Label presentacion;
         private System.Windows.Forms.Label labelUsuario;
+        private System.Windows.Forms.Label label_descripcion;
+        private System.Windows.Forms.TextBox textBox1;
 
     }
 }

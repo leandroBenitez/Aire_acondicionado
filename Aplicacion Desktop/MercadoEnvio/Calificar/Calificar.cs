@@ -45,10 +45,12 @@ namespace MercadoEnvio.Calificaciones
 
         private void AceptarButton_Click(object sender, EventArgs e)
         {
+            string descripcion = label_descripcion.ToString();
+
             try
             {
                 int estrellas = (int)Calificacion_ComboBox.SelectedItem;
-                calificarDAO.calificarA(pubCalif, estrellas, vendedorCalif, compradorCalif);
+                calificarDAO.calificarA(pubCalif, estrellas, vendedorCalif, compradorCalif, descripcion);
                 MessageBox.Show("Calificación realizada");
                 this.Close();
                 this.unMenu.Show();
