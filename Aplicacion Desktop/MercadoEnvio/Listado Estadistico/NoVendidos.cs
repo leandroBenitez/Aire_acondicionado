@@ -17,7 +17,7 @@ namespace MercadoEnvio.Listado_Estadistico
     
     public partial class NoVendidos : Form
     {
-        NoVendido_DAO ProdNoVendidos = new NoVendido_DAO();
+        ListadoEstadistico_DAO ProdNoVendidosDAO = new ListadoEstadistico_DAO();
         ABM_Visibilidad_DAO VisibDAO = new ABM_Visibilidad_DAO();
 
 
@@ -26,7 +26,7 @@ namespace MercadoEnvio.Listado_Estadistico
             InitializeComponent();
             comboBoxVisibilidad.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            List<string> idVisibilidades = ProdNoVendidos.get_idVisibilidad();
+            List<string> idVisibilidades = ProdNoVendidosDAO.get_idVisibilidad();
 
             for (int i = 0; i < idVisibilidades.Count; i++)
             {
@@ -46,12 +46,53 @@ namespace MercadoEnvio.Listado_Estadistico
 
         private void buttonSeleccionar_Click(object sender, EventArgs e)
         {
-            string condicion = " where 1=1";
+            SqlDataReader lectorNoVendido;
+            //string condicion = " where 1=1";
+            string condicion = " ";
             if (!(string.IsNullOrWhiteSpace(comboBoxVisibilidad.Text)))
             {
-                condicion = condicion + " and visibilidad = '" + comboBoxVisibilidad.Text + "'";
+                condicion = condicion + " and desc_tipo = '" + comboBoxVisibilidad.Text + "'";
             }
 
+            if (!(string.IsNullOrWhiteSpace(comboBoxMes.Text)))
+            {
+                condicion = condicion + " and MONTH(fecha_publicacion) = '" + comboBoxMes.Text + "'";
+            }
+
+            if (!(string.IsNullOrWhiteSpace(textBoxAñoNV.Text))) 
+            {
+                condicion = condicion + " and YEAR(fecha_publicacion) = '" + textBoxAñoNV.Text + "'";
+            }
+
+            lectorNoVendido = ProdNoVendidosDAO.getListVendMayorCantProdNoVend(condicion);
+            cargar_grid_prodNoVendidos(lectorNoVendido);
+        }
+
+        private void cargar_grid_prodNoVendidos(SqlDataReader lector)
+        {
+            SqlDataReader lectorNV;
+            int i = 0;
+
+            lectorNV = lector;
+
+            List<DataGridViewRow> filas = new List<DataGridViewRow>();
+            Object[] columnas = new Object[4];
+
+            while(lectorNV.Read())
+            {
+                i++;
+                columnas[0] = i.ToString();
+                columnas[1] = lectorNV["id_usuario"].ToString();
+                columnas[2] = lectorNV["desc_fecha_publi"].ToString();
+                columnas[3] = lectorNV["cantPublicaciones"].ToString();
+
+                filas.Add(new DataGridViewRow());
+                filas[filas.Count - 1].CreateCells(dataGridViewNoVendidos, columnas);
+            }
+
+            lectorNV.Close();
+            dataGridViewNoVendidos.Rows.AddRange(filas.ToArray());
+            
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)

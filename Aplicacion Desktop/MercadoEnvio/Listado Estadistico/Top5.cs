@@ -14,6 +14,7 @@ namespace MercadoEnvio.Listado_Estadistico
 {
     public partial class Top5 : Form
     {
+        ListadoEstadistico_DAO ListEstDAO = new ListadoEstadistico_DAO();
         public Menu menu;
 
         public Top5(Menu un_menu)
@@ -49,38 +50,48 @@ namespace MercadoEnvio.Listado_Estadistico
 
         private void buttonSeleccionar_Click(object sender, EventArgs e)
         {
-            comboBoxTop5.Items.Clear();
-           
-            if (comboBoxTrimestre.Text != "" && textBoxAñoTop.Text != "" && comboBoxTop5.Text != "")
+            SqlDataReader lectorTop5;
+            comboBoxTop5.Items.Clear();        
+
+            if ((!(string.IsNullOrWhiteSpace(comboBoxTrimestre.Text))) && (!(string.IsNullOrWhiteSpace(comboBoxTop5.Text))))
             {
-               
+                string condicionTrimAño = " ";
                 switch (comboBoxTrimestre.Text)
                 {
                     case "Primer trimestre":
-                        
+                        condicionTrimAño = condicionTrimAño + " MONTH(desc_fecha) BETWEEN '1' AND '3' = '" + comboBoxTrimestre.Text + "'";
                         break;
                     case "Segundo trimestre":
-                        
+                        condicionTrimAño = condicionTrimAño + " MONTH(desc_fecha) BETWEEN '4' AND '6' = '" + comboBoxTrimestre.Text + "'";
                         break;
                     case "Tercer trimestre":
-                        
+                        condicionTrimAño = condicionTrimAño + " MONTH(desc_fecha) BETWEEN '7' AND '9' = '" + comboBoxTrimestre.Text + "'";
                         break;
-
                     case "Cuarto trimestre":
-
+                        condicionTrimAño = condicionTrimAño + " MONTH(desc_fecha) BETWEEN '10' AND '12' = '" + comboBoxTrimestre.Text + "'";
                         break;
 
                 }
+                
+                if(!(string.IsNullOrWhiteSpace(textBoxAñoTop.Text)))
+                {
+                    condicionTrimAño = condicionTrimAño + " and YEAR(desc_fecha) = '" + textBoxAñoTop.Text + "'";
+                }
+
+
                 switch (comboBoxTop5.Text)
                 {
                     case "Clientes - Cantidad de productos comprados":
-                        
+                        lectorTop5 = ListEstDAO.getListClientesMayorCantProdComp(condicionTrimAño);
+                        cargar_grid_cliMayorCantProdComp(lectorTop5);
                         break;
                     case "Vendedores - Cantidad de factura":
-                        ;
+                        lectorTop5 = ListEstDAO.getListVendMayorCantFacturas(condicionTrimAño);
+                        cargar_grid_cliMayorCantProdComp(lectorTop5);
                         break;
                     case "Vendedores - Mayor monto facturado":
-                        
+                        lectorTop5 = ListEstDAO.getListVendMayorMontoFactutado(condicionTrimAño);
+                        cargar_grid_cliMayorCantProdComp(lectorTop5);
                         break;
 
                 }
@@ -90,6 +101,36 @@ namespace MercadoEnvio.Listado_Estadistico
                 MessageBox.Show("Debe seleccionar un trimestre, un año y un listado", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void cargar_grid_cliMayorCantProdComp(SqlDataReader lector)
+        {
+            SqlDataReader lectorT5;
+            int i = 0;
+
+            lectorT5 = lector;
+
+            List<DataGridViewRow> filas = new List<DataGridViewRow>();
+            Object[] columnas = new Object[5];
+
+            while(lectorT5.Read())
+            {
+                i++;
+                columnas[0] = i.ToString();
+                columnas[1] = lectorT5["id_usuario"].ToString();
+                columnas[2] = lectorT5["desc_fecha_publi"].ToString();
+                columnas[3] = lectorT5["Cantdad"].ToString();
+                columnas[4] = lectorT5["desc_rubro"].ToString(); //RUBRO)??
+
+                filas.Add(new DataGridViewRow());
+                filas[filas.Count - 1].CreateCells(dataGridViewTop5, columnas);
+            }
+
+            lectorT5.Close();
+            dataGridViewTop5.Rows.AddRange(filas.ToArray());
+            
+
+        }
+
 
         private void buttonVolver_Click(object sender, EventArgs e)
         {

@@ -211,8 +211,8 @@
     <Compile Include="DataBase\Conexion\HistorialEstrellas_DAO.cs" />
     <Compile Include="DataBase\Conexion\HistorialFacturas_DAO.cs" />
     <Compile Include="DataBase\Conexion\HistorialSubastas_DAO.cs" />
+    <Compile Include="DataBase\Conexion\ListadoEstadistico_DAO.cs" />
     <Compile Include="DataBase\Conexion\LoginDAO.cs" />
-    <Compile Include="DataBase\Conexion\NoVendido_DAO.cs" />
     <Compile Include="DataBase\Conexion\publicacionDAO.cs" />
     <Compile Include="DataBase\Conexion\SQLDataReader.cs" />
     <Compile Include="DataBase\Conexion\SQLServerBD.cs" />
