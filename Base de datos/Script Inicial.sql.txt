@@ -873,6 +873,17 @@ begin
 	where id_publicacion = @publicacion
 end
 
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_calificacion	(	 desc_cantidad_estrellas
+																,descripcion	
+																,id_usuario_vendedor
+																,id_usuario_comprador
+																,id_compra	)
+Select	 0
+		,''
+		,(Select id_usuario from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
+				where id_publicacion = @publicacion)
+		,@usuario
+		,@@IDENTITY
 GO
 
 /* STORED PROCEDURE PARA INICIAR APLICACION*/
@@ -922,12 +933,12 @@ Select	 @id_factura
 		,(Select id_usuario from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
 			where id_publicacion = @id_publi);
 	
-Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_item	(	 [desc_item_desc]
-														,[desc_item_monto]
-														,[desc_item_cant]
-														,[id_factura]
-														,[id_publicacion]
-														,[id_tipo_costo]	)
+Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_item	(	 desc_item_desc
+														,desc_item_monto
+														,desc_item_cant
+														,id_factura
+														,id_publicacion
+														,id_tipo_costo	)
 Select	 (Select desc_tipo_costo from GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_costo ti
 			where ti.id_tipo_costo = 2)
 		,vi.desc_precio
@@ -963,12 +974,12 @@ begin
 
 	if (@costo_envio <> 0)
 	begin
-		Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_item	(	 [desc_item_desc]
-															,[desc_item_monto]
-															,[desc_item_cant]
-															,[id_factura]
-															,[id_publicacion]
-															,[id_tipo_costo]	)
+		Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_item	(	 desc_item_desc
+															,desc_item_monto
+															,desc_item_cant
+															,id_factura
+															,id_publicacion
+															,id_tipo_costo	)
 		Select	 (Select desc_tipo_costo from GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_costo ti
 					where ti.id_tipo_costo = 3)
 				,@costo_envio
@@ -978,12 +989,12 @@ begin
 				,3;
 	end
 
-	Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_item	(	 [desc_item_desc]
-															,[desc_item_monto]
-															,[desc_item_cant]
-															,[id_factura]
-															,[id_publicacion]
-															,[id_tipo_costo]	)
+	Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_item	(	 desc_item_desc
+															,desc_item_monto
+															,desc_item_cant
+															,id_factura
+															,id_publicacion
+															,id_tipo_costo	)
 	Select	 (Select desc_tipo_costo from GESTORES_DEL_AIRE_ACONDICIONADO.dm_tipo_costo ti
 				where ti.id_tipo_costo = 4)
 			,@monto_final
@@ -992,14 +1003,12 @@ begin
 			,@id_publi
 			,4;
 
-	Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_calificacion	(	 [desc_codigo]	
-																	,[desc_cantidad_estrellas]
-																	,[descripcion]
-																	,[id_usuario_vendedor]
-																	,[id_usuario_comprador]
-																	,[id_subasta]	)
+	Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_calificacion	(	 desc_cantidad_estrellas
+																	,descripcion
+																	,id_usuario_vendedor
+																	,id_usuario_comprador
+																	,id_subasta	)
 	Select	 0
-			,0
 			,''
 			,(Select id_usuario from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
 				where id_estado_publi = @id_publi)

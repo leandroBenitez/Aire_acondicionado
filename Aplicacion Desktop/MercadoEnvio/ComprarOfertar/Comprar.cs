@@ -80,8 +80,17 @@ namespace MercadoEnvio.ComprarOfertar
         {
             if (!(combo_cantidad.Text == "0"))
             {
+                string envio;
                 publicacionDAO publicacion = new publicacionDAO();
-                publicacion.realizar_compra_subasta(0, this.id_publicacion, this.id_usuario, "Compra Inmediata", Int16.Parse(combo_cantidad.Text));
+                if (check_envio.Checked == true)
+                {
+                    envio = "Si";
+                }
+                else
+                {
+                    envio = "No";
+                }
+                publicacion.comprar(Int16.Parse(combo_cantidad.Text), this.id_publicacion, this.id_usuario, envio);
                 MessageBox.Show("Su compra se ha realizado con exito!");
                 this.Close();
                 this.un_menu.Show();

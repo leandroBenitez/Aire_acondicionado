@@ -345,3 +345,4 @@ J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio
 J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ComprarOfertar.Publicaciones_compra.resources
 J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialCalificacionesRecibidas.resources
 J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csprojResolveAssemblyReference.cache
+C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialCalificacionesRecibidas.resources

@@ -21,6 +21,7 @@ namespace MercadoEnvio
             leerArchivoConfig();
             loginDAO = new LoginDAO();
             InitializeComponent();
+            loginDAO.iniciar_aplicacion();
         }
 
         private void leerArchivoConfig()

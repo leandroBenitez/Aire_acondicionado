@@ -169,12 +169,7 @@ namespace MercadoEnvio.ComprarOfertar
 
                 Comprar unaCompra = new Comprar(publicacion, valor, costo_envio, stock, id_publicacion, this.unMenu.id_usuario, this.unMenu);
                 unaCompra.Show();
-                
-                /*else
-                {
-                    Subastar unaSubasta = new Subastar(fecha_venc, publicacion, valor, costo_envio, stock, id_publicacion, this.unMenu.id_usuario);
-                    unaSubasta.Show();
-                }*/
+                this.Close();
             }
             catch
             {

@@ -191,18 +191,22 @@ namespace MercadoEnvio.DataBase.Conexion
             return cantidad;
         }
 
-        public void realizar_compra_subasta (   float monto, 
-                                                int publicacion, 
-                                                int usuario, 
-                                                string tipo_publicacion, 
-                                                int cantidad    )
+        public void comprar (   int cantidad, int publicacion, int usuario, string envio    )
         {
-            this.GD1C2016.ejecutarSentenciaSinRetorno("Execute GESTORES_DEL_AIRE_ACONDICIONADO.comprar_subastar @desc_fecha = '" + ConstantesBD.fechaSistema
-                                                                                                         + "' , @monto = '" + monto.ToString()
-                                                                                                         + "' , @publicacion = '" + publicacion.ToString()
-                                                                                                         + "' , @usuario = '" + usuario.ToString()
-                                                                                                         + "' , @tipo_publicacion = '" + tipo_publicacion
-                                                                                                         + "' , @cantidad = '" + cantidad.ToString() + "'");    
+            this.GD1C2016.ejecutarSentenciaSinRetorno("Execute GESTORES_DEL_AIRE_ACONDICIONADO.comprar @desc_fecha = '" + ConstantesBD.fechaSistema
+                                                                                                 + "', @cantidad = '" + cantidad.ToString()
+                                                                                                 + "', @publicacion = '" + publicacion.ToString()
+                                                                                                 + "', @usuario = '" + usuario.ToString()
+                                                                                                 + "', @envio = '" + envio.ToString() + "'");    
+        }
+
+        public void subastar (   float monto, int publicacion, int usuario, string envio    )
+        {
+            this.GD1C2016.ejecutarSentenciaSinRetorno("Execute GESTORES_DEL_AIRE_ACONDICIONADO.subastar @desc_fecha = '" + ConstantesBD.fechaSistema
+                                                                                                  + "', @monto = '" + monto.ToString()
+                                                                                                  + "', @publicacion = '" + publicacion.ToString()
+                                                                                                  + "', @usuario = '" + usuario.ToString()
+                                                                                                  + "', @envio = '" + envio.ToString() + "'");
         }
 
         public SqlDataReader get_ultima_oferta(int id_publicacion)

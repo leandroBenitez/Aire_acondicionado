@@ -52,6 +52,11 @@ namespace MercadoEnvio.DataBase.Conexion
             return aux;
         }
 
+        public void iniciar_aplicacion()
+        {
+            this.GD1C2016.ejecutarSentenciaSinRetorno("Execute GESTORES_DEL_AIRE_ACONDICIONADO.inicializar_modelo @fechasys = '" + ConstantesBD.fechaSistema + "';");
+        }
+
         public int get_id_usuario(string username)
         {
             SqlDataReader usuario = this.GD1C2016.ejecutarSentenciaConRetorno("Select id_usuario from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario where desc_username = '" +

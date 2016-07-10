@@ -74,7 +74,16 @@ namespace MercadoEnvio.ComprarOfertar
             {
                 if (float.Parse(nuevo_monto.Text) > float.Parse(ult_monto.Text.Substring(1)))
                 {
-                    publicacion.realizar_compra_subasta(float.Parse(nuevo_monto.Text), this.id_publicacion, this.id_usuario, "Subasta", 0);
+                    string envio;
+                    if (check_envio.Checked == true)
+                    {
+                        envio = "Si";
+                    }
+                    else
+                    {
+                        envio = "No";
+                    }
+                    publicacion.subastar(float.Parse(nuevo_monto.Text), this.id_publicacion, this.id_usuario, envio);
                     MessageBox.Show("Su oferta se ha realizado con exito!");
                     this.Close();
                 }
