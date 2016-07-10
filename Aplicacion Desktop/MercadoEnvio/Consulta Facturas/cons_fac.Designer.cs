@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.listado = new System.Windows.Forms.DataGridView();
+            this.id_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -53,10 +57,6 @@
             this.textDia1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonVolver = new System.Windows.Forms.Button();
-            this.id_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desc_total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.listado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,12 +71,36 @@
             this.desc_fecha,
             this.desc_total,
             this.id_usuario});
-            this.listado.Location = new System.Drawing.Point(252, 203);
+            this.listado.Location = new System.Drawing.Point(259, 213);
             this.listado.Margin = new System.Windows.Forms.Padding(2);
             this.listado.Name = "listado";
             this.listado.RowTemplate.Height = 24;
             this.listado.Size = new System.Drawing.Size(445, 300);
             this.listado.TabIndex = 11;
+            // 
+            // id_factura
+            // 
+            this.id_factura.HeaderText = "Nro Factura";
+            this.id_factura.Name = "id_factura";
+            this.id_factura.ReadOnly = true;
+            // 
+            // desc_fecha
+            // 
+            this.desc_fecha.HeaderText = "Fecha";
+            this.desc_fecha.Name = "desc_fecha";
+            this.desc_fecha.ReadOnly = true;
+            // 
+            // desc_total
+            // 
+            this.desc_total.HeaderText = "Importe";
+            this.desc_total.Name = "desc_total";
+            this.desc_total.ReadOnly = true;
+            // 
+            // id_usuario
+            // 
+            this.id_usuario.HeaderText = "Usuario";
+            this.id_usuario.Name = "id_usuario";
+            this.id_usuario.ReadOnly = true;
             // 
             // label1
             // 
@@ -114,14 +138,14 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(804, 147);
+            this.groupBox1.Size = new System.Drawing.Size(804, 172);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de Búsqueda";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(488, 102);
+            this.button1.Location = new System.Drawing.Point(323, 139);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 24);
             this.button1.TabIndex = 24;
@@ -131,7 +155,7 @@
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(700, 106);
+            this.buttonBuscar.Location = new System.Drawing.Point(710, 138);
             this.buttonBuscar.Name = "buttonBuscar";
             this.buttonBuscar.Size = new System.Drawing.Size(88, 25);
             this.buttonBuscar.TabIndex = 23;
@@ -143,7 +167,7 @@
             // 
             this.textDestinatario.Location = new System.Drawing.Point(323, 102);
             this.textDestinatario.Name = "textDestinatario";
-            this.textDestinatario.Size = new System.Drawing.Size(96, 20);
+            this.textDestinatario.Size = new System.Drawing.Size(475, 20);
             this.textDestinatario.TabIndex = 22;
             // 
             // label10
@@ -151,9 +175,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(323, 86);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 13);
+            this.label10.Size = new System.Drawing.Size(264, 13);
             this.label10.TabIndex = 21;
-            this.label10.Text = "Destinatario";
+            this.label10.Text = "Destinatario (Puede ser solo una parte del destinatario)";
             // 
             // textDescripcion
             // 
@@ -167,9 +191,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(323, 27);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 13);
+            this.label9.Size = new System.Drawing.Size(264, 13);
             this.label9.TabIndex = 19;
-            this.label9.Text = "Descipción";
+            this.label9.Text = "Descipción (Puede ser solo un parte de la descripción)";
             // 
             // label8
             // 
@@ -207,28 +231,28 @@
             // 
             this.textAnio2.Location = new System.Drawing.Point(164, 69);
             this.textAnio2.Name = "textAnio2";
-            this.textAnio2.Size = new System.Drawing.Size(16, 20);
+            this.textAnio2.Size = new System.Drawing.Size(20, 20);
             this.textAnio2.TabIndex = 14;
             // 
             // textMes2
             // 
-            this.textMes2.Location = new System.Drawing.Point(124, 68);
+            this.textMes2.Location = new System.Drawing.Point(120, 68);
             this.textMes2.Name = "textMes2";
-            this.textMes2.Size = new System.Drawing.Size(16, 20);
+            this.textMes2.Size = new System.Drawing.Size(20, 20);
             this.textMes2.TabIndex = 13;
             // 
             // textAnio1
             // 
-            this.textAnio1.Location = new System.Drawing.Point(164, 43);
+            this.textAnio1.Location = new System.Drawing.Point(164, 42);
             this.textAnio1.Name = "textAnio1";
-            this.textAnio1.Size = new System.Drawing.Size(16, 20);
+            this.textAnio1.Size = new System.Drawing.Size(20, 20);
             this.textAnio1.TabIndex = 12;
             // 
             // textMes1
             // 
-            this.textMes1.Location = new System.Drawing.Point(124, 42);
+            this.textMes1.Location = new System.Drawing.Point(120, 42);
             this.textMes1.Name = "textMes1";
-            this.textMes1.Size = new System.Drawing.Size(16, 20);
+            this.textMes1.Size = new System.Drawing.Size(20, 20);
             this.textMes1.TabIndex = 11;
             // 
             // label6
@@ -271,14 +295,14 @@
             // 
             this.textDia2.Location = new System.Drawing.Point(84, 69);
             this.textDia2.Name = "textDia2";
-            this.textDia2.Size = new System.Drawing.Size(16, 20);
+            this.textDia2.Size = new System.Drawing.Size(18, 20);
             this.textDia2.TabIndex = 3;
             // 
             // textDia1
             // 
-            this.textDia1.Location = new System.Drawing.Point(84, 43);
+            this.textDia1.Location = new System.Drawing.Point(84, 42);
             this.textDia1.Name = "textDia1";
-            this.textDia1.Size = new System.Drawing.Size(16, 20);
+            this.textDia1.Size = new System.Drawing.Size(18, 20);
             this.textDia1.TabIndex = 1;
             // 
             // label2
@@ -292,7 +316,7 @@
             // 
             // buttonVolver
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(741, 501);
+            this.buttonVolver.Location = new System.Drawing.Point(741, 513);
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Size = new System.Drawing.Size(75, 23);
             this.buttonVolver.TabIndex = 14;
@@ -300,35 +324,11 @@
             this.buttonVolver.UseVisualStyleBackColor = true;
             this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
-            // id_factura
-            // 
-            this.id_factura.HeaderText = "Nro Factura";
-            this.id_factura.Name = "id_factura";
-            this.id_factura.ReadOnly = true;
-            // 
-            // desc_fecha
-            // 
-            this.desc_fecha.HeaderText = "Fecha";
-            this.desc_fecha.Name = "desc_fecha";
-            this.desc_fecha.ReadOnly = true;
-            // 
-            // desc_total
-            // 
-            this.desc_total.HeaderText = "Importe";
-            this.desc_total.Name = "desc_total";
-            this.desc_total.ReadOnly = true;
-            // 
-            // id_usuario
-            // 
-            this.id_usuario.HeaderText = "Usuario";
-            this.id_usuario.Name = "id_usuario";
-            this.id_usuario.ReadOnly = true;
-            // 
             // cons_fac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 536);
+            this.ClientSize = new System.Drawing.Size(829, 548);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);

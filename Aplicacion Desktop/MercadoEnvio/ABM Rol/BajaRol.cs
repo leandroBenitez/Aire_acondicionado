@@ -40,6 +40,7 @@ namespace MercadoEnvio.ABMRol
             abm_rol.updateEstadoRol("D", id_rol);
 
             // INHABILITAR A LOS USUARIOS QUE TENGAN ASIGNADO EL ROL (¿QUE ONDA ESTO?)
+            MessageBox.Show("El rol ha sido dado de baja exitosamente");
             this.Close();
         }
 

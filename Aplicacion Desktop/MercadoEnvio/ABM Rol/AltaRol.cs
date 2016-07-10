@@ -69,8 +69,9 @@ namespace MercadoEnvios.ABM_Rol
                                 i++;
                             }
                         }
-                        this.Close();
                     }
+                    MessageBox.Show("El rol ha sido dado de alta satisfactoriamente");
+                    this.Close();
                 }
                 else
                 {

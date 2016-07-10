@@ -113,7 +113,6 @@ namespace MercadoEnvio.ABMRol
             int id_rol = abm_rol.getIdRol(comboNombresRoles.SelectedItem.ToString());
 
             //ELIMINO TODAS LAS FUNCIONES QUE TIENE ASIGNADAS EL ROL - OK
-            MessageBox.Show("VOY A ELIMINAR TODOS LOS ROLES");
             abm_rol.deleteFuncionesDeRol(id_rol);
 
             //AGREGO LAS CORRESPONDIENTES POR LA MODIFICACION
@@ -124,7 +123,6 @@ namespace MercadoEnvio.ABMRol
 
                     funcionalidad = checkedListBox1.Items[x].ToString();
                     id_func = abm_rol.getIdFunc(funcionalidad);
-                    MessageBox.Show("VOY A SETEAR UNA FUNCIONALIDAD");
                     abm_rol.setearFuncionalidades(funcionalidad, id_func, id_rol);
             }
 
@@ -138,7 +136,9 @@ namespace MercadoEnvio.ABMRol
             abm_rol.updateEstadoRol(estado, id_rol);
 
             //DESHABILITO USUARIO EN CASO DE QUE EL ESTADO DEL ROL SEA D (¿QUE ONDA CON ESTO?)
-            
+
+            MessageBox.Show("El Rol ha sido modificado satisfactoriamente");
+            this.Close();
 
         }
 

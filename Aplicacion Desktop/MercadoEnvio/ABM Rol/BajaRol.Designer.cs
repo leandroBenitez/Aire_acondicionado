@@ -39,7 +39,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(109, 9);
+            this.label1.Location = new System.Drawing.Point(78, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(181, 27);
             this.label1.TabIndex = 0;
@@ -64,9 +64,9 @@
             // 
             // botonBaja
             // 
-            this.botonBaja.Location = new System.Drawing.Point(212, 98);
+            this.botonBaja.Location = new System.Drawing.Point(256, 105);
             this.botonBaja.Name = "botonBaja";
-            this.botonBaja.Size = new System.Drawing.Size(99, 28);
+            this.botonBaja.Size = new System.Drawing.Size(55, 21);
             this.botonBaja.TabIndex = 3;
             this.botonBaja.Text = "Baja";
             this.botonBaja.UseVisualStyleBackColor = true;
@@ -76,7 +76,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(23, 105);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 20);
+            this.button1.Size = new System.Drawing.Size(54, 20);
             this.button1.TabIndex = 4;
             this.button1.Text = "Volver";
             this.button1.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 143);
+            this.ClientSize = new System.Drawing.Size(332, 143);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.botonBaja);
             this.Controls.Add(this.comboNombresRoles);
