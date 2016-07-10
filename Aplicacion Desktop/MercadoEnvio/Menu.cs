@@ -15,6 +15,7 @@ using MercadoEnvio.ABM_Usuario;
 using MercadoEnvio.Consulta_Facturas;
 using MercadoEnvio.Listado_Estadistico;
 using MercadoEnvio.ListadoCalificaciones;
+using MercadoEnvio.ABM_Rol;
 
 namespace MercadoEnvio
 {
@@ -143,7 +144,8 @@ namespace MercadoEnvio
 
         private void boton_abm_roles_Click(object sender, EventArgs e)
         {
-
+            subMenuRol subMenu = new subMenuRol();
+            subMenu.Show();
         }
     }
 }

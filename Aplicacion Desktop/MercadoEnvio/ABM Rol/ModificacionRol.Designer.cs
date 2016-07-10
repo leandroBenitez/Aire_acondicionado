@@ -43,6 +43,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.radioButtonH = new System.Windows.Forms.RadioButton();
             this.radioButtonD = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -196,11 +197,22 @@
             this.radioButtonD.Text = "Dehabilitado";
             this.radioButtonD.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(22, 359);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(73, 28);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Volver";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ModificacionRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 397);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButtonD);
             this.Controls.Add(this.radioButtonH);
             this.Controls.Add(this.label7);
@@ -240,5 +252,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton radioButtonH;
         private System.Windows.Forms.RadioButton radioButtonD;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -156,6 +156,18 @@ namespace MercadoEnvio.DataBase.Conexion
             this.GD1C2016.ejecutarSentenciaSinRetorno("UPDATE GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol SET estado_rol = '" + estado + "' where id_rol = " + id_rol + ";");
         }
 
+        public int rolExistente(String nombreRol)
+        {
+            SqlDataReader columna = this.GD1C2016.ejecutarSentenciaConRetorno("select 1 from GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol where desc_rol = '" + nombreRol + "'");
+            if(columna.HasRows)
+            {
+                columna.Close();
+                return 1;
+            }
+            columna.Close();
+            return 0;
+        }
+
 
 
     }

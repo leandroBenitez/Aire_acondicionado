@@ -32,6 +32,7 @@
             this.nombreRol = new System.Windows.Forms.Label();
             this.comboNombresRoles = new System.Windows.Forms.ComboBox();
             this.botonBaja = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -71,11 +72,22 @@
             this.botonBaja.UseVisualStyleBackColor = true;
             this.botonBaja.Click += new System.EventHandler(this.botonBaja_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(23, 105);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 20);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Volver";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // bajaRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 143);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.botonBaja);
             this.Controls.Add(this.comboNombresRoles);
             this.Controls.Add(this.nombreRol);
@@ -93,5 +105,6 @@
         private System.Windows.Forms.Label nombreRol;
         private System.Windows.Forms.ComboBox comboNombresRoles;
         private System.Windows.Forms.Button botonBaja;
+        private System.Windows.Forms.Button button1;
     }
 }

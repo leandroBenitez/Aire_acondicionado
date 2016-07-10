@@ -99,29 +99,29 @@
     <Compile Include="ABM Empresa\modificacionEmpresa.Designer.cs">
       <DependentUpon>modificacionEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Rol\AltaRol.cs">
+    <Compile Include="ABM Rol\altaRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Rol\AltaRol.Designer.cs">
-      <DependentUpon>AltaRol.cs</DependentUpon>
+    <Compile Include="ABM Rol\altaRol.Designer.cs">
+      <DependentUpon>altaRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Rol\BajaRol.cs">
+    <Compile Include="ABM Rol\bajaRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Rol\BajaRol.Designer.cs">
-      <DependentUpon>BajaRol.cs</DependentUpon>
+    <Compile Include="ABM Rol\bajaRol.Designer.cs">
+      <DependentUpon>bajaRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Rol\ModificacionRol.cs">
+    <Compile Include="ABM Rol\modificacionRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Rol\ModificacionRol.Designer.cs">
-      <DependentUpon>ModificacionRol.cs</DependentUpon>
+    <Compile Include="ABM Rol\modificacionRol.Designer.cs">
+      <DependentUpon>modificacionRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Rol\Rol.cs">
+    <Compile Include="ABM Rol\subMenuRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Rol\Rol.Designer.cs">
-      <DependentUpon>Rol.cs</DependentUpon>
+    <Compile Include="ABM Rol\subMenuRol.Designer.cs">
+      <DependentUpon>subMenuRol.cs</DependentUpon>
     </Compile>
     <Compile Include="ABM Usuario\subMenuUsuario.cs">
       <SubType>Form</SubType>
@@ -356,14 +356,17 @@
     <EmbeddedResource Include="ABM Empresa\modificacionEmpresa.resx">
       <DependentUpon>modificacionEmpresa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Rol\AltaRol.resx">
-      <DependentUpon>AltaRol.cs</DependentUpon>
+    <EmbeddedResource Include="ABM Rol\altaRol.resx">
+      <DependentUpon>altaRol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Rol\BajaRol.resx">
-      <DependentUpon>BajaRol.cs</DependentUpon>
+    <EmbeddedResource Include="ABM Rol\bajaRol.resx">
+      <DependentUpon>bajaRol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Rol\ModificacionRol.resx">
-      <DependentUpon>ModificacionRol.cs</DependentUpon>
+    <EmbeddedResource Include="ABM Rol\modificacionRol.resx">
+      <DependentUpon>modificacionRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Rol\subMenuRol.resx">
+      <DependentUpon>subMenuRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABM Usuario\subMenuUsuario.resx">
       <DependentUpon>subMenuUsuario.cs</DependentUpon>

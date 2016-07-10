@@ -22,7 +22,7 @@ namespace MercadoEnvios.ABM_Rol
             leerArchivoConfig();
             abm_rol = new ABM_Rol_DAO();
             InitializeComponent();
-            //cargar_funciones();
+            cargar_funciones();
         }
 
         /* CARGO EL CHEKEDLSITBOX CON TODAS LAS FUNCIONALIDADES QUE PUEDE TENER EL ROL*/
@@ -47,27 +47,34 @@ namespace MercadoEnvios.ABM_Rol
         /* CARGO LAS TABLAS CUANDO ACEPTO*/
         private void aceptar_Click(object sender, EventArgs e)
         {
-            /* VERIFICO QUE TODOS LOS CAMPOS ESTÉN CARGADOS CORRECTAMENTE (falta) */
+            /* VERIFICO QUE TODOS LOS CAMPOS ESTÉN CARGADOS CORRECTAMENTE */
             if (textNombre.Text != "")
             {
-                abm_rol = new ABM_Rol_DAO();
-                
-                /* SETEO TABLA ROL Y OBTENGO EL NÚMERO DE RUBRO*/
-                int id_nuevo_rol = abm_rol.setearRol(textNombre.Text);
-                // Determine if there are any items checked.
-                if (checkedListBox1.CheckedItems.Count != 0)
+                if (abm_rol.rolExistente(textNombre.Text) == 0)
                 {
-                    int i = 0;
-                    // If so, loop through all checked items and add to table
-                    for (int x = 0; x <= checkedListBox1.Items.Count - 1; x++)
+                    abm_rol = new ABM_Rol_DAO();
+
+                    /* SETEO TABLA ROL Y OBTENGO EL NÚMERO DE RUBRO*/
+                    int id_nuevo_rol = abm_rol.setearRol(textNombre.Text);
+                    // Determine if there are any items checked.
+                    if (checkedListBox1.CheckedItems.Count != 0)
                     {
-                        if (checkedListBox1.GetItemChecked(x) == true)
+                        int i = 0;
+                        // If so, loop through all checked items and add to table
+                        for (int x = 0; x <= checkedListBox1.Items.Count - 1; x++)
                         {
-                            abm_rol.setearFuncionalidades(checkedListBox1.CheckedItems[i].ToString(), x+1, id_nuevo_rol);
-                            i++;
+                            if (checkedListBox1.GetItemChecked(x) == true)
+                            {
+                                abm_rol.setearFuncionalidades(checkedListBox1.CheckedItems[i].ToString(), x + 1, id_nuevo_rol);
+                                i++;
+                            }
                         }
+                        this.Close();
                     }
-                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("El nombre de rol ingresado ya existe");
                 }
             }
             else
@@ -104,6 +111,11 @@ namespace MercadoEnvios.ABM_Rol
             {
                 MessageBox.Show(ex.Message, "Error al leer el archivo de configuracion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }
