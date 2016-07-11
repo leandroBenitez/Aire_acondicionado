@@ -86,6 +86,7 @@ namespace MercadoEnvio.ComprarOfertar
                     publicacion.subastar(float.Parse(nuevo_monto.Text), this.id_publicacion, this.id_usuario, envio);
                     MessageBox.Show("Su oferta se ha realizado con exito!");
                     this.Close();
+                    this.un_menu.Show();
                 }
                 else
                 {

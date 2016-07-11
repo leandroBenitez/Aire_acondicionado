@@ -70,7 +70,7 @@
             this.presentacion.AutoSize = true;
             this.presentacion.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.presentacion.ForeColor = System.Drawing.Color.Maroon;
-            this.presentacion.Location = new System.Drawing.Point(79, 19);
+            this.presentacion.Location = new System.Drawing.Point(63, 18);
             this.presentacion.Name = "presentacion";
             this.presentacion.Size = new System.Drawing.Size(90, 23);
             this.presentacion.TabIndex = 8;
@@ -81,7 +81,7 @@
             this.labelUsuario.AutoSize = true;
             this.labelUsuario.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsuario.ForeColor = System.Drawing.Color.Maroon;
-            this.labelUsuario.Location = new System.Drawing.Point(164, 19);
+            this.labelUsuario.Location = new System.Drawing.Point(148, 18);
             this.labelUsuario.Name = "labelUsuario";
             this.labelUsuario.Size = new System.Drawing.Size(23, 23);
             this.labelUsuario.TabIndex = 9;

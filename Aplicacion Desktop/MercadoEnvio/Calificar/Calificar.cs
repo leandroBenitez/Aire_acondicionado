@@ -18,6 +18,8 @@ namespace MercadoEnvio.Calificaciones
     public partial class Calificar : Form
     {
         private Calificar_DAO calificarDAO;
+        private ABM_usuario_DAO usuarioDAO;
+
         int pubCalif, vendedorCalif, compradorCalif; 
         private Menu unMenu;
 
@@ -25,9 +27,10 @@ namespace MercadoEnvio.Calificaciones
         {
             leerArchivoConfig();
             calificarDAO = new Calificar_DAO();
+            usuarioDAO = new ABM_usuario_DAO();
             InitializeComponent();
-            
-            labelUsuario.Text = vendedor.ToString();
+
+            labelUsuario.Text = usuarioDAO.getUsername(vendedor.ToString());
             pubCalif = publicacion;
             vendedorCalif = vendedor;
             compradorCalif = comprador;
