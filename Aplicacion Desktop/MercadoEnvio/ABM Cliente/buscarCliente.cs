@@ -98,44 +98,50 @@ namespace MercadoEnvio.ABM_Usuario
             textDni.Text = "";
             textEmail.Text = "";
             textDni.Text = "";
-            //ComboBoxTipoDoc  -- Limpiar combo box
+            ComboBoxTipoDoc.Text = "";
         }
   
         private void buttonMod_Click(object sender, EventArgs e)
         {
-            // FALTARIA UN TRY CATCH PARA QUE CUANDO NO SE SELECCIONA NADA NO EXPLOTE TODO  LA CHOTA
-            Cliente clienteMod = new Cliente();
+            try
+            {
+                Cliente clienteMod = new Cliente();
 
-            DataGridViewRow fila = listado.SelectedRows[0];
+                DataGridViewRow fila = listado.SelectedRows[0];
 
-            clienteMod.setApellido(fila.Cells["APELLIDO"].Value.ToString());
-            clienteMod.setNombre(fila.Cells["NOMBRE"].Value.ToString());
-            clienteMod.setFecha_nacimiento(fila.Cells["FEC_NAC"].Value.ToString());
-            clienteMod.setDni(fila.Cells["DNI"].Value.ToString());
-            clienteMod.setMail(fila.Cells["EMAIL"].Value.ToString());
-            clienteMod.setDireccion(fila.Cells["DOMICILIO"].Value.ToString());
-            clienteMod.setNroCalle(fila.Cells["NRO_CALLE"].Value.ToString());
-            clienteMod.setPiso(fila.Cells["PISO"].Value.ToString());
-            clienteMod.setDepto(fila.Cells["DPTO"].Value.ToString());
-            clienteMod.setCodigo_postal(fila.Cells["COD_POSTAL"].Value.ToString());
-            clienteMod.setLocalidad(fila.Cells["LOCALIDAD"].Value.ToString());
-            clienteMod.setTelefono(fila.Cells["TELEFONO"].Value.ToString());
-            clienteMod.setTipoDoc(fila.Cells["TIPO_DOC"].Value.ToString());
-            clienteMod.setUsername(fila.Cells["USUARIO"].Value.ToString());
-            clienteMod.setFechaCreacion(fila.Cells["FECHA_CREACION"].Value.ToString());
+                clienteMod.setApellido(fila.Cells["APELLIDO"].Value.ToString());
+                clienteMod.setNombre(fila.Cells["NOMBRE"].Value.ToString());
+                clienteMod.setFecha_nacimiento(fila.Cells["FEC_NAC"].Value.ToString());
+                clienteMod.setDni(fila.Cells["DNI"].Value.ToString());
+                clienteMod.setMail(fila.Cells["EMAIL"].Value.ToString());
+                clienteMod.setDireccion(fila.Cells["DOMICILIO"].Value.ToString());
+                clienteMod.setNroCalle(fila.Cells["NRO_CALLE"].Value.ToString());
+                clienteMod.setPiso(fila.Cells["PISO"].Value.ToString());
+                clienteMod.setDepto(fila.Cells["DPTO"].Value.ToString());
+                clienteMod.setCodigo_postal(fila.Cells["COD_POSTAL"].Value.ToString());
+                clienteMod.setLocalidad(fila.Cells["LOCALIDAD"].Value.ToString());
+                clienteMod.setTelefono(fila.Cells["TELEFONO"].Value.ToString());
+                clienteMod.setTipoDoc(fila.Cells["TIPO_DOC"].Value.ToString());
+                clienteMod.setUsername(fila.Cells["USUARIO"].Value.ToString());
+                clienteMod.setFechaCreacion(fila.Cells["FECHA_CREACION"].Value.ToString());
 
-            String username = abm_usuario.getUsername(fila.Cells["USUARIO"].Value.ToString());
+                String username = abm_usuario.getUsername(fila.Cells["USUARIO"].Value.ToString());
 
-           //clienteMod.setRol(fila.Cells["ROL"].Value.ToString());
-            //String id_rol = ;
-            //clienteMod.setRol(abm_usuario.getDescRol(id_rol));
+                //clienteMod.setRol(fila.Cells["ROL"].Value.ToString());
+                //String id_rol = ;
+                //clienteMod.setRol(abm_usuario.getDescRol(id_rol));
 
 
-            modificacionCliente modificarCliente = new modificacionCliente(clienteMod);
+                modificacionCliente modificarCliente = new modificacionCliente(clienteMod);
 
-            modificarCliente.Show();
+                modificarCliente.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Debe seleccionar un registro");
+            }
         }
-
+   
         private void B_Volver_Click(object sender, EventArgs e)
         {
             this.Close();

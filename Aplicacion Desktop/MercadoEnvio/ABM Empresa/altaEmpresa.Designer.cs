@@ -243,6 +243,7 @@
             // 
             this.textFechaSist.Location = new System.Drawing.Point(116, 279);
             this.textFechaSist.Name = "textFechaSist";
+            this.textFechaSist.ReadOnly = true;
             this.textFechaSist.Size = new System.Drawing.Size(95, 20);
             this.textFechaSist.TabIndex = 136;
             // 

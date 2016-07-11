@@ -165,7 +165,7 @@
     <Compile Include="ABM Visibilidad\ModificacionVisibilidad.designer.cs">
       <DependentUpon>ModificacionVisibilidad.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM_Factura_DAO.cs" />
+    <Compile Include="DataBase\ABM_Factura_DAO.cs" />
     <Compile Include="Calificar\Calificar.cs">
       <SubType>Form</SubType>
     </Compile>

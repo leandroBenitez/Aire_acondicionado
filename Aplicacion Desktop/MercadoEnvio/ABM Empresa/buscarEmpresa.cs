@@ -32,35 +32,41 @@ namespace MercadoEnvio.ABM_Empresa
 
         private void buttonMod_Click(object sender, EventArgs e)
         {
-            // FALTARIA UN TRY CATCH PARA QUE CUANDO NO SE SELECCIONA NADA NO EXPLOTE TODO  LA CHOTA
-            Empresa empresaMod = new Empresa();
+            try
+            {
+                Empresa empresaMod = new Empresa();
 
-            DataGridViewRow fila = listado.SelectedRows[0];
+                DataGridViewRow fila = listado.SelectedRows[0];
 
-            empresaMod.setIdUsername(fila.Cells["USUARIO"].Value.ToString());
-            empresaMod.setRazSoc(fila.Cells["RAZON_SOCIAL"].Value.ToString());
-            empresaMod.setMail(fila.Cells["EMAIL"].Value.ToString());
-            //empresaMod.setTelefono(fila.Cells["TELEFONO"].Value.ToString());
-            empresaMod.setFechaCreacion(fila.Cells["FEC_CREACION"].Value.ToString());
-            empresaMod.setMail(fila.Cells["EMAIL"].Value.ToString());
-            empresaMod.setDomCalle(fila.Cells["DOMICILIO"].Value.ToString());
-            empresaMod.setNroCalle(fila.Cells["NRO_CALLE"].Value.ToString());
-            empresaMod.setPiso(fila.Cells["PISO"].Value.ToString());
-            empresaMod.setDepto(fila.Cells["DPTO"].Value.ToString());
-            //empresaMod.setLocalidad(fila.Cells["LOCALIDAD"].Value.ToString());
-            empresaMod.setCodPos(fila.Cells["COD_POSTAL"].Value.ToString());
-            empresaMod.setTelefono(fila.Cells["TELEFONO"].Value.ToString());
-            empresaMod.setRubro(fila.Cells["RUBRO"].Value.ToString());
-            empresaMod.setCiudad(fila.Cells["CIUDAD"].Value.ToString());
-            empresaMod.setLocalidad(fila.Cells["LOCALIDAD"].Value.ToString());
-            empresaMod.setNombreContacto(fila.Cells["NOMBRE_CONTACTO"].Value.ToString());
-            empresaMod.setCuit(fila.Cells["CUIT"].Value.ToString());
-            empresaMod.setFechaCreacion(fila.Cells["FEC_CREACION"].Value.ToString());
+                empresaMod.setIdUsername(fila.Cells["USUARIO"].Value.ToString());
+                empresaMod.setRazSoc(fila.Cells["RAZON_SOCIAL"].Value.ToString());
+                empresaMod.setMail(fila.Cells["EMAIL"].Value.ToString());
+                //empresaMod.setTelefono(fila.Cells["TELEFONO"].Value.ToString());
+                empresaMod.setFechaCreacion(fila.Cells["FEC_CREACION"].Value.ToString());
+                empresaMod.setMail(fila.Cells["EMAIL"].Value.ToString());
+                empresaMod.setDomCalle(fila.Cells["DOMICILIO"].Value.ToString());
+                empresaMod.setNroCalle(fila.Cells["NRO_CALLE"].Value.ToString());
+                empresaMod.setPiso(fila.Cells["PISO"].Value.ToString());
+                empresaMod.setDepto(fila.Cells["DPTO"].Value.ToString());
+                //empresaMod.setLocalidad(fila.Cells["LOCALIDAD"].Value.ToString());
+                empresaMod.setCodPos(fila.Cells["COD_POSTAL"].Value.ToString());
+                empresaMod.setTelefono(fila.Cells["TELEFONO"].Value.ToString());
+                empresaMod.setRubro(fila.Cells["RUBRO"].Value.ToString());
+                empresaMod.setCiudad(fila.Cells["CIUDAD"].Value.ToString());
+                empresaMod.setLocalidad(fila.Cells["LOCALIDAD"].Value.ToString());
+                empresaMod.setNombreContacto(fila.Cells["NOMBRE_CONTACTO"].Value.ToString());
+                empresaMod.setCuit(fila.Cells["CUIT"].Value.ToString());
+                empresaMod.setFechaCreacion(fila.Cells["FEC_CREACION"].Value.ToString());
 
-            //String username = abm_usuario.getUsername(fila.Cells["USUARIO"].Value.ToString());
-            modificacionEmpresa modificarEmpresa = new modificacionEmpresa(empresaMod);
+                //String username = abm_usuario.getUsername(fila.Cells["USUARIO"].Value.ToString());
+                modificacionEmpresa modificarEmpresa = new modificacionEmpresa(empresaMod);
 
-            modificarEmpresa.Show();
+                modificarEmpresa.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Debe seleccionar un registro");
+            }
         }
 
         private void B_Buscar_Click(object sender, EventArgs e)

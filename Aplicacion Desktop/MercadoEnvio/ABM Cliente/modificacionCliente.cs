@@ -53,7 +53,11 @@ namespace MercadoEnvio.ABM_Cliente
             textDepto.Text = clienteMod.getDepto();
             textLocalidad.Text = clienteMod.getLocalidad();
             textTelefono.Text = clienteMod.getTelefono();
-            textCalendar.Text = clienteMod.getFecha_nacimiento();
+            /* FECHA DE NACIMIENTO DESDE CALENDAR/DATEPICKER */
+            fechaNacimiento.Format = DateTimePickerFormat.Custom;
+            fechaNacimiento.CustomFormat = "dd/mm/yy";
+            fechaNacimiento.Text = clienteMod.getFecha_nacimiento();
+            /* ----------------------------------------*/
             textCP.Text = clienteMod.getCodigo_postal();
             textFecCreacion.Text = clienteMod.getFechaCreacion();
             if (abm_usuario.getEstadoUsuario(clienteMod.getUsername()) == "1")
@@ -70,7 +74,7 @@ namespace MercadoEnvio.ABM_Cliente
         private void buttonMod_Click(object sender, EventArgs e)
         {   
             String mail = textMail.Text + "@" + comboDominio.SelectedItem.ToString();
-            abm_usuario.actualizarCliente(textUsername.Text, textNombre.Text, textApellido.Text, textDni.Text, comboTipoDoc.Text, mail, textTelefono.Text, textDireccion.Text, textAltura.Text, textPiso.Text, textDepto.Text, textLocalidad.Text, textCP.Text, "10/10/10", "10/10/10");
+            abm_usuario.actualizarCliente(textUsername.Text, textNombre.Text, textApellido.Text, textDni.Text, comboTipoDoc.Text, mail, textTelefono.Text, textDireccion.Text, textAltura.Text, textPiso.Text, textDepto.Text, textLocalidad.Text, textCP.Text, fechaNacimiento.Text, "" );
             this.Close();
         }
 

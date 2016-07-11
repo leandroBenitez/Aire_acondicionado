@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.label19 = new System.Windows.Forms.Label();
-            this.textCalendar = new System.Windows.Forms.TextBox();
-            this.buttonCalendarNac = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.textTelefono = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -67,9 +65,9 @@
             this.textFecCreacion = new System.Windows.Forms.TextBox();
             this.buttonVolver = new System.Windows.Forms.Button();
             this.buttonDeshabilitar = new System.Windows.Forms.Button();
-            this.buttonCalendarCre = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.textEstado = new System.Windows.Forms.TextBox();
+            this.fechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label19
@@ -80,22 +78,6 @@
             this.label19.Size = new System.Drawing.Size(87, 13);
             this.label19.TabIndex = 112;
             this.label19.Text = "Datos del Cliente";
-            // 
-            // textCalendar
-            // 
-            this.textCalendar.Location = new System.Drawing.Point(103, 293);
-            this.textCalendar.Name = "textCalendar";
-            this.textCalendar.Size = new System.Drawing.Size(100, 20);
-            this.textCalendar.TabIndex = 108;
-            // 
-            // buttonCalendarNac
-            // 
-            this.buttonCalendarNac.Location = new System.Drawing.Point(212, 293);
-            this.buttonCalendarNac.Name = "buttonCalendarNac";
-            this.buttonCalendarNac.Size = new System.Drawing.Size(75, 23);
-            this.buttonCalendarNac.TabIndex = 107;
-            this.buttonCalendarNac.Text = "Calendario";
-            this.buttonCalendarNac.UseVisualStyleBackColor = true;
             // 
             // label17
             // 
@@ -336,7 +318,7 @@
             // 
             // buttonMod
             // 
-            this.buttonMod.Location = new System.Drawing.Point(253, 395);
+            this.buttonMod.Location = new System.Drawing.Point(253, 370);
             this.buttonMod.Name = "buttonMod";
             this.buttonMod.Size = new System.Drawing.Size(75, 23);
             this.buttonMod.TabIndex = 115;
@@ -374,12 +356,13 @@
             // 
             this.textFecCreacion.Location = new System.Drawing.Point(103, 319);
             this.textFecCreacion.Name = "textFecCreacion";
+            this.textFecCreacion.ReadOnly = true;
             this.textFecCreacion.Size = new System.Drawing.Size(100, 20);
             this.textFecCreacion.TabIndex = 119;
             // 
             // buttonVolver
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(15, 395);
+            this.buttonVolver.Location = new System.Drawing.Point(15, 370);
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Size = new System.Drawing.Size(75, 23);
             this.buttonVolver.TabIndex = 120;
@@ -389,7 +372,7 @@
             // 
             // buttonDeshabilitar
             // 
-            this.buttonDeshabilitar.Location = new System.Drawing.Point(103, 395);
+            this.buttonDeshabilitar.Location = new System.Drawing.Point(103, 370);
             this.buttonDeshabilitar.Name = "buttonDeshabilitar";
             this.buttonDeshabilitar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.buttonDeshabilitar.Size = new System.Drawing.Size(135, 22);
@@ -397,15 +380,6 @@
             this.buttonDeshabilitar.Text = "Deshabilitar/Habilitar";
             this.buttonDeshabilitar.UseVisualStyleBackColor = true;
             this.buttonDeshabilitar.Click += new System.EventHandler(this.buttonDeshabilitar_Click);
-            // 
-            // buttonCalendarCre
-            // 
-            this.buttonCalendarCre.Location = new System.Drawing.Point(212, 319);
-            this.buttonCalendarCre.Name = "buttonCalendarCre";
-            this.buttonCalendarCre.Size = new System.Drawing.Size(75, 23);
-            this.buttonCalendarCre.TabIndex = 122;
-            this.buttonCalendarCre.Text = "Calendario";
-            this.buttonCalendarCre.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
@@ -424,14 +398,21 @@
             this.textEstado.Size = new System.Drawing.Size(100, 20);
             this.textEstado.TabIndex = 124;
             // 
+            // fechaNacimiento
+            // 
+            this.fechaNacimiento.Location = new System.Drawing.Point(103, 296);
+            this.fechaNacimiento.Name = "fechaNacimiento";
+            this.fechaNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.fechaNacimiento.TabIndex = 125;
+            // 
             // modificacionCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 430);
+            this.ClientSize = new System.Drawing.Size(342, 397);
+            this.Controls.Add(this.fechaNacimiento);
             this.Controls.Add(this.textEstado);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.buttonCalendarCre);
             this.Controls.Add(this.buttonDeshabilitar);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.textFecCreacion);
@@ -441,8 +422,6 @@
             this.Controls.Add(this.buttonMod);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.textCalendar);
-            this.Controls.Add(this.buttonCalendarNac);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.textTelefono);
             this.Controls.Add(this.label16);
@@ -482,8 +461,6 @@
         #endregion
 
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textCalendar;
-        private System.Windows.Forms.Button buttonCalendarNac;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textTelefono;
         private System.Windows.Forms.Label label16;
@@ -520,8 +497,8 @@
         private System.Windows.Forms.TextBox textFecCreacion;
         private System.Windows.Forms.Button buttonVolver;
         private System.Windows.Forms.Button buttonDeshabilitar;
-        private System.Windows.Forms.Button buttonCalendarCre;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textEstado;
+        private System.Windows.Forms.DateTimePicker fechaNacimiento;
     }
 }

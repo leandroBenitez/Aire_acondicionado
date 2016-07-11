@@ -279,6 +279,7 @@
             // 
             this.textFechaCreacion.Location = new System.Drawing.Point(112, 308);
             this.textFechaCreacion.Name = "textFechaCreacion";
+            this.textFechaCreacion.ReadOnly = true;
             this.textFechaCreacion.Size = new System.Drawing.Size(208, 20);
             this.textFechaCreacion.TabIndex = 136;
             // 

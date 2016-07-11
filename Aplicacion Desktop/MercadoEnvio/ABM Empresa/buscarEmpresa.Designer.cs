@@ -285,7 +285,7 @@
             this.B_Limpiar.Name = "B_Limpiar";
             this.B_Limpiar.Size = new System.Drawing.Size(90, 25);
             this.B_Limpiar.TabIndex = 5;
-            this.B_Limpiar.Text = "Limpiar";
+            this.B_Limpiar.Text = "Limpiar Filtros";
             this.B_Limpiar.UseVisualStyleBackColor = true;
             this.B_Limpiar.Click += new System.EventHandler(this.B_Limpiar_Click);
             // 

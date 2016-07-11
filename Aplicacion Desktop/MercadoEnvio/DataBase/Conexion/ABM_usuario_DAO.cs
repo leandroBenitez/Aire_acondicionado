@@ -233,7 +233,6 @@ namespace MercadoEnvio.DataBase.Conexion
 	                                                                                                  +"',desc_Localidad = '" + localidad
 	                                                                                                +"',desc_Cod_Postal = '" + codPos
                                                                                     +"',desc_Fecha_Nac = Convert(datetime, '" + fechaNac + "')"
-                                                                                +",desc_Fecha_Creacion = Convert(datetime, '" + fechaCreacion + "')"
                                                                                                      + "where id_usuario = '" + idCliente + "'");
             MessageBox.Show("El cliente ha sido modificado Satisfactoriamente");
         }
