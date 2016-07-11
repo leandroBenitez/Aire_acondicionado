@@ -19,7 +19,6 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public List<string> get_idVisibilidad()
         {
-            MessageBox.Show("SELECT id_visibilidad FROM " + ConstantesBD.tabla_visibilidad);
             SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT id_visibilidad FROM " + ConstantesBD.tabla_visibilidad );
 
             List<string> resultado = new List<string>();
@@ -33,24 +32,18 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public SqlDataReader getListVendMayorCantProdNoVend(string condicion)/*5 vendedores con mayor cantidad de productos no vendidos (1) */
         {
-            MessageBox.Show("SELECT TOP 5 id_usuario, fecha_publicacion, COUNT(id_publicacion) CantPublicaciones FROM GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones WHERE desc_estado = 'Publicada' "
-                + condicion + " GROUP BY id_usuario, fecha_publicacion ORDER BY fecha_publicacion ");
-
            SqlDataReader resultado;
-           resultado = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 id_usuario, fecha_publicacion, COUNT(id_publicacion) CantPublicaciones FROM GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones WHERE desc_estado = 'Publicada' "
-                                                                    + condicion + ") GROUP BY id_usuario, fecha_publicacion ORDER BY fecha_publicacion ");
+           resultado = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 id_usuario, fecha_publicacion, COUNT(id_publicacion) Cantidad FROM GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones WHERE desc_estado = 'Activo' "
+                                                                    + condicion + " GROUP BY id_usuario, fecha_publicacion ORDER BY fecha_publicacion ");
 
            return resultado;
         }
 
         public SqlDataReader getListClientesMayorCantProdComp(string condicion)
         {
-            MessageBox.Show("SELECT TOP 5 C.id_usuario, C.desc_fecha, C.desc_cantidad, R.desc_rubro FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra C INNER JOIN GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion P ON C.id_publicacion = P.id_publicacion INNER JOIN GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro R ON P.id_rubro = R.id_rubro " 
-                                                                   + condicion + ") ORDER BY MONTH(C.desc_fecha),YEAR(C.desc_fecha) ");
-
             SqlDataReader resultado;
-            resultado = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 C.id_usuario, C.desc_fecha, C.desc_cantidad, R.desc_rubro FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra C INNER JOIN GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion P ON C.id_publicacion = P.id_publicacion INNER JOIN GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro R ON P.id_rubro = R.id_rubro " 
-                                                                   + condicion + ") ORDER BY MONTH(C.desc_fecha),YEAR(C.desc_fecha) ");
+            resultado = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 C.id_usuario, C.desc_fecha, C.desc_cantidad as Cantidad, R.desc_rubro as desc_rubro FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_compra C INNER JOIN GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion P ON C.id_publicacion = P.id_publicacion INNER JOIN GESTORES_DEL_AIRE_ACONDICIONADO.dm_rubro R ON P.id_rubro = R.id_rubro WHERE " 
+                                                                   + condicion + " ORDER BY MONTH(C.desc_fecha),YEAR(C.desc_fecha) ");
             return resultado;
         }
 
@@ -58,13 +51,10 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public SqlDataReader getListVendMayorCantFacturas(string condicion)
         {
-            MessageBox.Show("SELECT TOP 5 id_usuario, desc_fecha, COUNT(desc_total) Facturas FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura "
-                             + condicion + ") GROUP BY id_usuario, desc_fecha ORDER BY MONTH(desc_fecha), YEAR(desc_fecha) ");
-
             SqlDataReader resultado;
 
-            resultado = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 id_usuario, desc_fecha, COUNT(desc_total) Cantidad FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura " 
-                                                                    + condicion + ") GROUP BY id_usuario, desc_fecha ORDER BY MONTH(desc_fecha), YEAR(desc_fecha) ");
+            resultado = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 id_usuario, desc_fecha, COUNT(desc_total) Cantidad FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura WHERE " 
+                                                                    + condicion + " GROUP BY id_usuario, desc_fecha ORDER BY MONTH(desc_fecha), YEAR(desc_fecha) ");
 
             return resultado;
         }
@@ -74,8 +64,8 @@ namespace MercadoEnvio.DataBase.Conexion
         {
             SqlDataReader resultado;
 
-            resultado = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 id_usuario, desc_fecha, SUM(desc_total) Cantidad FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura "
-                                                                    + condicion + ") GROUP BY id_usuario, desc_fecha ORDER BY MONTH(desc_fecha), YEAR(desc_fecha) ");
+            resultado = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 id_usuario, desc_fecha, SUM(desc_total) Cantidad FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura WHERE "
+                                                                    + condicion + " GROUP BY id_usuario, desc_fecha ORDER BY MONTH(desc_fecha), YEAR(desc_fecha) ");
 
             return resultado;
         }

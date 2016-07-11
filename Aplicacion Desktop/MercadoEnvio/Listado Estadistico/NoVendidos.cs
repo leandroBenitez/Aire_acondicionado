@@ -83,8 +83,8 @@ namespace MercadoEnvio.Listado_Estadistico
                 i++;
                 columnas[0] = i.ToString();
                 columnas[1] = lectorNV["id_usuario"].ToString();
-                columnas[2] = lectorNV["desc_fecha_publi"].ToString();
-                columnas[3] = lectorNV["cantPublicaciones"].ToString();
+                columnas[2] = lectorNV["fecha_publicacion"].ToString();
+                columnas[3] = lectorNV["Cantidad"].ToString();
 
                 filas.Add(new DataGridViewRow());
                 filas[filas.Count - 1].CreateCells(dataGridViewNoVendidos, columnas);

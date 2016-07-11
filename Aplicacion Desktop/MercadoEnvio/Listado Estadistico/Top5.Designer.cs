@@ -36,13 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewTop5 = new System.Windows.Forms.DataGridView();
+            this.Col_nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_desc_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_MontoCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonSeleccionar = new System.Windows.Forms.Button();
             this.buttonVolver = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
-            this.Col_nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_MontoCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_rubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTop5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,12 +117,40 @@
             this.dataGridViewTop5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_nro,
             this.Col_usuario,
+            this.Col_desc_fecha,
             this.Col_MontoCant,
             this.Col_rubro});
             this.dataGridViewTop5.Location = new System.Drawing.Point(25, 108);
+            this.dataGridViewTop5.MultiSelect = false;
             this.dataGridViewTop5.Name = "dataGridViewTop5";
-            this.dataGridViewTop5.Size = new System.Drawing.Size(443, 176);
+            this.dataGridViewTop5.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridViewTop5.Size = new System.Drawing.Size(542, 166);
             this.dataGridViewTop5.TabIndex = 6;
+            // 
+            // Col_nro
+            // 
+            this.Col_nro.HeaderText = "Nº";
+            this.Col_nro.Name = "Col_nro";
+            // 
+            // Col_usuario
+            // 
+            this.Col_usuario.HeaderText = "Usuario";
+            this.Col_usuario.Name = "Col_usuario";
+            // 
+            // Col_desc_fecha
+            // 
+            this.Col_desc_fecha.HeaderText = "Fecha";
+            this.Col_desc_fecha.Name = "Col_desc_fecha";
+            // 
+            // Col_MontoCant
+            // 
+            this.Col_MontoCant.HeaderText = "Monto o Cantidad";
+            this.Col_MontoCant.Name = "Col_MontoCant";
+            // 
+            // Col_rubro
+            // 
+            this.Col_rubro.HeaderText = "Rubro";
+            this.Col_rubro.Name = "Col_rubro";
             // 
             // buttonSeleccionar
             // 
@@ -135,7 +164,8 @@
             // 
             // buttonVolver
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(218, 290);
+            this.buttonVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonVolver.Location = new System.Drawing.Point(492, 290);
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Size = new System.Drawing.Size(75, 23);
             this.buttonVolver.TabIndex = 8;
@@ -145,7 +175,7 @@
             // 
             // buttonLimpiar
             // 
-            this.buttonLimpiar.Location = new System.Drawing.Point(393, 290);
+            this.buttonLimpiar.Location = new System.Drawing.Point(266, 290);
             this.buttonLimpiar.Name = "buttonLimpiar";
             this.buttonLimpiar.Size = new System.Drawing.Size(75, 23);
             this.buttonLimpiar.TabIndex = 9;
@@ -153,31 +183,11 @@
             this.buttonLimpiar.UseVisualStyleBackColor = true;
             this.buttonLimpiar.Click += new System.EventHandler(this.buttonLimpiar_Click);
             // 
-            // Col_nro
-            // 
-            this.Col_nro.HeaderText = "Nº";
-            this.Col_nro.Name = "Col_nro";
-            // 
-            // Col_usuario
-            // 
-            this.Col_usuario.HeaderText = "Usuario";
-            this.Col_usuario.Name = "Col_usuario";
-            // 
-            // Col_MontoCant
-            // 
-            this.Col_MontoCant.HeaderText = "Monto o Cantidad";
-            this.Col_MontoCant.Name = "Col_MontoCant";
-            // 
-            // Col_rubro
-            // 
-            this.Col_rubro.HeaderText = "Rubro";
-            this.Col_rubro.Name = "Col_rubro";
-            // 
             // Top5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 325);
+            this.ClientSize = new System.Drawing.Size(611, 325);
             this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.buttonSeleccionar);
@@ -210,6 +220,7 @@
         private System.Windows.Forms.Button buttonLimpiar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_nro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_desc_fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_MontoCant;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_rubro;
     }

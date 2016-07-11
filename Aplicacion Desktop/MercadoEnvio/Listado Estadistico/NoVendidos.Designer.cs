@@ -34,15 +34,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewNoVendidos = new System.Windows.Forms.DataGridView();
+            this.Col_nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_desc_fecha_publi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_CantProf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonSeleccionar = new System.Windows.Forms.Button();
             this.buttonVolver = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxAñoNV = new System.Windows.Forms.TextBox();
-            this.Col_nro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_desc_fecha_publi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_CantProf = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNoVendidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,8 +104,28 @@
             this.Col_CantProf});
             this.dataGridViewNoVendidos.Location = new System.Drawing.Point(38, 147);
             this.dataGridViewNoVendidos.Name = "dataGridViewNoVendidos";
-            this.dataGridViewNoVendidos.Size = new System.Drawing.Size(443, 203);
+            this.dataGridViewNoVendidos.Size = new System.Drawing.Size(443, 180);
             this.dataGridViewNoVendidos.TabIndex = 4;
+            // 
+            // Col_nro
+            // 
+            this.Col_nro.HeaderText = "Nº";
+            this.Col_nro.Name = "Col_nro";
+            // 
+            // Col_Vendedor
+            // 
+            this.Col_Vendedor.HeaderText = "Vendedor";
+            this.Col_Vendedor.Name = "Col_Vendedor";
+            // 
+            // Col_desc_fecha_publi
+            // 
+            this.Col_desc_fecha_publi.HeaderText = "Fecha";
+            this.Col_desc_fecha_publi.Name = "Col_desc_fecha_publi";
+            // 
+            // Col_CantProf
+            // 
+            this.Col_CantProf.HeaderText = "Cantidad";
+            this.Col_CantProf.Name = "Col_CantProf";
             // 
             // buttonSeleccionar
             // 
@@ -153,26 +173,6 @@
             this.textBoxAñoNV.Name = "textBoxAñoNV";
             this.textBoxAñoNV.Size = new System.Drawing.Size(100, 20);
             this.textBoxAñoNV.TabIndex = 9;
-            // 
-            // Col_nro
-            // 
-            this.Col_nro.HeaderText = "Nº";
-            this.Col_nro.Name = "Col_nro";
-            // 
-            // Col_Vendedor
-            // 
-            this.Col_Vendedor.HeaderText = "Vendedor";
-            this.Col_Vendedor.Name = "Col_Vendedor";
-            // 
-            // Col_desc_fecha_publi
-            // 
-            this.Col_desc_fecha_publi.HeaderText = "Fecha";
-            this.Col_desc_fecha_publi.Name = "Col_desc_fecha_publi";
-            // 
-            // Col_CantProf
-            // 
-            this.Col_CantProf.HeaderText = "Cantidad";
-            this.Col_CantProf.Name = "Col_CantProf";
             // 
             // NoVendidos
             // 
