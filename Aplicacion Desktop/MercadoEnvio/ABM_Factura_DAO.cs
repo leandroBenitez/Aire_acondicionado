@@ -20,17 +20,13 @@ namespace MercadoEnvio.DataBase.Conexion
         /* BUSCO FACTURAS POR FILTROS INGRESADOS */
         public List<SqlDataReader> buscarFactura(List<String> filtros)
         {
-            MessageBox.Show("SELECT * FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura WHERE " + filtros[0] +
-                                                                                                                                         " and " + filtros[1] +
-                                                                                                                                         " and " + filtros[2] +
-                                                                                                                                         " and " + filtros[3] + ";");
             SqlDataReader facturas = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT * FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura WHERE " + filtros[0] +
                                                                                                                                          " and " + filtros[1] +
                                                                                                                                          " and " + filtros[2] +
                                                                                                                                          " and " + filtros[3] + ";");
             List<SqlDataReader> listaReturn = new List<SqlDataReader>();
             listaReturn.Add(facturas);
-            MessageBox.Show("salgo del buscador de facturas");
+            
 
             return listaReturn;
         }
@@ -38,9 +34,6 @@ namespace MercadoEnvio.DataBase.Conexion
         /* OBTENGO TODOS LOS ID DE USUARIO TIRANDOLE UN LIKE A LA DESCRIPCIÓN EN LA TABLA USUARIO - PROBAR */
         public List<String> getUsuarioPorLikeDesc(String likeDescUser)
         {
-            MessageBox.Show("entro al like por descripcion");
-            MessageBox.Show(likeDescUser);
-            MessageBox.Show("select id_usuario from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario where desc_username LIKE '% " + likeDescUser + "%'");
             SqlDataReader usuarios = this.GD1C2016.ejecutarSentenciaConRetorno("select id_usuario from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario where desc_username LIKE '%" +  likeDescUser + "%'");
             List<String> users = new List<String>();
 
@@ -50,7 +43,6 @@ namespace MercadoEnvio.DataBase.Conexion
             }
 
             usuarios.Close();
-            MessageBox.Show("salgo del like por descripcion");
 
             return users;
         }

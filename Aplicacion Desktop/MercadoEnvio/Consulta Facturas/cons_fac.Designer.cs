@@ -138,14 +138,14 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(804, 172);
+            this.groupBox1.Size = new System.Drawing.Size(804, 158);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de Búsqueda";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(323, 139);
+            this.button1.Location = new System.Drawing.Point(323, 128);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(83, 24);
             this.button1.TabIndex = 24;
@@ -155,9 +155,9 @@
             // 
             // buttonBuscar
             // 
-            this.buttonBuscar.Location = new System.Drawing.Point(710, 138);
+            this.buttonBuscar.Location = new System.Drawing.Point(710, 128);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(88, 25);
+            this.buttonBuscar.Size = new System.Drawing.Size(88, 24);
             this.buttonBuscar.TabIndex = 23;
             this.buttonBuscar.Text = "Buscar";
             this.buttonBuscar.UseVisualStyleBackColor = true;
@@ -198,7 +198,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(108, 109);
+            this.label8.Location = new System.Drawing.Point(133, 121);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(10, 13);
             this.label8.TabIndex = 18;
@@ -206,14 +206,14 @@
             // 
             // textImporte2
             // 
-            this.textImporte2.Location = new System.Drawing.Point(124, 106);
+            this.textImporte2.Location = new System.Drawing.Point(149, 118);
             this.textImporte2.Name = "textImporte2";
             this.textImporte2.Size = new System.Drawing.Size(96, 20);
             this.textImporte2.TabIndex = 17;
             // 
             // textImporte1
             // 
-            this.textImporte1.Location = new System.Drawing.Point(6, 106);
+            this.textImporte1.Location = new System.Drawing.Point(31, 118);
             this.textImporte1.Name = "textImporte1";
             this.textImporte1.Size = new System.Drawing.Size(96, 20);
             this.textImporte1.TabIndex = 16;
@@ -221,7 +221,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(59, 90);
+            this.label7.Location = new System.Drawing.Point(4, 102);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 13);
             this.label7.TabIndex = 15;
@@ -308,11 +308,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(82, 27);
+            this.label2.Location = new System.Drawing.Point(4, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 13);
+            this.label2.Size = new System.Drawing.Size(275, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Intervalo de fechas";
+            this.label2.Text = "Intervalo de fechas (Se cargan ambas fechas o ninguna)";
             // 
             // buttonVolver
             // 

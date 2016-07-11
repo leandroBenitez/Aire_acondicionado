@@ -352,3 +352,4 @@ J:\GDD\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Rol.subMenuRol.resources
 E:\Progs\C#\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.Historial_Cliente.HistorialCalificacionesRecibidas.resources
 C:\Users\Flia Benitez\Desktop\TP Frba MercadoEnvio - 1C 2016\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.ABM_Rol.subMenuRol.resources
+C:\Users\Jamper\Documents\GitHub\Aire_acondicionado\Aplicacion Desktop\MercadoEnvio\obj\Debug\MercadoEnvio.csprojResolveAssemblyReference.cache
