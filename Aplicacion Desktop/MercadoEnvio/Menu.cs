@@ -104,19 +104,32 @@ namespace MercadoEnvio
             this.Hide();
         }
 
-
         private void boton_comprar_Click(object sender, EventArgs e)
         {
-            Publicaciones_compra publi = new Publicaciones_compra(this);
-            publi.Show();
-            this.Hide();
+            if (this.loginDAO.calificaciones_pendientes(this.id_usuario) < 4)
+            {
+                Publicaciones_compra publi = new Publicaciones_compra(this);
+                publi.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Antes de comprar complete sus calificaciones pendientes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void boton_ofertar_Click(object sender, EventArgs e)
         {
-            Publicaciones_subasta publi = new Publicaciones_subasta(this);
-            publi.Show();
-            this.Hide();
+            if (this.loginDAO.calificaciones_pendientes(this.id_usuario) < 4)
+            {
+                Publicaciones_subasta publi = new Publicaciones_subasta(this);
+                publi.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Antes de subastar complete sus calificaciones pendientes.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void boton_calificar_Click(object sender, EventArgs e)
