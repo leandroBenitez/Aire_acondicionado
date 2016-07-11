@@ -146,8 +146,8 @@
             // 
             // boton_salir
             // 
-            this.boton_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.boton_salir.ForeColor = System.Drawing.Color.Red;
+            this.boton_salir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.boton_salir.ForeColor = System.Drawing.Color.Maroon;
             this.boton_salir.Location = new System.Drawing.Point(195, 317);
             this.boton_salir.Name = "boton_salir";
             this.boton_salir.Size = new System.Drawing.Size(133, 23);

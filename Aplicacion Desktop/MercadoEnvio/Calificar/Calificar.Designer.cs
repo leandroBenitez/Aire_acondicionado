@@ -35,12 +35,13 @@
             this.labelUsuario = new System.Windows.Forms.Label();
             this.label_descripcion = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button_volver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Calificacion_ComboBox
             // 
             this.Calificacion_ComboBox.FormattingEnabled = true;
-            this.Calificacion_ComboBox.Location = new System.Drawing.Point(114, 74);
+            this.Calificacion_ComboBox.Location = new System.Drawing.Point(125, 74);
             this.Calificacion_ComboBox.Name = "Calificacion_ComboBox";
             this.Calificacion_ComboBox.Size = new System.Drawing.Size(121, 21);
             this.Calificacion_ComboBox.TabIndex = 0;
@@ -48,7 +49,7 @@
             // Calificación
             // 
             this.Calificación.AutoSize = true;
-            this.Calificación.Location = new System.Drawing.Point(47, 77);
+            this.Calificación.Location = new System.Drawing.Point(34, 77);
             this.Calificación.Name = "Calificación";
             this.Calificación.Size = new System.Drawing.Size(61, 13);
             this.Calificación.TabIndex = 1;
@@ -56,7 +57,7 @@
             // 
             // AceptarButton
             // 
-            this.AceptarButton.Location = new System.Drawing.Point(160, 184);
+            this.AceptarButton.Location = new System.Drawing.Point(171, 184);
             this.AceptarButton.Name = "AceptarButton";
             this.AceptarButton.Size = new System.Drawing.Size(75, 23);
             this.AceptarButton.TabIndex = 2;
@@ -89,7 +90,7 @@
             // label_descripcion
             // 
             this.label_descripcion.AutoSize = true;
-            this.label_descripcion.Location = new System.Drawing.Point(47, 127);
+            this.label_descripcion.Location = new System.Drawing.Point(34, 127);
             this.label_descripcion.Name = "label_descripcion";
             this.label_descripcion.Size = new System.Drawing.Size(63, 13);
             this.label_descripcion.TabIndex = 10;
@@ -97,16 +98,29 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(114, 124);
+            this.textBox1.Location = new System.Drawing.Point(125, 124);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 11;
+            // 
+            // button_volver
+            // 
+            this.button_volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button_volver.ForeColor = System.Drawing.Color.Maroon;
+            this.button_volver.Location = new System.Drawing.Point(37, 184);
+            this.button_volver.Name = "button_volver";
+            this.button_volver.Size = new System.Drawing.Size(75, 23);
+            this.button_volver.TabIndex = 12;
+            this.button_volver.Text = "Volver";
+            this.button_volver.UseVisualStyleBackColor = true;
+            this.button_volver.Click += new System.EventHandler(this.button_volver_Click);
             // 
             // Calificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.button_volver);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label_descripcion);
             this.Controls.Add(this.labelUsuario);
@@ -130,6 +144,7 @@
         private System.Windows.Forms.Label labelUsuario;
         private System.Windows.Forms.Label label_descripcion;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button_volver;
 
     }
 }

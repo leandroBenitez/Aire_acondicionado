@@ -20,15 +20,13 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public List<string> getCompras(string comprador)
         {
-            SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT co.id_compra from " + ConstantesBD.tabla_compras + " AS co" +
-                                                                             " LEFT JOIN " + ConstantesBD.tabla_calificacion + " AS ca" +
-                                                                             " ON co.id_compra = ca.id_compra WHERE ca.id_compra IS NULL AND co.id_usuario = " +
-                                                                             comprador);
+            SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT ca.id_calificacion from " + ConstantesBD.tabla_calificacion + " ca" +
+                                                                             " WHERE ca.desc_cantidad_estrellas = 0 AND ca.id_usuario_comprador = " + comprador);
             List<string> resultado = new List<string>();
 
             while (lector.Read())
             {
-                resultado.Add(lector["id_compra"].ToString());
+                resultado.Add(lector["id_calificacion"].ToString());
             }
 
             lector.Close();
@@ -59,10 +57,8 @@ namespace MercadoEnvio.DataBase.Conexion
         public int getVendedor(int id_compra)
         {
             int id = 0;
-            SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT pu.id_usuario FROM " + ConstantesBD.tabla_publicaciones + " pu" +
-                                                                               " JOIN " + ConstantesBD.tabla_compras + " co" +
-                                                                               " ON co.id_compra = " + id_compra +
-                                                                               " AND co.id_publicacion = pu.id_publicacion");
+            SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT ca.id_usuario_vendedor FROM " + ConstantesBD.tabla_calificacion + " ca" +
+                                                                               " WHERE ca.id_calificacion = " + id_compra);
 
             if (num_rol.Read())
                 id = (int)num_rol[0];
@@ -71,16 +67,15 @@ namespace MercadoEnvio.DataBase.Conexion
             return id;
         }
 
-        public void calificarA(int pubCalif, int estrellas, int vendedorCalif, int compradorCalif, string descripcion)
+        public void calificarA(int pubCalif, int estrellas, string descripcion, int compradorCalif)
         {
-            this.GD1C2016.ejecutarSentenciaSinRetorno("INSERT INTO " + ConstantesBD.tabla_calificacion + " (desc_codigo, desc_cantidad_estrellas, id_usuario_vendedor, id_usuario_comprador, id_compra, descripcion) " +
-                                                      "Values ("
-                                                      + pubCalif + ", "
-                                                      + estrellas + ", "
-                                                      + vendedorCalif + ", "
-                                                      + compradorCalif + ", "
-                                                      + pubCalif + ", "
-                                                      + descripcion + ")");
+            this.GD1C2016.ejecutarSentenciaSinRetorno("UPDATE " + ConstantesBD.tabla_calificacion + " SET " +
+                                                      "desc_cantidad_estrellas = " 
+                                                      + estrellas + ", descripcion = '"
+                                                      + descripcion + "' "
+                                                      + "WHERE id_calificacion = " 
+                                                      + pubCalif + " AND id_usuario_comprador = "
+                                                      + compradorCalif);
         }
     }
 }

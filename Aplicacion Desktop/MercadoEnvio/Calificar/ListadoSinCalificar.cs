@@ -37,21 +37,28 @@ namespace MercadoEnvio.ListadoCalificaciones
 
             for (int i = 0; i < listadoCalificaciones.Count; i++)
             {
-                calificacionListado.Rows.Add(listadoCalificaciones[i].ToString()
-                                            ,calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i].ToString()))
+                calificacionListado.Rows.Add(listadoCalificaciones[i]
+                                            , calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i]))
                                             ,calificarDAO.getCalificacion(id_vendendor, listadoCalificaciones[i].ToString()));
             }
         }
 
         private void button_seleccionar_Click(object sender, EventArgs e)
         {
-            DataGridViewRow fila = calificacionListado.SelectedRows[0];
-            int publicacion = int.Parse(fila.Cells["Publicacion"].Value.ToString());
-            int vendedor = int.Parse(fila.Cells["Vendedor"].Value.ToString());
+            try
+            {
+                DataGridViewRow fila = calificacionListado.SelectedRows[0];
+                int publicacion = int.Parse(fila.Cells["Publicacion"].Value.ToString());
+                int vendedor = int.Parse(fila.Cells["Vendedor"].Value.ToString());
 
-            Calificar formCalificar = new Calificar(publicacion, vendedor, int.Parse(this.unMenu.id_usuario.ToString()), this.unMenu);
-            formCalificar.Show();
-            this.Close();
+                Calificar formCalificar = new Calificar(publicacion, vendedor, int.Parse(this.unMenu.id_usuario.ToString()), this.unMenu, this);
+                formCalificar.Show();
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione una fila");
+            }
 
         }
 

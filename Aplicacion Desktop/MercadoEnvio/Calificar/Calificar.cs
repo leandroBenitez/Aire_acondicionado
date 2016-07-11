@@ -11,6 +11,7 @@ using MercadoEnvio.DataBase.Conexion;
 using MercadoEnvio.DataBase.Entidades;
 using System.Data.SqlClient;
 using System.IO;
+using MercadoEnvio.ListadoCalificaciones;
 
 namespace MercadoEnvio.Calificaciones
 {
@@ -20,7 +21,7 @@ namespace MercadoEnvio.Calificaciones
         int pubCalif, vendedorCalif, compradorCalif; 
         private Menu unMenu;
 
-        public Calificar(int publicacion, int vendedor, int comprador, Menu menu)
+        public Calificar(int publicacion, int vendedor, int comprador, Menu menu, ListadoSinCalificar listado)
         {
             leerArchivoConfig();
             calificarDAO = new Calificar_DAO();
@@ -45,12 +46,12 @@ namespace MercadoEnvio.Calificaciones
 
         private void AceptarButton_Click(object sender, EventArgs e)
         {
-            string descripcion = label_descripcion.ToString();
+            string descripcion = label_descripcion.Text;
 
             try
             {
                 int estrellas = (int)Calificacion_ComboBox.SelectedItem;
-                calificarDAO.calificarA(pubCalif, estrellas, vendedorCalif, compradorCalif, descripcion);
+                calificarDAO.calificarA(pubCalif, estrellas, descripcion, compradorCalif);
                 MessageBox.Show("Calificación realizada");
                 this.Close();
                 this.unMenu.Show();
@@ -89,6 +90,12 @@ namespace MercadoEnvio.Calificaciones
             {
                 MessageBox.Show(ex.Message, "Error al leer el archivo de configuracion", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button_volver_Click(object sender, EventArgs e)
+        {
+            this.unMenu.Show();
+            this.Close();
         }
     }
 }

@@ -202,10 +202,10 @@
     <Compile Include="Consulta Facturas\cons_fac.Designer.cs">
       <DependentUpon>cons_fac.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\Conexion\Calificar_DAO.cs" />
     <Compile Include="DataBase\Conexion\ABM_Rol_DAO.cs" />
     <Compile Include="DataBase\Conexion\ABM_usuario_DAO.cs" />
     <Compile Include="DataBase\Conexion\ABM_Visibilidad_DAO.cs" />
-    <Compile Include="DataBase\Conexion\Calificar_DAO.cs" />
     <Compile Include="DataBase\Conexion\GDAA_DAO.cs" />
     <Compile Include="DataBase\Conexion\HistorialCompras_DAO.cs" />
     <Compile Include="DataBase\Conexion\HistorialEstrellas_DAO.cs" />
