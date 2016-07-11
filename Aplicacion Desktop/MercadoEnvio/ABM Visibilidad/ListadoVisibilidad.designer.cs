@@ -39,12 +39,13 @@
             this.textBoxEnvio = new System.Windows.Forms.TextBox();
             this.Limpiar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.presentacion = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxTipo
             // 
-            this.textBoxTipo.Location = new System.Drawing.Point(110, 32);
+            this.textBoxTipo.Location = new System.Drawing.Point(109, 32);
             this.textBoxTipo.Name = "textBoxTipo";
             this.textBoxTipo.Size = new System.Drawing.Size(100, 20);
             this.textBoxTipo.TabIndex = 0;
@@ -146,24 +147,37 @@
             this.groupBox1.Controls.Add(this.textBoxPrecio);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(11, 65);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(311, 254);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingreso de datos nuevos";
             // 
+            // presentacion
+            // 
+            this.presentacion.AutoSize = true;
+            this.presentacion.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presentacion.ForeColor = System.Drawing.Color.Maroon;
+            this.presentacion.Location = new System.Drawing.Point(90, 9);
+            this.presentacion.Name = "presentacion";
+            this.presentacion.Size = new System.Drawing.Size(143, 23);
+            this.presentacion.TabIndex = 10;
+            this.presentacion.Text = "Ingreso de datos";
+            // 
             // ListadoVisibilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(360, 278);
+            this.ClientSize = new System.Drawing.Size(339, 338);
+            this.Controls.Add(this.presentacion);
             this.Controls.Add(this.groupBox1);
             this.Name = "ListadoVisibilidad";
             this.Text = "ListadoVisibilidad";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -180,5 +194,6 @@
         private System.Windows.Forms.TextBox textBoxEnvio;
         private System.Windows.Forms.Button Limpiar;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label presentacion;
     }
 }
