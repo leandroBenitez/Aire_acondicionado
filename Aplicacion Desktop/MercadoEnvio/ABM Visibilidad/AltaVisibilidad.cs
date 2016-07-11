@@ -16,12 +16,14 @@ namespace MercadoEnvio.ABM_Visibilidad
     public partial class AltaVisibilidad : Form
     {
         private ABM_Visibilidad_DAO abm_visibilidad;
+        SubMenuVisibilidad unMenu;
 
-        public AltaVisibilidad()
+        public AltaVisibilidad(SubMenuVisibilidad menu)
         {
             leerArchivoConfig();
             abm_visibilidad = new ABM_Visibilidad_DAO();
             InitializeComponent();
+            unMenu = menu;
         }
 
 
@@ -37,6 +39,7 @@ namespace MercadoEnvio.ABM_Visibilidad
                 abm_visibilidad.setearVisibilidad(desc_tipo, desc_precio, desc_porcentaje, desc_porcentaje_envio);
 
                 MessageBox.Show("Visibilidad creada");
+                this.Close();
             }
         }
 
@@ -46,6 +49,12 @@ namespace MercadoEnvio.ABM_Visibilidad
             textPrecio.Text = "";
             textPorcentaje.Text = "";
             textEnvio.Text = "";
+        }
+
+        private void button_volver_Click(object sender, EventArgs e)
+        {
+            unMenu.Show();
+            this.Close();
         }
 
         private void leerArchivoConfig()

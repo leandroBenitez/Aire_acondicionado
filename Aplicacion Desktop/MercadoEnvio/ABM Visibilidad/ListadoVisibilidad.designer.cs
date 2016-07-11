@@ -40,6 +40,7 @@
             this.Limpiar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.presentacion = new System.Windows.Forms.Label();
+            this.button_volver = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,11 +166,24 @@
             this.presentacion.TabIndex = 10;
             this.presentacion.Text = "Ingreso de datos";
             // 
+            // button_volver
+            // 
+            this.button_volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button_volver.ForeColor = System.Drawing.Color.Maroon;
+            this.button_volver.Location = new System.Drawing.Point(31, 341);
+            this.button_volver.Name = "button_volver";
+            this.button_volver.Size = new System.Drawing.Size(75, 23);
+            this.button_volver.TabIndex = 22;
+            this.button_volver.Text = "Volver";
+            this.button_volver.UseVisualStyleBackColor = true;
+            this.button_volver.Click += new System.EventHandler(this.button_volver_Click);
+            // 
             // ListadoVisibilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 338);
+            this.ClientSize = new System.Drawing.Size(330, 376);
+            this.Controls.Add(this.button_volver);
             this.Controls.Add(this.presentacion);
             this.Controls.Add(this.groupBox1);
             this.Name = "ListadoVisibilidad";
@@ -195,5 +209,6 @@
         private System.Windows.Forms.Button Limpiar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label presentacion;
+        private System.Windows.Forms.Button button_volver;
     }
 }

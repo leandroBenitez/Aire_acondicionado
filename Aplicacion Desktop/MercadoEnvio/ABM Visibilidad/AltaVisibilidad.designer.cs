@@ -40,6 +40,7 @@
             this.Limpiar = new System.Windows.Forms.Button();
             this.Guardar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_volver = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(57, 9);
+            this.label1.Location = new System.Drawing.Point(79, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 23);
             this.label1.TabIndex = 1;
@@ -124,7 +125,8 @@
             // 
             // Limpiar
             // 
-            this.Limpiar.Location = new System.Drawing.Point(32, 268);
+            this.Limpiar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Limpiar.Location = new System.Drawing.Point(6, 189);
             this.Limpiar.Name = "Limpiar";
             this.Limpiar.Size = new System.Drawing.Size(75, 23);
             this.Limpiar.TabIndex = 10;
@@ -134,7 +136,8 @@
             // 
             // Guardar
             // 
-            this.Guardar.Location = new System.Drawing.Point(161, 268);
+            this.Guardar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Guardar.Location = new System.Drawing.Point(145, 189);
             this.Guardar.Name = "Guardar";
             this.Guardar.Size = new System.Drawing.Size(75, 23);
             this.Guardar.TabIndex = 11;
@@ -146,7 +149,9 @@
             // 
             this.groupBox1.Controls.Add(this.textNombre);
             this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.Guardar);
             this.groupBox1.Controls.Add(this.textPrecio);
+            this.groupBox1.Controls.Add(this.Limpiar);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textPorcentaje);
@@ -155,19 +160,30 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox1.Location = new System.Drawing.Point(32, 55);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(204, 183);
+            this.groupBox1.Size = new System.Drawing.Size(226, 233);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de usuario";
+            // 
+            // button_volver
+            // 
+            this.button_volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button_volver.ForeColor = System.Drawing.Color.Maroon;
+            this.button_volver.Location = new System.Drawing.Point(32, 303);
+            this.button_volver.Name = "button_volver";
+            this.button_volver.Size = new System.Drawing.Size(75, 23);
+            this.button_volver.TabIndex = 13;
+            this.button_volver.Text = "Volver";
+            this.button_volver.UseVisualStyleBackColor = true;
+            this.button_volver.Click += new System.EventHandler(this.button_volver_Click);
             // 
             // AltaVisibilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 329);
+            this.ClientSize = new System.Drawing.Size(302, 338);
+            this.Controls.Add(this.button_volver);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.Guardar);
-            this.Controls.Add(this.Limpiar);
             this.Controls.Add(this.label1);
             this.Name = "AltaVisibilidad";
             this.Text = "Alta Visibilidad";
@@ -192,5 +208,6 @@
         private System.Windows.Forms.Button Limpiar;
         private System.Windows.Forms.Button Guardar;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button_volver;
     }
 }

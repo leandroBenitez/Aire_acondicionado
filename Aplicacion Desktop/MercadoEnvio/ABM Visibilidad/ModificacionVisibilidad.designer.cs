@@ -40,13 +40,14 @@
             this.Limpiar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.tablaVisibilidad = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PorcentajeEnvio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Selección = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_volver = new System.Windows.Forms.Button();
+            this.button_modificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaVisibilidad)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -162,13 +163,31 @@
             this.Tipo,
             this.Precio,
             this.Porcentaje,
-            this.PorcentajeEnvio,
-            this.Selección});
+            this.PorcentajeEnvio});
             this.tablaVisibilidad.Location = new System.Drawing.Point(12, 209);
             this.tablaVisibilidad.Name = "tablaVisibilidad";
             this.tablaVisibilidad.Size = new System.Drawing.Size(594, 217);
             this.tablaVisibilidad.TabIndex = 19;
             this.tablaVisibilidad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Click_En_Seleccionar);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textPrecio);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textTipo);
+            this.groupBox1.Controls.Add(this.textPorcentaje);
+            this.groupBox1.Controls.Add(this.textEnvio);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.groupBox1.Location = new System.Drawing.Point(12, 53);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(594, 99);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros de Búsqueda";
             // 
             // Id
             // 
@@ -198,35 +217,35 @@
             this.PorcentajeEnvio.HeaderText = "Porcentaje Envio";
             this.PorcentajeEnvio.Name = "PorcentajeEnvio";
             // 
-            // Selección
+            // button_volver
             // 
-            this.Selección.HeaderText = "Seleccionar";
-            this.Selección.Name = "Selección";
+            this.button_volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.button_volver.ForeColor = System.Drawing.Color.Maroon;
+            this.button_volver.Location = new System.Drawing.Point(12, 442);
+            this.button_volver.Name = "button_volver";
+            this.button_volver.Size = new System.Drawing.Size(75, 23);
+            this.button_volver.TabIndex = 21;
+            this.button_volver.Text = "Volver";
+            this.button_volver.UseVisualStyleBackColor = true;
+            this.button_volver.Click += new System.EventHandler(this.button_volver_Click);
             // 
-            // groupBox1
+            // button_modificar
             // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textPrecio);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textTipo);
-            this.groupBox1.Controls.Add(this.textPorcentaje);
-            this.groupBox1.Controls.Add(this.textEnvio);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox1.Location = new System.Drawing.Point(12, 53);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(594, 99);
-            this.groupBox1.TabIndex = 20;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros de Búsqueda";
+            this.button_modificar.Location = new System.Drawing.Point(531, 442);
+            this.button_modificar.Name = "button_modificar";
+            this.button_modificar.Size = new System.Drawing.Size(75, 23);
+            this.button_modificar.TabIndex = 22;
+            this.button_modificar.Text = "Modificar";
+            this.button_modificar.UseVisualStyleBackColor = true;
+            this.button_modificar.Click += new System.EventHandler(this.button_modificar_Click);
             // 
             // ModificacionVisibilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 457);
+            this.ClientSize = new System.Drawing.Size(620, 477);
+            this.Controls.Add(this.button_modificar);
+            this.Controls.Add(this.button_volver);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tablaVisibilidad);
             this.Controls.Add(this.label10);
@@ -256,12 +275,13 @@
         private System.Windows.Forms.Button Limpiar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView tablaVisibilidad;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Porcentaje;
         private System.Windows.Forms.DataGridViewTextBoxColumn PorcentajeEnvio;
-        private System.Windows.Forms.DataGridViewButtonColumn Selección;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button_volver;
+        private System.Windows.Forms.Button button_modificar;
     }
 }

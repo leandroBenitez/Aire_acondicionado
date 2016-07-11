@@ -16,6 +16,7 @@ using MercadoEnvio.Consulta_Facturas;
 using MercadoEnvio.Listado_Estadistico;
 using MercadoEnvio.ListadoCalificaciones;
 using MercadoEnvio.ABM_Rol;
+using MercadoEnvio.ABM_Visibilidad;
 
 namespace MercadoEnvio
 {
@@ -147,7 +148,8 @@ namespace MercadoEnvio
 
         private void boton_abm_visib_Click(object sender, EventArgs e)
         {
-
+            SubMenuVisibilidad visibilidad = new SubMenuVisibilidad(this);
+            visibilidad.Show();
         }
 
         private void boton_abm_rubro_Click(object sender, EventArgs e)

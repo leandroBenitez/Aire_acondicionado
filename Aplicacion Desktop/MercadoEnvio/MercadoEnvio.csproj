@@ -165,6 +165,12 @@
     <Compile Include="ABM Visibilidad\ModificacionVisibilidad.designer.cs">
       <DependentUpon>ModificacionVisibilidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABM Visibilidad\SubMenuVisibilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Visibilidad\SubMenuVisibilidad.Designer.cs">
+      <DependentUpon>SubMenuVisibilidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\ABM_Factura_DAO.cs" />
     <Compile Include="Calificar\Calificar.cs">
       <SubType>Form</SubType>
@@ -385,6 +391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABM Visibilidad\ModificacionVisibilidad.resx">
       <DependentUpon>ModificacionVisibilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Visibilidad\SubMenuVisibilidad.resx">
+      <DependentUpon>SubMenuVisibilidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Calificar\Calificar.resx">
       <DependentUpon>Calificar.cs</DependentUpon>

@@ -160,7 +160,7 @@ namespace MercadoEnvio.DataBase.Conexion
             }
         }
 
-        public void updateVisibilidad(int id_visibilidad, String desc_tipo, String desc_precio, String desc_porcentaje, String desc_porcentaje_envio)
+        public void updateVisibilidad(int id_visibilidad, String desc_tipo, float desc_precio, float desc_porcentaje, float desc_porcentaje_envio)
         {
             this.GD1C2016.ejecutarSentenciaSinRetorno("UPDATE " + ConstantesBD.tabla_visibilidad + " SET desc_tipo = '" + desc_tipo + "'" +
                                                                                                    ", desc_precio = " + desc_precio +

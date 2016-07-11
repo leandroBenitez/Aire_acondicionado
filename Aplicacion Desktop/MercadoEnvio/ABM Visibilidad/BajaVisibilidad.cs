@@ -16,13 +16,15 @@ namespace MercadoEnvio.ABM_Visibilidad
     public partial class BajaVisibilidad : Form
     {
          ABM_Visibilidad_DAO abm_visibilidad;
-        List<string> id_visibilidad = new List<string>();
+         List<string> id_visibilidad = new List<string>();
+         SubMenuVisibilidad unMenu;
 
-        public BajaVisibilidad()
+        public BajaVisibilidad(SubMenuVisibilidad menu)
         {
             leerArchivoConfig();
             abm_visibilidad = new ABM_Visibilidad_DAO();
             InitializeComponent();
+            unMenu = menu;
         }
 
         private void Seleccionar_Click(object sender, EventArgs e)
@@ -49,8 +51,7 @@ namespace MercadoEnvio.ABM_Visibilidad
                                           abm_visibilidad.get_descVisibilidadSegun(id).ToString(),
                                           abm_visibilidad.get_desc_precioVisibilidadSegun(id).ToString(),
                                           abm_visibilidad.get_desc_porcentajeVisibilidadSegun(id).ToString(),
-                                          abm_visibilidad.get_desc_porcentaje_envioVisibilidadSegun(id).ToString(),
-                                          "Eliminar");
+                                          abm_visibilidad.get_desc_porcentaje_envioVisibilidadSegun(id).ToString());
             }
         }
 
@@ -71,6 +72,27 @@ namespace MercadoEnvio.ABM_Visibilidad
             textPrecio.Text = "";
             textPorcentaje.Text = "";
             textEnvio.Text = "";
+        }
+
+        private void button_eliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow fila = tablaVisibilidad.SelectedRows[0];
+                int id = int.Parse(fila.Cells["Id"].Value.ToString());
+
+                abm_visibilidad.borrarVisibilidad(id);
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione una fila");
+            }
+        }
+
+        private void Volver_Click(object sender, EventArgs e)
+        {
+            unMenu.Show();
+            this.Close();
         }
 
         private void leerArchivoConfig()

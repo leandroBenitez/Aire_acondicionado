@@ -45,8 +45,9 @@
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PorcentajeEnvio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Selección = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Volver = new System.Windows.Forms.Button();
+            this.button_eliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaVisibilidad)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -161,8 +162,7 @@
             this.Tipo,
             this.Precio,
             this.Porcentaje,
-            this.PorcentajeEnvio,
-            this.Selección});
+            this.PorcentajeEnvio});
             this.tablaVisibilidad.Location = new System.Drawing.Point(12, 208);
             this.tablaVisibilidad.Name = "tablaVisibilidad";
             this.tablaVisibilidad.Size = new System.Drawing.Size(594, 217);
@@ -197,11 +197,6 @@
             this.PorcentajeEnvio.HeaderText = "Porcentaje Envio";
             this.PorcentajeEnvio.Name = "PorcentajeEnvio";
             // 
-            // Selección
-            // 
-            this.Selección.HeaderText = "Seleccionar";
-            this.Selección.Name = "Selección";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
@@ -220,11 +215,35 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de Búsqueda";
             // 
+            // Volver
+            // 
+            this.Volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Volver.ForeColor = System.Drawing.Color.Maroon;
+            this.Volver.Location = new System.Drawing.Point(12, 431);
+            this.Volver.Name = "Volver";
+            this.Volver.Size = new System.Drawing.Size(75, 23);
+            this.Volver.TabIndex = 32;
+            this.Volver.Text = "Volver";
+            this.Volver.UseVisualStyleBackColor = true;
+            this.Volver.Click += new System.EventHandler(this.Volver_Click);
+            // 
+            // button_eliminar
+            // 
+            this.button_eliminar.Location = new System.Drawing.Point(531, 431);
+            this.button_eliminar.Name = "button_eliminar";
+            this.button_eliminar.Size = new System.Drawing.Size(75, 23);
+            this.button_eliminar.TabIndex = 33;
+            this.button_eliminar.Text = "Eliminar";
+            this.button_eliminar.UseVisualStyleBackColor = true;
+            this.button_eliminar.Click += new System.EventHandler(this.button_eliminar_Click);
+            // 
             // BajaVisibilidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 451);
+            this.ClientSize = new System.Drawing.Size(618, 492);
+            this.Controls.Add(this.button_eliminar);
+            this.Controls.Add(this.Volver);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.tablaVisibilidad);
             this.Controls.Add(this.Limpiar);
@@ -254,12 +273,13 @@
         private System.Windows.Forms.Button Buscar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView tablaVisibilidad;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Porcentaje;
         private System.Windows.Forms.DataGridViewTextBoxColumn PorcentajeEnvio;
-        private System.Windows.Forms.DataGridViewButtonColumn Selección;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button Volver;
+        private System.Windows.Forms.Button button_eliminar;
     }
 }
