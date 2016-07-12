@@ -30,6 +30,18 @@ namespace MercadoEnvio.DataBase.Conexion
             return rubros;
         }
 
+        public List<String> get_Estados()
+        {
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("select desc_estado from " + ConstantesBD.tabla_estado_publicacion);
+            List<string> estados = new List<string>();
+            while (resultado.Read())
+            {
+                estados.Add(resultado["desc_estado"].ToString());
+            }
+            resultado.Close();
+            return estados;
+        }
+
         public List<String> get_Tipo_Publicacion()
         {
             SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("select desc_estado from " + ConstantesBD.tabla_estado_publicacion);
@@ -63,6 +75,21 @@ namespace MercadoEnvio.DataBase.Conexion
             return ultimo_id;
         }
 
+        public SqlDataReader get_publicaciones_propias(int id_usuario)
+        {
+            return this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.vista_publicaciones.ToString()
+                                                                        + " where id_usuario = '" + id_usuario.ToString()
+                                                                        + "' and desc_estado <> 'Borrador'");
+        }
+
+        public void cambiar_Estado(int publicacion, string nuevo_estado)
+        {
+            this.GD1C2016.ejecutarSentenciaSinRetorno("Update " + ConstantesBD.tabla_publicaciones
+                                                                + " Set id_estado_publi = es.id_estado_publi From " + ConstantesBD.tabla_estado_publicacion
+                                                                + " es where es.desc_estado = '" + nuevo_estado 
+                                                                + "' and id_publicacion = '" + publicacion.ToString() + "'");
+        }
+
         public string publicacion_pendiente(int id_user, string tipo_publicacion)
         {
             SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select 'existe' as resultado from " + tipo_publicacion 
@@ -86,7 +113,8 @@ namespace MercadoEnvio.DataBase.Conexion
             {
                 return this.GD1C2016.ejecutarSentenciaConRetorno("Select TOP " + tamanioPagina.ToString() + " * from " 
                                                                     + ConstantesBD.vista_publi_compra
-                                                                    + " where " + condiciones);
+                                                                    + " where " + condiciones
+                                                                    + " order by precio_visualizacion desc");
             }
             else
             {
@@ -99,7 +127,8 @@ namespace MercadoEnvio.DataBase.Conexion
                                                                     + " id_publicacion from "
                                                                     + ConstantesBD.vista_publi_compra
                                                                     + " where " + condiciones
-                                                                    + ")");
+                                                                    + ")"
+                                                                    + " order by precio_visualizacion desc");
             }
         }
 
@@ -109,7 +138,8 @@ namespace MercadoEnvio.DataBase.Conexion
             {
                 return this.GD1C2016.ejecutarSentenciaConRetorno("Select TOP " + tamanioPagina.ToString() + " * from "
                                                                     + ConstantesBD.vista_publi_subasta
-                                                                    + " where " + condiciones);
+                                                                    + " where " + condiciones
+                                                                    + " order by precio_visualizacion desc");
             }
             else
             {
@@ -122,7 +152,8 @@ namespace MercadoEnvio.DataBase.Conexion
                                                                     + " id_publicacion from "
                                                                     + ConstantesBD.vista_publi_subasta
                                                                     + " where " + condiciones
-                                                                    + ")");
+                                                                    + ")"
+                                                                    + " order by precio_visualizacion desc");
             }
         }
 

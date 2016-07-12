@@ -39,7 +39,7 @@ namespace MercadoEnvio.DataBase.Conexion
         public static String tabla_roles_usuarios = "GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios";
         public static String vista_publi_compra = "GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones_compra";
         public static String vista_publi_subasta = "GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones_subasta";
-
+        public static String vista_publicaciones = "GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones";
 
         // Recibe una fecha en formato DD/MM/AAAA y lo convierte a formato de BD: AAAAMMDD 00:00:00.00
         public static String cambiarFormatoFecha(String fecha)

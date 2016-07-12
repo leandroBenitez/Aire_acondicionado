@@ -1,6 +1,6 @@
 ﻿namespace MercadoEnvio.Generar_Publicación
 {
-    partial class Subasta
+    partial class Compra
     {
         /// <summary>
         /// Required designer variable.
@@ -51,11 +51,7 @@
             this.fecha_sys = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.año = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.mes = new System.Windows.Forms.TextBox();
-            this.dia = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.fecha_vencimiento = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.boton_finalizar = new System.Windows.Forms.Button();
             this.boton_salir = new System.Windows.Forms.Button();
@@ -117,11 +113,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(179, 114);
+            this.label4.Location = new System.Drawing.Point(149, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.Size = new System.Drawing.Size(93, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Valor inicial:";
+            this.label4.Text = "Precio por unidad:";
             // 
             // text_precio
             // 
@@ -138,6 +134,7 @@
             this.combo_vis.Name = "combo_vis";
             this.combo_vis.Size = new System.Drawing.Size(197, 21);
             this.combo_vis.TabIndex = 11;
+            this.combo_vis.SelectedIndexChanged += new System.EventHandler(this.combo_vis_SelectedIndexChanged);
             // 
             // combo_estado_pu
             // 
@@ -189,9 +186,9 @@
             this.check_envio.AutoSize = true;
             this.check_envio.Location = new System.Drawing.Point(347, 113);
             this.check_envio.Name = "check_envio";
-            this.check_envio.Size = new System.Drawing.Size(53, 17);
+            this.check_envio.Size = new System.Drawing.Size(55, 17);
             this.check_envio.TabIndex = 17;
-            this.check_envio.Text = "Envio";
+            this.check_envio.Text = "Envío";
             this.check_envio.UseVisualStyleBackColor = true;
             this.check_envio.CheckedChanged += new System.EventHandler(this.check_envio_CheckedChanged);
             // 
@@ -259,11 +256,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.año);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.mes);
-            this.groupBox1.Controls.Add(this.dia);
-            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.fecha_vencimiento);
             this.groupBox1.Controls.Add(this.fecha_sys);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label12);
@@ -274,44 +267,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fechas";
             // 
-            // año
+            // fecha_vencimiento
             // 
-            this.año.Location = new System.Drawing.Point(159, 61);
-            this.año.Name = "año";
-            this.año.Size = new System.Drawing.Size(46, 20);
-            this.año.TabIndex = 30;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(145, 64);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(12, 13);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "/";
-            // 
-            // mes
-            // 
-            this.mes.Location = new System.Drawing.Point(120, 61);
-            this.mes.Name = "mes";
-            this.mes.Size = new System.Drawing.Size(23, 20);
-            this.mes.TabIndex = 28;
-            // 
-            // dia
-            // 
-            this.dia.Location = new System.Drawing.Point(80, 61);
-            this.dia.Name = "dia";
-            this.dia.Size = new System.Drawing.Size(23, 20);
-            this.dia.TabIndex = 27;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(106, 64);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(12, 13);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "/";
+            this.fecha_vencimiento.CustomFormat = "";
+            this.fecha_vencimiento.Location = new System.Drawing.Point(80, 58);
+            this.fecha_vencimiento.Name = "fecha_vencimiento";
+            this.fecha_vencimiento.Size = new System.Drawing.Size(102, 20);
+            this.fecha_vencimiento.TabIndex = 31;
+            this.fecha_vencimiento.Value = new System.DateTime(2016, 6, 17, 0, 0, 0, 0);
             // 
             // label13
             // 
@@ -344,7 +307,7 @@
             this.boton_salir.UseVisualStyleBackColor = true;
             this.boton_salir.Click += new System.EventHandler(this.boton_salir_Click);
             // 
-            // Subasta
+            // Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -372,8 +335,8 @@
             this.Controls.Add(this.desc);
             this.Controls.Add(this.combo_rubros);
             this.Controls.Add(this.label1);
-            this.Name = "Subasta";
-            this.Text = "Subasta";
+            this.Name = "Compra";
+            this.Text = "Venta";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -409,11 +372,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button boton_finalizar;
         private System.Windows.Forms.Button boton_salir;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox año;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox mes;
-        private System.Windows.Forms.TextBox dia;
+        private System.Windows.Forms.DateTimePicker fecha_vencimiento;
 
     }
 }

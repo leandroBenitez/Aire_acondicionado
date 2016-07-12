@@ -51,7 +51,7 @@ namespace MercadoEnvio.ComprarOfertar
             SqlDataReader lectura = publicacion.get_publicaciones_SU(this.condiciones + " " + this.condicion_necesaria, this.paginaActual, this.tamanioPagina);
             
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
-            Object[] columnas = new Object[6];
+            Object[] columnas = new Object[7];
 
             while (lectura.Read())
             {
@@ -61,6 +61,7 @@ namespace MercadoEnvio.ComprarOfertar
                 columnas[3] = lectura["desc_precio"].ToString();
                 columnas[4] = lectura["desc_costo_envio"].ToString();
                 columnas[5] = lectura["fecha_vencimiento"].ToString();
+                columnas[6] = lectura["precio_visualizacion"].ToString();
 
                 filas.Add(new DataGridViewRow());
                 filas[filas.Count - 1].CreateCells(dataGridViewPub, columnas);

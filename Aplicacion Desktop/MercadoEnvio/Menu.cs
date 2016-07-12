@@ -53,7 +53,10 @@ namespace MercadoEnvio
                 {   boton_abm_visib.Hide(); }
 
             if (!(funciones.Contains("Generar Publicación")))
-            { boton_generar_pu.Hide(); }
+            { 
+                boton_generar_pu.Hide();
+                my_publi.Hide();
+            }
 
             if (!(funciones.Contains("Comprar/Ofertar")))
                 {   boton_comprar.Hide();
@@ -79,6 +82,11 @@ namespace MercadoEnvio
 
         private void boton_generar_pu_Click(object sender, EventArgs e)
         {
+            if (this.loginDAO.cant_publicaciones(this.id_usuario) == 0)
+            {
+                MessageBox.Show("Gracias por elejirnos. Su primer publicacion sera gratis.", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             TipoDePubli un_tipo = new TipoDePubli(id_usuario, this);
             un_tipo.Show();
             this.Hide();
@@ -161,6 +169,13 @@ namespace MercadoEnvio
         {
             subMenuRol subMenu = new subMenuRol();
             subMenu.Show();
+        }
+
+        private void my_publi_Click(object sender, EventArgs e)
+        {
+            Mis_publicaciones mis = new Mis_publicaciones(this);
+            mis.Show(); 
+            this.Hide();
         }
     }
 }

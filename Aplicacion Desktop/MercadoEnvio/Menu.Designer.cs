@@ -42,6 +42,7 @@
             this.text_user = new System.Windows.Forms.Label();
             this.text_fecha = new System.Windows.Forms.Label();
             this.boton_calificar = new System.Windows.Forms.Button();
+            this.my_publi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // boton_abm_roles
@@ -190,11 +191,22 @@
             this.boton_calificar.UseVisualStyleBackColor = true;
             this.boton_calificar.Click += new System.EventHandler(this.boton_calificar_Click);
             // 
+            // my_publi
+            // 
+            this.my_publi.Location = new System.Drawing.Point(195, 179);
+            this.my_publi.Name = "my_publi";
+            this.my_publi.Size = new System.Drawing.Size(133, 23);
+            this.my_publi.TabIndex = 13;
+            this.my_publi.Text = "Mis publicaciones";
+            this.my_publi.UseVisualStyleBackColor = true;
+            this.my_publi.Click += new System.EventHandler(this.my_publi_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 423);
+            this.Controls.Add(this.my_publi);
             this.Controls.Add(this.boton_calificar);
             this.Controls.Add(this.text_fecha);
             this.Controls.Add(this.text_user);
@@ -232,5 +244,6 @@
         private System.Windows.Forms.Label text_user;
         private System.Windows.Forms.Label text_fecha;
         private System.Windows.Forms.Button boton_calificar;
+        private System.Windows.Forms.Button my_publi;
     }
 }

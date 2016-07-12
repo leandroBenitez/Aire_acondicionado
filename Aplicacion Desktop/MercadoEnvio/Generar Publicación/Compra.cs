@@ -44,13 +44,13 @@ namespace MercadoEnvio.Generar_Publicación
             label_user.Text = login.get_username(this.id_usuario);
             
             fecha_vencimiento.Format = DateTimePickerFormat.Custom;
-            fecha_vencimiento.CustomFormat = "yyyy-MM-dd";
+            fecha_vencimiento.CustomFormat = "dd-mm-yyyy";
 
             if (publicacion.publicacion_pendiente(this.id_usuario, ConstantesBD.vista_publi_compra) == "ok")
             {
                 label_id_publicacion.Text = (publicacion.ultimo_id() + 1).ToString();
                 fecha_sys.Text = ConstantesBD.fechaSistema;
-                fecha_vencimiento.Text = "2017-01-01";
+                fecha_vencimiento.Text = "01-01-2017";
             }
             else
             {
@@ -208,6 +208,21 @@ namespace MercadoEnvio.Generar_Publicación
         private void check_envio_CheckedChanged(object sender, EventArgs e)
         {
             textbox_envio.Enabled = (check_envio.CheckState == CheckState.Checked);
+        }
+
+        private void combo_vis_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (combo_vis.Text == "Gratis")
+            {
+                textbox_envio.Text = "";
+                check_envio.Enabled = false;
+                textbox_envio.Enabled = false;
+            }
+            else
+            {
+                check_envio.Enabled = true;
+                textbox_envio.Enabled = true;
+            }
         }
     }
 }

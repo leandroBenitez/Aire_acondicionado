@@ -48,6 +48,24 @@ namespace MercadoEnvio.DataBase.Conexion
             }
         }
 
+        public int cant_publicaciones(int id_usuario)
+        {
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select Count(1) as CANTIDAD from " + ConstantesBD.tabla_publicaciones +
+                                                                                    " where id_usuario = '" + id_usuario.ToString() + "'");
+            if (resultado.HasRows)
+            {
+                resultado.Read();
+                int aux = Int32.Parse(resultado["CANTIDAD"].ToString());
+                resultado.Close();
+                return aux;
+            }
+            else
+            {
+                resultado.Close();
+                return 0;
+            }
+        }
+
         public List<string> get_funcionalidades(string rol)
         {
             SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("Select desc_funcion from GESTORES_DEL_AIRE_ACONDICIONADO.rol_funcionalidades where desc_rol = '" +

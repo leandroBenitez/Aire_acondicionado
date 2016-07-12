@@ -43,10 +43,14 @@ namespace MercadoEnvio.Generar_Publicación
 
             label_user.Text = login.get_username(this.id_usuario);
 
+            fecha_vencimiento.Format = DateTimePickerFormat.Custom;
+            fecha_vencimiento.CustomFormat = "dd-mm-yyyy";
+
             if (publicacion.publicacion_pendiente(this.id_usuario, ConstantesBD.vista_publi_subasta) == "ok")
             {
                 label_id_publicacion.Text = (publicacion.ultimo_id() + 1).ToString();
                 fecha_sys.Text = ConstantesBD.fechaSistema;
+                fecha_vencimiento.Text = "01-01-2017";
             }
             else
             {
@@ -74,11 +78,12 @@ namespace MercadoEnvio.Generar_Publicación
                 combo_vis.Text = resultado["desc_tipo"].ToString();
 
                 string fecha_venc = resultado["fecha_vencimiento"].ToString();
-                dia.Text = fecha_venc.Substring(0, 2);
-                mes.Text = fecha_venc.Substring(3, 2);
-                año.Text = fecha_venc.Substring(6, 4);
 
                 resultado.Close();
+
+                fecha_vencimiento.Text = fecha_venc;
+                combo_rubros.Items.Add("Todos");
+                combo_rubros.Text = "Todos";
             }
         }
 
@@ -121,17 +126,17 @@ namespace MercadoEnvio.Generar_Publicación
             string fecha;
 
             if (check_envio.Checked)
-            {   aux =  textbox_envio.Text;  }
+            { aux = textbox_envio.Text; }
             else
-            {   aux = "0";  }
+            { aux = "0"; }
 
-            if (string.IsNullOrWhiteSpace(dia.Text))
-            { 
+            if (string.IsNullOrWhiteSpace(fecha_vencimiento.Text))
+            {
                 fecha = "01/01/1900";
             }
             else
             {
-                fecha = dia.Text + "/" + mes.Text + "/" + año.Text;
+                fecha = fecha_vencimiento.Text;
             }
 
             bool resultado = this.publicacion.guardar_publicacion(label_id_publicacion.Text,
@@ -190,9 +195,7 @@ namespace MercadoEnvio.Generar_Publicación
                 string.IsNullOrWhiteSpace(combo_rubros.Text) ||
                 string.IsNullOrWhiteSpace(combo_estado_pu.Text) ||
                 string.IsNullOrWhiteSpace(combo_vis.Text) ||
-                string.IsNullOrWhiteSpace(dia.Text) ||
-                string.IsNullOrWhiteSpace(mes.Text) ||
-                string.IsNullOrWhiteSpace(año.Text))
+                string.IsNullOrWhiteSpace(fecha_vencimiento.Text))
             {
                 return "incompleto";
             }
@@ -205,6 +208,21 @@ namespace MercadoEnvio.Generar_Publicación
         private void check_envio_CheckedChanged(object sender, EventArgs e)
         {
             textbox_envio.Enabled = (check_envio.CheckState == CheckState.Checked);
+        }
+
+        private void combo_vis_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (combo_vis.Text == "Gratis")
+            {
+                textbox_envio.Text = "";
+                check_envio.Enabled = false;
+                textbox_envio.Enabled = false;
+            }
+            else
+            {
+                check_envio.Enabled = true;
+                textbox_envio.Enabled = true;
+            }
         }
     }
 }

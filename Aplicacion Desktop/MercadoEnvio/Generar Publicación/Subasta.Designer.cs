@@ -1,6 +1,6 @@
 ﻿namespace MercadoEnvio.Generar_Publicación
 {
-    partial class Compra
+    partial class Subasta
     {
         /// <summary>
         /// Required designer variable.
@@ -51,10 +51,10 @@
             this.fecha_sys = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.fecha_vencimiento = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.boton_finalizar = new System.Windows.Forms.Button();
             this.boton_salir = new System.Windows.Forms.Button();
+            this.fecha_vencimiento = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,11 +113,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(149, 114);
+            this.label4.Location = new System.Drawing.Point(179, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Precio por unidad:";
+            this.label4.Text = "Valor inicial:";
             // 
             // text_precio
             // 
@@ -134,6 +134,7 @@
             this.combo_vis.Name = "combo_vis";
             this.combo_vis.Size = new System.Drawing.Size(197, 21);
             this.combo_vis.TabIndex = 11;
+            this.combo_vis.SelectedIndexChanged += new System.EventHandler(this.combo_vis_SelectedIndexChanged);
             // 
             // combo_estado_pu
             // 
@@ -185,9 +186,9 @@
             this.check_envio.AutoSize = true;
             this.check_envio.Location = new System.Drawing.Point(347, 113);
             this.check_envio.Name = "check_envio";
-            this.check_envio.Size = new System.Drawing.Size(55, 17);
+            this.check_envio.Size = new System.Drawing.Size(53, 17);
             this.check_envio.TabIndex = 17;
-            this.check_envio.Text = "Envío";
+            this.check_envio.Text = "Envio";
             this.check_envio.UseVisualStyleBackColor = true;
             this.check_envio.CheckedChanged += new System.EventHandler(this.check_envio_CheckedChanged);
             // 
@@ -266,15 +267,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fechas";
             // 
-            // fecha_vencimiento
-            // 
-            this.fecha_vencimiento.CustomFormat = "";
-            this.fecha_vencimiento.Location = new System.Drawing.Point(80, 58);
-            this.fecha_vencimiento.Name = "fecha_vencimiento";
-            this.fecha_vencimiento.Size = new System.Drawing.Size(102, 20);
-            this.fecha_vencimiento.TabIndex = 31;
-            this.fecha_vencimiento.Value = new System.DateTime(2016, 6, 17, 0, 0, 0, 0);
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -306,7 +298,16 @@
             this.boton_salir.UseVisualStyleBackColor = true;
             this.boton_salir.Click += new System.EventHandler(this.boton_salir_Click);
             // 
-            // Compra
+            // fecha_vencimiento
+            // 
+            this.fecha_vencimiento.CustomFormat = "";
+            this.fecha_vencimiento.Location = new System.Drawing.Point(80, 58);
+            this.fecha_vencimiento.Name = "fecha_vencimiento";
+            this.fecha_vencimiento.Size = new System.Drawing.Size(102, 20);
+            this.fecha_vencimiento.TabIndex = 32;
+            this.fecha_vencimiento.Value = new System.DateTime(2016, 6, 17, 0, 0, 0, 0);
+            // 
+            // Subasta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -334,8 +335,8 @@
             this.Controls.Add(this.desc);
             this.Controls.Add(this.combo_rubros);
             this.Controls.Add(this.label1);
-            this.Name = "Compra";
-            this.Text = "Venta";
+            this.Name = "Subasta";
+            this.Text = "Subasta";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
