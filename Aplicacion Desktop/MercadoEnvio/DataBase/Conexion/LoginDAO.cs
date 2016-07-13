@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using MercadoEnvio.Excepciones;
 using MercadoEnvio.Conexion;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace MercadoEnvio.DataBase.Conexion
 {
@@ -64,6 +65,24 @@ namespace MercadoEnvio.DataBase.Conexion
                 resultado.Close();
                 return 0;
             }
+        }
+
+        public string verificar_pass(string nueva_pass, int id_usuario)
+        {
+            SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("Select case desc_password when hashbytes('sha2_256', '" + nueva_pass
+                                                                                + "') then 'OK' else 'NO' END as verificacion from " + ConstantesBD.tabla_usuarios
+                                                                                + " where id_usuario = '" + id_usuario.ToString() + "'");
+            lector.Read();
+            String resultado = lector["verificacion"].ToString();
+            lector.Close();
+            return resultado;
+        }
+
+        public void cambiar_pass(string nueva_pass, int id_usuario)
+        {
+            this.GD1C2016.ejecutarSentenciaConRetorno("Update " + ConstantesBD.tabla_usuarios
+                                                        + " set desc_password = hashbytes('sha2_256', '" + nueva_pass  
+                                                        + "') where id_usuario = '" + id_usuario.ToString() + "'");
         }
 
         public List<string> get_funcionalidades(string rol)

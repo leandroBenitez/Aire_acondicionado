@@ -171,6 +171,12 @@
     <Compile Include="ABM Visibilidad\SubMenuVisibilidad.Designer.cs">
       <DependentUpon>SubMenuVisibilidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Change_Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change_Password.Designer.cs">
+      <DependentUpon>Change_Password.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\ABM_Factura_DAO.cs" />
     <Compile Include="Calificar\Calificar.cs">
       <SubType>Form</SubType>
@@ -406,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Calificar\ListadoSinCalificar.resx">
       <DependentUpon>ListadoSinCalificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Change_Password.resx">
+      <DependentUpon>Change_Password.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ComprarOfertar\Comprar.resx">
       <DependentUpon>Comprar.cs</DependentUpon>

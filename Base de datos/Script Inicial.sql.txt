@@ -1009,7 +1009,7 @@ Declare @id_subasta int;
 Declare un_cursor cursor for
 	Select id_publicacion 
 		from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
-		where	desc_fecha_venc > @fecha
+		where	desc_fecha_venc < @fecha
 			and	id_estado_publi not in (1, 4);
 
 open un_cursor

@@ -50,6 +50,7 @@
             this.desc_costo_envio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc_fecha_venc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_visualizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPub)).BeginInit();
             this.SuspendLayout();
@@ -124,7 +125,8 @@
             this.desc_precio,
             this.desc_costo_envio,
             this.desc_fecha_venc,
-            this.precio_visualizacion});
+            this.precio_visualizacion,
+            this.Column1});
             this.dataGridViewPub.Location = new System.Drawing.Point(228, 69);
             this.dataGridViewPub.Name = "dataGridViewPub";
             this.dataGridViewPub.ReadOnly = true;
@@ -277,6 +279,13 @@
             this.precio_visualizacion.ReadOnly = true;
             this.precio_visualizacion.Visible = false;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Estado";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
             // Publicaciones_compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,5 +336,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_costo_envio;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_fecha_venc;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_visualizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

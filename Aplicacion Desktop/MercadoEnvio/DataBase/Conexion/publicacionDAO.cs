@@ -84,10 +84,9 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public void cambiar_Estado(int publicacion, string nuevo_estado)
         {
-            this.GD1C2016.ejecutarSentenciaSinRetorno("Update " + ConstantesBD.tabla_publicaciones
-                                                                + " Set id_estado_publi = es.id_estado_publi From " + ConstantesBD.tabla_estado_publicacion
-                                                                + " es where es.desc_estado = '" + nuevo_estado 
-                                                                + "' and id_publicacion = '" + publicacion.ToString() + "'");
+            this.GD1C2016.ejecutarSentenciaSinRetorno("Execute GESTORES_DEL_AIRE_ACONDICIONADO.facturar_publicacion   @id_publicacion = '" + publicacion.ToString()
+                                                                                                                + "', @nuevo_estado = '" + nuevo_estado
+                                                                                                                + "', @fechasys = '" + ConstantesBD.fechaSistema + "'"  );
         }
 
         public string publicacion_pendiente(int id_user, string tipo_publicacion)

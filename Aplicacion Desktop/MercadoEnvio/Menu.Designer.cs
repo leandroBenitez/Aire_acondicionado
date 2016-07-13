@@ -43,6 +43,7 @@
             this.text_fecha = new System.Windows.Forms.Label();
             this.boton_calificar = new System.Windows.Forms.Button();
             this.my_publi = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // boton_abm_roles
@@ -50,7 +51,7 @@
             this.boton_abm_roles.Location = new System.Drawing.Point(195, 271);
             this.boton_abm_roles.Name = "boton_abm_roles";
             this.boton_abm_roles.Size = new System.Drawing.Size(133, 23);
-            this.boton_abm_roles.TabIndex = 10;
+            this.boton_abm_roles.TabIndex = 12;
             this.boton_abm_roles.Text = "ABM Roles";
             this.boton_abm_roles.UseVisualStyleBackColor = true;
             this.boton_abm_roles.Click += new System.EventHandler(this.boton_abm_roles_Click);
@@ -60,7 +61,7 @@
             this.boton_abm_user.Location = new System.Drawing.Point(23, 225);
             this.boton_abm_user.Name = "boton_abm_user";
             this.boton_abm_user.Size = new System.Drawing.Size(133, 23);
-            this.boton_abm_user.TabIndex = 7;
+            this.boton_abm_user.TabIndex = 9;
             this.boton_abm_user.Text = "ABM Usuarios";
             this.boton_abm_user.UseVisualStyleBackColor = true;
             this.boton_abm_user.Click += new System.EventHandler(this.boton_abm_user_Click);
@@ -70,7 +71,7 @@
             this.boton_abm_rubro.Location = new System.Drawing.Point(23, 271);
             this.boton_abm_rubro.Name = "boton_abm_rubro";
             this.boton_abm_rubro.Size = new System.Drawing.Size(133, 23);
-            this.boton_abm_rubro.TabIndex = 9;
+            this.boton_abm_rubro.TabIndex = 11;
             this.boton_abm_rubro.Text = "ABM Rubros";
             this.boton_abm_rubro.UseVisualStyleBackColor = true;
             this.boton_abm_rubro.Click += new System.EventHandler(this.boton_abm_rubro_Click);
@@ -80,7 +81,7 @@
             this.boton_abm_visib.Location = new System.Drawing.Point(195, 225);
             this.boton_abm_visib.Name = "boton_abm_visib";
             this.boton_abm_visib.Size = new System.Drawing.Size(133, 23);
-            this.boton_abm_visib.TabIndex = 8;
+            this.boton_abm_visib.TabIndex = 10;
             this.boton_abm_visib.Text = "ABM Visibilidades";
             this.boton_abm_visib.UseVisualStyleBackColor = true;
             this.boton_abm_visib.Click += new System.EventHandler(this.boton_abm_visib_Click);
@@ -152,7 +153,7 @@
             this.boton_salir.Location = new System.Drawing.Point(195, 317);
             this.boton_salir.Name = "boton_salir";
             this.boton_salir.Size = new System.Drawing.Size(133, 23);
-            this.boton_salir.TabIndex = 11;
+            this.boton_salir.TabIndex = 14;
             this.boton_salir.Text = "Salir";
             this.boton_salir.UseVisualStyleBackColor = true;
             this.boton_salir.Click += new System.EventHandler(this.boton_salir_Click);
@@ -186,7 +187,7 @@
             this.boton_calificar.Location = new System.Drawing.Point(23, 179);
             this.boton_calificar.Name = "boton_calificar";
             this.boton_calificar.Size = new System.Drawing.Size(133, 23);
-            this.boton_calificar.TabIndex = 12;
+            this.boton_calificar.TabIndex = 7;
             this.boton_calificar.Text = "Calificar";
             this.boton_calificar.UseVisualStyleBackColor = true;
             this.boton_calificar.Click += new System.EventHandler(this.boton_calificar_Click);
@@ -196,16 +197,30 @@
             this.my_publi.Location = new System.Drawing.Point(195, 179);
             this.my_publi.Name = "my_publi";
             this.my_publi.Size = new System.Drawing.Size(133, 23);
-            this.my_publi.TabIndex = 13;
+            this.my_publi.TabIndex = 8;
             this.my_publi.Text = "Mis publicaciones";
             this.my_publi.UseVisualStyleBackColor = true;
             this.my_publi.Click += new System.EventHandler(this.my_publi_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Blue;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(12, 334);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(94, 13);
+            this.linkLabel1.TabIndex = 13;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Cambiar Password";
+            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Blue;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 423);
+            this.ClientSize = new System.Drawing.Size(354, 356);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.my_publi);
             this.Controls.Add(this.boton_calificar);
             this.Controls.Add(this.text_fecha);
@@ -221,6 +236,7 @@
             this.Controls.Add(this.boton_abm_rubro);
             this.Controls.Add(this.boton_abm_user);
             this.Controls.Add(this.boton_abm_roles);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Menu";
             this.Text = "Menu";
             this.ResumeLayout(false);
@@ -245,5 +261,6 @@
         private System.Windows.Forms.Label text_fecha;
         private System.Windows.Forms.Button boton_calificar;
         private System.Windows.Forms.Button my_publi;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

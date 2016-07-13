@@ -84,7 +84,7 @@ namespace MercadoEnvio
         {
             if (this.loginDAO.cant_publicaciones(this.id_usuario) == 0)
             {
-                MessageBox.Show("Gracias por elejirnos. Su primer publicacion sera gratis.", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Gracias por elegirnos. Su primer publicacion sera gratis.", "Bienvenido", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             TipoDePubli un_tipo = new TipoDePubli(id_usuario, this);
@@ -176,6 +176,12 @@ namespace MercadoEnvio
             Mis_publicaciones mis = new Mis_publicaciones(this);
             mis.Show(); 
             this.Hide();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Change_Password change = new Change_Password(this);
+            change.Show();
         }
     }
 }

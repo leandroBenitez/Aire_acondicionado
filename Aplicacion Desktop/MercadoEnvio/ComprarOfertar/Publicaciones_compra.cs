@@ -51,7 +51,7 @@ namespace MercadoEnvio.ComprarOfertar
             SqlDataReader lectura = publicacion.get_publicaciones_CO(this.condiciones + " " + this.condicion_necesaria, this.paginaActual, this.tamanioPagina);
             
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
-            Object[] columnas = new Object[7];
+            Object[] columnas = new Object[8];
 
             while (lectura.Read())
             {
@@ -62,6 +62,7 @@ namespace MercadoEnvio.ComprarOfertar
                 columnas[4] = lectura["desc_costo_envio"].ToString();
                 columnas[5] = lectura["fecha_vencimiento"].ToString();
                 columnas[6] = lectura["precio_visualizacion"].ToString();
+                columnas[7] = lectura["desc_estado"].ToString();
 
                 filas.Add(new DataGridViewRow());
                 filas[filas.Count - 1].CreateCells(dataGridViewPub, columnas);
@@ -167,10 +168,18 @@ namespace MercadoEnvio.ComprarOfertar
                 int stock = Int32.Parse(fila.Cells["desc_stock"].Value.ToString());
                 int id_publicacion = Int32.Parse(fila.Cells["id_publi"].Value.ToString());
                 string fecha_venc = fila.Cells["desc_fecha_venc"].Value.ToString();
+                string estado = fila.Cells["desc_estado"].Value.ToString();
 
-                Comprar unaCompra = new Comprar(publicacion, valor, costo_envio, stock, id_publicacion, this.unMenu.id_usuario, this.unMenu);
-                unaCompra.Show();
-                this.Close();
+                if (estado == "Activo")
+                {
+                    Comprar unaCompra = new Comprar(publicacion, valor, costo_envio, stock, id_publicacion, this.unMenu.id_usuario, this.unMenu);
+                    unaCompra.Show();
+                    this.Close();
+                }
+                else 
+                {
+                    MessageBox.Show("La publicacion seleccionada se encuntra PAUSADA, pruebe mas tarde.");
+                }
             }
             catch
             {
