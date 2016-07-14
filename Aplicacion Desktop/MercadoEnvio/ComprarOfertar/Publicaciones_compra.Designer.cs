@@ -50,7 +50,7 @@
             this.desc_costo_envio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc_fecha_venc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio_visualizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desc_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPub)).BeginInit();
             this.SuspendLayout();
@@ -126,7 +126,7 @@
             this.desc_costo_envio,
             this.desc_fecha_venc,
             this.precio_visualizacion,
-            this.Column1});
+            this.desc_estado});
             this.dataGridViewPub.Location = new System.Drawing.Point(228, 69);
             this.dataGridViewPub.Name = "dataGridViewPub";
             this.dataGridViewPub.ReadOnly = true;
@@ -279,12 +279,12 @@
             this.precio_visualizacion.ReadOnly = true;
             this.precio_visualizacion.Visible = false;
             // 
-            // Column1
+            // desc_estado
             // 
-            this.Column1.HeaderText = "Estado";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
+            this.desc_estado.HeaderText = "Estado";
+            this.desc_estado.Name = "desc_estado";
+            this.desc_estado.ReadOnly = true;
+            this.desc_estado.Visible = false;
             // 
             // Publicaciones_compra
             // 
@@ -336,6 +336,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_costo_envio;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_fecha_venc;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_visualizacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desc_estado;
     }
 }

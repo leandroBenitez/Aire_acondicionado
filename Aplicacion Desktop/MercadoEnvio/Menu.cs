@@ -78,6 +78,7 @@ namespace MercadoEnvio
         private void boton_salir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            this.Close();
         }
 
         private void boton_generar_pu_Click(object sender, EventArgs e)
