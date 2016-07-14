@@ -36,6 +36,7 @@ namespace MercadoEnvio.ABMRol
         /* CUANDO SELECCIONO UN ROL DEL COMBO, CARGO LAS FUNCIONES QUE TIENE Y EL ESTADO EN EL QUE ESTA - OK*/
         private void comboNombresRoles_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //comboNombresRoles.DropDownStyle;
             // BORRA SI YA SE HABIA SELECCIONADO ALGO POR ERROR
             checkedListBox1.Items.Clear();
             checkedListBox2.Items.Clear();
@@ -110,36 +111,47 @@ namespace MercadoEnvio.ABMRol
 
         private void buttonModificar_Click(object sender, EventArgs e)
         {
-            int id_rol = abm_rol.getIdRol(comboNombresRoles.SelectedItem.ToString());
-
-            //ELIMINO TODAS LAS FUNCIONES QUE TIENE ASIGNADAS EL ROL - OK
-            abm_rol.deleteFuncionesDeRol(id_rol);
-
-            //AGREGO LAS CORRESPONDIENTES POR LA MODIFICACION
-            string funcionalidad;
-            int id_func;
-            for (int x = 0; x <= checkedListBox1.Items.Count - 1; x++)
+            try
             {
+                int id_rol = abm_rol.getIdRol(comboNombresRoles.SelectedItem.ToString());
 
+                //ELIMINO TODAS LAS FUNCIONES QUE TIENE ASIGNADAS EL ROL - OK
+                abm_rol.deleteFuncionesDeRol(id_rol);
+
+                //AGREGO LAS CORRESPONDIENTES POR LA MODIFICACION
+                string funcionalidad;
+                int id_func;
+                for (int x = 0; x <= checkedListBox1.Items.Count - 1; x++)
+                {
                     funcionalidad = checkedListBox1.Items[x].ToString();
                     id_func = abm_rol.getIdFunc(funcionalidad);
                     abm_rol.setearFuncionalidades(funcionalidad, id_func, id_rol);
+                }
+
+                string estado = "";
+                if (radioButtonH.Checked)
+                    estado = "H";
+                else
+                    estado = "D";
+
+                String nombre = "";
+
+                if (textNewName.Text != "")
+                {
+                    nombre = textNewName.Text;
+                    abm_rol.updateNombreRol(id_rol, nombre);
+                }
+                // UPDATEO EL ESTADO EN CASO DE QUE SEA NECESARIO
+                abm_rol.updateEstadoRol(estado, id_rol);
+
+                //DESHABILITO USUARIO EN CASO DE QUE EL ESTADO DEL ROL SEA D (¿QUE ONDA CON ESTO?)
+                MessageBox.Show("El Rol ha sido modificado satisfactoriamente");
+                this.Close();
             }
-
-            string estado = "";
-            if (radioButtonH.Checked)
-                estado = "H";
-            else
-                estado = "D";
-
-            // UPDATEO EL ESTADO EN CASO DE QUE SEA NECESARIO
-            abm_rol.updateEstadoRol(estado, id_rol);
-
-            //DESHABILITO USUARIO EN CASO DE QUE EL ESTADO DEL ROL SEA D (¿QUE ONDA CON ESTO?)
-
-            MessageBox.Show("El Rol ha sido modificado satisfactoriamente");
-            this.Close();
-
+            catch
+            {
+                MessageBox.Show("Asegúrese de haber completado los datos correspondientes");
+            }
         }
 
         private void leerArchivoConfig()

@@ -17,10 +17,24 @@ namespace MercadoEnvio.ABM_Empresa
     public partial class buscarEmpresa : Form
     {
         ABM_usuario_DAO abm_usuario;
+        private int tamanioPagina = 11;
+        private int paginaActual = 1;
+        private int totalPaginas = 0;
+        public List<String> filtros = new List<String>();
+
         public buscarEmpresa()
         {
             abm_usuario = new ABM_usuario_DAO();
             InitializeComponent();
+            cargarDatos();
+            cargarGrid(filtros);
+        }
+
+        public void cargarDatos()
+        {
+            filtros.Add("1=1");
+            filtros.Add("1=1");
+            filtros.Add("1=1");
         }
 
         private void B_Limpiar_Click(object sender, EventArgs e)
@@ -71,8 +85,10 @@ namespace MercadoEnvio.ABM_Empresa
 
         private void B_Buscar_Click(object sender, EventArgs e)
         {
-            List<String> filtros = new List<String>();
+            filtros = new List<String>();
             listado.Rows.Clear();
+
+            this.paginaActual = 1;
 
             if (textRazSoc.Text != "")
                 filtros.Add("e.desc_razon_social like '%" + textRazSoc.Text + "%'");
@@ -86,19 +102,26 @@ namespace MercadoEnvio.ABM_Empresa
                 filtros.Add("e.desc_Cuit like '%" + textCuit.Text + "%'");
             else
                 filtros.Add("1 = 1");
-            
+
+            cargarGrid(filtros);
+        }
+
+        public void cargarGrid (List<String> filtros)
+        {
+            listado.Rows.Clear();
+
+            int totalRegistros = abm_usuario.obtenerTotalRegistrosEmpresa(filtros);
+            this.totalPaginas = calcularTotalDePaginas(totalRegistros);
+
+            List<SqlDataReader> empresa = abm_usuario.buscarEmpresa(filtros, paginaActual, tamanioPagina);
+
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
             Object[] columnas = new Object[18];
 
-            List<SqlDataReader> empresa = abm_usuario.buscarEmpresa(filtros);
-
-            List<String> id_usuarios = new List<String>();
-            String id_usuario = "";
-
             while (empresa[0].Read())
             {
-                id_usuario = empresa[0]["id_usuario"].ToString();
-                columnas[1] = id_usuario;
+                //id_usuario = empresa[0]["id_usuario"].ToString();
+                columnas[1] = empresa[0]["id_usuario"].ToString();//  id_usuario;
                 columnas[2] = empresa[0]["desc_razon_social"];
                 columnas[3] = empresa[0]["desc_Cuit"];
                 columnas[4] = empresa[0]["desc_Fecha_Creacion"];
@@ -124,6 +147,47 @@ namespace MercadoEnvio.ABM_Empresa
         private void B_Volver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private int calcularTotalDePaginas(int cantRegistros)
+        {
+            int aux;
+            aux = cantRegistros / this.tamanioPagina;
+            if (cantRegistros % this.tamanioPagina > 0)
+            {
+                aux += 1;
+            }
+            return aux;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (!(this.paginaActual == this.totalPaginas))
+            {
+                this.paginaActual += 1;
+                cargarGrid(this.filtros);
+            }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            this.paginaActual = this.totalPaginas;
+            cargarGrid(this.filtros);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (!(this.paginaActual == 1))
+            {
+                this.paginaActual -= 1;
+                cargarGrid(this.filtros);
+            }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            this.paginaActual = 1;
+            cargarGrid(this.filtros);
         }
     }
 }

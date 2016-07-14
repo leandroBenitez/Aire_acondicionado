@@ -35,7 +35,7 @@
             this.id_usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.limpiarFiltros = new System.Windows.Forms.Button();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.textDestinatario = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -57,6 +57,12 @@
             this.textDia1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonVolver = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,11 +77,11 @@
             this.desc_fecha,
             this.desc_total,
             this.id_usuario});
-            this.listado.Location = new System.Drawing.Point(259, 213);
+            this.listado.Location = new System.Drawing.Point(257, 199);
             this.listado.Margin = new System.Windows.Forms.Padding(2);
             this.listado.Name = "listado";
             this.listado.RowTemplate.Height = 24;
-            this.listado.Size = new System.Drawing.Size(445, 300);
+            this.listado.Size = new System.Drawing.Size(445, 264);
             this.listado.TabIndex = 11;
             // 
             // id_factura
@@ -115,7 +121,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.limpiarFiltros);
             this.groupBox1.Controls.Add(this.buttonBuscar);
             this.groupBox1.Controls.Add(this.textDestinatario);
             this.groupBox1.Controls.Add(this.label10);
@@ -143,15 +151,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de Búsqueda";
             // 
-            // button1
+            // limpiarFiltros
             // 
-            this.button1.Location = new System.Drawing.Point(323, 128);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(83, 24);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Limpiar Filtros";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.limpiarFiltros.Location = new System.Drawing.Point(340, 128);
+            this.limpiarFiltros.Name = "limpiarFiltros";
+            this.limpiarFiltros.Size = new System.Drawing.Size(83, 24);
+            this.limpiarFiltros.TabIndex = 24;
+            this.limpiarFiltros.Text = "Limpiar Filtros";
+            this.limpiarFiltros.UseVisualStyleBackColor = true;
+            this.limpiarFiltros.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonBuscar
             // 
@@ -165,15 +173,15 @@
             // 
             // textDestinatario
             // 
-            this.textDestinatario.Location = new System.Drawing.Point(323, 102);
+            this.textDestinatario.Location = new System.Drawing.Point(340, 102);
             this.textDestinatario.Name = "textDestinatario";
-            this.textDestinatario.Size = new System.Drawing.Size(475, 20);
+            this.textDestinatario.Size = new System.Drawing.Size(458, 20);
             this.textDestinatario.TabIndex = 22;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(323, 86);
+            this.label10.Location = new System.Drawing.Point(337, 86);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(264, 13);
             this.label10.TabIndex = 21;
@@ -181,15 +189,15 @@
             // 
             // textDescripcion
             // 
-            this.textDescripcion.Location = new System.Drawing.Point(323, 46);
+            this.textDescripcion.Location = new System.Drawing.Point(340, 46);
             this.textDescripcion.Name = "textDescripcion";
-            this.textDescripcion.Size = new System.Drawing.Size(475, 20);
+            this.textDescripcion.Size = new System.Drawing.Size(458, 20);
             this.textDescripcion.TabIndex = 20;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(323, 27);
+            this.label9.Location = new System.Drawing.Point(337, 26);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(264, 13);
             this.label9.TabIndex = 19;
@@ -310,13 +318,13 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(4, 26);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(275, 13);
+            this.label2.Size = new System.Drawing.Size(327, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Intervalo de fechas (Se cargan ambas fechas o ninguna)";
+            this.label2.Text = "Intervalo de fechas (Si se carga alguna/ambas, llenar los 3 campos)";
             // 
             // buttonVolver
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(741, 513);
+            this.buttonVolver.Location = new System.Drawing.Point(735, 481);
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Size = new System.Drawing.Size(75, 23);
             this.buttonVolver.TabIndex = 14;
@@ -324,11 +332,73 @@
             this.buttonVolver.UseVisualStyleBackColor = true;
             this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(578, 481);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(91, 23);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "Última Pág. >>";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(311, 481);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 23);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "<< Primera Pág.";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(408, 481);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(79, 23);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "< Página Ant.";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(493, 481);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(79, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Página Sig. >";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(25, 45);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 13);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Desde -->";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(28, 72);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(50, 13);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Hasta -->";
+            // 
             // cons_fac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(829, 548);
+            this.ClientSize = new System.Drawing.Size(829, 521);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -368,11 +438,17 @@
         private System.Windows.Forms.TextBox textDescripcion;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonBuscar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button limpiarFiltros;
         private System.Windows.Forms.Button buttonVolver;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_factura;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc_total;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_usuario;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -73,6 +73,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonAlta = new System.Windows.Forms.Button();
             this.labelCliente = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBoxEmpresa.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -196,9 +197,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(47, 122);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 146;
-            this.label6.Text = "Telefono:";
+            this.label6.Text = "Telefono*:";
             // 
             // textCuit1
             // 
@@ -276,11 +277,11 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(75, 99);
+            this.label28.Location = new System.Drawing.Point(68, 96);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(29, 13);
+            this.label28.Size = new System.Drawing.Size(33, 13);
             this.label28.TabIndex = 132;
-            this.label28.Text = "Mail:";
+            this.label28.Text = "Mail*:";
             // 
             // textMail
             // 
@@ -310,9 +311,10 @@
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(65, 252);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(35, 13);
+            this.label22.Size = new System.Drawing.Size(39, 13);
             this.label22.TabIndex = 121;
-            this.label22.Text = "CUIT:";
+            this.label22.Text = "CUIT*:";
+            this.label22.Click += new System.EventHandler(this.label22_Click);
             // 
             // textDepto
             // 
@@ -342,15 +344,15 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(112, 170);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(30, 13);
+            this.label24.Size = new System.Drawing.Size(34, 13);
             this.label24.TabIndex = 117;
-            this.label24.Text = "Piso:";
+            this.label24.Text = "Piso*:";
             // 
             // textAltura
             // 
-            this.textAltura.Location = new System.Drawing.Point(242, 145);
+            this.textAltura.Location = new System.Drawing.Point(248, 144);
             this.textAltura.Name = "textAltura";
-            this.textAltura.Size = new System.Drawing.Size(29, 20);
+            this.textAltura.Size = new System.Drawing.Size(39, 20);
             this.textAltura.TabIndex = 116;
             // 
             // label25
@@ -358,9 +360,9 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(206, 148);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(37, 13);
+            this.label25.Size = new System.Drawing.Size(41, 13);
             this.label25.TabIndex = 115;
-            this.label25.Text = "Altura:";
+            this.label25.Text = "Altura*:";
             // 
             // textDireccion
             // 
@@ -383,16 +385,16 @@
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(9, 22);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(96, 13);
+            this.label30.Size = new System.Drawing.Size(100, 13);
             this.label30.TabIndex = 105;
-            this.label30.Text = "Nro. Razon Social:";
+            this.label30.Text = "Nro. Razon Social*:";
             // 
             // textRazonSoc
             // 
             this.textRazonSoc.Location = new System.Drawing.Point(116, 19);
             this.textRazonSoc.Name = "textRazonSoc";
             this.textRazonSoc.Size = new System.Drawing.Size(208, 20);
-            this.textRazonSoc.TabIndex = 104;
+            this.textRazonSoc.TabIndex = 47;
             // 
             // groupBox1
             // 
@@ -415,7 +417,7 @@
             this.buttonVolver.Location = new System.Drawing.Point(231, 65);
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Size = new System.Drawing.Size(75, 23);
-            this.buttonVolver.TabIndex = 48;
+            this.buttonVolver.TabIndex = 43;
             this.buttonVolver.Text = "Volver";
             this.buttonVolver.UseVisualStyleBackColor = true;
             this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
@@ -426,7 +428,7 @@
             this.textRol.Name = "textRol";
             this.textRol.ReadOnly = true;
             this.textRol.Size = new System.Drawing.Size(83, 20);
-            this.textRol.TabIndex = 47;
+            this.textRol.TabIndex = 46;
             // 
             // textPassword
             // 
@@ -492,11 +494,21 @@
             this.labelCliente.TabIndex = 143;
             this.labelCliente.Text = "ALTA DE EMPRESA";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(18, 483);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(261, 13);
+            this.label11.TabIndex = 144;
+            this.label11.Text = "Están marcados con asterisco los campos obligatorios";
+            // 
             // altaEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(402, 508);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.labelCliente);
             this.Controls.Add(this.buttonAlta);
             this.Controls.Add(this.groupBox1);
@@ -560,5 +572,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textNameContact;
+        private System.Windows.Forms.Label label11;
     }
 }

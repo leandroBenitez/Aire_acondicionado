@@ -66,8 +66,20 @@ namespace MercadoEnvio.ABM_Empresa
         private void buttonMod_Click(object sender, EventArgs e)
         {
             String mail = textMail.Text + "@" + comboDominio.Text;
-            abm_usuario.actualizarEmpresa(textRazonSoc.Text, mail, textTelefono.Text, textDireccion.Text, textAltura.Text, textDepto.Text, textLocalidad.Text, textCP.Text, textCiudad.Text, textCuit1.Text, textNombreContacto.Text, textRubro.Text, textUsername.Text);
-            this.Close();
+            try
+            {
+                if (textPass.Text != "")
+                {
+                    abm_usuario.actualizarPassword(textUsername.Text, textPass.Text);
+                }
+                abm_usuario.actualizarEmpresa(textRazonSoc.Text, mail, textTelefono.Text, textDireccion.Text, textAltura.Text, textDepto.Text, textLocalidad.Text, textCP.Text, textCiudad.Text, textCuit1.Text, textNombreContacto.Text, textRubro.Text, textUsername.Text);
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Verifique que estén completos correctamente todos los datos");
+            }
+
         }
 
         /* HABILITA O DESHABILITA AL USUARIO DEPENDIENDO EN QEU ESTADO ESTÉ - OK*/

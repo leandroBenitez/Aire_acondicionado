@@ -129,29 +129,70 @@ namespace MercadoEnvio.DataBase.Conexion
         }
 
         /* BUSCO CLIENTE POR FILTROS INGRESADOS */
-        public List<SqlDataReader> buscarCliente(List<String> filtros)
+        public List<SqlDataReader> buscarCliente(List<String> filtros, int pagina, int tamanioPagina)
         {
-            SqlDataReader clientes = this.GD1C2016.ejecutarSentenciaConRetorno("select * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario as u inner join GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente as c on u.id_usuario = c.id_usuario where " + filtros[0] +
-                                                                                                                                                                                                                                         " and " + filtros[1] +
-                                                                                                                                                                                                                                         " and " + filtros[2] +
-                                                                                                                                                                                                                                         " and " + filtros[3] +
-                                                                                                                                                                                                                                         " and " + filtros[4] + ";");
-            List<SqlDataReader> listaReturn = new List<SqlDataReader>();
-            listaReturn.Add(clientes);
+            if (pagina == 1)
+            {
+                SqlDataReader clientes = this.GD1C2016.ejecutarSentenciaConRetorno("select TOP " + tamanioPagina.ToString() + " * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario as u inner join GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente as c on u.id_usuario = c.id_usuario where " + filtros[0] +
+                                                                                                                                                                                                                                                                                            " and " + filtros[1] +
+                                                                                                                                                                                                                                                                                            " and " + filtros[2] +
+                                                                                                                                                                                                                                                                                            " and " + filtros[3] +
+                                                                                                                                                                                                                                                                                            " and " + filtros[4] + ";");
+                List<SqlDataReader> listaReturn = new List<SqlDataReader>();
+                listaReturn.Add(clientes);
 
-            return listaReturn;
+                return listaReturn;
+            }
+            else
+            {
+                int publicacionesAnteriores = (pagina - 1) * tamanioPagina;
+                SqlDataReader clientes = this.GD1C2016.ejecutarSentenciaConRetorno("select TOP " + tamanioPagina.ToString() + " * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario as u inner join GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente as c on u.id_usuario = c.id_usuario where " + filtros[0] +
+                                                                                                                                                                                                                                                                            " and " + filtros[1] +
+                                                                                                                                                                                                                                                                            " and " + filtros[2] +
+                                                                                                                                                                                                                                                                            " and " + filtros[3] +
+                                                                                                                                                                                                                                                                            " and " + filtros[4] +
+                                                                                                                                                                                                                                                                            " and " + "id_cliente not in (Select TOP " + publicacionesAnteriores.ToString() +
+                                                                                                                                                                                                                                                                                                           " id_cliente from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario as u inner join GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente as c on u.id_usuario = c.id_usuario where " + filtros[0] +
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                       " and " + filtros[1] +
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                       " and " + filtros[2] +
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                       " and " + filtros[3] +
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                       " and " + filtros[4] + " );");
+                List<SqlDataReader> listaReturn = new List<SqlDataReader>();
+                listaReturn.Add(clientes);
+
+                return listaReturn;
+            }
+           
         }
 
         /* BUSCO EMPRESA POR FILTROS INGRESADOS */
-        public List<SqlDataReader> buscarEmpresa(List<String> filtros)
+        public List<SqlDataReader> buscarEmpresa(List<String> filtros, int pagina, int tamanioPagina)
         {
-            SqlDataReader empresas = this.GD1C2016.ejecutarSentenciaConRetorno("select * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario as u inner join GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa as e on u.id_usuario = e.id_usuario where " + filtros[0] +
-                                                                                                                                                                                                                                        " and " + filtros[1] +
-                                                                                                                                                                                                                                        " and " + filtros[2] + ";");
-            List<SqlDataReader> listaReturn = new List<SqlDataReader>();
-            listaReturn.Add(empresas);
+            if (pagina == 1)
+            {
+                SqlDataReader empresas = this.GD1C2016.ejecutarSentenciaConRetorno("select TOP " + tamanioPagina.ToString() + " * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario as u inner join GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa as e on u.id_usuario = e.id_usuario where " + filtros[0] +
+                                                                                                                                                                                                                                                                                 " and " + filtros[1] +
+                                                                                                                                                                                                                                                                                 " and " + filtros[2] + ";");
+                List<SqlDataReader> listaReturn = new List<SqlDataReader>();
+                listaReturn.Add(empresas);
 
-            return listaReturn;
+                return listaReturn;
+            }
+            else
+            {
+                int publicacionesAnteriores = (pagina - 1) * tamanioPagina;
+                SqlDataReader empresas = this.GD1C2016.ejecutarSentenciaConRetorno("select TOP " + tamanioPagina.ToString() + " * from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario as u inner join GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa as e on u.id_usuario = e.id_usuario where " + filtros[0] +
+                                                                                                                                                                                                                                                                                 " and " + filtros[1] +
+                                                                                                                                                                                                                                                                                 " and " + filtros[2] +
+                                                                                                                                                                                                                                                                                 " and " + "id_empresa not in (Select TOP " + publicacionesAnteriores.ToString() +
+                                                                                                                                                                                                                                                                                 " id_empresa from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario as u inner join GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa as e on u.id_usuario = e.id_usuario where " + filtros[0] +
+                                                                                                                                                                                                                                                                                                                                                                                                                                             " and " + filtros[1] +
+                                                                                                                                                                                                                                                                                                                                                                                                                                             " and " + filtros[2] + ");");
+                List<SqlDataReader> listaReturn = new List<SqlDataReader>();
+                listaReturn.Add(empresas);
+
+                return listaReturn;
+            }
         }
         
         /* OBTENGO LA DESCRIPCION DE UN ROL SEGUN ID*/
@@ -252,6 +293,7 @@ namespace MercadoEnvio.DataBase.Conexion
         /* OBTENGO ID_USUARIO SEGUN USERNAME - Probar */
         public String getId(String desc_usuario)
         {
+            MessageBox.Show(desc_usuario);
             SqlDataReader id_usuario = this.GD1C2016.ejecutarSentenciaConRetorno("select id_usuario from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario where desc_username = '" + desc_usuario + "'");
             if (id_usuario.HasRows)
             {
@@ -277,6 +319,51 @@ namespace MercadoEnvio.DataBase.Conexion
             String est = estado["id_estado"].ToString();
             estado.Close();
             return est;
+        }
+
+        public int obtenerTotalRegistrosCliente(List<String> filtros)
+        {
+            SqlDataReader clientes = this.GD1C2016.ejecutarSentenciaConRetorno("select Count(1) as CONTADOR from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario as u inner join GESTORES_DEL_AIRE_ACONDICIONADO.lk_cliente as c on u.id_usuario = c.id_usuario where " + filtros[0] +
+                                                                                                                                                                                                                                                           " and " + filtros[1] +
+                                                                                                                                                                                                                                                           " and " + filtros[2] +
+                                                                                                                                                                                                                                                           " and " + filtros[3] +
+                                                                                                                                                                                                                                                           " and " + filtros[4] + ";");
+            clientes.Read();
+            int cantidad;
+            int.TryParse(clientes["CONTADOR"].ToString(), out cantidad);
+            clientes.Close();
+            return cantidad;
+        }
+
+        public int obtenerTotalRegistrosEmpresa(List<String> filtros)
+        {
+            SqlDataReader clientes = this.GD1C2016.ejecutarSentenciaConRetorno("select Count(1) as CONTADOR from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario as u inner join GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa as e on u.id_usuario = e.id_usuario where " + filtros[0] +
+                                                                                                                                                                                                                                        " and " + filtros[1] +
+                                                                                                                                                                                                                                        " and " + filtros[2] + ";");
+            clientes.Read();
+            int cantidad;
+            int.TryParse(clientes["CONTADOR"].ToString(), out cantidad);
+            clientes.Close();
+            return cantidad;
+        }
+
+        public int obtenerTotalRegistrosFacturas(List<String> filtros)
+        {
+            SqlDataReader clientes = this.GD1C2016.ejecutarSentenciaConRetorno("select Count(1) as CONTADOR FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura WHERE " + filtros[0] +
+                                                                                                                                                            " and " + filtros[1] +
+                                                                                                                                                            " and " + filtros[2] +
+                                                                                                                                                            " and " + filtros[3] + ";");
+            clientes.Read();
+            int cantidad;
+            int.TryParse(clientes["CONTADOR"].ToString(), out cantidad);
+            clientes.Close();
+            return cantidad;
+        }
+
+        public void actualizarPassword(String id_usuario, String nuevoPass)
+        {
+            
+            this.GD1C2016.ejecutarSentenciaSinRetorno("update GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario set desc_password = HASHBYTES('SHA2_256','" + nuevoPass + "' ) where id_usuario = '" + id_usuario + "';");
         }
     }
 }

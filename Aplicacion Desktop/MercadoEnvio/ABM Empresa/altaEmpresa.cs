@@ -46,64 +46,80 @@ namespace MercadoEnvio.ABM_Empresa
 
         private void buttonAlta_Click(object sender, EventArgs e)
         {
-            if (abm_usuario.validarRazSocExistente(textRazonSoc.Text) == 1)
+            try
             {
-                if (textCuit1.Text == "" || textCuit2.Text == "" || textCuit3.Text == "")
-                {
-                    MessageBox.Show("Debe ingresar un numero de cuit valido");
-                }
+                if (textRazonSoc.Text == "")
+                    MessageBox.Show("Ingresar un número de razón social, es obligatorio");
                 else
                 {
-                    String cuit = textCuit1.Text + "-" + textCuit2.Text + "-" + textCuit3.Text;
-                    if (abm_usuario.validarCuitExistente(cuit) == 1)
+                    if (abm_usuario.validarRazSocExistente(textRazonSoc.Text) == 1)
                     {
-
-                        if (comboDominio.SelectedItem == null)
+                        if (textCuit1.Text == "" || textCuit2.Text == "" || textCuit3.Text == "")
                         {
-                            MessageBox.Show("Debe ingresar un dominio de email. Ayuda: seleccione una de las opciones dadas");
+                            MessageBox.Show("Debe ingresar un numero de cuit valido");
                         }
                         else
                         {
-                            String username = textUsername.Text;
-                            String password = textPassword.Text;
-                            String rol = textRol.Text;
-                            String razSoc = textRazonSoc.Text;
-                            String desc_Mail = textMail.Text + "@" + comboDominio.SelectedItem.ToString();
-                            String telefono = textTelefono.Text;
-                            String fecha_creacion = textFechaSist.Text;
-                            String direccion = textDireccion.Text;
-                            String altura = textAltura.Text;
-                            String piso = textPiso.Text;
-                            String depto = textDepto.Text;
-                            String localidad = textLocalidad.Text;
-                            String codPos = textCP.Text;
-                            String ciudad = textCiudad.Text;
-                            String rubro = textRubro.Text;
-                            String nombreContacto = textNameContact.Text;
+                            String cuit = textCuit1.Text + "-" + textCuit2.Text + "-" + textCuit3.Text;
+                            if (abm_usuario.validarCuitExistente(cuit) == 1)
+                            {
 
-                            // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
-                            abm_usuario.setearEmpresa(username, password, rol, razSoc, desc_Mail, telefono, fecha_creacion, direccion, altura, piso, depto, localidad, codPos, ciudad, cuit, rubro, nombreContacto);
+                                if (comboDominio.SelectedItem == null)
+                                {
+                                    MessageBox.Show("Debe ingresar un dominio de email. Ayuda: seleccione una de las opciones dadas");
+                                }
+                                else
+                                {
+                                    String username = textUsername.Text;
+                                    String password = textPassword.Text;
+                                    String rol = textRol.Text;
+                                    String razSoc = textRazonSoc.Text;
+                                    String desc_Mail = textMail.Text + "@" + comboDominio.SelectedItem.ToString();
+                                    String telefono = textTelefono.Text;
+                                    String fecha_creacion = textFechaSist.Text;
+                                    String direccion = textDireccion.Text;
+                                    String altura = textAltura.Text;
+                                    String piso = textPiso.Text;
+                                    String depto = textDepto.Text;
+                                    String localidad = textLocalidad.Text;
+                                    String codPos = textCP.Text;
+                                    String ciudad = textCiudad.Text;
+                                    String rubro = textRubro.Text;
+                                    String nombreContacto = textNameContact.Text;
 
-                            // VUELVO
-                            MessageBox.Show("La empresa ha sido creada exitosamente!");
-                            this.Close();
+                                    // MANDO A SETEAR TABLAS USUARIO, ROLES_USUARIO Y CLIENTE - ME ESTA TIRANDO ERROR ESTO NO SE POR QUE 
+                                    abm_usuario.setearEmpresa(username, password, rol, razSoc, desc_Mail, telefono, fecha_creacion, direccion, altura, piso, depto, localidad, codPos, ciudad, cuit, rubro, nombreContacto);
+
+                                    // VUELVO
+                                    MessageBox.Show("La empresa ha sido creada exitosamente!");
+                                    this.Close();
+                                }
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("El numero de CUIT ya existe");
+                            }
                         }
-                        
                     }
                     else
                     {
-                        MessageBox.Show("El numero de CUIT ya existe");
+                        MessageBox.Show("El numero de razon social ya existe, por favor ingrese otro");
                     }
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("El numero de razon social ya existe, por favor ingrese otro");
+                MessageBox.Show("Verifique los datos ingresados");
             }
-
         }
 
         private void altaEmpresa_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label22_Click(object sender, EventArgs e)
         {
 
         }

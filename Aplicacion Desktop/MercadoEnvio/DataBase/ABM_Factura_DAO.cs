@@ -18,17 +18,38 @@ namespace MercadoEnvio.DataBase.Conexion
         }
 
         /* BUSCO FACTURAS POR FILTROS INGRESADOS */
-        public List<SqlDataReader> buscarFactura(List<String> filtros)
+        public List<SqlDataReader> buscarFactura(List<String> filtros, int pagina, int tamanioPagina)
         {
-            SqlDataReader facturas = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT * FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura WHERE " + filtros[0] +
-                                                                                                                                         " and " + filtros[1] +
-                                                                                                                                         " and " + filtros[2] +
-                                                                                                                                         " and " + filtros[3] + ";");
-            List<SqlDataReader> listaReturn = new List<SqlDataReader>();
-            listaReturn.Add(facturas);
-            
+            if (pagina == 1)
+            {
+                SqlDataReader facturas = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP " + tamanioPagina.ToString() + " * FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura WHERE " + filtros[0] +
+                                                                                                                                            " and " + filtros[1] +
+                                                                                                                                            " and " + filtros[2] +
+                                                                                                                                            " and " + filtros[3] + ";");
+                List<SqlDataReader> listaReturn = new List<SqlDataReader>();
+                listaReturn.Add(facturas);
 
-            return listaReturn;
+
+                return listaReturn;
+            }
+            else
+            {
+                int publicacionesAnteriores = (pagina - 1) * tamanioPagina;
+                SqlDataReader facturas = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP " + tamanioPagina.ToString() + " * FROM GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura WHERE " + filtros[0] +
+                                                                                                                                            " and " + filtros[1] +
+                                                                                                                                            " and " + filtros[2] +
+                                                                                                                                            " and " + filtros[3] + 
+                                                                                                                                            " and id_factura not in (Select TOP " + publicacionesAnteriores.ToString() +
+                                                                                                                                            " id_factura from GESTORES_DEL_AIRE_ACONDICIONADO.ft_factura WHERE " + filtros[0] +
+                                                                                                                                                                                                         " and " + filtros[1] +
+                                                                                                                                                                                                         " and " + filtros[2] +
+                                                                                                                                                                                                         " and " + filtros[3] + ");");
+                List<SqlDataReader> listaReturn = new List<SqlDataReader>();
+                listaReturn.Add(facturas);
+
+
+                return listaReturn;
+            }
         }
 
         /* OBTENGO TODOS LOS ID DE USUARIO TIRANDOLE UN LIKE A LA DESCRIPCIÓN EN LA TABLA USUARIO - PROBAR */

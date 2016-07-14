@@ -168,7 +168,10 @@ namespace MercadoEnvio.DataBase.Conexion
             return 0;
         }
 
-
+        public void updateNombreRol(int id_rol, String nombreRol)
+        {
+            this.GD1C2016.ejecutarSentenciaSinRetorno("UPDATE GESTORES_DEL_AIRE_ACONDICIONADO.dm_rol SET desc_rol = '" + nombreRol + "' where id_rol = " + id_rol + ";");
+        }
 
     }
 }
