@@ -46,7 +46,8 @@
             // 
             // buttonVolver
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(576, 270);
+            this.buttonVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonVolver.Location = new System.Drawing.Point(537, 270);
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Size = new System.Drawing.Size(92, 23);
             this.buttonVolver.TabIndex = 0;
@@ -78,7 +79,8 @@
             this.Col_IdCompra});
             this.dataGridViewComprasCalificadas.Location = new System.Drawing.Point(25, 24);
             this.dataGridViewComprasCalificadas.Name = "dataGridViewComprasCalificadas";
-            this.dataGridViewComprasCalificadas.Size = new System.Drawing.Size(643, 227);
+            this.dataGridViewComprasCalificadas.RowHeadersVisible = false;
+            this.dataGridViewComprasCalificadas.Size = new System.Drawing.Size(604, 227);
             this.dataGridViewComprasCalificadas.TabIndex = 1;
             // 
             // Col_IdCalif
@@ -123,7 +125,7 @@
             // 
             // buttonPaginaAnt
             // 
-            this.buttonPaginaAnt.Location = new System.Drawing.Point(160, 270);
+            this.buttonPaginaAnt.Location = new System.Drawing.Point(139, 270);
             this.buttonPaginaAnt.Name = "buttonPaginaAnt";
             this.buttonPaginaAnt.Size = new System.Drawing.Size(92, 23);
             this.buttonPaginaAnt.TabIndex = 3;
@@ -133,7 +135,7 @@
             // 
             // buttonPaginaSgte
             // 
-            this.buttonPaginaSgte.Location = new System.Drawing.Point(294, 270);
+            this.buttonPaginaSgte.Location = new System.Drawing.Point(261, 270);
             this.buttonPaginaSgte.Name = "buttonPaginaSgte";
             this.buttonPaginaSgte.Size = new System.Drawing.Size(92, 23);
             this.buttonPaginaSgte.TabIndex = 4;
@@ -143,7 +145,7 @@
             // 
             // buttonUltimaPag
             // 
-            this.buttonUltimaPag.Location = new System.Drawing.Point(445, 270);
+            this.buttonUltimaPag.Location = new System.Drawing.Point(396, 270);
             this.buttonUltimaPag.Name = "buttonUltimaPag";
             this.buttonUltimaPag.Size = new System.Drawing.Size(92, 23);
             this.buttonUltimaPag.TabIndex = 5;

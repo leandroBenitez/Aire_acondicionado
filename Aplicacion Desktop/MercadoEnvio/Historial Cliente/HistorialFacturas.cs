@@ -53,7 +53,7 @@ namespace MercadoEnvio.Historial_Cliente
                 columnas[1] = lectura["desc_fecha"].ToString();
                 columnas[2] = lectura["desc_total"].ToString();
                 columnas[3] = lectura["id_forma_pago"].ToString();
-                columnas[4] = lectura["Id_usuario"].ToString();
+                columnas[4] = lectura["id_usuario"].ToString();
 
                 filas.Add(new DataGridViewRow());
                 filas[filas.Count - 1].CreateCells(dataGridViewFacturas, columnas);

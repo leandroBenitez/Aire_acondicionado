@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonVolver = new System.Windows.Forms.Button();
             this.dataGridViewComprasSinCalificar = new System.Windows.Forms.DataGridView();
-            this.buttonPrimerPag = new System.Windows.Forms.Button();
-            this.buttonPaginaAnt = new System.Windows.Forms.Button();
-            this.buttonPaginaSgte = new System.Windows.Forms.Button();
-            this.buttonUltimaPag = new System.Windows.Forms.Button();
             this.Col_IdCalif = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_descCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_descCantidadEstrellas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_IdCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonPrimerPag = new System.Windows.Forms.Button();
+            this.buttonPaginaAnt = new System.Windows.Forms.Button();
+            this.buttonPaginaSgte = new System.Windows.Forms.Button();
+            this.buttonUltimaPag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewComprasSinCalificar)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonVolver
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(584, 275);
+            this.buttonVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonVolver.Location = new System.Drawing.Point(539, 262);
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Size = new System.Drawing.Size(94, 23);
             this.buttonVolver.TabIndex = 0;
@@ -61,14 +62,14 @@
             this.dataGridViewComprasSinCalificar.AllowUserToDeleteRows = false;
             this.dataGridViewComprasSinCalificar.AllowUserToResizeColumns = false;
             this.dataGridViewComprasSinCalificar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComprasSinCalificar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComprasSinCalificar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewComprasSinCalificar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewComprasSinCalificar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_IdCalif,
@@ -79,54 +80,15 @@
             this.Col_IdCompra});
             this.dataGridViewComprasSinCalificar.Location = new System.Drawing.Point(28, 27);
             this.dataGridViewComprasSinCalificar.Name = "dataGridViewComprasSinCalificar";
-            this.dataGridViewComprasSinCalificar.Size = new System.Drawing.Size(650, 217);
+            this.dataGridViewComprasSinCalificar.RowHeadersVisible = false;
+            this.dataGridViewComprasSinCalificar.Size = new System.Drawing.Size(605, 217);
             this.dataGridViewComprasSinCalificar.TabIndex = 1;
-            // 
-            // buttonPrimerPag
-            // 
-            this.buttonPrimerPag.Location = new System.Drawing.Point(28, 275);
-            this.buttonPrimerPag.Name = "buttonPrimerPag";
-            this.buttonPrimerPag.Size = new System.Drawing.Size(94, 23);
-            this.buttonPrimerPag.TabIndex = 2;
-            this.buttonPrimerPag.Text = "<< Primer Pág.";
-            this.buttonPrimerPag.UseVisualStyleBackColor = true;
-            this.buttonPrimerPag.Click += new System.EventHandler(this.buttonPrimerPag_Click);
-            // 
-            // buttonPaginaAnt
-            // 
-            this.buttonPaginaAnt.Location = new System.Drawing.Point(164, 275);
-            this.buttonPaginaAnt.Name = "buttonPaginaAnt";
-            this.buttonPaginaAnt.Size = new System.Drawing.Size(94, 23);
-            this.buttonPaginaAnt.TabIndex = 3;
-            this.buttonPaginaAnt.Text = "< Página Ant.";
-            this.buttonPaginaAnt.UseVisualStyleBackColor = true;
-            this.buttonPaginaAnt.Click += new System.EventHandler(this.buttonPaginaAnt_Click);
-            // 
-            // buttonPaginaSgte
-            // 
-            this.buttonPaginaSgte.Location = new System.Drawing.Point(303, 275);
-            this.buttonPaginaSgte.Name = "buttonPaginaSgte";
-            this.buttonPaginaSgte.Size = new System.Drawing.Size(94, 23);
-            this.buttonPaginaSgte.TabIndex = 4;
-            this.buttonPaginaSgte.Text = "Página Sgte >";
-            this.buttonPaginaSgte.UseVisualStyleBackColor = true;
-            this.buttonPaginaSgte.Click += new System.EventHandler(this.buttonPaginaSgte_Click);
-            // 
-            // buttonUltimaPag
-            // 
-            this.buttonUltimaPag.Location = new System.Drawing.Point(446, 275);
-            this.buttonUltimaPag.Name = "buttonUltimaPag";
-            this.buttonUltimaPag.Size = new System.Drawing.Size(94, 23);
-            this.buttonUltimaPag.TabIndex = 5;
-            this.buttonUltimaPag.Text = "Última Pág.";
-            this.buttonUltimaPag.UseVisualStyleBackColor = true;
-            this.buttonUltimaPag.Click += new System.EventHandler(this.buttonUltimaPag_Click);
             // 
             // Col_IdCalif
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Col_IdCalif.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Col_IdCalif.DefaultCellStyle = dataGridViewCellStyle4;
             this.Col_IdCalif.HeaderText = "Nº Calificación";
             this.Col_IdCalif.Name = "Col_IdCalif";
             this.Col_IdCalif.ReadOnly = true;
@@ -156,6 +118,46 @@
             this.Col_IdCompra.HeaderText = "Compra";
             this.Col_IdCompra.Name = "Col_IdCompra";
             // 
+            // buttonPrimerPag
+            // 
+            this.buttonPrimerPag.Location = new System.Drawing.Point(28, 262);
+            this.buttonPrimerPag.Name = "buttonPrimerPag";
+            this.buttonPrimerPag.Size = new System.Drawing.Size(94, 23);
+            this.buttonPrimerPag.TabIndex = 2;
+            this.buttonPrimerPag.Text = "<< Primer Pág.";
+            this.buttonPrimerPag.UseVisualStyleBackColor = true;
+            this.buttonPrimerPag.Click += new System.EventHandler(this.buttonPrimerPag_Click);
+            // 
+            // buttonPaginaAnt
+            // 
+            this.buttonPaginaAnt.Location = new System.Drawing.Point(153, 262);
+            this.buttonPaginaAnt.Name = "buttonPaginaAnt";
+            this.buttonPaginaAnt.Size = new System.Drawing.Size(94, 23);
+            this.buttonPaginaAnt.TabIndex = 3;
+            this.buttonPaginaAnt.Text = "< Página Ant.";
+            this.buttonPaginaAnt.UseVisualStyleBackColor = true;
+            this.buttonPaginaAnt.Click += new System.EventHandler(this.buttonPaginaAnt_Click);
+            // 
+            // buttonPaginaSgte
+            // 
+            this.buttonPaginaSgte.Location = new System.Drawing.Point(283, 262);
+            this.buttonPaginaSgte.Name = "buttonPaginaSgte";
+            this.buttonPaginaSgte.Size = new System.Drawing.Size(94, 23);
+            this.buttonPaginaSgte.TabIndex = 4;
+            this.buttonPaginaSgte.Text = "Página Sgte >";
+            this.buttonPaginaSgte.UseVisualStyleBackColor = true;
+            this.buttonPaginaSgte.Click += new System.EventHandler(this.buttonPaginaSgte_Click);
+            // 
+            // buttonUltimaPag
+            // 
+            this.buttonUltimaPag.Location = new System.Drawing.Point(413, 262);
+            this.buttonUltimaPag.Name = "buttonUltimaPag";
+            this.buttonUltimaPag.Size = new System.Drawing.Size(94, 23);
+            this.buttonUltimaPag.TabIndex = 5;
+            this.buttonUltimaPag.Text = "Última Pág.";
+            this.buttonUltimaPag.UseVisualStyleBackColor = true;
+            this.buttonUltimaPag.Click += new System.EventHandler(this.buttonUltimaPag_Click);
+            // 
             // HistorialComprasSinCalificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +171,7 @@
             this.Controls.Add(this.buttonVolver);
             this.Name = "HistorialComprasSinCalificar";
             this.Text = "Compras sin calificar";
+            this.Load += new System.EventHandler(this.HistorialComprasSinCalificar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewComprasSinCalificar)).EndInit();
             this.ResumeLayout(false);
 

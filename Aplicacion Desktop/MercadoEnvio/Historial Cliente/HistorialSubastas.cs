@@ -44,7 +44,7 @@ namespace MercadoEnvio.Historial_Cliente
             lectura = HistSubDAO.get_subastas(this.id_usuario);
 
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
-            Object[] columnas = new Object[5];
+            Object[] columnas = new Object[6];
 
             while (lectura.Read())
             {
@@ -52,7 +52,8 @@ namespace MercadoEnvio.Historial_Cliente
                 columnas[1] = lectura["desc_fecha"].ToString();
                 columnas[2] = lectura["desc_monto"].ToString();
                 columnas[3] = lectura["id_publicación"].ToString();
-                columnas[4] = lectura["Id_usuario"].ToString();
+                columnas[4] = lectura["id_usuario"].ToString();
+                columnas[5] = lectura["desc_envio"].ToString();
 
                 filas.Add(new DataGridViewRow());
                 filas[filas.Count - 1].CreateCells(dataGridViewSubastas, columnas);

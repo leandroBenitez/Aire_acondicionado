@@ -110,5 +110,10 @@ namespace MercadoEnvio.Historial_Cliente
             this.paginaActual = this.totalPaginas;
             cargar_grid_histComprasSinCalificar();
         }
+
+        private void HistorialComprasSinCalificar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
