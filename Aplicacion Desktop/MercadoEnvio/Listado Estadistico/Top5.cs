@@ -112,6 +112,9 @@ namespace MercadoEnvio.Listado_Estadistico
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
             Object[] columnas = new Object[5];
 
+            this.dataGridViewTop5.Columns["Col_rubro"].Visible = true;
+            
+
             while(lectorT5.Read())
             {
                 i++;
@@ -119,7 +122,7 @@ namespace MercadoEnvio.Listado_Estadistico
                 columnas[1] = lectorT5["id_usuario"].ToString();
                 columnas[2] = lectorT5["desc_fecha"].ToString();
                 columnas[3] = lectorT5["Cantidad"].ToString();
-                columnas[4] = lectorT5["desc_rubro"].ToString(); //RUBRO)??
+                columnas[4] = lectorT5["desc_rubro"].ToString(); 
 
                 filas.Add(new DataGridViewRow());
                 filas[filas.Count - 1].CreateCells(dataGridViewTop5, columnas);
@@ -139,13 +142,16 @@ namespace MercadoEnvio.Listado_Estadistico
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
             Object[] columnas = new Object[4];
 
+            //this.dataGridViewTop5.Columns.Remove(Col_rubro);
+            this.dataGridViewTop5.Columns["Col_rubro"].Visible = false;
+
             while (lectorT5.Read())
             {
                 i++;
                 columnas[0] = i.ToString();
                 columnas[1] = lectorT5["id_usuario"].ToString();
                 columnas[2] = lectorT5["desc_fecha"].ToString();
-                columnas[3] = lectorT5["Cantidad"].ToString();
+                columnas[3] = lectorT5["Cantidad"].ToString();               
              
                 filas.Add(new DataGridViewRow());
                 filas[filas.Count - 1].CreateCells(dataGridViewTop5, columnas);
@@ -171,6 +177,7 @@ namespace MercadoEnvio.Listado_Estadistico
             comboBoxTop5.Items.Clear();
             comboBoxTrimestre.SelectedIndex = -1;
             comboBoxTrimestre.Items.Clear();
+            
         }
 
         private void comboBoxTrimestre_SelectedIndexChanged(object sender, EventArgs e)
