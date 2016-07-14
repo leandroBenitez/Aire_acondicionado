@@ -114,6 +114,11 @@ namespace MercadoEnvio.Historial_Cliente
             this.Close();
         }
 
+        private void HistorialCalificacionesRecibidas_Load(object sender, EventArgs e)
+        {
+            cargar_grid_histCalificacionesRecibidas();
+        }
+
 
 
     

@@ -111,6 +111,11 @@ namespace MercadoEnvio.Historial_Cliente
             cargar_grid_histSubastas();
         }
 
+        private void HistorialSubastas_Load(object sender, EventArgs e)
+        {
+            cargar_grid_histSubastas();
+        }
+
        
     }
 }

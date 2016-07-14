@@ -111,6 +111,11 @@ namespace MercadoEnvio.Historial_Cliente
             cargar_grid_histFacturas();
         }
 
+        private void HistorialFacturas_Load(object sender, EventArgs e)
+        {
+            cargar_grid_histFacturas();
+        }
+
     }
 }
 

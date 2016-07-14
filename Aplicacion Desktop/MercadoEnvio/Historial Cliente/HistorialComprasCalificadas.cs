@@ -113,6 +113,11 @@ namespace MercadoEnvio.Historial_Cliente
             this.Close();
         }
 
+        private void HistorialComprasCalificadas_Load(object sender, EventArgs e)
+        {
+            cargar_grid_histComprasCalificadas();
+        }
+
       
 
       

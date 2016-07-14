@@ -35,16 +35,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonVolverAlMenu = new System.Windows.Forms.Button();
             this.dataGridViewSubastas = new System.Windows.Forms.DataGridView();
-            this.buttonPrimerPag = new System.Windows.Forms.Button();
-            this.buttonPaginaAnt = new System.Windows.Forms.Button();
-            this.buttonPaginaSgte = new System.Windows.Forms.Button();
-            this.buttonUltimaPag = new System.Windows.Forms.Button();
             this.Col_idSubasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_descFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_descMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_idPublicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_envio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonPrimerPag = new System.Windows.Forms.Button();
+            this.buttonPaginaAnt = new System.Windows.Forms.Button();
+            this.buttonPaginaSgte = new System.Windows.Forms.Button();
+            this.buttonUltimaPag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubastas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,6 +109,36 @@
             this.dataGridViewSubastas.Size = new System.Drawing.Size(594, 226);
             this.dataGridViewSubastas.TabIndex = 3;
             // 
+            // Col_idSubasta
+            // 
+            this.Col_idSubasta.HeaderText = "Subasta";
+            this.Col_idSubasta.Name = "Col_idSubasta";
+            // 
+            // Col_descFecha
+            // 
+            this.Col_descFecha.HeaderText = "Fecha";
+            this.Col_descFecha.Name = "Col_descFecha";
+            // 
+            // Col_descMonto
+            // 
+            this.Col_descMonto.HeaderText = "Monto";
+            this.Col_descMonto.Name = "Col_descMonto";
+            // 
+            // Col_idPublicacion
+            // 
+            this.Col_idPublicacion.HeaderText = "Publicación";
+            this.Col_idPublicacion.Name = "Col_idPublicacion";
+            // 
+            // Col_idUsuario
+            // 
+            this.Col_idUsuario.HeaderText = "Usuario";
+            this.Col_idUsuario.Name = "Col_idUsuario";
+            // 
+            // Col_envio
+            // 
+            this.Col_envio.HeaderText = "Envío";
+            this.Col_envio.Name = "Col_envio";
+            // 
             // buttonPrimerPag
             // 
             this.buttonPrimerPag.Location = new System.Drawing.Point(26, 268);
@@ -149,36 +179,6 @@
             this.buttonUltimaPag.UseVisualStyleBackColor = true;
             this.buttonUltimaPag.Click += new System.EventHandler(this.buttonUltimaPag_Click);
             // 
-            // Col_idSubasta
-            // 
-            this.Col_idSubasta.HeaderText = "Subasta";
-            this.Col_idSubasta.Name = "Col_idSubasta";
-            // 
-            // Col_descFecha
-            // 
-            this.Col_descFecha.HeaderText = "Fecha";
-            this.Col_descFecha.Name = "Col_descFecha";
-            // 
-            // Col_descMonto
-            // 
-            this.Col_descMonto.HeaderText = "Monto";
-            this.Col_descMonto.Name = "Col_descMonto";
-            // 
-            // Col_idPublicacion
-            // 
-            this.Col_idPublicacion.HeaderText = "Publicación";
-            this.Col_idPublicacion.Name = "Col_idPublicacion";
-            // 
-            // Col_idUsuario
-            // 
-            this.Col_idUsuario.HeaderText = "Usuario";
-            this.Col_idUsuario.Name = "Col_idUsuario";
-            // 
-            // Col_envio
-            // 
-            this.Col_envio.HeaderText = "Envío";
-            this.Col_envio.Name = "Col_envio";
-            // 
             // HistorialSubastas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +192,7 @@
             this.Controls.Add(this.buttonVolverAlMenu);
             this.Name = "HistorialSubastas";
             this.Text = "Historial Subastas";
+            this.Load += new System.EventHandler(this.HistorialSubastas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSubastas)).EndInit();
             this.ResumeLayout(false);
 

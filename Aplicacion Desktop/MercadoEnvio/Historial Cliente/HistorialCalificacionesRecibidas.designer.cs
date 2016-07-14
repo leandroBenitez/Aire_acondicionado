@@ -30,17 +30,17 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewCalificacionesRecibidas = new System.Windows.Forms.DataGridView();
-            this.buttonPrimerPag = new System.Windows.Forms.Button();
-            this.buttonPaginaAnt = new System.Windows.Forms.Button();
-            this.buttonPaginaSgte = new System.Windows.Forms.Button();
-            this.buttonVolver = new System.Windows.Forms.Button();
-            this.buttonUltimaPag = new System.Windows.Forms.Button();
             this.Col_idCalif = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_CantEstr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_idSubasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonPrimerPag = new System.Windows.Forms.Button();
+            this.buttonPaginaAnt = new System.Windows.Forms.Button();
+            this.buttonPaginaSgte = new System.Windows.Forms.Button();
+            this.buttonVolver = new System.Windows.Forms.Button();
+            this.buttonUltimaPag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCalificacionesRecibidas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +75,36 @@
             this.dataGridViewCalificacionesRecibidas.RowHeadersVisible = false;
             this.dataGridViewCalificacionesRecibidas.Size = new System.Drawing.Size(603, 228);
             this.dataGridViewCalificacionesRecibidas.TabIndex = 0;
+            // 
+            // Col_idCalif
+            // 
+            this.Col_idCalif.HeaderText = "Nº Calificación";
+            this.Col_idCalif.Name = "Col_idCalif";
+            // 
+            // Col_Cod
+            // 
+            this.Col_Cod.HeaderText = "Código";
+            this.Col_Cod.Name = "Col_Cod";
+            // 
+            // Col_CantEstr
+            // 
+            this.Col_CantEstr.HeaderText = "Estrellas";
+            this.Col_CantEstr.Name = "Col_CantEstr";
+            // 
+            // Col_Vendedor
+            // 
+            this.Col_Vendedor.HeaderText = "Vendedor";
+            this.Col_Vendedor.Name = "Col_Vendedor";
+            // 
+            // Col_Compra
+            // 
+            this.Col_Compra.HeaderText = "Compra";
+            this.Col_Compra.Name = "Col_Compra";
+            // 
+            // Col_idSubasta
+            // 
+            this.Col_idSubasta.HeaderText = "Subasta";
+            this.Col_idSubasta.Name = "Col_idSubasta";
             // 
             // buttonPrimerPag
             // 
@@ -126,36 +156,6 @@
             this.buttonUltimaPag.UseVisualStyleBackColor = true;
             this.buttonUltimaPag.Click += new System.EventHandler(this.buttonUltimaPag_Click);
             // 
-            // Col_idCalif
-            // 
-            this.Col_idCalif.HeaderText = "Nº Calificación";
-            this.Col_idCalif.Name = "Col_idCalif";
-            // 
-            // Col_Cod
-            // 
-            this.Col_Cod.HeaderText = "Código";
-            this.Col_Cod.Name = "Col_Cod";
-            // 
-            // Col_CantEstr
-            // 
-            this.Col_CantEstr.HeaderText = "Estrellas";
-            this.Col_CantEstr.Name = "Col_CantEstr";
-            // 
-            // Col_Vendedor
-            // 
-            this.Col_Vendedor.HeaderText = "Vendedor";
-            this.Col_Vendedor.Name = "Col_Vendedor";
-            // 
-            // Col_Compra
-            // 
-            this.Col_Compra.HeaderText = "Compra";
-            this.Col_Compra.Name = "Col_Compra";
-            // 
-            // Col_idSubasta
-            // 
-            this.Col_idSubasta.HeaderText = "Subasta";
-            this.Col_idSubasta.Name = "Col_idSubasta";
-            // 
             // HistorialCalificacionesRecibidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +169,7 @@
             this.Controls.Add(this.dataGridViewCalificacionesRecibidas);
             this.Name = "HistorialCalificacionesRecibidas";
             this.Text = "Calificaciones Recibidas";
+            this.Load += new System.EventHandler(this.HistorialCalificacionesRecibidas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCalificacionesRecibidas)).EndInit();
             this.ResumeLayout(false);
 

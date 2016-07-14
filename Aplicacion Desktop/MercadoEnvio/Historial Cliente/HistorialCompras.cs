@@ -51,7 +51,7 @@ namespace MercadoEnvio.Historial_Cliente
                 columnas[0] = lectura["id_compra"].ToString();
                 columnas[1] = lectura["desc_fecha"].ToString();
                 columnas[2] = lectura["desc_cantidad"].ToString();
-                columnas[3] = lectura["id_publicación"].ToString();
+                columnas[3] = lectura["id_publicacion"].ToString();
                 columnas[4] = lectura["id_usuario"].ToString();
                 columnas[5] = lectura["desc_envio"].ToString();
 
@@ -110,6 +110,11 @@ namespace MercadoEnvio.Historial_Cliente
         private void buttonUltimaPag_Click(object sender, EventArgs e)
         {
             this.paginaActual = this.totalPaginas;
+            cargar_grid_histCompras();
+        }
+
+        private void HistorialCompras_Load(object sender, EventArgs e)
+        {
             cargar_grid_histCompras();
         }
 

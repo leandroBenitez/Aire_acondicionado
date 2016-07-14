@@ -166,6 +166,7 @@
             this.Controls.Add(this.buttonVolver);
             this.Name = "HistorialComprasCalificadas";
             this.Text = "Compras calificadas";
+            this.Load += new System.EventHandler(this.HistorialComprasCalificadas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewComprasCalificadas)).EndInit();
             this.ResumeLayout(false);
 

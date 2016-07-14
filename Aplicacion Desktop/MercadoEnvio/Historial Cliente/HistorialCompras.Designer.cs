@@ -191,6 +191,7 @@
             this.Controls.Add(this.dataGridViewCompras);
             this.Name = "HistorialCompras";
             this.Text = "Historial compras";
+            this.Load += new System.EventHandler(this.HistorialCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompras)).EndInit();
             this.ResumeLayout(false);
 

@@ -41,7 +41,7 @@ namespace MercadoEnvio.Historial_Cliente
 
             SqlDataReader lectura;
 
-            lectura = HistEstDAO.get_comprasCalificadas(this.id_usuario);
+            lectura = HistEstDAO.get_comprasSinCalificar(this.id_usuario);
 
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
             Object[] columnas = new Object[6];
@@ -113,7 +113,7 @@ namespace MercadoEnvio.Historial_Cliente
 
         private void HistorialComprasSinCalificar_Load(object sender, EventArgs e)
         {
-
+            cargar_grid_histComprasSinCalificar();
         }
     }
 }

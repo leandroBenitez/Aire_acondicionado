@@ -184,6 +184,7 @@
             this.Controls.Add(this.buttonVolverAlMenu);
             this.Name = "HistorialFacturas";
             this.Text = "Historial de facturas";
+            this.Load += new System.EventHandler(this.HistorialFacturas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFacturas)).EndInit();
             this.ResumeLayout(false);
 
