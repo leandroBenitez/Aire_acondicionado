@@ -41,14 +41,14 @@ namespace MercadoEnvio.ListadoCalificaciones
         {
             int id_compra = 0;
             int id_subasta = 0;
-            int id_publicacion = 0;
+            decimal id_publicacion = 0;
 
             listadoCalificaciones = calificarDAO.getIdCalificacion(id_comprador);
 
             for (int i = 0; i < listadoCalificaciones.Count; i++)
             {
                 id_compra = calificarDAO.getCompra(int.Parse(listadoCalificaciones[i]));
-                /*
+                
                 if (id_compra == -1)
                 {
                     id_subasta = calificarDAO.getSubasta(int.Parse(listadoCalificaciones[i]));
@@ -58,23 +58,25 @@ namespace MercadoEnvio.ListadoCalificaciones
                 {
                 id_publicacion = calificarDAO.getPublicacionCompra(id_compra);
                 }
-                */
+                
                 calificacionListado.Rows.Add(listadoCalificaciones[i]
-                                            , id_compra
+                                            , publicacionDAO.get_desc_publicacion(id_publicacion)
                                             , usuarioDAO.getUsername(calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i])).ToString())
-                                            , calificarDAO.getCalificacion(id_comprador, listadoCalificaciones[i].ToString()));
+                                            , calificarDAO.getCalificacion(int.Parse(listadoCalificaciones[i])));
             }
         }
 
         private void button_seleccionar_Click(object sender, EventArgs e)
         {
+            int id_user = int.Parse(this.unMenu.id_usuario.ToString());
+
             try
             {
                 DataGridViewRow fila = calificacionListado.SelectedRows[0];
-                int publicacion = int.Parse(fila.Cells["Publicacion"].Value.ToString());
-                int vendedor = int.Parse(fila.Cells["Vendedor"].Value.ToString());
+                int id_calif = int.Parse(fila.Cells["idCalificacion"].Value.ToString());
+                int vendedor = calificarDAO.getVendedor(id_calif);
 
-                Calificar formCalificar = new Calificar(publicacion, vendedor, int.Parse(this.unMenu.id_usuario.ToString()), this.unMenu, this);
+                Calificar formCalificar = new Calificar(id_calif, vendedor, id_user, this.unMenu, this);
                 formCalificar.Show();
                 this.Close();
             }

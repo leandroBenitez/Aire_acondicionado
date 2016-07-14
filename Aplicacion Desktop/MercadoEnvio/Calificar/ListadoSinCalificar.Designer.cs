@@ -48,12 +48,12 @@
             this.Calificación});
             this.calificacionListado.Location = new System.Drawing.Point(13, 24);
             this.calificacionListado.Name = "calificacionListado";
-            this.calificacionListado.Size = new System.Drawing.Size(445, 195);
+            this.calificacionListado.Size = new System.Drawing.Size(513, 195);
             this.calificacionListado.TabIndex = 0;
             // 
             // button_seleccionar
             // 
-            this.button_seleccionar.Location = new System.Drawing.Point(383, 225);
+            this.button_seleccionar.Location = new System.Drawing.Point(451, 225);
             this.button_seleccionar.Name = "button_seleccionar";
             this.button_seleccionar.Size = new System.Drawing.Size(75, 23);
             this.button_seleccionar.TabIndex = 1;
@@ -75,6 +75,7 @@
             // 
             // idCalificacion
             // 
+            this.idCalificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.idCalificacion.HeaderText = "CalificacionID";
             this.idCalificacion.Name = "idCalificacion";
             // 
@@ -82,6 +83,7 @@
             // 
             this.Publicacion.HeaderText = "Publicacion";
             this.Publicacion.Name = "Publicacion";
+            this.Publicacion.Width = 200;
             // 
             // Vendedor
             // 
@@ -92,6 +94,7 @@
             // 
             this.Calificación.HeaderText = "Calificación";
             this.Calificación.Name = "Calificación";
+            this.Calificación.Width = 70;
             // 
             // ListadoSinCalificar
             // 

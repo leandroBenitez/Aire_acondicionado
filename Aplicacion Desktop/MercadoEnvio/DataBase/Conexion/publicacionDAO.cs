@@ -66,8 +66,7 @@ namespace MercadoEnvio.DataBase.Conexion
             return visibilidad;
         }
 
-        /*OBTENGO USERNAME DE USUARIO - Probar*/
-        public String getUsername(int id_publicacion)
+        public String get_desc_publicacion(decimal id_publicacion)
         {
             SqlDataReader username = this.GD1C2016.ejecutarSentenciaConRetorno("Select desc_publicacion from " + ConstantesBD.tabla_publicaciones + " where id_publicacion = " + id_publicacion);
 

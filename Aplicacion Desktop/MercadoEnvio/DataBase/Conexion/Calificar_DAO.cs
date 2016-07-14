@@ -33,25 +33,17 @@ namespace MercadoEnvio.DataBase.Conexion
             return resultado;
         }
 
-        public int getCalificacion(int id_user, string id_pub)
+        public decimal getCalificacion(int id_pub)
         {
-            try
-            {
-                int id = 0;
+                decimal id = 0;
                 SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT desc_cantidad_estrellas FROM " + ConstantesBD.tabla_calificacion +
-                                                                                   " WHERE id_publicacion = " + id_pub +
-                                                                                   " AND id_usuario = " + id_user);
+                                                                                   " WHERE id_calificacion = " + id_pub);
 
                 if (num_rol.Read())
-                    id = (int)num_rol[0];
+                    id = (decimal)num_rol[0];
                 num_rol.Close();
 
                 return id;
-            }
-            catch (Exception e)
-            {
-                return 0;
-            }
         }
 
         public int getCompra(int id_cal)
@@ -74,16 +66,16 @@ namespace MercadoEnvio.DataBase.Conexion
             }
         }
 
-        public int getPublicacionCompra(int id_com)
+        public decimal getPublicacionCompra(int id_com)
         {
             try
             {
-                int id = 0;
+                decimal id = 0;
                 SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT id_publicacion FROM " + ConstantesBD.tabla_compras +
                                                                                    " WHERE id_compra = " + id_com);
 
                 if (num_rol.Read())
-                    id = (int)num_rol[0];
+                    id = (decimal)num_rol[0];
                 num_rol.Close();
 
                 return id;
@@ -114,16 +106,16 @@ namespace MercadoEnvio.DataBase.Conexion
             }
         }
 
-        public int getPublicacionSubasta(int id_sub)
+        public decimal getPublicacionSubasta(int id_sub)
         {
             try
             {
-                int id = 0;
+                decimal id = 0;
                 SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT id_publicacion FROM " + ConstantesBD.tabla_subastas +
                                                                                    " WHERE id_subasta = " + id_sub);
 
                 if (num_rol.Read())
-                    id = (int)num_rol[0];
+                    id = (decimal)num_rol[0];
                 num_rol.Close();
 
                 return id;

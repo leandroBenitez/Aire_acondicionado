@@ -23,7 +23,7 @@ namespace MercadoEnvio.Calificaciones
         int pubCalif, vendedorCalif, compradorCalif; 
         private Menu unMenu;
 
-        public Calificar(int publicacion, int vendedor, int comprador, Menu menu, ListadoSinCalificar listado)
+        public Calificar(int id_calif, int vendedor, int comprador, Menu menu, ListadoSinCalificar listado)
         {
             leerArchivoConfig();
             calificarDAO = new Calificar_DAO();
@@ -31,7 +31,7 @@ namespace MercadoEnvio.Calificaciones
             InitializeComponent();
 
             labelUsuario.Text = usuarioDAO.getUsername(vendedor.ToString());
-            pubCalif = publicacion;
+            pubCalif = id_calif;
             vendedorCalif = vendedor;
             compradorCalif = comprador;
             unMenu = menu;
