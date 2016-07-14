@@ -1445,7 +1445,7 @@ Insert into GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa	(	 id_usuario
 														)
 Select	 
 			 @ultimo_id
-			,@desc_razon_social 
+			,'Razon Social Nº:' + @desc_razon_social 
 			,@desc_Mail 
 			,Convert(numeric(10,0), @desc_Telefono)  
 			,Convert(datetime, substring(@desc_fecha_Creacion, 7,4)+substring(@desc_fecha_Creacion, 1,2)+substring(@desc_fecha_Creacion, 4,2))
@@ -1564,8 +1564,8 @@ Go
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
 															,desc_password
 															,id_estado	)
-Values	 ('admin', HASHBYTES('sha2_256', 'w23e'), 1)
+Values	 ('administrador', HASHBYTES('sha2_256', 'w23e'), 1)
 
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
-values	 (@@IDENTITY, 4)
+values	 (@@IDENTITY, 3)
 Go
