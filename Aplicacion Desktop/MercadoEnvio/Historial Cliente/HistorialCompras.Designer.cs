@@ -44,6 +44,7 @@
             this.Col_DescCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_idPubl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_envio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCompras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,7 +70,8 @@
             this.Col_DescFec,
             this.Col_DescCant,
             this.Col_idPubl,
-            this.Col_idUsuario});
+            this.Col_idUsuario,
+            this.Col_envio});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,10 +90,11 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewCompras.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewCompras.RowHeadersVisible = false;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewCompras.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewCompras.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridViewCompras.Size = new System.Drawing.Size(529, 228);
+            this.dataGridViewCompras.Size = new System.Drawing.Size(581, 228);
             this.dataGridViewCompras.TabIndex = 3;
             // 
             // buttonVolverAlMenu
@@ -170,11 +173,16 @@
             this.Col_idUsuario.HeaderText = "Usuario";
             this.Col_idUsuario.Name = "Col_idUsuario";
             // 
+            // Col_envio
+            // 
+            this.Col_envio.HeaderText = "Envío";
+            this.Col_envio.Name = "Col_envio";
+            // 
             // HistorialCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(575, 314);
+            this.ClientSize = new System.Drawing.Size(662, 314);
             this.Controls.Add(this.buttonUltimaPag);
             this.Controls.Add(this.buttonPaginaSgte);
             this.Controls.Add(this.buttonPaginaAnt);
@@ -201,5 +209,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_DescCant;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idPubl;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_envio;
     }
 }

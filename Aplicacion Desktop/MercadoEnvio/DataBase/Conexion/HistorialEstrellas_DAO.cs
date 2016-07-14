@@ -38,7 +38,7 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public SqlDataReader get_calificacionesRecibidas(int id_usuario)//Las calificaciones las que recibe el vendedor
         { 
-            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.tabla_calificacion
+            SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT id_calificacion, desc_codigo, desc_cantidad_estrellas, id_usuario_vendedor, id_compra, id_subasta " + ConstantesBD.tabla_calificacion
                                                                                     + " where id_calificacion  > 0 and id_usuario_vendedor = '" + id_usuario.ToString() + "'");
 
             return resultado;

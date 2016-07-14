@@ -38,9 +38,9 @@
             this.Col_idCalif = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_CantEstr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_Desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_Compra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_idSubasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCalificacionesRecibidas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,12 +67,13 @@
             this.Col_idCalif,
             this.Col_Cod,
             this.Col_CantEstr,
-            this.Col_Desc,
             this.Col_Vendedor,
-            this.Col_Compra});
+            this.Col_Compra,
+            this.Col_idSubasta});
             this.dataGridViewCalificacionesRecibidas.Location = new System.Drawing.Point(21, 23);
             this.dataGridViewCalificacionesRecibidas.Name = "dataGridViewCalificacionesRecibidas";
-            this.dataGridViewCalificacionesRecibidas.Size = new System.Drawing.Size(643, 228);
+            this.dataGridViewCalificacionesRecibidas.RowHeadersVisible = false;
+            this.dataGridViewCalificacionesRecibidas.Size = new System.Drawing.Size(603, 228);
             this.dataGridViewCalificacionesRecibidas.TabIndex = 0;
             // 
             // buttonPrimerPag
@@ -96,7 +97,7 @@
             // 
             // buttonPaginaSgte
             // 
-            this.buttonPaginaSgte.Location = new System.Drawing.Point(287, 268);
+            this.buttonPaginaSgte.Location = new System.Drawing.Point(281, 268);
             this.buttonPaginaSgte.Name = "buttonPaginaSgte";
             this.buttonPaginaSgte.Size = new System.Drawing.Size(89, 23);
             this.buttonPaginaSgte.TabIndex = 3;
@@ -107,7 +108,7 @@
             // buttonVolver
             // 
             this.buttonVolver.ForeColor = System.Drawing.Color.Maroon;
-            this.buttonVolver.Location = new System.Drawing.Point(575, 268);
+            this.buttonVolver.Location = new System.Drawing.Point(535, 268);
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Size = new System.Drawing.Size(89, 23);
             this.buttonVolver.TabIndex = 5;
@@ -117,7 +118,7 @@
             // 
             // buttonUltimaPag
             // 
-            this.buttonUltimaPag.Location = new System.Drawing.Point(424, 268);
+            this.buttonUltimaPag.Location = new System.Drawing.Point(408, 268);
             this.buttonUltimaPag.Name = "buttonUltimaPag";
             this.buttonUltimaPag.Size = new System.Drawing.Size(89, 23);
             this.buttonUltimaPag.TabIndex = 6;
@@ -140,11 +141,6 @@
             this.Col_CantEstr.HeaderText = "Estrellas";
             this.Col_CantEstr.Name = "Col_CantEstr";
             // 
-            // Col_Desc
-            // 
-            this.Col_Desc.HeaderText = "Descripción";
-            this.Col_Desc.Name = "Col_Desc";
-            // 
             // Col_Vendedor
             // 
             this.Col_Vendedor.HeaderText = "Vendedor";
@@ -154,6 +150,11 @@
             // 
             this.Col_Compra.HeaderText = "Compra";
             this.Col_Compra.Name = "Col_Compra";
+            // 
+            // Col_idSubasta
+            // 
+            this.Col_idSubasta.HeaderText = "Subasta";
+            this.Col_idSubasta.Name = "Col_idSubasta";
             // 
             // HistorialCalificacionesRecibidas
             // 
@@ -184,8 +185,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_idCalif;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Cod;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CantEstr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Desc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Vendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Compra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_idSubasta;
     }
 }

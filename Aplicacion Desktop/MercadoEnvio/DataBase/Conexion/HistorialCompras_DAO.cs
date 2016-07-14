@@ -22,7 +22,6 @@ namespace MercadoEnvio.DataBase.Conexion
         {
             SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("Select * from " + ConstantesBD.tabla_compras 
                                                                                     + " where id_usuario = '" + id_usuario.ToString() + "'");
-
             return resultado;
         }
 
