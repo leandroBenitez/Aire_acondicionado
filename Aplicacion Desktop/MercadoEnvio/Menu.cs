@@ -116,7 +116,7 @@ namespace MercadoEnvio
 
         private void boton_comprar_Click(object sender, EventArgs e)
         {
-            if (this.loginDAO.calificaciones_pendientes(this.id_usuario) < 4)
+            if (this.loginDAO.calificaciones_pendientes(this.id_usuario) < 3)
             {
                 Publicaciones_compra publi = new Publicaciones_compra(this);
                 publi.Show();
@@ -130,7 +130,7 @@ namespace MercadoEnvio
 
         private void boton_ofertar_Click(object sender, EventArgs e)
         {
-            if (this.loginDAO.calificaciones_pendientes(this.id_usuario) < 4)
+            if (this.loginDAO.calificaciones_pendientes(this.id_usuario) < 3)
             {
                 Publicaciones_subasta publi = new Publicaciones_subasta(this);
                 publi.Show();

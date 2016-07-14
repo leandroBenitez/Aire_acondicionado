@@ -66,6 +66,25 @@ namespace MercadoEnvio.DataBase.Conexion
             return visibilidad;
         }
 
+        /*OBTENGO USERNAME DE USUARIO - Probar*/
+        public String getUsername(int id_publicacion)
+        {
+            SqlDataReader username = this.GD1C2016.ejecutarSentenciaConRetorno("Select desc_publicacion from " + ConstantesBD.tabla_publicaciones + " where id_publicacion = " + id_publicacion);
+
+            if (username.HasRows)
+            {
+                username.Read();
+                String user = username["desc_publicacion"].ToString();
+                username.Close();
+                return user;
+            }
+            else
+            {
+                return "eh";
+            }
+
+        }
+
         public int ultimo_id()
         {
             SqlDataReader resultado = this.GD1C2016.ejecutarSentenciaConRetorno("select MAX(id_publicacion) as max from " + ConstantesBD.tabla_publicaciones);

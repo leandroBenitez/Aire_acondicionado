@@ -208,21 +208,17 @@ namespace MercadoEnvio.DataBase.Conexion
         /*OBTENGO USERNAME DE USUARIO - Probar*/
         public String getUsername(String id_username)
         {
-            MessageBox.Show("Select desc_username from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario where id_usuario = '" + id_username + "';");
             SqlDataReader username = this.GD1C2016.ejecutarSentenciaConRetorno("Select desc_username from GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario where id_usuario = '" + id_username + "';");
 
             if (username.HasRows)
             {
-                MessageBox.Show("if");
                 username.Read();
                 String user = username["desc_username"].ToString();
-                MessageBox.Show(user);
                 username.Close();
                 return user;
             }
             else
             {
-                MessageBox.Show("else");
                 return "eh";
             }
 

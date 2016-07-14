@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.calificacionListado = new System.Windows.Forms.DataGridView();
+            this.button_seleccionar = new System.Windows.Forms.Button();
+            this.Volver = new System.Windows.Forms.Button();
+            this.idCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Publicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Calificación = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button_seleccionar = new System.Windows.Forms.Button();
-            this.Volver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.calificacionListado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,32 +42,18 @@
             // 
             this.calificacionListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.calificacionListado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCalificacion,
             this.Publicacion,
             this.Vendedor,
             this.Calificación});
             this.calificacionListado.Location = new System.Drawing.Point(13, 24);
             this.calificacionListado.Name = "calificacionListado";
-            this.calificacionListado.Size = new System.Drawing.Size(343, 166);
+            this.calificacionListado.Size = new System.Drawing.Size(445, 195);
             this.calificacionListado.TabIndex = 0;
-            // 
-            // Publicacion
-            // 
-            this.Publicacion.HeaderText = "Publicacion";
-            this.Publicacion.Name = "Publicacion";
-            // 
-            // Vendedor
-            // 
-            this.Vendedor.HeaderText = "Vendedor";
-            this.Vendedor.Name = "Vendedor";
-            // 
-            // Calificación
-            // 
-            this.Calificación.HeaderText = "Calificación";
-            this.Calificación.Name = "Calificación";
             // 
             // button_seleccionar
             // 
-            this.button_seleccionar.Location = new System.Drawing.Point(281, 225);
+            this.button_seleccionar.Location = new System.Drawing.Point(383, 225);
             this.button_seleccionar.Name = "button_seleccionar";
             this.button_seleccionar.Size = new System.Drawing.Size(75, 23);
             this.button_seleccionar.TabIndex = 1;
@@ -86,11 +73,31 @@
             this.Volver.UseVisualStyleBackColor = true;
             this.Volver.Click += new System.EventHandler(this.Volver_Click);
             // 
+            // idCalificacion
+            // 
+            this.idCalificacion.HeaderText = "CalificacionID";
+            this.idCalificacion.Name = "idCalificacion";
+            // 
+            // Publicacion
+            // 
+            this.Publicacion.HeaderText = "Publicacion";
+            this.Publicacion.Name = "Publicacion";
+            // 
+            // Vendedor
+            // 
+            this.Vendedor.HeaderText = "Vendedor";
+            this.Vendedor.Name = "Vendedor";
+            // 
+            // Calificación
+            // 
+            this.Calificación.HeaderText = "Calificación";
+            this.Calificación.Name = "Calificación";
+            // 
             // ListadoSinCalificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 289);
+            this.ClientSize = new System.Drawing.Size(558, 358);
             this.Controls.Add(this.Volver);
             this.Controls.Add(this.button_seleccionar);
             this.Controls.Add(this.calificacionListado);
@@ -105,9 +112,10 @@
 
         private System.Windows.Forms.DataGridView calificacionListado;
         private System.Windows.Forms.Button button_seleccionar;
+        private System.Windows.Forms.Button Volver;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCalificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Publicacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Calificación;
-        private System.Windows.Forms.Button Volver;
     }
 }

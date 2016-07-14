@@ -18,10 +18,10 @@ namespace MercadoEnvio.DataBase.Conexion
             this.iniciar();
         }
 
-        public List<string> getCompras(string comprador)
+        public List<string> getIdCalificacion(int comprador)
         {
             SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT ca.id_calificacion from " + ConstantesBD.tabla_calificacion + " ca" +
-                                                                             " WHERE ca.desc_cantidad_estrellas = 0 AND ca.id_usuario_comprador = " + comprador);
+                                                                             " WHERE ca.id_usuario_comprador = " + comprador);
             List<string> resultado = new List<string>();
 
             while (lector.Read())
@@ -54,6 +54,86 @@ namespace MercadoEnvio.DataBase.Conexion
             }
         }
 
+        public int getCompra(int id_cal)
+        {
+            try
+            {
+                int id = 0;
+                SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT id_compra FROM " + ConstantesBD.tabla_calificacion +
+                                                                                   " WHERE id_calificacion = " + id_cal);
+
+                if (num_rol.Read())
+                    id = (int)num_rol[0];
+                num_rol.Close();
+
+                return id;
+            }
+            catch (Exception e)
+            {
+                return -1;
+            }
+        }
+
+        public int getPublicacionCompra(int id_com)
+        {
+            try
+            {
+                int id = 0;
+                SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT id_publicacion FROM " + ConstantesBD.tabla_compras +
+                                                                                   " WHERE id_compra = " + id_com);
+
+                if (num_rol.Read())
+                    id = (int)num_rol[0];
+                num_rol.Close();
+
+                return id;
+            }
+            catch (Exception e)
+            {
+                return -1;
+            }
+        }
+
+        public int getSubasta(int id_cal)
+        {
+            try
+            {
+                int id = 0;
+                SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT id_subasta FROM " + ConstantesBD.tabla_calificacion +
+                                                                                   " WHERE id_calificacion = " + id_cal);
+
+                if (num_rol.Read())
+                    id = (int)num_rol[0];
+                num_rol.Close();
+
+                return id;
+            }
+            catch (Exception e)
+            {
+                return -1;
+            }
+        }
+
+        public int getPublicacionSubasta(int id_sub)
+        {
+            try
+            {
+                int id = 0;
+                SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT id_publicacion FROM " + ConstantesBD.tabla_subastas +
+                                                                                   " WHERE id_subasta = " + id_sub);
+
+                if (num_rol.Read())
+                    id = (int)num_rol[0];
+                num_rol.Close();
+
+                return id;
+            }
+            catch (Exception e)
+            {
+                return -1;
+            }
+        }
+        
         public int getVendedor(int id_compra)
         {
             int id = 0;

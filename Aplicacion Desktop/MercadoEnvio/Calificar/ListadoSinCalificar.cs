@@ -18,28 +18,51 @@ namespace MercadoEnvio.ListadoCalificaciones
     public partial class ListadoSinCalificar : Form
     {
         private Calificar_DAO calificarDAO;
+        private ABM_usuario_DAO usuarioDAO;
+        private publicacionDAO publicacionDAO;
+
         private Menu unMenu;
         List<string> listadoCalificaciones = new List<string>();
 
 
-        public ListadoSinCalificar(Menu menu, int id_vendendor)
+        public ListadoSinCalificar(Menu menu, int id_comprador)
         {
             leerArchivoConfig();
             calificarDAO = new Calificar_DAO();
+            usuarioDAO = new ABM_usuario_DAO();
+            publicacionDAO = new publicacionDAO();
+
             this.unMenu = menu;
             InitializeComponent();
-            cargarGridView(id_vendendor);
+            cargarGridView(id_comprador);
         }
 
-        private void cargarGridView(int id_vendendor)
+        private void cargarGridView(int id_comprador)
         {
-            listadoCalificaciones = calificarDAO.getCompras(id_vendendor.ToString());
+            int id_compra = 0;
+            int id_subasta = 0;
+            int id_publicacion = 0;
+
+            listadoCalificaciones = calificarDAO.getIdCalificacion(id_comprador);
 
             for (int i = 0; i < listadoCalificaciones.Count; i++)
             {
+                id_compra = calificarDAO.getCompra(int.Parse(listadoCalificaciones[i]));
+                /*
+                if (id_compra == -1)
+                {
+                    id_subasta = calificarDAO.getSubasta(int.Parse(listadoCalificaciones[i]));
+                    id_publicacion = calificarDAO.getPublicacionSubasta(id_subasta);
+                }
+                else
+                {
+                id_publicacion = calificarDAO.getPublicacionCompra(id_compra);
+                }
+                */
                 calificacionListado.Rows.Add(listadoCalificaciones[i]
-                                            , calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i]))
-                                            ,calificarDAO.getCalificacion(id_vendendor, listadoCalificaciones[i].ToString()));
+                                            , id_compra
+                                            , usuarioDAO.getUsername(calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i])).ToString())
+                                            , calificarDAO.getCalificacion(id_comprador, listadoCalificaciones[i].ToString()));
             }
         }
 
