@@ -63,6 +63,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.textCuit3 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textCuit2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -196,6 +200,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textCuit3);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.textCuit2);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textCuit);
             this.groupBox1.Controls.Add(this.textEmail);
             this.groupBox1.Controls.Add(this.textRazSoc);
@@ -220,7 +228,7 @@
             this.textCuit.Margin = new System.Windows.Forms.Padding(2);
             this.textCuit.MaxLength = 20;
             this.textCuit.Name = "textCuit";
-            this.textCuit.Size = new System.Drawing.Size(120, 20);
+            this.textCuit.Size = new System.Drawing.Size(20, 20);
             this.textCuit.TabIndex = 3;
             // 
             // textEmail
@@ -364,6 +372,38 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // textCuit3
+            // 
+            this.textCuit3.Location = new System.Drawing.Point(526, 56);
+            this.textCuit3.Name = "textCuit3";
+            this.textCuit3.Size = new System.Drawing.Size(20, 20);
+            this.textCuit3.TabIndex = 148;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(509, 59);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(10, 13);
+            this.label5.TabIndex = 147;
+            this.label5.Text = "-";
+            // 
+            // textCuit2
+            // 
+            this.textCuit2.Location = new System.Drawing.Point(444, 56);
+            this.textCuit2.Name = "textCuit2";
+            this.textCuit2.Size = new System.Drawing.Size(61, 20);
+            this.textCuit2.TabIndex = 146;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(434, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(10, 13);
+            this.label3.TabIndex = 145;
+            this.label3.Text = "-";
+            // 
             // buscarEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,5 +465,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textCuit3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textCuit2;
+        private System.Windows.Forms.Label label3;
     }
 }

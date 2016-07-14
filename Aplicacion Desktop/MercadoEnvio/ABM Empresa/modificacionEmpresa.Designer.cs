@@ -35,6 +35,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBoxEmpresa = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textPass = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.textRubro = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textNombreContacto = new System.Windows.Forms.TextBox();
@@ -68,9 +71,10 @@
             this.label30 = new System.Windows.Forms.Label();
             this.textRazonSoc = new System.Windows.Forms.TextBox();
             this.buttonDeshabilitar = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textPass = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.textCuit2 = new System.Windows.Forms.TextBox();
+            this.textCuit3 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBoxEmpresa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,6 +135,10 @@
             // 
             // groupBoxEmpresa
             // 
+            this.groupBoxEmpresa.Controls.Add(this.label12);
+            this.groupBoxEmpresa.Controls.Add(this.label11);
+            this.groupBoxEmpresa.Controls.Add(this.textCuit3);
+            this.groupBoxEmpresa.Controls.Add(this.textCuit2);
             this.groupBoxEmpresa.Controls.Add(this.label10);
             this.groupBoxEmpresa.Controls.Add(this.textPass);
             this.groupBoxEmpresa.Controls.Add(this.label9);
@@ -176,6 +184,32 @@
             this.groupBoxEmpresa.TabIndex = 144;
             this.groupBoxEmpresa.TabStop = false;
             this.groupBoxEmpresa.Text = "Datos Empresa";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(200, 56);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.TabIndex = 160;
+            this.label10.Text = "(opcional)";
+            // 
+            // textPass
+            // 
+            this.textPass.Location = new System.Drawing.Point(113, 53);
+            this.textPass.Name = "textPass";
+            this.textPass.PasswordChar = '*';
+            this.textPass.Size = new System.Drawing.Size(81, 20);
+            this.textPass.TabIndex = 159;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(14, 56);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(91, 13);
+            this.label9.TabIndex = 158;
+            this.label9.Text = "Nuevo Password:";
             // 
             // textRubro
             // 
@@ -278,7 +312,7 @@
             // 
             this.textCuit1.Location = new System.Drawing.Point(112, 309);
             this.textCuit1.Name = "textCuit1";
-            this.textCuit1.Size = new System.Drawing.Size(208, 20);
+            this.textCuit1.Size = new System.Drawing.Size(22, 20);
             this.textCuit1.TabIndex = 145;
             // 
             // textFechaCreacion
@@ -446,31 +480,37 @@
             this.buttonDeshabilitar.UseVisualStyleBackColor = true;
             this.buttonDeshabilitar.Click += new System.EventHandler(this.buttonDeshabilitar_Click_1);
             // 
-            // label9
+            // textCuit2
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 56);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 13);
-            this.label9.TabIndex = 158;
-            this.label9.Text = "Nuevo Password:";
+            this.textCuit2.Location = new System.Drawing.Point(145, 309);
+            this.textCuit2.Name = "textCuit2";
+            this.textCuit2.Size = new System.Drawing.Size(108, 20);
+            this.textCuit2.TabIndex = 161;
             // 
-            // textPass
+            // textCuit3
             // 
-            this.textPass.Location = new System.Drawing.Point(113, 53);
-            this.textPass.Name = "textPass";
-            this.textPass.PasswordChar = '*';
-            this.textPass.Size = new System.Drawing.Size(81, 20);
-            this.textPass.TabIndex = 159;
+            this.textCuit3.Location = new System.Drawing.Point(275, 309);
+            this.textCuit3.Name = "textCuit3";
+            this.textCuit3.Size = new System.Drawing.Size(20, 20);
+            this.textCuit3.TabIndex = 162;
             // 
-            // label10
+            // label11
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(200, 56);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 13);
-            this.label10.TabIndex = 160;
-            this.label10.Text = "(opcional)";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(135, 312);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(10, 13);
+            this.label11.TabIndex = 163;
+            this.label11.Text = "-";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(259, 312);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(10, 13);
+            this.label12.TabIndex = 164;
+            this.label12.Text = "-";
             // 
             // modificacionEmpresa
             // 
@@ -534,5 +574,9 @@
         private System.Windows.Forms.TextBox textPass;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textCuit3;
+        private System.Windows.Forms.TextBox textCuit2;
     }
 }

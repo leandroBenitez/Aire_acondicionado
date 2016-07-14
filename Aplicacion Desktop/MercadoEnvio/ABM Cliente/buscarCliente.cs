@@ -63,8 +63,18 @@ namespace MercadoEnvio.ABM_Usuario
             else 
                 filtros.Add("1 = 1");
             if (textDni.Text != "")
-                filtros.Add("c.desc_Dni like '%" + textDni.Text + "%'");
-            else 
+            {
+                if (textDni.Text.LongCount() == 8)
+                {
+                    filtros.Add("c.desc_Dni like '%" + textDni.Text + "%'");
+                }
+                else
+                {
+                    MessageBox.Show("No se filtró por DNI porque requiere de 8 caracteres específicamente");
+                    filtros.Add("1 = 1");
+                }
+            }
+            else
                 filtros.Add("1 = 1");
             if (textEmail.Text != "")
                 filtros.Add("c.desc_Mail like '%" + textEmail.Text + "%'");

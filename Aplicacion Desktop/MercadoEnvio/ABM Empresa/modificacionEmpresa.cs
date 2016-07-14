@@ -48,7 +48,13 @@ namespace MercadoEnvio.ABM_Empresa
             textDepto.Text = empresaMod.getDepto();
             textCP.Text = empresaMod.getCodPos();
             textLocalidad.Text = empresaMod.getLocalidad();
-            textCuit1.Text = empresaMod.getCuit();
+
+            /* DESCOMPONGO CUIT */
+
+            textCuit1.Text = empresaMod.getCuit().Substring(0,2);
+            textCuit2.Text = empresaMod.getCuit().Substring(3, 8);
+            //textCuit1.Text = empresaMod.getCuit().Substring(9, 10);
+
             textFechaCreacion.Text = empresaMod.getFechaCreacion();
             textRubro.Text = empresaMod.getRubro();
             textNombreContacto.Text = empresaMod.getNombreContacto();

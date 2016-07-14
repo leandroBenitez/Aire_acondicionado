@@ -1507,8 +1507,8 @@ As
 Declare @estado varchar(2)
 Declare @id_rol int
 
-Select estado_rol = @estado from inserted
-Select id_rol = @id_rol from inserted
+Set @estado = (Select estado_rol from inserted)
+Set @id_rol = (Select id_rol from inserted)
 
 if @estado = 'D'
 begin

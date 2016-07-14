@@ -85,25 +85,44 @@ namespace MercadoEnvio.ABM_Empresa
 
         private void B_Buscar_Click(object sender, EventArgs e)
         {
-            filtros = new List<String>();
-            listado.Rows.Clear();
+            try
+            {
+                filtros = new List<String>();
+                listado.Rows.Clear();
 
-            this.paginaActual = 1;
+                this.paginaActual = 1;
 
-            if (textRazSoc.Text != "")
-                filtros.Add("e.desc_razon_social like '%" + textRazSoc.Text + "%'");
-            else
-                filtros.Add("1 = 1");
-            if (textEmail.Text != "")
-                filtros.Add("e.desc_Mail like '%" + textEmail.Text + "%'");
-            else
-                filtros.Add("1 = 1");
-            if (textCuit.Text != "")
-                filtros.Add("e.desc_Cuit like '%" + textCuit.Text + "%'");
-            else
-                filtros.Add("1 = 1");
+                if (textRazSoc.Text != "")
+                    filtros.Add("e.desc_razon_social like '%" + textRazSoc.Text + "%'");
+                else
+                    filtros.Add("1 = 1");
+                if (textEmail.Text != "")
+                    filtros.Add("e.desc_Mail like '%" + textEmail.Text + "%'");
+                else
+                    filtros.Add("1 = 1");
+                if (textCuit.Text != "" || textCuit2.Text != "" || textCuit3.Text != "")
+                {
+                    if (textCuit.Text.LongCount() == 2 && textCuit2.Text.LongCount() == 8 && textCuit3.Text.LongCount() == 2)
+                    {
+                        String cuit = textCuit.Text + "-" + textCuit2.Text + "-" + textCuit3.Text;
+                        filtros.Add("e.desc_Cuit = '" + cuit + "'");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se filtró por CUIT porque se necesita el número de CUIT entero");
+                        filtros.Add("1 = 1");
+                    }
+                    
+                }
+                else
+                    filtros.Add("1 = 1");
 
-            cargarGrid(filtros);
+                cargarGrid(filtros);
+            }
+            catch
+            {
+                MessageBox.Show("Verifique los filtros ingresados");
+            }
         }
 
         public void cargarGrid (List<String> filtros)

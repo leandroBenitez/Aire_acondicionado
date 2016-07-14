@@ -16,7 +16,7 @@ namespace MercadoEnvio.Conexion
             this.GD1C2016 = new SQLServerBD(MercadoEnvio.DataBase.Conexion.ConstantesBD.Param_Conexion_urlServidor,
                 MercadoEnvio.DataBase.Conexion.ConstantesBD.Param_Conexion_usuario,
                 MercadoEnvio.DataBase.Conexion.ConstantesBD.Param_Conexion_contraseña,
-                MercadoEnvio.DataBase.Conexion.ConstantesBD.Param_Conexion_nombreBD, "true", "15");
+                MercadoEnvio.DataBase.Conexion.ConstantesBD.Param_Conexion_nombreBD, "true", "1000");
             this.GD1C2016.abrir();
         }
 

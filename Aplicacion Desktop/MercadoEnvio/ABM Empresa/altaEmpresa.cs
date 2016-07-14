@@ -54,7 +54,7 @@ namespace MercadoEnvio.ABM_Empresa
                 {
                     if (abm_usuario.validarRazSocExistente(textRazonSoc.Text) == 1)
                     {
-                        if (textCuit1.Text == "" || textCuit2.Text == "" || textCuit3.Text == "")
+                        if (textCuit1.Text.LongCount() != 2 || textCuit2.Text.LongCount() != 8 || textCuit3.Text.LongCount() != 2)
                         {
                             MessageBox.Show("Debe ingresar un numero de cuit valido");
                         }
