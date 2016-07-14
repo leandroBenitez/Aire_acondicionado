@@ -31,6 +31,7 @@
             this.labelCliente = new System.Windows.Forms.Label();
             this.buttonAlta = new System.Windows.Forms.Button();
             this.groupBoxCliente = new System.Windows.Forms.GroupBox();
+            this.fechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.comboTipoDoc = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textFechaCre = new System.Windows.Forms.TextBox();
@@ -67,7 +68,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.fechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBoxCliente.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -130,6 +131,13 @@
             this.groupBoxCliente.TabStop = false;
             this.groupBoxCliente.Text = "Datos Cliente";
             // 
+            // fechaNacimiento
+            // 
+            this.fechaNacimiento.Location = new System.Drawing.Point(116, 199);
+            this.fechaNacimiento.Name = "fechaNacimiento";
+            this.fechaNacimiento.Size = new System.Drawing.Size(100, 20);
+            this.fechaNacimiento.TabIndex = 108;
+            // 
             // comboTipoDoc
             // 
             this.comboTipoDoc.FormattingEnabled = true;
@@ -185,9 +193,9 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(49, 173);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 13);
+            this.label16.Size = new System.Drawing.Size(56, 13);
             this.label16.TabIndex = 94;
-            this.label16.Text = "Telefono:";
+            this.label16.Text = "Telefono*:";
             // 
             // textCP
             // 
@@ -249,9 +257,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(114, 128);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(30, 13);
+            this.label12.Size = new System.Drawing.Size(34, 13);
             this.label12.TabIndex = 86;
-            this.label12.Text = "Piso:";
+            this.label12.Text = "Piso*:";
             // 
             // textAltura
             // 
@@ -265,9 +273,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(213, 106);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 13);
+            this.label11.Size = new System.Drawing.Size(41, 13);
             this.label11.TabIndex = 84;
-            this.label11.Text = "Altura:";
+            this.label11.Text = "Altura*:";
             // 
             // textCalle
             // 
@@ -307,9 +315,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(75, 81);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
+            this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 79;
-            this.label7.Text = "Mail:";
+            this.label7.Text = "Mail*:";
             // 
             // textMail
             // 
@@ -437,18 +445,21 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Username:";
             // 
-            // fechaNacimiento
+            // label1
             // 
-            this.fechaNacimiento.Location = new System.Drawing.Point(116, 199);
-            this.fechaNacimiento.Name = "fechaNacimiento";
-            this.fechaNacimiento.Size = new System.Drawing.Size(100, 20);
-            this.fechaNacimiento.TabIndex = 108;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 445);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(261, 13);
+            this.label1.TabIndex = 145;
+            this.label1.Text = "Están marcados con asterisco los campos obligatorios";
             // 
             // altaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(361, 506);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxCliente);
             this.Controls.Add(this.buttonAlta);
@@ -506,5 +517,6 @@
         private System.Windows.Forms.TextBox textPassword;
         private System.Windows.Forms.TextBox textUsername;
         private System.Windows.Forms.DateTimePicker fechaNacimiento;
+        private System.Windows.Forms.Label label1;
     }
 }

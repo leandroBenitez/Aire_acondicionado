@@ -51,8 +51,10 @@ namespace MercadoEnvio.ABM_Usuario
         /* VALIDAR TODOS LOS CAMPOS CONTRA LA BASE */
         private void buttonAlta_Click(object sender, EventArgs e)
         {
+            try
+            {
                 // DNI EXISTENTE - SI ES = 1 ES PORQUE ES VALIDO EL DNI (NO ESTÁ INGRESADO TODAVIA)
-                if ( abm_usuario.validarDNIExistente(textDni.Text) == 1  )
+                if (abm_usuario.validarDNIExistente(textDni.Text) == 1)
                 {
                     if (comboDominio.SelectedItem == null)
                     {
@@ -94,15 +96,17 @@ namespace MercadoEnvio.ABM_Usuario
                         {
                             MessageBox.Show("Verifique los datos ingresados");
                         }
-                        
-
-                        
                     }
                 }
                 else
                 {
-                   MessageBox.Show("El DNI ingresado ya está registrado en el sistema");
+                    MessageBox.Show("El DNI ingresado ya está registrado en el sistema");
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Se ha producido un error, vuelva a intentarlo");
+            }
         }
 
         private void buttonSelectRol_Click(object sender, EventArgs e)

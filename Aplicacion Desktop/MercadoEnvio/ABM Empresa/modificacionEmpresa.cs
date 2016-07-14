@@ -51,9 +51,9 @@ namespace MercadoEnvio.ABM_Empresa
 
             /* DESCOMPONGO CUIT */
 
-            textCuit1.Text = empresaMod.getCuit().Substring(0,2);
+            textCuit1.Text = empresaMod.getCuit().Substring(1,2);
             textCuit2.Text = empresaMod.getCuit().Substring(3, 8);
-            //textCuit1.Text = empresaMod.getCuit().Substring(9, 10);
+            //textCuit3.Text = empresaMod.getCuit().Substring(8,9);
 
             textFechaCreacion.Text = empresaMod.getFechaCreacion();
             textRubro.Text = empresaMod.getRubro();
