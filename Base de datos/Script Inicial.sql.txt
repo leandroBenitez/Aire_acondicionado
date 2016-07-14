@@ -453,13 +453,13 @@ Insert into GESTORES_DEL_AIRE_ACONDICIONADO.dm_funcion	(desc_funcion)
 Values	('ABM de Rol'),
 		('ABM de Usuarios'),
 		('ABM de Rubro'),
-		('ABM visibilidad de publicación'),
-		('Generar Publicación'),
+		('ABM visibilidad de publicaciÃ³n'),
+		('Generar PublicaciÃ³n'),
 		('Comprar/Ofertar'),
 		('Historial del cliente'),
 		('Calificar al Vendedor'),
 		('Consulta de facturas realizadas al vendedor'),
-		('Listado Estadístico')
+		('Listado EstadÃ­stico')
 Go
 
 --Carga de los estados de las publicaciones
@@ -994,7 +994,20 @@ begin
 end
 GO
 
-/* STORED PROCEDURE PARA INICIAR APLICACION*/
+/* STORED PROCEDURE PARA INICIAR APLICACION SIMPLE*/
+Create procedure GESTORES_DEL_AIRE_ACONDICIONADO.inicializar_modelo (@fechasys varchar(10))
+as
+Declare @fecha date = convert(date, substring(@fechasys, 7, 4) + substring(@fechasys, 4, 2) + substring(@fechasys, 1, 2));
+
+Update GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
+set id_estado_publi = 4
+where	desc_fecha_venc < @fecha
+
+Go
+
+
+/* STORED PROCEDURE PARA INICIAR APLICACION CON FACTURACION, E ITEMS*/
+/*
 Create procedure GESTORES_DEL_AIRE_ACONDICIONADO.inicializar_modelo (@fechasys varchar(10))
 as
 Declare @fecha date = convert(date, substring(@fechasys, 7, 4) + substring(@fechasys, 4, 2) + substring(@fechasys, 1, 2));
@@ -1130,7 +1143,7 @@ end
 Close un_cursor
 Deallocate un_cursor
 
-Go
+Go*/
 
 /* STORED PROCEDURE PARA FACTURAR PUBLICACIONES CERRADAS */
 Create procedure GESTORES_DEL_AIRE_ACONDICIONADO.facturar_publicacion (	 @id_publicacion int
@@ -1445,7 +1458,7 @@ Insert into GESTORES_DEL_AIRE_ACONDICIONADO.lk_empresa	(	 id_usuario
 														)
 Select	 
 			 @ultimo_id
-			,'Razon Social Nº:' + @desc_razon_social 
+			,'Razon Social NÂº:' + @desc_razon_social 
 			,@desc_Mail 
 			,Convert(numeric(10,0), @desc_Telefono)  
 			,Convert(datetime, substring(@desc_fecha_Creacion, 7,4)+substring(@desc_fecha_Creacion, 1,2)+substring(@desc_fecha_Creacion, 4,2))
