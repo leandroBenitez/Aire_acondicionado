@@ -33,7 +33,7 @@ namespace MercadoEnvio.DataBase.Conexion
         public SqlDataReader getListVendMayorCantProdNoVend(string condicion)/*5 vendedores con mayor cantidad de productos no vendidos (1) */
         {
            SqlDataReader resultado;
-           resultado = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 id_usuario, fecha_publicacion, COUNT(id_publicacion) Cantidad FROM GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones WHERE desc_estado = 'Activo' "
+           resultado = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 id_usuario, fecha_publicacion, COUNT(id_publicacion) Cantidad FROM GESTORES_DEL_AIRE_ACONDICIONADO.publicaciones WHERE desc_estado != 'Activo' "
                                                                     + condicion + " GROUP BY id_usuario, fecha_publicacion ORDER BY fecha_publicacion ");
 
            return resultado;

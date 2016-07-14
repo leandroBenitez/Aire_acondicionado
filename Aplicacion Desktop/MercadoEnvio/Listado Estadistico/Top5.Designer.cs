@@ -123,8 +123,9 @@
             this.dataGridViewTop5.Location = new System.Drawing.Point(25, 108);
             this.dataGridViewTop5.MultiSelect = false;
             this.dataGridViewTop5.Name = "dataGridViewTop5";
+            this.dataGridViewTop5.RowHeadersVisible = false;
             this.dataGridViewTop5.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridViewTop5.Size = new System.Drawing.Size(542, 166);
+            this.dataGridViewTop5.Size = new System.Drawing.Size(503, 148);
             this.dataGridViewTop5.TabIndex = 6;
             // 
             // Col_nro

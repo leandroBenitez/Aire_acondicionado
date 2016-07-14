@@ -174,9 +174,8 @@ namespace MercadoEnvio.Listado_Estadistico
         {
             textBoxAñoTop.Text = "";
             comboBoxTop5.SelectedIndex = -1;
-            comboBoxTop5.Items.Clear();
             comboBoxTrimestre.SelectedIndex = -1;
-            comboBoxTrimestre.Items.Clear();
+            dataGridViewTop5.Rows.Clear();
             
         }
 

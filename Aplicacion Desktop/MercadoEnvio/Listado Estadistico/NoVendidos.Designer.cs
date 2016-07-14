@@ -104,7 +104,9 @@
             this.Col_CantProf});
             this.dataGridViewNoVendidos.Location = new System.Drawing.Point(38, 147);
             this.dataGridViewNoVendidos.Name = "dataGridViewNoVendidos";
-            this.dataGridViewNoVendidos.Size = new System.Drawing.Size(443, 180);
+            this.dataGridViewNoVendidos.RowHeadersVisible = false;
+            this.dataGridViewNoVendidos.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dataGridViewNoVendidos.Size = new System.Drawing.Size(405, 129);
             this.dataGridViewNoVendidos.TabIndex = 4;
             // 
             // Col_nro

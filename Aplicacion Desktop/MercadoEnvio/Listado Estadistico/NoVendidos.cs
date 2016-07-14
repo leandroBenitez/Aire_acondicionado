@@ -88,6 +88,8 @@ namespace MercadoEnvio.Listado_Estadistico
 
                 filas.Add(new DataGridViewRow());
                 filas[filas.Count - 1].CreateCells(dataGridViewNoVendidos, columnas);
+               
+
             }
 
             lectorNV.Close();
@@ -103,10 +105,9 @@ namespace MercadoEnvio.Listado_Estadistico
         private void buttonLimpiar_Click(object sender, EventArgs e)
         {
             comboBoxMes.SelectedIndex = -1;
-            comboBoxMes.Items.Clear();
             comboBoxVisibilidad.SelectedIndex = -1;
-            comboBoxVisibilidad.Items.Clear();
-
+            textBoxAñoNV.Text = "";
+            dataGridViewNoVendidos.Rows.Clear();
         }
 
         private void comboBoxMes_SelectedIndexChanged(object sender, EventArgs e)
