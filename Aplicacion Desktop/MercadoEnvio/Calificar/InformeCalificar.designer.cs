@@ -56,7 +56,7 @@
             // 
             this.button_volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.button_volver.ForeColor = System.Drawing.Color.Maroon;
-            this.button_volver.Location = new System.Drawing.Point(23, 626);
+            this.button_volver.Location = new System.Drawing.Point(23, 602);
             this.button_volver.Name = "button_volver";
             this.button_volver.Size = new System.Drawing.Size(75, 23);
             this.button_volver.TabIndex = 13;
@@ -153,7 +153,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox1.Location = new System.Drawing.Point(23, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(376, 299);
+            this.groupBox1.Size = new System.Drawing.Size(375, 283);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estrellas asignadas a compras";
@@ -162,7 +162,7 @@
             // 
             this.groupBox2.Controls.Add(this.dataGridView_historial);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox2.Location = new System.Drawing.Point(23, 374);
+            this.groupBox2.Location = new System.Drawing.Point(23, 350);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(494, 246);
             this.groupBox2.TabIndex = 21;
@@ -177,7 +177,7 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dataGridView_historial.Location = new System.Drawing.Point(16, 33);
+            this.dataGridView_historial.Location = new System.Drawing.Point(16, 31);
             this.dataGridView_historial.Name = "dataGridView_historial";
             this.dataGridView_historial.Size = new System.Drawing.Size(444, 184);
             this.dataGridView_historial.TabIndex = 14;
@@ -217,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 658);
+            this.ClientSize = new System.Drawing.Size(547, 631);
             this.Controls.Add(this.presentacion);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

@@ -56,7 +56,7 @@
             // 
             this.groupBox2.Controls.Add(this.dataGridView_historial);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox2.Location = new System.Drawing.Point(28, 371);
+            this.groupBox2.Location = new System.Drawing.Point(28, 353);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(494, 246);
             this.groupBox2.TabIndex = 24;
@@ -107,7 +107,7 @@
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.groupBox1.Location = new System.Drawing.Point(28, 49);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(376, 299);
+            this.groupBox1.Size = new System.Drawing.Size(376, 286);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estrellas asignadas a subastas";
@@ -193,7 +193,7 @@
             // 
             this.button_volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.button_volver.ForeColor = System.Drawing.Color.Maroon;
-            this.button_volver.Location = new System.Drawing.Point(28, 638);
+            this.button_volver.Location = new System.Drawing.Point(28, 620);
             this.button_volver.Name = "button_volver";
             this.button_volver.Size = new System.Drawing.Size(75, 23);
             this.button_volver.TabIndex = 22;

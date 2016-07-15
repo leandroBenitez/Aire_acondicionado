@@ -31,17 +31,17 @@
             this.button_seleccionar = new System.Windows.Forms.Button();
             this.Volver = new System.Windows.Forms.Button();
             this.calificacionListado = new System.Windows.Forms.DataGridView();
-            this.Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Publicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.presentacion = new System.Windows.Forms.Label();
+            this.idCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Publicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.calificacionListado)).BeginInit();
             this.SuspendLayout();
             // 
             // button_seleccionar
             // 
             this.button_seleccionar.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.button_seleccionar.Location = new System.Drawing.Point(407, 296);
+            this.button_seleccionar.Location = new System.Drawing.Point(302, 296);
             this.button_seleccionar.Name = "button_seleccionar";
             this.button_seleccionar.Size = new System.Drawing.Size(75, 23);
             this.button_seleccionar.TabIndex = 1;
@@ -70,13 +70,26 @@
             this.Vendedor});
             this.calificacionListado.Location = new System.Drawing.Point(33, 80);
             this.calificacionListado.Name = "calificacionListado";
-            this.calificacionListado.Size = new System.Drawing.Size(449, 195);
+            this.calificacionListado.Size = new System.Drawing.Size(344, 180);
             this.calificacionListado.TabIndex = 0;
             // 
-            // Vendedor
+            // presentacion
             // 
-            this.Vendedor.HeaderText = "Vendedor";
-            this.Vendedor.Name = "Vendedor";
+            this.presentacion.AutoSize = true;
+            this.presentacion.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presentacion.ForeColor = System.Drawing.Color.Black;
+            this.presentacion.Location = new System.Drawing.Point(68, 24);
+            this.presentacion.Name = "presentacion";
+            this.presentacion.Size = new System.Drawing.Size(273, 23);
+            this.presentacion.TabIndex = 9;
+            this.presentacion.Text = "PUBLICIDADES SIN CALIFICAR";
+            // 
+            // idCalificacion
+            // 
+            this.idCalificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.idCalificacion.HeaderText = "CalificacionID";
+            this.idCalificacion.Name = "idCalificacion";
+            this.idCalificacion.Visible = false;
             // 
             // Publicacion
             // 
@@ -84,28 +97,16 @@
             this.Publicacion.Name = "Publicacion";
             this.Publicacion.Width = 200;
             // 
-            // idCalificacion
+            // Vendedor
             // 
-            this.idCalificacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.idCalificacion.HeaderText = "CalificacionID";
-            this.idCalificacion.Name = "idCalificacion";
-            // 
-            // presentacion
-            // 
-            this.presentacion.AutoSize = true;
-            this.presentacion.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.presentacion.ForeColor = System.Drawing.Color.Black;
-            this.presentacion.Location = new System.Drawing.Point(117, 25);
-            this.presentacion.Name = "presentacion";
-            this.presentacion.Size = new System.Drawing.Size(273, 23);
-            this.presentacion.TabIndex = 9;
-            this.presentacion.Text = "PUBLICIDADES SIN CALIFICAR";
+            this.Vendedor.HeaderText = "Vendedor";
+            this.Vendedor.Name = "Vendedor";
             // 
             // ListadoSinCalificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 373);
+            this.ClientSize = new System.Drawing.Size(408, 346);
             this.Controls.Add(this.presentacion);
             this.Controls.Add(this.calificacionListado);
             this.Controls.Add(this.Volver);
@@ -123,10 +124,10 @@
         private System.Windows.Forms.Button button_seleccionar;
         private System.Windows.Forms.Button Volver;
         private System.Windows.Forms.DataGridView calificacionListado;
+        private System.Windows.Forms.Label presentacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCalificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Publicacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vendedor;
-        private System.Windows.Forms.Label presentacion;
 
     }
 }
