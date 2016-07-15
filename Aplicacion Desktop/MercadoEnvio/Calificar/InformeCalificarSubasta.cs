@@ -54,11 +54,16 @@ namespace MercadoEnvio.Calificaciones
             {
                 id_subasta = calificarDAO.getSubasta(int.Parse(listadoCalificaciones[i]));
                 id_publicacion = calificarDAO.getPublicacionSubasta(id_subasta);
-                
 
-                dataGridView_historial.Rows.Add(listadoCalificaciones[i]
-                                            , publicacionDAO.get_desc_publicacion(id_publicacion)
-                                            , usuarioDAO.getUsername(calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i])).ToString()));
+
+                if (calificarDAO.getCalificacion(int.Parse(listadoCalificaciones[i])) > 0)
+                {
+                    dataGridView_historial.Rows.Add(listadoCalificaciones[i]
+                                                , publicacionDAO.get_desc_publicacion(id_publicacion)
+                                                , usuarioDAO.getUsername(calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i])).ToString())
+                                                , calificarDAO.getCalificacion(int.Parse(listadoCalificaciones[i])));
+
+                }
 
             }
 

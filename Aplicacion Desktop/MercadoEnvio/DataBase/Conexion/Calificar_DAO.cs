@@ -77,8 +77,8 @@ namespace MercadoEnvio.DataBase.Conexion
 
                 return id;
         }
-
-        public int getCompra(int id_cal)
+        /*
+        public int getCompra(decimal id_cal)
         {
             try
             {
@@ -94,10 +94,24 @@ namespace MercadoEnvio.DataBase.Conexion
             }
             catch (Exception e)
             {
+                MessageBox.Show("No se encontro la compra Publicacion: " + id_cal.ToString());
                 return -1;
             }
         }
+        */
 
+        public int getCompra(decimal id_cal)
+        {
+                int id = 0;
+                SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT id_compra FROM " + ConstantesBD.tabla_calificacion +
+                                                                                   " WHERE id_calificacion = " + id_cal);
+
+                if (num_rol.Read())
+                    id = (int)num_rol[0];
+                num_rol.Close();
+
+                return id;
+        }
         public decimal getPublicacionCompra(int id_com)
         {
             try
@@ -117,8 +131,8 @@ namespace MercadoEnvio.DataBase.Conexion
                 return -1;
             }
         }
-
-        public int getSubasta(int id_cal)
+        /*
+        public int getSubasta(decimal id_cal)
         {
             try
             {
@@ -134,10 +148,25 @@ namespace MercadoEnvio.DataBase.Conexion
             }
             catch (Exception e)
             {
+                MessageBox.Show("No se encontro la subasta Publicacion: " + id_cal.ToString());
                 return -1;
             }
         }
+        */
 
+        public int getSubasta(decimal id_cal)
+        {
+                int id = 0;
+                SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT id_subasta FROM " + ConstantesBD.tabla_calificacion +
+                                                                                   " WHERE id_calificacion = " + id_cal);
+
+                if (num_rol.Read())
+                    id = (int)num_rol[0];
+                num_rol.Close();
+
+                return id;
+         
+        }
         public decimal getPublicacionSubasta(int id_sub)
         {
             try
@@ -154,6 +183,7 @@ namespace MercadoEnvio.DataBase.Conexion
             }
             catch (Exception e)
             {
+                MessageBox.Show("No se encuentra el id " + id_sub);
                 return -1;
             }
         }
@@ -184,19 +214,27 @@ namespace MercadoEnvio.DataBase.Conexion
 
         public List<string> get_ultimas_calificaciones(int id_usuario)
         {
-
-            SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 ca.id_calificacion from " + ConstantesBD.tabla_calificacion + " ca" +
-                                                                             " WHERE ca.id_usuario_comprador = " + id_usuario + " AND ca.id_subasta is null" +
-                                                                             " ORDER BY ca.id_calificacion DESC");
-            List<string> resultado = new List<string>();
-
-            while (lector.Read())
+            try
             {
-                resultado.Add(lector["id_calificacion"].ToString());
-            }
+                SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 ca.id_calificacion from " + ConstantesBD.tabla_calificacion + " ca" +
+                                                                                 " WHERE ca.id_usuario_comprador = " + id_usuario + " AND ca.id_subasta is null" +
+                                                                                 " ORDER BY ca.id_calificacion DESC");
+                List<string> resultado = new List<string>();
 
-            lector.Close();
-            return resultado;
+                while (lector.Read())
+                {
+                    resultado.Add(lector["id_calificacion"].ToString());
+                }
+
+                lector.Close();
+                return resultado;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No hay nada");
+                 List<string> resultado = new List<string>();
+                 return resultado;
+            }
         }
 
         public List<string> get_ultimas_calificaciones_subastas(int id_usuario)

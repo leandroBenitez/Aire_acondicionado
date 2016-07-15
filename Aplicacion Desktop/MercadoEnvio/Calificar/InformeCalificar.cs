@@ -54,17 +54,23 @@ namespace MercadoEnvio.Calificaciones
             int id_compra = 0;
             decimal id_publicacion = 0;
             listadoCalificaciones = calificarDAO.get_ultimas_calificaciones(id_usuario);
-
+            
             label_total.Text = listadoCalificaciones.Count().ToString();
 
             for (int i = 0; i < listadoCalificaciones.Count; i++)
             {
                 id_compra = calificarDAO.getCompra(int.Parse(listadoCalificaciones[i]));
+
+
                 id_publicacion = calificarDAO.getPublicacionCompra(id_compra);
 
-                dataGridView_historial.Rows.Add(listadoCalificaciones[i]
-                                            , publicacionDAO.get_desc_publicacion(id_publicacion)
-                                            , usuarioDAO.getUsername(calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i])).ToString()));
+                if (calificarDAO.getCalificacion(int.Parse(listadoCalificaciones[i])) > 0)
+                {
+                    dataGridView_historial.Rows.Add(listadoCalificaciones[i]
+                                                , publicacionDAO.get_desc_publicacion(id_publicacion)
+                                                , usuarioDAO.getUsername(calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i])).ToString())
+                                                , calificarDAO.getCalificacion(int.Parse(listadoCalificaciones[i])));
+                }
             }
 
             if (listadoCalificaciones.Count > 0)
