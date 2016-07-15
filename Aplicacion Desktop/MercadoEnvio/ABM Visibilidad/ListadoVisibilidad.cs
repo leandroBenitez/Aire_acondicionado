@@ -44,13 +44,20 @@ namespace MercadoEnvio.ABM_Visibilidad
             String desc_porcentaje = textBoxPorcentaje.Text;
             String desc_porcentaje_envio = textBoxEnvio.Text;
 
-            if (abm_visibilidad.validar(desc_tipo, desc_precio, desc_porcentaje, desc_porcentaje_envio))
+            try
             {
-                abm_visibilidad.updateVisibilidad(id_vis, desc_tipo, float.Parse(desc_precio), float.Parse(desc_porcentaje), float.Parse(desc_porcentaje_envio));
+                if (abm_visibilidad.validar(desc_tipo, desc_precio, desc_porcentaje, desc_porcentaje_envio))
+                {
+                    abm_visibilidad.updateVisibilidad(id_vis, desc_tipo, float.Parse(desc_precio), float.Parse(desc_porcentaje), float.Parse(desc_porcentaje_envio));
 
-                MessageBox.Show("Visibilidad creada");
+                    MessageBox.Show("Visibilidad creada");
 
-                this.Close();
+                    this.Close();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Modifique todos los campos o vuelva a ingresar los datos en cada campo");
             }
         }
 
