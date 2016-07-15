@@ -36,7 +36,7 @@
             // 
             // button_calificar
             // 
-            this.button_calificar.Location = new System.Drawing.Point(47, 48);
+            this.button_calificar.Location = new System.Drawing.Point(53, 44);
             this.button_calificar.Name = "button_calificar";
             this.button_calificar.Size = new System.Drawing.Size(75, 23);
             this.button_calificar.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // button_informe_compra
             // 
-            this.button_informe_compra.Location = new System.Drawing.Point(34, 89);
+            this.button_informe_compra.Location = new System.Drawing.Point(40, 85);
             this.button_informe_compra.Name = "button_informe_compra";
             this.button_informe_compra.Size = new System.Drawing.Size(103, 31);
             this.button_informe_compra.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             this.button_volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.button_volver.ForeColor = System.Drawing.Color.Maroon;
-            this.button_volver.Location = new System.Drawing.Point(47, 200);
+            this.button_volver.Location = new System.Drawing.Point(53, 196);
             this.button_volver.Name = "button_volver";
             this.button_volver.Size = new System.Drawing.Size(75, 23);
             this.button_volver.TabIndex = 4;
@@ -68,7 +68,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(34, 136);
+            this.button1.Location = new System.Drawing.Point(40, 132);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 34);
             this.button1.TabIndex = 5;
@@ -80,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(171, 247);
+            this.ClientSize = new System.Drawing.Size(184, 267);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_volver);
             this.Controls.Add(this.button_informe_compra);
