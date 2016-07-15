@@ -59,6 +59,16 @@ namespace MercadoEnvio.Calificaciones
                 dataGridView_historial.Rows.Add(listadoCalificaciones[i]
                                             , publicacionDAO.get_desc_publicacion(id_publicacion)
                                             , usuarioDAO.getUsername(calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i])).ToString()));
+
+            }
+
+            if (listadoCalificaciones.Count > 0)
+            {
+                foreach (DataGridViewRow row in dataGridView_historial.Rows)
+                {
+
+                    row.DefaultCellStyle.ForeColor = Color.Black;
+                }
             }
         }
 
@@ -98,6 +108,15 @@ namespace MercadoEnvio.Calificaciones
                                             , publicacionDAO.get_desc_publicacion(id_publicacion)
                                             , usuarioDAO.getUsername(calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i])).ToString())
                                             , calificarDAO.getCalificacion(int.Parse(listadoCalificaciones[i])));
+            }
+
+            if (listadoCalificaciones.Count > 0)
+            {
+                foreach (DataGridViewRow row in dataGridView_calificaciones.Rows)
+                {
+
+                    row.DefaultCellStyle.ForeColor = Color.Black;
+                }
             }
         }
     }

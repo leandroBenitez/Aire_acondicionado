@@ -159,7 +159,7 @@
             // 
             this.presentacion.AutoSize = true;
             this.presentacion.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.presentacion.ForeColor = System.Drawing.Color.Maroon;
+            this.presentacion.ForeColor = System.Drawing.Color.Black;
             this.presentacion.Location = new System.Drawing.Point(90, 9);
             this.presentacion.Name = "presentacion";
             this.presentacion.Size = new System.Drawing.Size(143, 23);

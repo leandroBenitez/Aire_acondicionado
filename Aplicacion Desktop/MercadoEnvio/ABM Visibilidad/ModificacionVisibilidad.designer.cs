@@ -40,12 +40,12 @@
             this.Limpiar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.tablaVisibilidad = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Porcentaje = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PorcentajeEnvio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button_volver = new System.Windows.Forms.Button();
             this.button_modificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaVisibilidad)).BeginInit();
@@ -145,7 +145,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label10.ForeColor = System.Drawing.Color.Maroon;
+            this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(136, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(293, 23);
@@ -169,25 +169,6 @@
             this.tablaVisibilidad.Size = new System.Drawing.Size(594, 217);
             this.tablaVisibilidad.TabIndex = 19;
             this.tablaVisibilidad.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Click_En_Seleccionar);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textPrecio);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textTipo);
-            this.groupBox1.Controls.Add(this.textPorcentaje);
-            this.groupBox1.Controls.Add(this.textEnvio);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox1.Location = new System.Drawing.Point(12, 53);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(594, 99);
-            this.groupBox1.TabIndex = 20;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filtros de Búsqueda";
             // 
             // Id
             // 
@@ -216,6 +197,25 @@
             // 
             this.PorcentajeEnvio.HeaderText = "Porcentaje Envio";
             this.PorcentajeEnvio.Name = "PorcentajeEnvio";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.textPrecio);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.textTipo);
+            this.groupBox1.Controls.Add(this.textPorcentaje);
+            this.groupBox1.Controls.Add(this.textEnvio);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.groupBox1.Location = new System.Drawing.Point(12, 53);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(594, 99);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filtros de Búsqueda";
             // 
             // button_volver
             // 

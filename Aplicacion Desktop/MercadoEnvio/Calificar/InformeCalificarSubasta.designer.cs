@@ -45,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.combo_calificacion = new System.Windows.Forms.ComboBox();
             this.button_volver = new System.Windows.Forms.Button();
+            this.presentacion = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_historial)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -55,7 +56,7 @@
             // 
             this.groupBox2.Controls.Add(this.dataGridView_historial);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox2.Location = new System.Drawing.Point(26, 334);
+            this.groupBox2.Location = new System.Drawing.Point(28, 371);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(494, 246);
             this.groupBox2.TabIndex = 24;
@@ -104,7 +105,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.combo_calificacion);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox1.Location = new System.Drawing.Point(26, 12);
+            this.groupBox1.Location = new System.Drawing.Point(28, 49);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(376, 299);
             this.groupBox1.TabIndex = 23;
@@ -192,7 +193,7 @@
             // 
             this.button_volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.button_volver.ForeColor = System.Drawing.Color.Maroon;
-            this.button_volver.Location = new System.Drawing.Point(26, 601);
+            this.button_volver.Location = new System.Drawing.Point(28, 638);
             this.button_volver.Name = "button_volver";
             this.button_volver.Size = new System.Drawing.Size(75, 23);
             this.button_volver.TabIndex = 22;
@@ -200,11 +201,23 @@
             this.button_volver.UseVisualStyleBackColor = true;
             this.button_volver.Click += new System.EventHandler(this.button_volver_Click);
             // 
+            // presentacion
+            // 
+            this.presentacion.AutoSize = true;
+            this.presentacion.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presentacion.ForeColor = System.Drawing.Color.Black;
+            this.presentacion.Location = new System.Drawing.Point(175, 9);
+            this.presentacion.Name = "presentacion";
+            this.presentacion.Size = new System.Drawing.Size(215, 23);
+            this.presentacion.TabIndex = 25;
+            this.presentacion.Text = "INFORME DE SUBASTAS";
+            // 
             // InformeCalificarSubasta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 639);
+            this.ClientSize = new System.Drawing.Size(539, 674);
+            this.Controls.Add(this.presentacion);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_volver);
@@ -216,6 +229,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_calificaciones)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -238,6 +252,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox combo_calificacion;
         private System.Windows.Forms.Button button_volver;
+        private System.Windows.Forms.Label presentacion;
 
     }
 }

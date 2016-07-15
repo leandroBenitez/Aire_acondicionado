@@ -30,6 +30,9 @@
         {
             this.button_volver = new System.Windows.Forms.Button();
             this.dataGridView_calificaciones = new System.Windows.Forms.DataGridView();
+            this.IdCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Publicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.combo_calificacion = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,9 +45,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCalificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Publicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.presentacion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_calificaciones)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -55,7 +56,7 @@
             // 
             this.button_volver.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.button_volver.ForeColor = System.Drawing.Color.Maroon;
-            this.button_volver.Location = new System.Drawing.Point(23, 616);
+            this.button_volver.Location = new System.Drawing.Point(23, 626);
             this.button_volver.Name = "button_volver";
             this.button_volver.Size = new System.Drawing.Size(75, 23);
             this.button_volver.TabIndex = 13;
@@ -74,6 +75,21 @@
             this.dataGridView_calificaciones.Name = "dataGridView_calificaciones";
             this.dataGridView_calificaciones.Size = new System.Drawing.Size(346, 176);
             this.dataGridView_calificaciones.TabIndex = 14;
+            // 
+            // IdCalificacion
+            // 
+            this.IdCalificacion.HeaderText = "IdCalificacion";
+            this.IdCalificacion.Name = "IdCalificacion";
+            // 
+            // Vendedor
+            // 
+            this.Vendedor.HeaderText = "Publicacion";
+            this.Vendedor.Name = "Vendedor";
+            // 
+            // Publicacion
+            // 
+            this.Publicacion.HeaderText = "Vendedor";
+            this.Publicacion.Name = "Publicacion";
             // 
             // combo_calificacion
             // 
@@ -135,7 +151,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.combo_calificacion);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox1.Location = new System.Drawing.Point(23, 27);
+            this.groupBox1.Location = new System.Drawing.Point(23, 52);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(376, 299);
             this.groupBox1.TabIndex = 20;
@@ -146,7 +162,7 @@
             // 
             this.groupBox2.Controls.Add(this.dataGridView_historial);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.groupBox2.Location = new System.Drawing.Point(23, 349);
+            this.groupBox2.Location = new System.Drawing.Point(23, 374);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(494, 246);
             this.groupBox2.TabIndex = 21;
@@ -186,26 +202,23 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Calificacion";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // IdCalificacion
+            // presentacion
             // 
-            this.IdCalificacion.HeaderText = "IdCalificacion";
-            this.IdCalificacion.Name = "IdCalificacion";
-            // 
-            // Vendedor
-            // 
-            this.Vendedor.HeaderText = "Publicacion";
-            this.Vendedor.Name = "Vendedor";
-            // 
-            // Publicacion
-            // 
-            this.Publicacion.HeaderText = "Vendedor";
-            this.Publicacion.Name = "Publicacion";
+            this.presentacion.AutoSize = true;
+            this.presentacion.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.presentacion.ForeColor = System.Drawing.Color.Black;
+            this.presentacion.Location = new System.Drawing.Point(167, 9);
+            this.presentacion.Name = "presentacion";
+            this.presentacion.Size = new System.Drawing.Size(204, 23);
+            this.presentacion.TabIndex = 22;
+            this.presentacion.Text = "INFORME DE COMPRAS";
             // 
             // InformeCalificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(531, 658);
+            this.Controls.Add(this.presentacion);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_volver);
@@ -217,6 +230,7 @@
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_historial)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -239,5 +253,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCalificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Publicacion;
+        private System.Windows.Forms.Label presentacion;
     }
 }

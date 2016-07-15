@@ -47,13 +47,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(79, 9);
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(49, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 23);
+            this.label1.Size = new System.Drawing.Size(203, 23);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Alta de Visibilidad";
+            this.label1.Text = "ALTA DE VISIBILIDAD";
             // 
             // textNombre
             // 

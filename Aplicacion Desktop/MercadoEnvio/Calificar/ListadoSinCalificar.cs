@@ -65,6 +65,15 @@ namespace MercadoEnvio.ListadoCalificaciones
                                             , publicacionDAO.get_desc_publicacion(id_publicacion)
                                             , usuarioDAO.getUsername(calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i])).ToString()));
             }
+
+            if (listadoCalificaciones.Count > 0)
+            {
+                foreach (DataGridViewRow row in calificacionListado.Rows)
+                {
+
+                    row.DefaultCellStyle.ForeColor = Color.Black;
+                }
+            }
         }
 
         private void button_seleccionar_Click(object sender, EventArgs e)
