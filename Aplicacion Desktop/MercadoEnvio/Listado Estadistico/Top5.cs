@@ -15,8 +15,10 @@ namespace MercadoEnvio.Listado_Estadistico
 {
     public partial class Top5 : Form
     {
+        publicacionDAO publicacion = new publicacionDAO();
         ListadoEstadistico_DAO ListEstDAO = new ListadoEstadistico_DAO();
         public Menu menu;
+        string condicion_guardada;
 
         public Top5(Menu un_menu)
         {
@@ -42,12 +44,20 @@ namespace MercadoEnvio.Listado_Estadistico
                 combo_anio.Items.Add(aux);
             }
 
+            foreach (string aux in publicacion.get_Rubros())
+            {
+                combo_rubros.Items.Add(aux);
+            }
+
             comboBoxTrimestre.Enabled = false;
             comboBoxTop5.Enabled = false;
+            combo_rubros.Enabled = false;
         }
 
         private void comboBoxTop5_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBoxTop5.Enabled = false;
+
             if (comboBoxTop5.Text == "Vendedores - Cantidad de productos no vendidos")
             {
                 NoVendidos formNoVendidos = new NoVendidos();
@@ -85,11 +95,14 @@ namespace MercadoEnvio.Listado_Estadistico
                 condicionTrimAño = condicionTrimAño + " and YEAR(desc_fecha) = '" + combo_anio.Text + "'";
             }
 
+            this.condicion_guardada = condicionTrimAño;
+
             switch (comboBoxTop5.Text)
             {
                 case "Clientes - Cantidad de productos comprados":
-                        lectorTop5 = ListEstDAO.getListClientesMayorCantProdComp(condicionTrimAño);
-                        cargar_grid_cliMayorCantProdComp(lectorTop5);
+                        //lectorTop5 = ListEstDAO.getListClientesMayorCantProdComp(condicionTrimAño);
+                        //cargar_grid_cliMayorCantProdComp(lectorTop5);
+                        combo_rubros.Enabled = true;
                         break;
                 case "Vendedores - Cantidad de facturas":
                         lectorTop5 = ListEstDAO.getListVendMayorCantFacturas(condicionTrimAño);
@@ -119,7 +132,7 @@ namespace MercadoEnvio.Listado_Estadistico
             {
                 i++;
                 columnas[0] = i.ToString();
-                columnas[1] = lectorT5["id_usuario"].ToString();
+                columnas[1] = lectorT5["desc_username"].ToString();
                 columnas[2] = lectorT5["desc_fecha"].ToString();
                 columnas[3] = lectorT5["Cantidad"].ToString();
                 columnas[4] = lectorT5["desc_rubro"].ToString(); 
@@ -149,7 +162,7 @@ namespace MercadoEnvio.Listado_Estadistico
             {
                 i++;
                 columnas[0] = i.ToString();
-                columnas[1] = lectorT5["id_usuario"].ToString();
+                columnas[1] = lectorT5["desc_username"].ToString();
                 columnas[2] = lectorT5["desc_fecha"].ToString();
                 columnas[3] = lectorT5["Cantidad"].ToString();               
              
@@ -172,13 +185,18 @@ namespace MercadoEnvio.Listado_Estadistico
             combo_anio.SelectedIndex = -1;
             comboBoxTop5.SelectedIndex = -1;
             comboBoxTrimestre.SelectedIndex = -1;
+            combo_rubros.SelectedIndex = -1;
             dataGridViewTop5.Rows.Clear();
             comboBoxTrimestre.Enabled = false;
             comboBoxTop5.Enabled = false;
+            combo_anio.Enabled = true;
+            combo_rubros.Enabled = false;
         }
 
         private void comboBoxTrimestre_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBoxTrimestre.Enabled = false;
+
             if (comboBoxTrimestre.Text != "")
             {
                 comboBoxTop5.Enabled = true;
@@ -191,6 +209,8 @@ namespace MercadoEnvio.Listado_Estadistico
 
         private void combo_anio_SelectedIndexChanged(object sender, EventArgs e)
         {
+            combo_anio.Enabled = false;
+
             if (combo_anio.Text != "")
             {
                 comboBoxTrimestre.Enabled = true;
@@ -202,11 +222,16 @@ namespace MercadoEnvio.Listado_Estadistico
             }
         }
 
+        private void combo_rubros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlDataReader lectorTop5;
+            string condiciones;
 
+            condiciones = this.condicion_guardada + " and ru.desc_rubro = '" + combo_rubros.Text + "' ";
 
-       
-       
-
-        
+            combo_rubros.Enabled = false;
+            lectorTop5 = ListEstDAO.getListClientesMayorCantProdComp(condiciones);
+            cargar_grid_cliMayorCantProdComp(lectorTop5);
+        }   
     }
 }

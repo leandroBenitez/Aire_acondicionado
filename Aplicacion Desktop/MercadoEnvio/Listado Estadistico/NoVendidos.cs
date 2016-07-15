@@ -84,15 +84,16 @@ namespace MercadoEnvio.Listado_Estadistico
             lectorNV = lector;
 
             List<DataGridViewRow> filas = new List<DataGridViewRow>();
-            Object[] columnas = new Object[4];
+            Object[] columnas = new Object[5];
 
             while(lectorNV.Read())
             {
                 i++;
                 columnas[0] = i.ToString();
-                columnas[1] = lectorNV["id_usuario"].ToString();
+                columnas[1] = lectorNV["desc_username"].ToString();
                 columnas[2] = lectorNV["fecha_publicacion"].ToString();
-                columnas[3] = lectorNV["Cantidad"].ToString();
+                columnas[3] = lectorNV["desc_tipo"].ToString();
+                columnas[4] = lectorNV["Cantidad"].ToString();
 
                 filas.Add(new DataGridViewRow());
                 filas[filas.Count - 1].CreateCells(dataGridViewNoVendidos, columnas);
@@ -115,20 +116,24 @@ namespace MercadoEnvio.Listado_Estadistico
             dataGridViewNoVendidos.Rows.Clear();
             combo_anios.Enabled = false;
             comboBoxMes.Enabled = false;
+            comboBoxVisibilidad.Enabled = true;
         }
 
         private void comboBoxMes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBoxMes.Enabled = false;
             cargar_lista();
         }
 
         private void comboBoxVisibilidad_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBoxVisibilidad.Enabled = false;
             combo_anios.Enabled = true;
         }
 
         private void combo_anios_SelectedIndexChanged(object sender, EventArgs e)
         {
+            combo_anios.Enabled = false;
             comboBoxMes.Enabled = true;
         }
     }

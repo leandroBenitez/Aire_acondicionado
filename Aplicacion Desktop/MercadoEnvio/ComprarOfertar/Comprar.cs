@@ -73,6 +73,7 @@ namespace MercadoEnvio.ComprarOfertar
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.un_menu.Show();
             this.Close();
         }
 

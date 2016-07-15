@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.comboBoxTop5 = new System.Windows.Forms.ComboBox();
             this.comboBoxTrimestre = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +43,8 @@
             this.buttonVolver = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
             this.combo_anio = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.combo_rubros = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTop5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,9 +52,9 @@
             // 
             this.comboBoxTop5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTop5.FormattingEnabled = true;
-            this.comboBoxTop5.Location = new System.Drawing.Point(107, 69);
+            this.comboBoxTop5.Location = new System.Drawing.Point(60, 69);
             this.comboBoxTop5.Name = "comboBoxTop5";
-            this.comboBoxTop5.Size = new System.Drawing.Size(387, 21);
+            this.comboBoxTop5.Size = new System.Drawing.Size(250, 21);
             this.comboBoxTop5.TabIndex = 0;
             this.comboBoxTop5.SelectedIndexChanged += new System.EventHandler(this.comboBoxTop5_SelectedIndexChanged);
             // 
@@ -62,14 +64,14 @@
             this.comboBoxTrimestre.FormattingEnabled = true;
             this.comboBoxTrimestre.Location = new System.Drawing.Point(373, 26);
             this.comboBoxTrimestre.Name = "comboBoxTrimestre";
-            this.comboBoxTrimestre.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTrimestre.Size = new System.Drawing.Size(152, 21);
             this.comboBoxTrimestre.TabIndex = 1;
             this.comboBoxTrimestre.SelectedIndexChanged += new System.EventHandler(this.comboBoxTrimestre_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 72);
+            this.label1.Location = new System.Drawing.Point(12, 72);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 3;
@@ -78,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(72, 31);
+            this.label2.Location = new System.Drawing.Point(25, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 4;
@@ -99,14 +101,14 @@
             this.dataGridViewTop5.AllowUserToDeleteRows = false;
             this.dataGridViewTop5.AllowUserToResizeColumns = false;
             this.dataGridViewTop5.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTop5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTop5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTop5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTop5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_nro,
@@ -173,17 +175,38 @@
             this.combo_anio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_anio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combo_anio.FormattingEnabled = true;
-            this.combo_anio.Location = new System.Drawing.Point(107, 26);
+            this.combo_anio.Location = new System.Drawing.Point(60, 24);
             this.combo_anio.Name = "combo_anio";
             this.combo_anio.Size = new System.Drawing.Size(128, 23);
             this.combo_anio.TabIndex = 10;
             this.combo_anio.SelectedIndexChanged += new System.EventHandler(this.combo_anio_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(328, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Rubro:";
+            // 
+            // combo_rubros
+            // 
+            this.combo_rubros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_rubros.FormattingEnabled = true;
+            this.combo_rubros.Location = new System.Drawing.Point(373, 69);
+            this.combo_rubros.Name = "combo_rubros";
+            this.combo_rubros.Size = new System.Drawing.Size(152, 21);
+            this.combo_rubros.TabIndex = 11;
+            this.combo_rubros.SelectedIndexChanged += new System.EventHandler(this.combo_rubros_SelectedIndexChanged);
             // 
             // Top5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(537, 308);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.combo_rubros);
             this.Controls.Add(this.combo_anio);
             this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.buttonVolver);
@@ -217,5 +240,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_MontoCant;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_rubro;
         private System.Windows.Forms.ComboBox combo_anio;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox combo_rubros;
     }
 }

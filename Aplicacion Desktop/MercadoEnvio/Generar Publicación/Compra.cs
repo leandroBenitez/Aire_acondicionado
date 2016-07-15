@@ -50,7 +50,7 @@ namespace MercadoEnvio.Generar_Publicación
             {
                 label_id_publicacion.Text = (publicacion.ultimo_id() + 1).ToString();
                 fecha_sys.Text = ConstantesBD.fechaSistema;
-                fecha_vencimiento.Text = "01-01-2017";
+                //fecha_vencimiento.Text = "01-01-2017";
             }
             else
             {
