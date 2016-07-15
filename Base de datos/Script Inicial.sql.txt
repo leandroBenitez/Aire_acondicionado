@@ -1577,8 +1577,8 @@ Go
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario	(	 desc_username
 															,desc_password
 															,id_estado	)
-Values	 ('administrador', HASHBYTES('sha2_256', 'w23e'), 1)
+Values	 ('admin', HASHBYTES('sha2_256', 'w23e'), 1)
 
 Insert into GESTORES_DEL_AIRE_ACONDICIONADO.rl_roles_usuarios
-values	 (@@IDENTITY, 3)
+values	 (@@IDENTITY, 4)
 Go
