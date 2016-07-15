@@ -269,6 +269,7 @@ Create Table GESTORES_DEL_AIRE_ACONDICIONADO.ft_calificacion
 	,id_usuario_comprador int
 	,id_compra int
 	,id_subasta int
+	, id_publicacion numeric(18,0)
 	,primary key (id_calificacion)
 	,foreign key (id_usuario_vendedor) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
 	,foreign key (id_usuario_comprador) references GESTORES_DEL_AIRE_ACONDICIONADO.ft_usuario(id_usuario)
@@ -723,13 +724,15 @@ insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_calificacion	(	 desc_codigo
 																,descripcion
 																,id_usuario_vendedor
 																,id_usuario_comprador
-																,id_compra	)
+																,id_compra
+																, id_publicacion	)
 Select	 co.calificacion
 		,co.estrellas
 		,co.cal_desc
 		,co.usuario_vendedor
 		,co.usuario_comprador
 		,co.id
+		,co.publicacion
 From #compra co
 
 --Migracion de las ofertas para subastas
@@ -899,13 +902,15 @@ Insert into GESTORES_DEL_AIRE_ACONDICIONADO.ft_calificacion	(	 desc_cantidad_est
 																,descripcion	
 																,id_usuario_vendedor
 																,id_usuario_comprador
-																,id_compra	)
+																,id_compra
+																, id_publicacion	)
 Select	 0
 		,''
 		,(Select id_usuario from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
 				where id_publicacion = @publicacion)
 		,@usuario
-		,@@IDENTITY;
+		,@@IDENTITY
+		, @publicacion;
 
 Select id_usuario = @usuario_publ from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
 	where id_publicacion = @publicacion;
@@ -1263,13 +1268,15 @@ begin
 																		,descripcion
 																		,id_usuario_vendedor
 																		,id_usuario_comprador
-																		,id_subasta	)
+																		,id_subasta
+																		,id_publicacion	)
 		Select	 0
 				,''
 				,(Select id_usuario from GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion
 					where id_estado_publi = @id_publicacion)
 				,@usuario_comprador
-				,@id_subasta;
+				,@id_subasta
+				,@id_publicacion;
 	end
 end
 Go

@@ -253,5 +253,18 @@ namespace MercadoEnvio.DataBase.Conexion
             lector.Close();
             return resultado;
         }
+
+        public decimal get_publicacion(int id_cal)
+        {
+            decimal id = 0;
+            SqlDataReader num_rol = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT ca.id_publicacion FROM " + ConstantesBD.tabla_calificacion + " ca" +
+                                                                               " WHERE ca.id_calificacion = " + id_cal);
+
+            if (num_rol.Read())
+                id = (decimal)num_rol[0];
+            num_rol.Close();
+
+            return id;
+        }
     }
 }

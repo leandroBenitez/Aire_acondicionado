@@ -43,27 +43,19 @@ namespace MercadoEnvio.ListadoCalificaciones
         {
             int id_compra = 0;
             int id_subasta = 0;
+            int id_calificacion = 0;
             decimal id_publicacion = 0;
 
             listadoCalificaciones = calificarDAO.getIdCalificacion(id_comprador);
 
             for (int i = 0; i < listadoCalificaciones.Count; i++)
             {
-                id_publicacion = int.Parse(listadoCalificaciones[i]);
+                id_calificacion = int.Parse(listadoCalificaciones[i]);
 
 
-                MessageBox.Show("Publicacion: " + id_publicacion.ToString());
+                MessageBox.Show("Publicacion: " + id_calificacion.ToString());
 
-                try
-                {
-                    id_compra = calificarDAO.getCompra(id_publicacion);
-                    id_publicacion = calificarDAO.getPublicacionCompra(id_compra);
-                }
-                catch (Exception)
-                {
-                    id_subasta = calificarDAO.getSubasta(id_publicacion);
-                    id_publicacion = calificarDAO.getPublicacionSubasta(id_subasta);
-                }
+                id_publicacion = calificarDAO.get_publicacion(id_calificacion);
 
                 calificacionListado.Rows.Add(listadoCalificaciones[i]
                                             , publicacionDAO.get_desc_publicacion(id_publicacion)
