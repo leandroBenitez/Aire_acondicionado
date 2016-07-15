@@ -25,7 +25,11 @@ namespace MercadoEnvio.Listado_Estadistico
         {
             InitializeComponent();
             comboBoxVisibilidad.DropDownStyle = ComboBoxStyle.DropDownList;
+            cargar_datos();
+        }
 
+        public void cargar_datos()
+        {
             List<string> idVisibilidades = ProdNoVendidosDAO.get_idVisibilidad();
 
             for (int i = 0; i < idVisibilidades.Count; i++)
@@ -34,17 +38,21 @@ namespace MercadoEnvio.Listado_Estadistico
                 comboBoxVisibilidad.Items.Add(descVisi);
             }
           
-
-            comboBoxMes.DropDownStyle = ComboBoxStyle.DropDownList;
-
             for (int i = 1; i <= 12; i++ )
             {
                 comboBoxMes.Items.Add(i);
             }
 
+            foreach (string aux in ProdNoVendidosDAO.get_anios())
+            {
+                combo_anios.Items.Add(aux);
+            }
+
+            combo_anios.Enabled = false;
+            comboBoxMes.Enabled = false;
         }
 
-        private void buttonSeleccionar_Click(object sender, EventArgs e)
+        private void cargar_lista()
         {
             SqlDataReader lectorNoVendido;
             //string condicion = " where 1=1";
@@ -59,9 +67,9 @@ namespace MercadoEnvio.Listado_Estadistico
                 condicion = condicion + " and MONTH(fecha_publicacion) = '" + comboBoxMes.Text + "'";
             }
 
-            if (!(string.IsNullOrWhiteSpace(textBoxAñoNV.Text))) 
+            if (!(string.IsNullOrWhiteSpace(combo_anios.Text))) 
             {
-                condicion = condicion + " and YEAR(fecha_publicacion) = '" + textBoxAñoNV.Text + "'";
+                condicion = condicion + " and YEAR(fecha_publicacion) = '" + combo_anios.Text + "'";
             }
 
             lectorNoVendido = ProdNoVendidosDAO.getListVendMayorCantProdNoVend(condicion);
@@ -88,13 +96,10 @@ namespace MercadoEnvio.Listado_Estadistico
 
                 filas.Add(new DataGridViewRow());
                 filas[filas.Count - 1].CreateCells(dataGridViewNoVendidos, columnas);
-               
-
             }
 
             lectorNV.Close();
             dataGridViewNoVendidos.Rows.AddRange(filas.ToArray());
-            
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)
@@ -106,18 +111,25 @@ namespace MercadoEnvio.Listado_Estadistico
         {
             comboBoxMes.SelectedIndex = -1;
             comboBoxVisibilidad.SelectedIndex = -1;
-            textBoxAñoNV.Text = "";
+            combo_anios.SelectedIndex = -1;
             dataGridViewNoVendidos.Rows.Clear();
+            combo_anios.Enabled = false;
+            comboBoxMes.Enabled = false;
         }
 
         private void comboBoxMes_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            cargar_lista();
         }
 
         private void comboBoxVisibilidad_SelectedIndexChanged(object sender, EventArgs e)
         {
+            combo_anios.Enabled = true;
+        }
 
+        private void combo_anios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBoxMes.Enabled = true;
         }
     }
 }

@@ -48,7 +48,18 @@ namespace MercadoEnvio.DataBase.Conexion
             return resultado;
         }
 
-
+        public List<string> get_anios()
+        {
+            SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT distinct YEAR(desc_fecha) as ANIOS FROM " + ConstantesBD.tabla_compras);
+            List<string> resultado = new List<string>();
+            
+            while (lector.Read())
+            {
+                resultado.Add(lector["ANIOS"].ToString());
+            }
+            lector.Close();
+            return resultado;
+        }
 
         public SqlDataReader getListVendMayorCantFacturas(string condicion)
         {

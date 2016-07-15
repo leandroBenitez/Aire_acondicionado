@@ -38,18 +38,18 @@
             this.Col_Vendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_desc_fecha_publi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_CantProf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonSeleccionar = new System.Windows.Forms.Button();
             this.buttonVolver = new System.Windows.Forms.Button();
             this.buttonLimpiar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxAñoNV = new System.Windows.Forms.TextBox();
+            this.combo_anios = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNoVendidos)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxVisibilidad
             // 
+            this.comboBoxVisibilidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVisibilidad.FormattingEnabled = true;
-            this.comboBoxVisibilidad.Location = new System.Drawing.Point(94, 21);
+            this.comboBoxVisibilidad.Location = new System.Drawing.Point(76, 24);
             this.comboBoxVisibilidad.Name = "comboBoxVisibilidad";
             this.comboBoxVisibilidad.Size = new System.Drawing.Size(139, 21);
             this.comboBoxVisibilidad.TabIndex = 0;
@@ -57,8 +57,9 @@
             // 
             // comboBoxMes
             // 
+            this.comboBoxMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMes.FormattingEnabled = true;
-            this.comboBoxMes.Location = new System.Drawing.Point(94, 66);
+            this.comboBoxMes.Location = new System.Drawing.Point(286, 64);
             this.comboBoxMes.Name = "comboBoxMes";
             this.comboBoxMes.Size = new System.Drawing.Size(139, 21);
             this.comboBoxMes.TabIndex = 1;
@@ -67,7 +68,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 21);
+            this.label1.Location = new System.Drawing.Point(17, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 2;
@@ -76,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 69);
+            this.label2.Location = new System.Drawing.Point(250, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 3;
@@ -102,11 +103,11 @@
             this.Col_Vendedor,
             this.Col_desc_fecha_publi,
             this.Col_CantProf});
-            this.dataGridViewNoVendidos.Location = new System.Drawing.Point(38, 147);
+            this.dataGridViewNoVendidos.Location = new System.Drawing.Point(12, 104);
             this.dataGridViewNoVendidos.Name = "dataGridViewNoVendidos";
             this.dataGridViewNoVendidos.RowHeadersVisible = false;
             this.dataGridViewNoVendidos.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridViewNoVendidos.Size = new System.Drawing.Size(405, 129);
+            this.dataGridViewNoVendidos.Size = new System.Drawing.Size(416, 129);
             this.dataGridViewNoVendidos.TabIndex = 4;
             // 
             // Col_nro
@@ -129,20 +130,10 @@
             this.Col_CantProf.HeaderText = "Cantidad";
             this.Col_CantProf.Name = "Col_CantProf";
             // 
-            // buttonSeleccionar
-            // 
-            this.buttonSeleccionar.Location = new System.Drawing.Point(38, 356);
-            this.buttonSeleccionar.Name = "buttonSeleccionar";
-            this.buttonSeleccionar.Size = new System.Drawing.Size(75, 23);
-            this.buttonSeleccionar.TabIndex = 5;
-            this.buttonSeleccionar.Text = "Seleccionar";
-            this.buttonSeleccionar.UseVisualStyleBackColor = true;
-            this.buttonSeleccionar.Click += new System.EventHandler(this.buttonSeleccionar_Click);
-            // 
             // buttonVolver
             // 
             this.buttonVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.buttonVolver.Location = new System.Drawing.Point(406, 356);
+            this.buttonVolver.Location = new System.Drawing.Point(353, 249);
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Size = new System.Drawing.Size(75, 23);
             this.buttonVolver.TabIndex = 6;
@@ -152,7 +143,7 @@
             // 
             // buttonLimpiar
             // 
-            this.buttonLimpiar.Location = new System.Drawing.Point(228, 356);
+            this.buttonLimpiar.Location = new System.Drawing.Point(12, 249);
             this.buttonLimpiar.Name = "buttonLimpiar";
             this.buttonLimpiar.Size = new System.Drawing.Size(75, 23);
             this.buttonLimpiar.TabIndex = 7;
@@ -163,36 +154,38 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 106);
+            this.label3.Location = new System.Drawing.Point(41, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Año:";
             // 
-            // textBoxAñoNV
+            // combo_anios
             // 
-            this.textBoxAñoNV.Location = new System.Drawing.Point(94, 106);
-            this.textBoxAñoNV.Name = "textBoxAñoNV";
-            this.textBoxAñoNV.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAñoNV.TabIndex = 9;
+            this.combo_anios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_anios.FormattingEnabled = true;
+            this.combo_anios.Location = new System.Drawing.Point(76, 64);
+            this.combo_anios.Name = "combo_anios";
+            this.combo_anios.Size = new System.Drawing.Size(139, 21);
+            this.combo_anios.TabIndex = 10;
+            this.combo_anios.SelectedIndexChanged += new System.EventHandler(this.combo_anios_SelectedIndexChanged);
             // 
             // NoVendidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 389);
-            this.Controls.Add(this.textBoxAñoNV);
+            this.ClientSize = new System.Drawing.Size(440, 281);
+            this.Controls.Add(this.combo_anios);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonLimpiar);
             this.Controls.Add(this.buttonVolver);
-            this.Controls.Add(this.buttonSeleccionar);
             this.Controls.Add(this.dataGridViewNoVendidos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxMes);
             this.Controls.Add(this.comboBoxVisibilidad);
             this.Name = "NoVendidos";
-            this.Text = "Productos no vendidos";
+            this.Text = "Ranking - Productos no vendidos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNoVendidos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -206,14 +199,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridViewNoVendidos;
-        private System.Windows.Forms.Button buttonSeleccionar;
         private System.Windows.Forms.Button buttonVolver;
         private System.Windows.Forms.Button buttonLimpiar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxAñoNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_nro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_Vendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_desc_fecha_publi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_CantProf;
+        private System.Windows.Forms.ComboBox combo_anios;
     }
 }
