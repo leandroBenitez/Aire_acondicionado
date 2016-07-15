@@ -1,4 +1,4 @@
-/*	**********************	CAMBIO DE BASE DE DATOS	******************** */
+﻿/*	**********************	CAMBIO DE BASE DE DATOS	******************** */
 Use GD1C2016
 Go
 
@@ -698,7 +698,7 @@ Select	 Distinct
 		,pu.id_usuario
 		,us.id
 		,ma.Calificacion_Codigo
-		,ma.Calificacion_Cant_Estrellas
+		,(case when ma.Calificacion_Cant_Estrellas>5 then (ma.Calificacion_Cant_Estrellas/2) else ma.Calificacion_Cant_Estrellas end) -- ma.Calificacion_Cant_Estrellas 
 		,ma.Calificacion_Descripcion
 From gd_esquema.Maestra ma
 inner join GESTORES_DEL_AIRE_ACONDICIONADO.ft_publicacion pu
