@@ -53,13 +53,18 @@ namespace MercadoEnvio.ABM_Cliente
             textDepto.Text = clienteMod.getDepto();
             textLocalidad.Text = clienteMod.getLocalidad();
             textTelefono.Text = clienteMod.getTelefono();
+
             /* FECHA DE NACIMIENTO DESDE CALENDAR/DATEPICKER */
             fechaNacimiento.Format = DateTimePickerFormat.Custom;
-            fechaNacimiento.CustomFormat = "dd/mm/yy";
+            fechaNacimiento.CustomFormat = "dd'/'MM'/'yyyy";
+
             fechaNacimiento.Text = clienteMod.getFecha_nacimiento();
             /* ----------------------------------------*/
             textCP.Text = clienteMod.getCodigo_postal();
-            textFecCreacion.Text = clienteMod.getFechaCreacion();
+            if (clienteMod.getFechaCreacion() != "")
+                textFecCreacion.Text = clienteMod.getFechaCreacion();
+            else
+                textFecCreacion.Text = ConstantesBD.fechaSistema;
             if (abm_usuario.getEstadoUsuario(clienteMod.getUsername()) == "1")
             {
                 textEstado.Text = "Habilitado";

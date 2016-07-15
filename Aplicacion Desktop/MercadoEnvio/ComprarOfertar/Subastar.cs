@@ -70,32 +70,39 @@ namespace MercadoEnvio.ComprarOfertar
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (float.Parse(nuevo_monto.Text) > 0)
+            try
             {
-                if (float.Parse(nuevo_monto.Text) > float.Parse(ult_monto.Text.Substring(1)))
+                if (float.Parse(nuevo_monto.Text) > 0)
                 {
-                    string envio;
-                    if (check_envio.Checked == true)
+                    if (float.Parse(nuevo_monto.Text) > float.Parse(ult_monto.Text.Substring(1)))
                     {
-                        envio = "Si";
+                        string envio;
+                        if (check_envio.Checked == true)
+                        {
+                            envio = "Si";
+                        }
+                        else
+                        {
+                            envio = "No";
+                        }
+                        publicacion.subastar(float.Parse(nuevo_monto.Text), this.id_publicacion, this.id_usuario, envio);
+                        MessageBox.Show("Su oferta se ha realizado con exito!");
+                        this.Close();
+                        this.un_menu.Show();
                     }
                     else
                     {
-                        envio = "No";
+                        MessageBox.Show("La oferta debe ser mayor a la anterior.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
-                    publicacion.subastar(float.Parse(nuevo_monto.Text), this.id_publicacion, this.id_usuario, envio);
-                    MessageBox.Show("Su oferta se ha realizado con exito!");
-                    this.Close();
-                    this.un_menu.Show();
                 }
                 else
                 {
-                    MessageBox.Show("La oferta debe ser mayor a la anterior.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Revise el valor ingresado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            else
+            catch
             {
-                MessageBox.Show("Revise el valor ingresado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Revise que el valor ingresado sea numerico");
             }
         }
 

@@ -44,7 +44,7 @@ namespace MercadoEnvio.Generar_Publicación
             label_user.Text = login.get_username(this.id_usuario);
             
             fecha_vencimiento.Format = DateTimePickerFormat.Custom;
-            fecha_vencimiento.CustomFormat = "dd-mm-yyyy";
+            fecha_vencimiento.CustomFormat = "dd'/'MM'/'yyyy";
 
             if (publicacion.publicacion_pendiente(this.id_usuario, ConstantesBD.vista_publi_compra) == "ok")
             {

@@ -41,7 +41,7 @@ namespace MercadoEnvio.ABM_Usuario
 
             /* FECHA DE NACIMIENTO DESDE CALENDAR/DATEPICKER */
             fechaNacimiento.Format = DateTimePickerFormat.Custom;
-            fechaNacimiento.CustomFormat = "dd/mm/yy";
+            fechaNacimiento.CustomFormat = "dd'/'MM'/'yyyy";
             fechaNacimiento.Text = "05/05/2016";
             
             /* SETEO LA FECHA DE CREACION LEVANTANDOLA DESDE EL ARCHIVO DE CONFIGURACION */

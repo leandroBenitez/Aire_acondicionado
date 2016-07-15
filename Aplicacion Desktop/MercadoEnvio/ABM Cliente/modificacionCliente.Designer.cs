@@ -420,6 +420,7 @@
             // 
             this.textPass.Location = new System.Drawing.Point(103, 60);
             this.textPass.Name = "textPass";
+            this.textPass.PasswordChar = '*';
             this.textPass.Size = new System.Drawing.Size(82, 20);
             this.textPass.TabIndex = 127;
             // 
