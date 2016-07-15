@@ -35,6 +35,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBoxEmpresa = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textCuit3 = new System.Windows.Forms.TextBox();
+            this.textCuit2 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textPass = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -71,10 +75,6 @@
             this.label30 = new System.Windows.Forms.Label();
             this.textRazonSoc = new System.Windows.Forms.TextBox();
             this.buttonDeshabilitar = new System.Windows.Forms.Button();
-            this.textCuit2 = new System.Windows.Forms.TextBox();
-            this.textCuit3 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.groupBoxEmpresa.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,6 +184,38 @@
             this.groupBoxEmpresa.TabIndex = 144;
             this.groupBoxEmpresa.TabStop = false;
             this.groupBoxEmpresa.Text = "Datos Empresa";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(259, 312);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(10, 13);
+            this.label12.TabIndex = 164;
+            this.label12.Text = "-";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(135, 312);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(10, 13);
+            this.label11.TabIndex = 163;
+            this.label11.Text = "-";
+            // 
+            // textCuit3
+            // 
+            this.textCuit3.Location = new System.Drawing.Point(275, 309);
+            this.textCuit3.Name = "textCuit3";
+            this.textCuit3.Size = new System.Drawing.Size(20, 20);
+            this.textCuit3.TabIndex = 162;
+            // 
+            // textCuit2
+            // 
+            this.textCuit2.Location = new System.Drawing.Point(145, 309);
+            this.textCuit2.Name = "textCuit2";
+            this.textCuit2.Size = new System.Drawing.Size(108, 20);
+            this.textCuit2.TabIndex = 161;
             // 
             // label10
             // 
@@ -304,9 +336,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(44, 157);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 146;
-            this.label6.Text = "Telefono:";
+            this.label6.Text = "Telefono*:";
             // 
             // textCuit1
             // 
@@ -354,9 +386,9 @@
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(72, 134);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(29, 13);
+            this.label28.Size = new System.Drawing.Size(33, 13);
             this.label28.TabIndex = 132;
-            this.label28.Text = "Mail:";
+            this.label28.Text = "Mail*:";
             // 
             // textMail
             // 
@@ -418,9 +450,9 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(200, 237);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(30, 13);
+            this.label24.Size = new System.Drawing.Size(34, 13);
             this.label24.TabIndex = 117;
-            this.label24.Text = "Piso:";
+            this.label24.Text = "Piso*:";
             // 
             // textAltura
             // 
@@ -434,9 +466,9 @@
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(68, 237);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(37, 13);
+            this.label25.Size = new System.Drawing.Size(41, 13);
             this.label25.TabIndex = 115;
-            this.label25.Text = "Altura:";
+            this.label25.Text = "Altura*:";
             // 
             // textDireccion
             // 
@@ -459,9 +491,9 @@
             this.label30.AutoSize = true;
             this.label30.Location = new System.Drawing.Point(28, 109);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(73, 13);
+            this.label30.Size = new System.Drawing.Size(77, 13);
             this.label30.TabIndex = 105;
-            this.label30.Text = "Razon Social:";
+            this.label30.Text = "Razon Social*:";
             // 
             // textRazonSoc
             // 
@@ -479,38 +511,6 @@
             this.buttonDeshabilitar.Text = "Deshabilitar/Habilitar";
             this.buttonDeshabilitar.UseVisualStyleBackColor = true;
             this.buttonDeshabilitar.Click += new System.EventHandler(this.buttonDeshabilitar_Click_1);
-            // 
-            // textCuit2
-            // 
-            this.textCuit2.Location = new System.Drawing.Point(145, 309);
-            this.textCuit2.Name = "textCuit2";
-            this.textCuit2.Size = new System.Drawing.Size(108, 20);
-            this.textCuit2.TabIndex = 161;
-            // 
-            // textCuit3
-            // 
-            this.textCuit3.Location = new System.Drawing.Point(275, 309);
-            this.textCuit3.Name = "textCuit3";
-            this.textCuit3.Size = new System.Drawing.Size(20, 20);
-            this.textCuit3.TabIndex = 162;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(135, 312);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(10, 13);
-            this.label11.TabIndex = 163;
-            this.label11.Text = "-";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(259, 312);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(10, 13);
-            this.label12.TabIndex = 164;
-            this.label12.Text = "-";
             // 
             // modificacionEmpresa
             // 

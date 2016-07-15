@@ -70,6 +70,7 @@
             this.fechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.textPass = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label19
@@ -102,9 +103,9 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(39, 298);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(52, 13);
+            this.label16.Size = new System.Drawing.Size(56, 13);
             this.label16.TabIndex = 104;
-            this.label16.Text = "Teléfono:";
+            this.label16.Text = "Teléfono*:";
             // 
             // textCP
             // 
@@ -166,9 +167,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(65, 246);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(30, 13);
+            this.label12.Size = new System.Drawing.Size(34, 13);
             this.label12.TabIndex = 96;
-            this.label12.Text = "Piso:";
+            this.label12.Text = "Piso*:";
             // 
             // textAltura
             // 
@@ -182,9 +183,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(212, 248);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(37, 13);
+            this.label11.Size = new System.Drawing.Size(41, 13);
             this.label11.TabIndex = 94;
-            this.label11.Text = "Altura:";
+            this.label11.Text = "Altura*:";
             // 
             // textDireccion
             // 
@@ -224,9 +225,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(69, 197);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
+            this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 89;
-            this.label7.Text = "Mail:";
+            this.label7.Text = "Mail*:";
             // 
             // textMail
             // 
@@ -320,7 +321,7 @@
             // 
             // buttonMod
             // 
-            this.buttonMod.Location = new System.Drawing.Point(253, 394);
+            this.buttonMod.Location = new System.Drawing.Point(253, 427);
             this.buttonMod.Name = "buttonMod";
             this.buttonMod.Size = new System.Drawing.Size(75, 23);
             this.buttonMod.TabIndex = 115;
@@ -364,7 +365,7 @@
             // 
             // buttonVolver
             // 
-            this.buttonVolver.Location = new System.Drawing.Point(15, 394);
+            this.buttonVolver.Location = new System.Drawing.Point(15, 427);
             this.buttonVolver.Name = "buttonVolver";
             this.buttonVolver.Size = new System.Drawing.Size(75, 23);
             this.buttonVolver.TabIndex = 120;
@@ -374,7 +375,7 @@
             // 
             // buttonDeshabilitar
             // 
-            this.buttonDeshabilitar.Location = new System.Drawing.Point(103, 394);
+            this.buttonDeshabilitar.Location = new System.Drawing.Point(103, 427);
             this.buttonDeshabilitar.Name = "buttonDeshabilitar";
             this.buttonDeshabilitar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.buttonDeshabilitar.Size = new System.Drawing.Size(135, 22);
@@ -424,11 +425,21 @@
             this.textPass.Size = new System.Drawing.Size(82, 20);
             this.textPass.TabIndex = 127;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(12, 399);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(261, 13);
+            this.label21.TabIndex = 146;
+            this.label21.Text = "Están marcados con asterisco los campos obligatorios";
+            // 
             // modificacionCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 425);
+            this.ClientSize = new System.Drawing.Size(342, 461);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.textPass);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.fechaNacimiento);
@@ -523,5 +534,6 @@
         private System.Windows.Forms.DateTimePicker fechaNacimiento;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textPass;
+        private System.Windows.Forms.Label label21;
     }
 }
