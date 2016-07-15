@@ -17,6 +17,7 @@ using MercadoEnvio.Listado_Estadistico;
 using MercadoEnvio.ListadoCalificaciones;
 using MercadoEnvio.ABM_Rol;
 using MercadoEnvio.ABM_Visibilidad;
+using MercadoEnvio.Calificaciones;
 
 namespace MercadoEnvio
 {
@@ -144,7 +145,7 @@ namespace MercadoEnvio
 
         private void boton_calificar_Click(object sender, EventArgs e)
         {
-            ListadoSinCalificar listado = new ListadoSinCalificar(this, this.id_usuario);
+            SubMenuCalificar listado = new SubMenuCalificar(this, this.id_usuario);
             listado.Show();
             this.Hide();
         }

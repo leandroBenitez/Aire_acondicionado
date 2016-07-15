@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Calificacion_ComboBox = new System.Windows.Forms.ComboBox();
             this.Calificación = new System.Windows.Forms.Label();
             this.AceptarButton = new System.Windows.Forms.Button();
             this.presentacion = new System.Windows.Forms.Label();
@@ -36,15 +35,8 @@
             this.label_descripcion = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button_volver = new System.Windows.Forms.Button();
+            this.combo_calificacion = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // Calificacion_ComboBox
-            // 
-            this.Calificacion_ComboBox.FormattingEnabled = true;
-            this.Calificacion_ComboBox.Location = new System.Drawing.Point(125, 74);
-            this.Calificacion_ComboBox.Name = "Calificacion_ComboBox";
-            this.Calificacion_ComboBox.Size = new System.Drawing.Size(121, 21);
-            this.Calificacion_ComboBox.TabIndex = 0;
             // 
             // Calificación
             // 
@@ -115,11 +107,21 @@
             this.button_volver.UseVisualStyleBackColor = true;
             this.button_volver.Click += new System.EventHandler(this.button_volver_Click);
             // 
+            // combo_calificacion
+            // 
+            this.combo_calificacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_calificacion.FormattingEnabled = true;
+            this.combo_calificacion.Location = new System.Drawing.Point(125, 77);
+            this.combo_calificacion.Name = "combo_calificacion";
+            this.combo_calificacion.Size = new System.Drawing.Size(44, 21);
+            this.combo_calificacion.TabIndex = 16;
+            // 
             // Calificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.combo_calificacion);
             this.Controls.Add(this.button_volver);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label_descripcion);
@@ -127,7 +129,6 @@
             this.Controls.Add(this.presentacion);
             this.Controls.Add(this.AceptarButton);
             this.Controls.Add(this.Calificación);
-            this.Controls.Add(this.Calificacion_ComboBox);
             this.Name = "Calificar";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -137,7 +138,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox Calificacion_ComboBox;
         private System.Windows.Forms.Label Calificación;
         private System.Windows.Forms.Button AceptarButton;
         private System.Windows.Forms.Label presentacion;
@@ -145,6 +145,7 @@
         private System.Windows.Forms.Label label_descripcion;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button_volver;
+        private System.Windows.Forms.ComboBox combo_calificacion;
 
     }
 }

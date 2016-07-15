@@ -22,6 +22,7 @@ namespace MercadoEnvio.Calificaciones
 
         int pubCalif, vendedorCalif, compradorCalif; 
         private Menu unMenu;
+        private ListadoSinCalificar unListado;
 
         public Calificar(int id_calif, int vendedor, int comprador, Menu menu, ListadoSinCalificar listado)
         {
@@ -35,6 +36,7 @@ namespace MercadoEnvio.Calificaciones
             vendedorCalif = vendedor;
             compradorCalif = comprador;
             unMenu = menu;
+            unListado = listado;
 
             cargarCalificacionComboBox();
         }
@@ -43,7 +45,7 @@ namespace MercadoEnvio.Calificaciones
         {
             for (int i = 1; i <= 5; i++)
             {
-                Calificacion_ComboBox.Items.Add(i);
+                combo_calificacion.Items.Add(i);
             }
         }
 
@@ -53,7 +55,7 @@ namespace MercadoEnvio.Calificaciones
 
             try
             {
-                int estrellas = (int)Calificacion_ComboBox.SelectedItem;
+                int estrellas = (int)combo_calificacion.SelectedItem;
                 calificarDAO.calificarA(pubCalif, estrellas, descripcion, compradorCalif);
                 MessageBox.Show("Calificación realizada");
                 this.Close();
@@ -97,7 +99,7 @@ namespace MercadoEnvio.Calificaciones
 
         private void button_volver_Click(object sender, EventArgs e)
         {
-            this.unMenu.Show();
+            this.unListado.Show();
             this.Close();
         }
     }

@@ -21,7 +21,39 @@ namespace MercadoEnvio.DataBase.Conexion
         public List<string> getIdCalificacion(int comprador)
         {
             SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT ca.id_calificacion from " + ConstantesBD.tabla_calificacion + " ca" +
-                                                                             " WHERE ca.id_usuario_comprador = " + comprador);
+                                                                             " WHERE ca.id_usuario_comprador = " + comprador + " AND ca.desc_cantidad_estrellas = 0");
+            List<string> resultado = new List<string>();
+
+            while (lector.Read())
+            {
+                resultado.Add(lector["id_calificacion"].ToString());
+            }
+
+            lector.Close();
+            return resultado;
+        }
+
+        public List<string> getCalificaciones(int comprador, int calificacion)
+        {
+            SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT ca.id_calificacion from " + ConstantesBD.tabla_calificacion + " ca" +
+                                                                             " WHERE ca.id_usuario_comprador = " + comprador +
+                                                                             " AND ca.desc_cantidad_estrellas = " + calificacion + " AND ca.id_subasta is null");
+            List<string> resultado = new List<string>();
+
+            while (lector.Read())
+            {
+                resultado.Add(lector["id_calificacion"].ToString());
+            }
+
+            lector.Close();
+            return resultado;
+        }
+
+        public List<string> getCalificacionesSubastas(int comprador, int calificacion)
+        {
+            SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT ca.id_calificacion from " + ConstantesBD.tabla_calificacion + " ca" +
+                                                                             " WHERE ca.id_usuario_comprador = " + comprador +
+                                                                             " AND ca.desc_cantidad_estrellas = " + calificacion + " AND ca.id_compra is null");
             List<string> resultado = new List<string>();
 
             while (lector.Read())
@@ -148,6 +180,40 @@ namespace MercadoEnvio.DataBase.Conexion
                                                       + "WHERE id_calificacion = " 
                                                       + pubCalif + " AND id_usuario_comprador = "
                                                       + compradorCalif);
+        }
+
+        public List<string> get_ultimas_calificaciones(int id_usuario)
+        {
+
+            SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 ca.id_calificacion from " + ConstantesBD.tabla_calificacion + " ca" +
+                                                                             " WHERE ca.id_usuario_comprador = " + id_usuario + " AND ca.id_subasta is null" +
+                                                                             " ORDER BY ca.id_calificacion DESC");
+            List<string> resultado = new List<string>();
+
+            while (lector.Read())
+            {
+                resultado.Add(lector["id_calificacion"].ToString());
+            }
+
+            lector.Close();
+            return resultado;
+        }
+
+        public List<string> get_ultimas_calificaciones_subastas(int id_usuario)
+        {
+
+            SqlDataReader lector = this.GD1C2016.ejecutarSentenciaConRetorno("SELECT TOP 5 ca.id_calificacion from " + ConstantesBD.tabla_calificacion + " ca" +
+                                                                             " WHERE ca.id_usuario_comprador = " + id_usuario + " AND ca.id_compra is null" +
+                                                                             " ORDER BY ca.id_calificacion DESC");
+            List<string> resultado = new List<string>();
+
+            while (lector.Read())
+            {
+                resultado.Add(lector["id_calificacion"].ToString());
+            }
+
+            lector.Close();
+            return resultado;
         }
     }
 }

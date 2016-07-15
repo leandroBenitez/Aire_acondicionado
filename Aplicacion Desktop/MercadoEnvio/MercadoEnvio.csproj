@@ -171,6 +171,24 @@
     <Compile Include="ABM Visibilidad\SubMenuVisibilidad.Designer.cs">
       <DependentUpon>SubMenuVisibilidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calificar\InformeCalificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calificar\InformeCalificar.designer.cs">
+      <DependentUpon>InformeCalificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calificar\InformeCalificarSubasta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calificar\InformeCalificarSubasta.designer.cs">
+      <DependentUpon>InformeCalificarSubasta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calificar\SubMenuCalificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Calificar\SubMenuCalificar.designer.cs">
+      <DependentUpon>SubMenuCalificar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Change_Password.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -410,8 +428,17 @@
     <EmbeddedResource Include="Calificar\Calificar.resx">
       <DependentUpon>Calificar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Calificar\InformeCalificar.resx">
+      <DependentUpon>InformeCalificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calificar\InformeCalificarSubasta.resx">
+      <DependentUpon>InformeCalificarSubasta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Calificar\ListadoSinCalificar.resx">
       <DependentUpon>ListadoSinCalificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Calificar\SubMenuCalificar.resx">
+      <DependentUpon>SubMenuCalificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Change_Password.resx">
       <DependentUpon>Change_Password.cs</DependentUpon>

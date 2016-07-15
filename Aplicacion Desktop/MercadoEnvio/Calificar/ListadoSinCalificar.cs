@@ -22,10 +22,11 @@ namespace MercadoEnvio.ListadoCalificaciones
         private publicacionDAO publicacionDAO;
 
         private Menu unMenu;
+        private SubMenuCalificar unSubMenu;
         List<string> listadoCalificaciones = new List<string>();
 
 
-        public ListadoSinCalificar(Menu menu, int id_comprador)
+        public ListadoSinCalificar(Menu menu, int id_comprador, SubMenuCalificar subMenu)
         {
             leerArchivoConfig();
             calificarDAO = new Calificar_DAO();
@@ -33,6 +34,7 @@ namespace MercadoEnvio.ListadoCalificaciones
             publicacionDAO = new publicacionDAO();
 
             this.unMenu = menu;
+            unSubMenu = subMenu;
             InitializeComponent();
             cargarGridView(id_comprador);
         }
@@ -61,8 +63,7 @@ namespace MercadoEnvio.ListadoCalificaciones
                 
                 calificacionListado.Rows.Add(listadoCalificaciones[i]
                                             , publicacionDAO.get_desc_publicacion(id_publicacion)
-                                            , usuarioDAO.getUsername(calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i])).ToString())
-                                            , calificarDAO.getCalificacion(int.Parse(listadoCalificaciones[i])));
+                                            , usuarioDAO.getUsername(calificarDAO.getVendedor(int.Parse(listadoCalificaciones[i])).ToString()));
             }
         }
 
@@ -78,7 +79,7 @@ namespace MercadoEnvio.ListadoCalificaciones
 
                 Calificar formCalificar = new Calificar(id_calif, vendedor, id_user, this.unMenu, this);
                 formCalificar.Show();
-                this.Close();
+                this.Hide();
             }
             catch
             {
@@ -89,7 +90,7 @@ namespace MercadoEnvio.ListadoCalificaciones
 
         private void Volver_Click(object sender, EventArgs e)
         {
-            this.unMenu.Show();
+            this.unSubMenu.Show();
             this.Close();
         }
 
