@@ -53,8 +53,6 @@ namespace MercadoEnvio.ListadoCalificaciones
                 id_calificacion = int.Parse(listadoCalificaciones[i]);
 
 
-                MessageBox.Show("Publicacion: " + id_calificacion.ToString());
-
                 id_publicacion = calificarDAO.get_publicacion(id_calificacion);
 
                 calificacionListado.Rows.Add(listadoCalificaciones[i]
